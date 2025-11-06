@@ -4,6 +4,7 @@ import basemod.BaseMod;
 import basemod.abstracts.CustomCard;
 import basemod.abstracts.DynamicVariable;
 import thehighman.InimigosDoSpire;
+import thehighman.powers.Seda;
 import thehighman.util.CardStats;
 import thehighman.util.TriFunction;
 import com.badlogic.gdx.graphics.Color;
@@ -705,5 +706,12 @@ public abstract class BaseCard extends CustomCard {
         public boolean isModified() {
             return forceModified || base != value;
         }
+    }
+
+    public int getSedaStacksOnPlayer(int baseBonus){
+        int sedaStacks = AbstractDungeon.player.hasPower(Seda.POWER_ID) ?
+                AbstractDungeon.player.getPower(Seda.POWER_ID).amount : 0;
+        // Retorna o bônus base somado aos stacks de "Seda"
+        return baseBonus + sedaStacks;
     }
 }

@@ -9,7 +9,7 @@ package thehighman.cards;
         import com.megacrit.cardcrawl.monsters.AbstractMonster;
         import thehighman.character.TheHighman;
         import thehighman.powers.Chapado;
-        import thehighman.powers.Seda_naofunciona;
+        import thehighman.powers.Seda;
         import thehighman.util.CardStats;
 
         /**
@@ -68,46 +68,7 @@ package thehighman.cards;
                 // Causa dano ao inimigo alvo
                 addToBot(new DamageAction(m, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL),
                         AbstractGameAction.AttackEffect.SLASH_VERTICAL));
-
-                // Aplica o efeito "Chapado" ao inimigo alvo
-                addToBot(new ApplyPowerAction(m, p, new Chapado(m, getBonusChapado(1)), getBonusChapado(1)));
+                addToBot(new ApplyPowerAction(m, p, new Chapado(m, 1), 1));
             }
 
-            /**
-             * Aplica modificadores de poder antes de calcular o dano.
-             * Adiciona o número de stacks do poder "Seda" ao dano base.
-             */
-            @Override
-            public void applyPowers() {
-                // Obtém o número de stacks do poder "Seda" do jogador
-                int sedaStacks = AbstractDungeon.player.hasPower(Seda_naofunciona.POWER_ID) ?
-                        AbstractDungeon.player.getPower(Seda_naofunciona.POWER_ID).amount : 0;
-
-                // Adiciona os stacks de "Seda" ao dano base
-                this.baseDamage += sedaStacks;
-
-                // Aplica os poderes e recalcula o dano
-                super.applyPowers();
-
-                // Remove os stacks de "Seda" do dano base para evitar alterações permanentes
-                this.baseDamage -= sedaStacks;
-
-                // Marca o dano como modificado se ele for diferente do dano base
-                this.isDamageModified = this.damage != this.baseDamage;
-            }
-
-            /**
-             * Calcula o bônus do efeito "Chapado" com base no número de stacks do poder "Seda".
-             *
-             * @param baseBonus O bônus base do efeito "Chapado".
-             * @return O bônus total, incluindo os stacks de "Seda".
-             */
-            private int getBonusChapado(int baseBonus) {
-                // Obtém o número de stacks do poder "Seda" do jogador
-                int sedaStacks = AbstractDungeon.player.hasPower(Seda_naofunciona.POWER_ID) ?
-                        AbstractDungeon.player.getPower(Seda_naofunciona.POWER_ID).amount : 0;
-
-                // Retorna o bônus base somado aos stacks de "Seda"
-                return baseBonus + sedaStacks;
-            }
         }

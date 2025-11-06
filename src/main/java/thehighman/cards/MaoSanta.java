@@ -1,11 +1,14 @@
 package thehighman.cards;
 
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.vfx.combat.InflameEffect;
 import thehighman.character.TheHighman;
-import thehighman.powers.Seda_naofunciona;
-import thehighman.powers.Erva_talvezfuncione;
+import thehighman.powers.Erva;
+import thehighman.powers.Seda;
 import thehighman.util.CardStats;
 
 /**
@@ -58,10 +61,15 @@ public class MaoSanta extends BaseCard {
      */
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        // Applies the "Seda" power to the player
-        addToBot(new ApplyPowerAction(p, p, new Seda_naofunciona(p, magicNumber), magicNumber));
+        // Apply the Seda power to the player
+        addToBot(new VFXAction(new InflameEffect(p)));
+        AbstractDungeon.actionManager.addToBottom(
+                new ApplyPowerAction(p, p, new Seda(p, p, this.magicNumber), this.magicNumber)
+        );
 
-        // Applies the "Erva" power to the player
-        addToBot(new ApplyPowerAction(p, p, new Erva_talvezfuncione(p, magicNumber), magicNumber));
+        // Apply the Erva power to the player
+        AbstractDungeon.actionManager.addToBottom(
+                new ApplyPowerAction(p, p, new Erva(p, p, this.magicNumber), this.magicNumber)
+        );
     }
 }
