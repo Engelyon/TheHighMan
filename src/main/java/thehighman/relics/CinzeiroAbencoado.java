@@ -1,6 +1,9 @@
 package thehighman.relics;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import thehighman.character.TheHighman;
+
+import static thehighman.InimigosDoSpire.makeID;
 
 public class CinzeiroAbencoado extends BaseRelic {
     private static final String NAME = "CinzeiroAbencoado"; //The name will be used for determining the image file as well as the ID.
@@ -9,6 +12,6 @@ public class CinzeiroAbencoado extends BaseRelic {
     private static final LandingSound SOUND = LandingSound.CLINK; //The sound played when the relic is clicked.
 
     public CinzeiroAbencoado() {
-        super(ID, NAME, RARITY, SOUND);
+        super(ID, NAME, TheHighman.Meta.CARD_COLOR, RARITY, SOUND);
     }
 }
