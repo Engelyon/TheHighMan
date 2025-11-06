@@ -5,5 +5,12 @@
     "DESCRIPTIONS": [
       "Gain [E] at the start of your turn. [E] is an energy icon."
     ]
+  },
+  "${modID}:CinzeiroAbencoado": {
+    "NAME": "Cinzeiro Abencoado",
+    "FLAVOR": "heh",
+    "DESCRIPTIONS": [
+      "Gain [E] at the start of your turn. [E] is an energy icon."
+    ]
   }
 }
