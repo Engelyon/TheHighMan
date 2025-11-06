@@ -1,14 +1,16 @@
 {
   "${modID}:Tapa": {
     "NAME": "Tapa",
-    "DESCRIPTION": "Dê !D! de dano",
-    "UPGRADE_DESCRIPTION": "This will automatically be used if the card is upgraded. Remove it if unneeded.",
-    "EXTENDED_DESCRIPTION": [
-      "You can put more text in here.",
-      "If you need to use it for stuff.",
-      "Blizzard is a good example for this."
-    ]
+    "DESCRIPTION": "Dê !D! de dano e aplique 1 de chapado.",
+    "UPGRADE_DESCRIPTION": "Dê !D! de dano e aplique 1 de chapado."
   },
+  "${modID}:MaoSanta": {
+    "NAME": "Mão Santa",
+    "DESCRIPTION": "Ganhe 1 de seda e 1 de erva.",
+    "UPGRADE_DESCRIPTION": "Ganhe 2 de seda e 2 de erva.",
+    "EXTENDED_DESCRIPTION": []
+  }
+,
   "${modID}:ExampleCard": {
     "NAME": "Name",
     "DESCRIPTION": "Description. NL Second line.",

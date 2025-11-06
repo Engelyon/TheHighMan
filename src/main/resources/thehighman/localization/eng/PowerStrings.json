@@ -4,5 +4,20 @@
     "DESCRIPTIONS": [
       "You are Very Cool and Strong."
     ]
+  },
+  "${modID}:Chapado": {
+    "NAME": "Chapado",
+    "DESCRIPTIONS": [
+      "Este inimigo está chapado. Ao atingir 10 stacks, ele perde todos os stacks e recebe Larica. Stacks atuais: ",
+      ". Redução de dano: ",
+      "%."
+    ]
+  },
+  "${modID}:Larica": {
+    "NAME": "Larica",
+    "DESCRIPTIONS": [
+      "Este inimigo está com larica. Ele recebe +2 de força, mas leva +5 de dano de ataques."
+    ]
   }
+
 }
