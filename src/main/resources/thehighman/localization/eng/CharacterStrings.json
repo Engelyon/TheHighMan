@@ -1,5 +1,5 @@
 {
-  "${modID}:CharacterID": {
+  "${modID}:Highman": {
     "NAMES": [
       "The Name (Displayed in character select)",
       "the Name (but 'the' is lowercase, this is displayed at the top left during gameplay)"

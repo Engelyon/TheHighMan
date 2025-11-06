@@ -1,8 +1,10 @@
 package thehighman;
 
+import basemod.AutoAdd;
 import basemod.BaseMod;
 import basemod.interfaces.*;
-import thehighman.character.MyCharacter;
+import thehighman.cards.BaseCard;
+import thehighman.character.TheHighman;
 import thehighman.util.GeneralUtils;
 import thehighman.util.KeywordInfo;
 import thehighman.util.Sounds;
@@ -30,7 +32,8 @@ import java.nio.charset.StandardCharsets;
 import java.util.*;
 
 @SpireInitializer
-public class BasicMod implements
+public class InimigosDoSpire implements
+        EditCardsSubscriber,
         EditCharactersSubscriber,
         EditStringsSubscriber,
         EditKeywordsSubscriber,
@@ -50,12 +53,12 @@ public class BasicMod implements
 
     //This will be called by ModTheSpire because of the @SpireInitializer annotation at the top of the class.
     public static void initialize() {
-        new BasicMod();
+        new InimigosDoSpire();
 
-        MyCharacter.Meta.registerColor();
+        TheHighman.Meta.registerColor();
     }
 
-    public BasicMod() {
+    public InimigosDoSpire() {
         BaseMod.subscribe(this); //This will make BaseMod trigger all the subscribers at their appropriate times.
         logger.info(modID + " subscribed to BaseMod.");
     }
@@ -161,7 +164,7 @@ public class BasicMod implements
 
     @Override
     public void receiveEditCharacters() {
-        MyCharacter.Meta.registerCharacter();
+        TheHighman.Meta.registerCharacter();
     }
 
     @Override
@@ -233,7 +236,7 @@ public class BasicMod implements
      * Checks the expected resources path based on the package name.
      */
     private static String checkResourcesPath() {
-        String name = BasicMod.class.getName(); //getPackage can be iffy with patching, so class name is used instead.
+        String name = InimigosDoSpire.class.getName(); //getPackage can be iffy with patching, so class name is used instead.
         int separator = name.indexOf('.');
         if (separator > 0)
             name = name.substring(0, separator);
@@ -244,7 +247,7 @@ public class BasicMod implements
             throw new RuntimeException("\n\tFailed to find resources folder; expected it to be at  \"resources/" + name + "\"." +
                     " Either make sure the folder under resources has the same name as your mod's package, or change the line\n" +
                     "\t\"private static final String resourcesFolder = checkResourcesPath();\"\n" +
-                    "\tat the top of the " + BasicMod.class.getSimpleName() + " java file.");
+                    "\tat the top of the " + InimigosDoSpire.class.getSimpleName() + " java file.");
         }
         if (!resources.child("images").exists()) {
             throw new RuntimeException("\n\tFailed to find the 'images' folder in the mod's 'resources/" + name + "' folder; Make sure the " +
@@ -267,7 +270,7 @@ public class BasicMod implements
             if (annotationDB == null)
                 return false;
             Set<String> initializers = annotationDB.getAnnotationIndex().getOrDefault(SpireInitializer.class.getName(), Collections.emptySet());
-            return initializers.contains(BasicMod.class.getName());
+            return initializers.contains(InimigosDoSpire.class.getName());
         }).findFirst();
         if (infos.isPresent()) {
             info = infos.get();
@@ -276,5 +279,12 @@ public class BasicMod implements
         else {
             throw new RuntimeException("Failed to determine mod info/ID based on initializer.");
         }
+    }
+    @Override
+    public void receiveEditCards() { //somewhere in the class
+        new AutoAdd(modID) //Loads files from this mod
+                .packageFilter(BaseCard.class) //In the same package as this class
+                .setDefaultSeen(true) //And marks them as seen in the compendium
+                .cards(); //Adds the cards
     }
 }

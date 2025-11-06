@@ -1,6 +1,6 @@
 package thehighman.util;
 
-import static thehighman.BasicMod.audioPath;
+import static thehighman.InimigosDoSpire.audioPath;
 
 public class Sounds {
     public static String TEST_SOUND = audioPath("test.wav"); //Load audio using a given path
