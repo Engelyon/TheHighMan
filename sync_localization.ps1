@@ -1,0 +1,1 @@
+Copy-Item "localization\eng\*.json" -Destination "localization\pt" -Force

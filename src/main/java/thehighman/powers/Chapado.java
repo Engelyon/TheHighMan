@@ -22,8 +22,8 @@ public class Chapado extends BasePower{
         super(POWER_ID, TYPE, TURN_BASED, owner, amount);
         // Aplica stacks extras se o jogador tiver Seda
         AbstractCreature player = AbstractDungeon.player;
-        if (player != null && player.hasPower(Seda.POWER_ID)) {
-            int extra = player.getPower(Seda.POWER_ID).amount;
+        if (player != null && player.hasPower(Seda_naofunciona.POWER_ID)) {
+            int extra = player.getPower(Seda_naofunciona.POWER_ID).amount;
             this.amount += extra;
         }
         updateDescription();
@@ -43,12 +43,12 @@ public class Chapado extends BasePower{
         this.fontScale = 8.0F;
 
         AbstractCreature player = AbstractDungeon.player;
-        if (player != null && player.hasPower(Seda.POWER_ID)) {
-            int extra = player.getPower(Seda.POWER_ID).amount;
+        if (player != null && player.hasPower(Seda_naofunciona.POWER_ID)) {
+            int extra = player.getPower(Seda_naofunciona.POWER_ID).amount;
             stackAmount += extra;
         }
         this.amount += stackAmount;
-        if (this.amount >= 10) {
+        if (this.amount >= 20) {
             AbstractDungeon.actionManager.addToBottom(
                     new ApplyPowerAction(owner, owner, new Larica(owner, 1), 1)
             );

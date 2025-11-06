@@ -91,6 +91,7 @@ public abstract class BaseCard extends CustomCard {
     }
 
     //Methods meant for constructor use
+    //Parametros são dano inicial, aumento de dano(upgrade)
     protected final void setDamage(int damage)
     {
         this.setDamage(damage, 0);
@@ -104,7 +105,7 @@ public abstract class BaseCard extends CustomCard {
             this.damageUpgrade = damageUpgrade;
         }
     }
-
+    //Parametros são defesa inicial, aumento de defesa(upgrade)
     protected final void setBlock(int block)
     {
         this.setBlock(block, 0);
@@ -118,7 +119,7 @@ public abstract class BaseCard extends CustomCard {
             this.blockUpgrade = blockUpgrade;
         }
     }
-
+    //Parametros são numero magico inicial inicial, aumento de numero(upgrade)
     protected final void setMagic(int magic)
     {
         this.setMagic(magic, 0);
@@ -384,12 +385,18 @@ public abstract class BaseCard extends CustomCard {
         this.upgEthereal = upgEthereal;
         this.isEthereal = baseEthereal;
     }
-    protected void setInnate(boolean baseInnate, boolean upgInnate)
-    {
-        this.baseInnate = baseInnate;
-        this.upgInnate = upgInnate;
-        this.isInnate = baseInnate;
-    }
+    /**
+         * Define se a carta é inata (innate), ou seja, se ela sempre estará na mão inicial do jogador.
+         *
+         * @param baseInnate Valor booleano indicando se a carta é inata no estado base (antes do upgrade).
+         * @param upgInnate Valor booleano indicando se a carta é inata após o upgrade.
+         */
+        protected void setInnate(boolean baseInnate, boolean upgInnate)
+        {
+            this.baseInnate = baseInnate; // Define o estado base de inata.
+            this.upgInnate = upgInnate;  // Define o estado de inata após o upgrade.
+            this.isInnate = baseInnate;  // Define o estado atual de inata com base no estado base.
+        }
     protected void setSelfRetain(boolean baseRetain, boolean upgRetain)
     {
         this.baseRetain = baseRetain;
