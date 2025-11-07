@@ -35,6 +35,12 @@ public class BadTrip extends BaseCard {
         if (p.hand.contains(this)) {
             // Perde 1 de vida
             addToBot(new LoseHPAction(p, p, 1));
+
+            // Ativa Maconha Medicinal se estiver presente
+            if (p.hasRelic("thehighman:MaconhaMedicinal")) {
+                ((thehighman.relics.MaconhaMedicinal) p.getRelic("thehighman:MaconhaMedicinal")).onBadTripDano();
+            }
+
             // Ganha 1 de Larica
             addToBot(new ApplyPowerAction(p, p, new Larica(p, 1), 1));
         }

@@ -1,8 +1,10 @@
 package thehighman.powers;
 
 import com.megacrit.cardcrawl.core.AbstractCreature;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.localization.PowerStrings;
+import thehighman.relics.SacoDeLanchesSemFundo;
 
 public class Comido extends AbstractPower {
     public static final String POWER_ID = "thehighman:Comido";
@@ -29,6 +31,12 @@ public class Comido extends AbstractPower {
         if (comido != null && comido.amount > 0) {
             comido.amount--;
             comido.updateDescription();
+
+            // Ativa a relíquia se for o jogador
+            if (target.isPlayer && AbstractDungeon.player.hasRelic("thehighman:SacoDeLanchesSemFundo")) {
+                ((SacoDeLanchesSemFundo) AbstractDungeon.player.getRelic("thehighman:SacoDeLanchesSemFundo")).onComidoConsumido();
+            }
+
             if (comido.amount == 0) {
                 target.powers.remove(comido);
             }
