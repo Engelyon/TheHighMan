@@ -5,10 +5,9 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thehighman.character.TheHighman;
-import thehighman.powers.Erva;
+import thehighman.powers.ErvaPower;
 import thehighman.util.CardStats;
 
 public class Enrolar extends BaseCard {
@@ -30,6 +29,7 @@ public class Enrolar extends BaseCard {
         super(ID, info);
         setDamage(DAMAGE, UPG_DAMAGE);
         setMagic(ERVA_AMOUNT);
+        this.rawDescription = "Cause !D! de dano. Ganhe !M! de Erva.";
         this.keywords.add("erva");
         initializeDescription();
     }
@@ -39,6 +39,15 @@ public class Enrolar extends BaseCard {
         addToBot(new DamageAction(m, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL),
                 AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
 
-        addToBot(new ApplyPowerAction(p, p, new Erva(p, p, this.magicNumber), this.magicNumber));
+        addToBot(new ApplyPowerAction(p, p, new ErvaPower(p, this.magicNumber), this.magicNumber));
+    }
+    @Override
+    public void upgrade() {
+        if (!upgraded) {
+            upgradeName();
+            upgradeDamage(UPG_DAMAGE);     // 7 → 10 de dano
+            upgradeMagicNumber(1);         // 1 → 2 de Erva
+            initializeDescription();
+        }
     }
 }

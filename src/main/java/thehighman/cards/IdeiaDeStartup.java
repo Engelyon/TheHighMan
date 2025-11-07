@@ -5,7 +5,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thehighman.character.TheHighman;
-import thehighman.powers.Erva;
+import thehighman.powers.ErvaPower;
 import thehighman.util.CardStats;
 
 public class IdeiaDeStartup extends BaseCard {
@@ -24,15 +24,27 @@ public class IdeiaDeStartup extends BaseCard {
     public IdeiaDeStartup() {
         super(ID, info);
         setMagic(ERVA_GAIN);
+        setMagic(ERVA_GAIN, ERVA_GAIN + 2); // 5 → 7 de Erva com upgrade
+
+        this.rawDescription = "Ganhe !M! de Erva. Consome toda a energia restante pq vc faliu a Piticas.";
+        this.keywords.add("erva");
         initializeDescription();
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         // Ganha 5 de Erva
-        addToBot(new ApplyPowerAction(p, p, new Erva(p, p, this.magicNumber), this.magicNumber));
+        addToBot(new ApplyPowerAction(p, p, new ErvaPower(p, this.magicNumber), this.magicNumber));
 
         // Zera a energia restante
         AbstractDungeon.player.energy.use(AbstractDungeon.player.energy.energy);
+    }
+    @Override
+    public void upgrade() {
+        if (!upgraded) {
+            upgradeName();
+            upgradeMagicNumber(2); // 5 → 7 de Erva
+            initializeDescription();
+        }
     }
 }

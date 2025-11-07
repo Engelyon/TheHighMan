@@ -23,11 +23,21 @@ public class Relaxar extends BaseCard {
     public Relaxar() {
         super(ID, info);
         setBlock(BLOCK, UPG_BLOCK);
+        this.tags.add(CardTags.STARTER_DEFEND);
+        this.rawDescription = "Ganhe !B! de Bloqueio.";
         initializeDescription();
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new GainBlockAction(p, this.block));
+    }
+    @Override
+    public void upgrade() {
+        if (!upgraded) {
+            upgradeName();
+            upgradeBlock(UPG_BLOCK); // 7 → 10 de Bloqueio
+            initializeDescription();
+        }
     }
 }

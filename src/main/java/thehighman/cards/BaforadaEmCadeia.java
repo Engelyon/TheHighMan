@@ -7,10 +7,9 @@ import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thehighman.character.TheHighman;
-import thehighman.powers.Chapado;
+import thehighman.powers.ChapadoPower;
 import thehighman.util.CardStats;
 
 public class BaforadaEmCadeia extends BaseCard {
@@ -32,6 +31,7 @@ public class BaforadaEmCadeia extends BaseCard {
         super(ID, info);
         setDamage(DAMAGE, UPG_DAMAGE);
         setMagic(CHAPADO_AMOUNT);
+        this.rawDescription = "Cause !D! de dano e aplique !M! de Chapado. Adicione uma Baforada Etérea à sua mão.";
         this.keywords.add("chapado");
         initializeDescription();
     }
@@ -43,7 +43,7 @@ public class BaforadaEmCadeia extends BaseCard {
                 AbstractGameAction.AttackEffect.FIRE));
 
         // Aplica Chapado
-        addToBot(new ApplyPowerAction(m, p, new Chapado(m, this.magicNumber), this.magicNumber));
+        addToBot(new ApplyPowerAction(m, p, new ChapadoPower(m, this.magicNumber), this.magicNumber));
 
         // Gera uma cópia da carta Baforada Etérea
         AbstractCard copia = new BaforadaEterea();
@@ -51,5 +51,13 @@ public class BaforadaEmCadeia extends BaseCard {
             copia.upgrade();
         }
         addToBot(new MakeTempCardInHandAction(copia, 1));
+    }
+    @Override
+    public void upgrade() {
+        if (!upgraded) {
+            upgradeName();
+            upgradeDamage(UPG_DAMAGE); // Aumenta o dano de 4 para 6
+            initializeDescription();
+        }
     }
 }

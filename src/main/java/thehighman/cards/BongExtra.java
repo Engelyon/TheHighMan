@@ -20,11 +20,21 @@ public class BongExtra extends BaseCard {
 
     public BongExtra() {
         super(ID, info);
+        this.rawDescription = "Ganhe o poder Bong Extra.";
+        this.keywords.add("bong");
         initializeDescription();
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new ApplyPowerAction(p, p, new BongExtraPower(p)));
+    }
+    @Override
+    public void upgrade() {
+        if (!upgraded) {
+            upgradeName();
+            upgradeBaseCost(1); // 2 → 1 de custo
+            initializeDescription();
+        }
     }
 }

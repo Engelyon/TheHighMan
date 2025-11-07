@@ -6,11 +6,10 @@ import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 import thehighman.character.TheHighman;
-import thehighman.powers.Erva;
+import thehighman.powers.ErvaPower;
 import thehighman.util.CardStats;
 
 public class Recompensa extends BaseCard {
@@ -31,6 +30,8 @@ public class Recompensa extends BaseCard {
     public Recompensa() {
         super(ID, info);
         setDamage(DAMAGE, UPG_DAMAGE);
+        this.rawDescription = "Cause !D! de dano. Se tiver Erva, consuma 1 para aplicar 2 de Vulnerável.";
+        this.keywords.add("erva");
         initializeDescription();
     }
 
@@ -41,9 +42,17 @@ public class Recompensa extends BaseCard {
                 AbstractGameAction.AttackEffect.BLUNT_LIGHT));
 
         // Se tiver Erva, consome 1 e aplica Vulnerável
-        if (p.hasPower(Erva.POWER_ID) && p.getPower(Erva.POWER_ID).amount >= 1) {
-            addToBot(new ReducePowerAction(p, p, Erva.POWER_ID, 1));
+        if (p.hasPower(ErvaPower.POWER_ID) && p.getPower(ErvaPower.POWER_ID).amount >= 1) {
+            addToBot(new ReducePowerAction(p, p, ErvaPower.POWER_ID, 1));
             addToBot(new ApplyPowerAction(m, p, new VulnerablePower(m, VULNERABLE_AMOUNT, false), VULNERABLE_AMOUNT));
+        }
+    }
+    @Override
+    public void upgrade() {
+        if (!upgraded) {
+            upgradeName();
+            upgradeDamage(UPG_DAMAGE); // 6 → 9 de dano
+            initializeDescription();
         }
     }
 }

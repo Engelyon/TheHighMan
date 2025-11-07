@@ -2,13 +2,11 @@ package thehighman.cards;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.LoseHPAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.AbstractPower;
 import thehighman.character.TheHighman;
-import thehighman.powers.Larica;
+import thehighman.powers.LaricaPower;
 import thehighman.util.CardStats;
 
 public class BadTrip extends BaseCard {
@@ -26,6 +24,9 @@ public class BadTrip extends BaseCard {
         super(ID, info);
         this.exhaust = false;
         this.dontTriggerOnUseCard = true;
+        this.rawDescription = "No fim do turno, se estiver na mão: perca 1 de vida e ganhe 1 de Larica.";
+        this.keywords.add("larica");
+        this.keywords.add("maldição");
         initializeDescription();
     }
 
@@ -42,7 +43,7 @@ public class BadTrip extends BaseCard {
             }
 
             // Ganha 1 de Larica
-            addToBot(new ApplyPowerAction(p, p, new Larica(p, 1), 1));
+            addToBot(new ApplyPowerAction(p, p, new LaricaPower(p, 1), 1));
         }
     }
 

@@ -5,10 +5,9 @@ import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.HealAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thehighman.character.TheHighman;
-import thehighman.powers.Larica;
+import thehighman.powers.LaricaPower;
 import thehighman.util.CardStats;
 
 public class ResgateDeLanche extends BaseCard {
@@ -29,6 +28,8 @@ public class ResgateDeLanche extends BaseCard {
     public ResgateDeLanche() {
         super(ID, info);
         setDamage(DAMAGE, UPG_DAMAGE);
+        this.rawDescription = "Cause !D! de dano. Se o inimigo tiver Larica, cure 3 de Vida.";
+        this.keywords.add("larica");
         initializeDescription();
     }
 
@@ -39,8 +40,16 @@ public class ResgateDeLanche extends BaseCard {
                 AbstractGameAction.AttackEffect.BLUNT_LIGHT));
 
         // Se o inimigo tiver Larica, cura o jogador
-        if (m.hasPower(Larica.POWER_ID)) {
+        if (m.hasPower(LaricaPower.POWER_ID)) {
             addToBot(new HealAction(p, p, HEAL_AMOUNT));
+        }
+    }
+    @Override
+    public void upgrade() {
+        if (!upgraded) {
+            upgradeName();
+            upgradeDamage(UPG_DAMAGE); // 5 → 8 de dano
+            initializeDescription();
         }
     }
 }

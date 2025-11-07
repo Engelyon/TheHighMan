@@ -6,7 +6,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thehighman.character.TheHighman;
-import thehighman.powers.Chapado;
+import thehighman.powers.ChapadoPower;
 import thehighman.util.CardStats;
 
 public class MarDeFumaca extends BaseCard {
@@ -25,6 +25,9 @@ public class MarDeFumaca extends BaseCard {
 
     public MarDeFumaca() {
         super(ID, info);
+        setMagic(CHAPADO_AMOUNT, 1); // upgrade aumenta o Chapado de 3 → 4
+        this.rawDescription = "Aplique !M! de Chapado a todos os inimigos. Ganhe Bloqueio igual a !M! × 3.";
+        this.keywords.add("chapado");
         initializeDescription();
     }
 
@@ -34,7 +37,7 @@ public class MarDeFumaca extends BaseCard {
 
         for (AbstractMonster mo : AbstractDungeon.getMonsters().monsters) {
             if (!mo.isDeadOrEscaped()) {
-                addToBot(new ApplyPowerAction(mo, p, new Chapado(mo, CHAPADO_AMOUNT), CHAPADO_AMOUNT));
+                addToBot(new ApplyPowerAction(mo, p, new ChapadoPower(mo, CHAPADO_AMOUNT), CHAPADO_AMOUNT));
                 totalStacks += CHAPADO_AMOUNT;
             }
         }
@@ -42,5 +45,13 @@ public class MarDeFumaca extends BaseCard {
         // Ganha bloqueio proporcional ao total de stacks aplicados
         int totalBlock = totalStacks * BLOCK_PER_STACK;
         addToBot(new GainBlockAction(p, totalBlock));
+    }
+    @Override
+    public void upgrade() {
+        if (!upgraded) {
+            upgradeName();
+            upgradeMagicNumber(1); // Chapado: 3 → 4
+            initializeDescription();
+        }
     }
 }

@@ -7,7 +7,7 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thehighman.character.TheHighman;
-import thehighman.powers.Larica;
+import thehighman.powers.LaricaPower;
 import thehighman.util.CardStats;
 
 public class BongGigatonico extends BaseCard {
@@ -28,20 +28,41 @@ public class BongGigatonico extends BaseCard {
     public BongGigatonico() {
         super(ID, info);
         setDamage(DAMAGE, UPG_DAMAGE);
+        this.exhaust = true;
+        this.rawDescription = "Cause !D! de dano. Se o inimigo tiver Larica, aplique 3 de Vulnerável.";
+        this.keywords.add("larica");
         initializeDescription();
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        // Causa dano pesado
+        boolean upgradedEffect = this.upgraded && m.hasPower(LaricaPower.POWER_ID);
+
+        if (upgradedEffect) {
+            // Aplica Vulnerável primeiro
+            addToBot(new ApplyPowerAction(m, p,
+                    new com.megacrit.cardcrawl.powers.VulnerablePower(m, this.magicNumber, false),
+                    this.magicNumber));
+        }
+
+        // Causa dano
         addToBot(new DamageAction(m, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL),
                 AbstractGameAction.AttackEffect.FIRE));
 
-        // Se o inimigo tiver Larica, aplica Vulnerável
-        if (m.hasPower(Larica.POWER_ID)) {
+        if (!upgradedEffect && m.hasPower(LaricaPower.POWER_ID)) {
+            // Aplica Vulnerável depois (versão não aprimorada)
             addToBot(new ApplyPowerAction(m, p,
-                    new com.megacrit.cardcrawl.powers.VulnerablePower(m, VULNERABLE_AMOUNT, false),
-                    VULNERABLE_AMOUNT));
+                    new com.megacrit.cardcrawl.powers.VulnerablePower(m, this.magicNumber, false),
+                    this.magicNumber));
+        }
+    }
+    @Override
+    public void upgrade() {
+        if (!upgraded) {
+            upgradeName();
+            upgradeDamage(UPG_DAMAGE);     // 30 → 38 de dano
+            upgradeMagicNumber(1);         // 3 → 4 de Vulnerável
+            initializeDescription();
         }
     }
 }

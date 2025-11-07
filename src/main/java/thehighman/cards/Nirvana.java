@@ -20,11 +20,21 @@ public class Nirvana extends BaseCard {
 
     public Nirvana() {
         super(ID, info);
+        this.rawDescription = "Ganhe o poder Nirvana.";
+        this.keywords.add("nirvana");
         initializeDescription();
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new ApplyPowerAction(p, p, new NirvanaPower(p)));
+    }
+    @Override
+    public void upgrade() {
+        if (!upgraded) {
+            upgradeName();
+            upgradeBaseCost(1); // 2 → 1 de custo
+            initializeDescription();
+        }
     }
 }

@@ -19,28 +19,41 @@ public class SemPressa extends BaseCard {
 
     private static final int BASE_BLOCK = 3;
     private static final int BONUS_BLOCK = 2;
-
-    private boolean foiRetida = false;
+    private boolean foiRetidaEsteTurno = false;
 
     public SemPressa() {
         super(ID, info);
         setBlock(BASE_BLOCK);
         this.selfRetain = true;
         this.exhaust = true;
+        this.rawDescription = "Retenha esta carta. Se for usada após ser retida, custa 0 e ganha +2 de Bloqueio.";
         initializeDescription();
     }
 
     @Override
     public void atTurnStart() {
-        if (this.selfRetain && this.foiRetida) {
+        if (foiRetidaEsteTurno) {
             this.setCostForTurn(0);
-            this.upgradeBlock(BONUS_BLOCK);
         }
-        this.foiRetida = true;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new GainBlockAction(p, this.block));
+        int totalBlock = this.block + (foiRetidaEsteTurno ? BONUS_BLOCK : 0);
+        addToBot(new GainBlockAction(p, totalBlock));
+        foiRetidaEsteTurno = false;
+    }
+    @Override
+    public void triggerOnEndOfTurnForPlayingCard() {
+        foiRetidaEsteTurno = true;
+    }
+
+    @Override
+    public void upgrade() {
+        if (!upgraded) {
+            upgradeName();
+            upgradeBlock(2); // 3 → 5 base
+            initializeDescription();
+        }
     }
 }

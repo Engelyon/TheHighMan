@@ -6,7 +6,7 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thehighman.character.TheHighman;
-import thehighman.powers.Comido;
+import thehighman.powers.ComidoPower;
 import thehighman.util.CardStats;
 
 public class MordidaNoLanche extends BaseCard {
@@ -29,6 +29,8 @@ public class MordidaNoLanche extends BaseCard {
     public MordidaNoLanche() {
         super(ID, info);
         setDamage(BASE_DAMAGE, UPG_DAMAGE);
+        this.rawDescription = "Cause !D! de dano 3 vezes. Se tiver 2 ou mais de Comido, cada golpe causa +1 de dano.";
+        this.keywords.add("comido");
         initializeDescription();
     }
 
@@ -36,7 +38,7 @@ public class MordidaNoLanche extends BaseCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         int bonus = 0;
 
-        if (p.hasPower(Comido.POWER_ID) && p.getPower(Comido.POWER_ID).amount >= COMIDO_THRESHOLD) {
+        if (p.hasPower(ComidoPower.POWER_ID) && p.getPower(ComidoPower.POWER_ID).amount >= COMIDO_THRESHOLD) {
             bonus = BONUS_PER_HIT;
         }
 
@@ -44,6 +46,14 @@ public class MordidaNoLanche extends BaseCard {
             addToBot(new DamageAction(m,
                     new DamageInfo(p, this.damage + bonus, DamageInfo.DamageType.NORMAL),
                     AbstractGameAction.AttackEffect.SLASH_VERTICAL));
+        }
+    }
+    @Override
+    public void upgrade() {
+        if (!upgraded) {
+            upgradeName();
+            upgradeDamage(UPG_DAMAGE); // 4 → 5 de dano base por golpe
+            initializeDescription();
         }
     }
 }

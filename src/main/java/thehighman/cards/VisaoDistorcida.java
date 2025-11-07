@@ -7,7 +7,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thehighman.character.TheHighman;
 import thehighman.powers.VisaoDistorcidaPower;
-import thehighman.powers.Chapado;
+import thehighman.powers.ChapadoPower;
 import thehighman.util.CardStats;
 
 public class VisaoDistorcida extends BaseCard {
@@ -28,6 +28,9 @@ public class VisaoDistorcida extends BaseCard {
         super(ID, info);
         this.selfRetain = true;
         this.exhaust = true;
+        this.rawDescription = "Aplique 5 de Chapado a todos os inimigos. Perca 10 de Vida. No próximo turno, entre em Visão Distorcida. Exaure.";
+        this.keywords.add("chapado");
+        this.keywords.add("visão distorcida");
         initializeDescription();
     }
 
@@ -36,7 +39,7 @@ public class VisaoDistorcida extends BaseCard {
         // Aplica 5 de Chapado a todos os inimigos
         for (AbstractMonster mo : AbstractDungeon.getMonsters().monsters) {
             if (!mo.isDeadOrEscaped()) {
-                addToBot(new ApplyPowerAction(mo, p, new Chapado(mo, CHAPADO_AMOUNT), CHAPADO_AMOUNT));
+                addToBot(new ApplyPowerAction(mo, p, new ChapadoPower(mo, CHAPADO_AMOUNT), CHAPADO_AMOUNT));
             }
         }
 
@@ -45,5 +48,14 @@ public class VisaoDistorcida extends BaseCard {
 
         // Aplica o efeito para o próximo turno
         addToBot(new ApplyPowerAction(p, p, new VisaoDistorcidaPower(p)));
+    }
+    @Override
+    public void upgrade() {
+        if (!upgraded) {
+            upgradeName();
+            this.exhaust = false;
+            this.rawDescription = "Aplique 5 de Chapado a todos os inimigos. Perca 10 de Vida. No próximo turno, entre em Visão Distorcida.";
+            initializeDescription();
+        }
     }
 }

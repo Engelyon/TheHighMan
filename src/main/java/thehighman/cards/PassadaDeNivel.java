@@ -7,7 +7,7 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thehighman.character.TheHighman;
-import thehighman.powers.Chapado;
+import thehighman.powers.ChapadoPower;
 import thehighman.util.CardStats;
 
 public class PassadaDeNivel extends BaseCard {
@@ -28,6 +28,8 @@ public class PassadaDeNivel extends BaseCard {
     public PassadaDeNivel() {
         super(ID, info);
         setDamage(DAMAGE, UPG_DAMAGE);
+        this.rawDescription = "Cause !D! de dano. Se o inimigo tiver 7 ou mais de Chapado, compre 1 carta.";
+        this.keywords.add("chapado");
         initializeDescription();
     }
 
@@ -38,8 +40,16 @@ public class PassadaDeNivel extends BaseCard {
                 AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
 
         // Se o inimigo tiver 7 ou mais de Chapado, compra 1 carta
-        if (m.hasPower(Chapado.POWER_ID) && m.getPower(Chapado.POWER_ID).amount >= CHAPADO_THRESHOLD) {
+        if (m.hasPower(ChapadoPower.POWER_ID) && m.getPower(ChapadoPower.POWER_ID).amount >= CHAPADO_THRESHOLD) {
             addToBot(new DrawCardAction(p, 1));
+        }
+    }
+    @Override
+    public void upgrade() {
+        if (!upgraded) {
+            upgradeName();
+            upgradeDamage(UPG_DAMAGE); // 8 → 11 de dano
+            initializeDescription();
         }
     }
 }

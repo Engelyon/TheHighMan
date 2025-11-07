@@ -6,11 +6,11 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import thehighman.relics.SacoDeLanchesSemFundo;
 
-public class Comido extends AbstractPower {
+public class ComidoPower extends AbstractPower {
     public static final String POWER_ID = "thehighman:Comido";
     private static final PowerStrings powerStrings = com.megacrit.cardcrawl.core.CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
 
-    public Comido(AbstractCreature owner, int amount) {
+    public ComidoPower(AbstractCreature owner, int amount) {
         this.name = powerStrings.NAME;
         this.ID = POWER_ID;
         this.owner = owner;

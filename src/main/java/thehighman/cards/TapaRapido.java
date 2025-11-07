@@ -27,6 +27,7 @@ public class TapaRapido extends BaseCard {
         super(ID, info);
         setDamage(DAMAGE, UPG_DAMAGE);
         this.exhaust = true;
+        this.rawDescription = "Cause !D! de dano. Exaure.";
         initializeDescription();
     }
 
@@ -34,5 +35,13 @@ public class TapaRapido extends BaseCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new DamageAction(m, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL),
                 AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
+    }
+    @Override
+    public void upgrade() {
+        if (!upgraded) {
+            upgradeName();
+            upgradeDamage(UPG_DAMAGE); // 4 → 6 de dano
+            initializeDescription();
+        }
     }
 }

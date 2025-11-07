@@ -5,7 +5,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thehighman.character.TheHighman;
-import thehighman.powers.Chapado;
+import thehighman.powers.ChapadoPower;
 import thehighman.util.CardStats;
 
 public class Ventilador extends BaseCard {
@@ -25,6 +25,8 @@ public class Ventilador extends BaseCard {
     public Ventilador() {
         super(ID, info);
         setMagic(CHAPADO_AMOUNT, UPG_CHAPADO);
+        this.rawDescription = "Aplique !M! de Chapado a todos os inimigos.";
+        this.keywords.add("chapado");
         initializeDescription();
     }
 
@@ -32,8 +34,16 @@ public class Ventilador extends BaseCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
             if (!mo.isDeadOrEscaped()) {
-                addToBot(new ApplyPowerAction(mo, p, new Chapado(mo, this.magicNumber), this.magicNumber));
+                addToBot(new ApplyPowerAction(mo, p, new ChapadoPower(mo, this.magicNumber), this.magicNumber));
             }
+        }
+    }
+    @Override
+    public void upgrade() {
+        if (!upgraded) {
+            upgradeName();
+            upgradeMagicNumber(UPG_CHAPADO); // 2 → 3 de Chapado
+            initializeDescription();
         }
     }
 }

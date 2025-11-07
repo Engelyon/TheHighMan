@@ -7,7 +7,7 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thehighman.character.TheHighman;
-import thehighman.powers.Larica;
+import thehighman.powers.LaricaPower;
 import thehighman.util.CardStats;
 
 public class AtaqueDeVazio extends BaseCard {
@@ -28,6 +28,8 @@ public class AtaqueDeVazio extends BaseCard {
         super(ID, info);
         setDamage(BASE_DAMAGE);
         this.exhaust = true;
+        this.rawDescription = "Cause !D! de dano. Se tiver Larica, cause 10 de dano adicional e perca 1 de Larica.";
+        this.keywords.add("larica");
         initializeDescription();
     }
 
@@ -38,10 +40,18 @@ public class AtaqueDeVazio extends BaseCard {
                 AbstractGameAction.AttackEffect.BLUNT_LIGHT));
 
         // Se estiver com Larica, causa dano extra e consome 1 stack
-        if (p.hasPower(Larica.POWER_ID) && p.getPower(Larica.POWER_ID).amount >= 1) {
+        if (p.hasPower(LaricaPower.POWER_ID) && p.getPower(LaricaPower.POWER_ID).amount >= 1) {
             addToBot(new DamageAction(m, new DamageInfo(p, BONUS_DAMAGE, DamageInfo.DamageType.NORMAL),
                     AbstractGameAction.AttackEffect.FIRE));
-            addToBot(new ReducePowerAction(p, p, Larica.POWER_ID, 1));
+            addToBot(new ReducePowerAction(p, p, LaricaPower.POWER_ID, 1));
+        }
+    }
+    @Override
+    public void upgrade() {
+        if (!upgraded) {
+            upgradeName();
+            this.exhaust = false; // Remove o exaust da carta
+            initializeDescription();
         }
     }
 }

@@ -5,7 +5,7 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thehighman.character.TheHighman;
-import thehighman.powers.Erva;
+import thehighman.powers.ErvaPower;
 import thehighman.util.CardStats;
 
 import java.util.Collections;
@@ -28,6 +28,9 @@ public class Amnesia extends BaseCard {
     public Amnesia() {
         super(ID, info);
         this.exhaust = true;
+        this.rawDescription = "Exausta 2 cartas aleatórias da sua mão. Para cada Bad Trip exaurida, ganhe 2 de Erva.";
+        this.keywords.add("erva");
+        this.keywords.add("bad trip");
         initializeDescription();
     }
 
@@ -48,7 +51,15 @@ public class Amnesia extends BaseCard {
         }
 
         if (badTripCount > 0) {
-            addToBot(new ApplyPowerAction(p, p, new Erva(p, p, ERVA_GAIN), ERVA_GAIN));
+            addToBot(new ApplyPowerAction(p, p, new ErvaPower(p, ERVA_GAIN), ERVA_GAIN));
+        }
+    }
+    @Override
+    public void upgrade() {
+        if (!upgraded) {
+            upgradeName();
+            this.exhaust = false; // Remove o exaust da carta
+            initializeDescription();
         }
     }
 }

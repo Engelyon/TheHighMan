@@ -20,11 +20,21 @@ public class CompreensaoElevada extends BaseCard {
 
     public CompreensaoElevada() {
         super(ID, info);
+        this.rawDescription = "Ganhe o poder Compreensão Elevada.";
+        this.keywords.add("compreensão");
         initializeDescription();
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new ApplyPowerAction(p, p, new CompreensaoElevadaPower(p)));
+    }
+    @Override
+    public void upgrade() {
+        if (!upgraded) {
+            upgradeName();
+            upgradeBaseCost(1); // 2 → 1 de custo
+            initializeDescription();
+        }
     }
 }

@@ -5,11 +5,10 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 import thehighman.character.TheHighman;
-import thehighman.powers.Chapado;
+import thehighman.powers.ChapadoPower;
 import thehighman.util.CardStats;
 
 public class SoproRelaxante extends BaseCard {
@@ -31,8 +30,10 @@ public class SoproRelaxante extends BaseCard {
     public SoproRelaxante() {
         super(ID, info);
         setDamage(DAMAGE, UPG_DAMAGE);
-        setMagic(CHAPADO_AMOUNT); // opcional, se quiser escalar Chapado
+        setMagic(CHAPADO_AMOUNT);
+        this.rawDescription = "Cause !D! de dano. Aplique !M! de Chapado e 1 de Vulnerável.";
         this.keywords.add("chapado");
+        this.keywords.add("vulnerável");
         initializeDescription();
     }
 
@@ -41,7 +42,15 @@ public class SoproRelaxante extends BaseCard {
         addToBot(new DamageAction(m, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL),
                 AbstractGameAction.AttackEffect.LIGHTNING));
 
-        addToBot(new ApplyPowerAction(m, p, new Chapado(m, CHAPADO_AMOUNT), CHAPADO_AMOUNT));
+        addToBot(new ApplyPowerAction(m, p, new ChapadoPower(m, CHAPADO_AMOUNT), CHAPADO_AMOUNT));
         addToBot(new ApplyPowerAction(m, p, new VulnerablePower(m, VULNERABLE_AMOUNT, false), VULNERABLE_AMOUNT));
+    }
+    @Override
+    public void upgrade() {
+        if (!upgraded) {
+            upgradeName();
+            upgradeDamage(UPG_DAMAGE); // 5 → 8 de dano
+            initializeDescription();
+        }
     }
 }

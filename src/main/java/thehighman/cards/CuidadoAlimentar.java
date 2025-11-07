@@ -5,7 +5,7 @@ import com.megacrit.cardcrawl.actions.common.HealAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thehighman.character.TheHighman;
-import thehighman.powers.Comido;
+import thehighman.powers.ComidoPower;
 import thehighman.util.CardStats;
 
 public class CuidadoAlimentar extends BaseCard {
@@ -25,14 +25,28 @@ public class CuidadoAlimentar extends BaseCard {
 
     public CuidadoAlimentar() {
         super(ID, info);
+        setBlock(BLOCK, BLOCK + 4); // 12 → 16 de Bloqueio com upgrade
+        setMagic(HEAL, HEAL + 1);   // 2 → 3 de Cura com upgrade
+
+        this.rawDescription = "Se tiver 3+ de Comido, ganhe !B! de Bloqueio e cure !M! de vida.";
+        this.keywords.add("comido");
         initializeDescription();
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (p.hasPower(Comido.POWER_ID) && p.getPower(Comido.POWER_ID).amount >= COMIDO_THRESHOLD) {
+        if (p.hasPower(ComidoPower.POWER_ID) && p.getPower(ComidoPower.POWER_ID).amount >= COMIDO_THRESHOLD) {
             addToBot(new GainBlockAction(p, BLOCK));
             addToBot(new HealAction(p, p, HEAL));
+        }
+    }
+    @Override
+    public void upgrade() {
+        if (!upgraded) {
+            upgradeName();
+            upgradeBlock(4);         // 12 → 16
+            upgradeMagicNumber(1);   // 2 → 3
+            initializeDescription();
         }
     }
 }

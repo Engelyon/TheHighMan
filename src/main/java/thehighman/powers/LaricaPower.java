@@ -5,24 +5,26 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 
 import static thehighman.InimigosDoSpire.makeID;
 
-public class Larica extends AbstractPower {
+public class LaricaPower extends AbstractPower {
     public static final String POWER_ID = makeID("Larica");
     private static final PowerStrings powerStrings =
             CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
 
-    public Larica(AbstractCreature owner, int amount) {
+    public LaricaPower(AbstractCreature owner, int amount) {
         this.name = powerStrings.NAME;
         this.ID = POWER_ID;
         this.owner = owner;
         this.amount = amount;
         this.type = PowerType.DEBUFF;
         this.isTurnBased = false;
+        this.img = ImageMaster.loadImage("images/powers/32/blur.png");
         this.updateDescription();
     }
 

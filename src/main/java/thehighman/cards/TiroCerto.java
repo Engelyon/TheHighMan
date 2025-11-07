@@ -5,11 +5,10 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import thehighman.character.TheHighman;
-import thehighman.powers.Chapado;
+import thehighman.powers.ChapadoPower;
 import thehighman.util.CardStats;
 
 public class TiroCerto extends BaseCard {
@@ -31,6 +30,9 @@ public class TiroCerto extends BaseCard {
     public TiroCerto() {
         super(ID, info);
         setDamage(DAMAGE, UPG_DAMAGE);
+        this.rawDescription = "Cause !D! de dano. Se o inimigo tiver 5 ou mais de Chapado, ganhe 1 de Força temporária.";
+        this.keywords.add("chapado");
+        this.keywords.add("força");
         initializeDescription();
     }
 
@@ -41,9 +43,17 @@ public class TiroCerto extends BaseCard {
                 AbstractGameAction.AttackEffect.SLASH_HEAVY));
 
         // Se o inimigo tiver 5 ou mais stacks de Chapado, ganha 1 de força temporária
-        if (m.hasPower(Chapado.POWER_ID) && m.getPower(Chapado.POWER_ID).amount >= CHAPADO_THRESHOLD) {
+        if (m.hasPower(ChapadoPower.POWER_ID) && m.getPower(ChapadoPower.POWER_ID).amount >= CHAPADO_THRESHOLD) {
             addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, TEMP_STRENGTH), TEMP_STRENGTH));
             addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, -TEMP_STRENGTH), TEMP_STRENGTH));
+        }
+    }
+    @Override
+    public void upgrade() {
+        if (!upgraded) {
+            upgradeName();
+            upgradeDamage(UPG_DAMAGE); // 9 → 12 de dano
+            initializeDescription();
         }
     }
 }

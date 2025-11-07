@@ -27,6 +27,8 @@ public class ViagemSoDeIda extends BaseCard {
     public ViagemSoDeIda() {
         super(ID, info);
         setDamage(BASE_DAMAGE, UPG_DAMAGE);
+        this.rawDescription = "Cause !D! de dano. Se Bad Trip foi jogada neste turno, cause +6 de dano.";
+        this.keywords.add("bad trip");
         initializeDescription();
     }
 
@@ -42,5 +44,13 @@ public class ViagemSoDeIda extends BaseCard {
 
         addToBot(new DamageAction(m, new DamageInfo(p, finalDamage, DamageInfo.DamageType.NORMAL),
                 AbstractGameAction.AttackEffect.POISON));
+    }
+    @Override
+    public void upgrade() {
+        if (!upgraded) {
+            upgradeName();
+            upgradeDamage(UPG_DAMAGE); // 6 → 9 de dano base
+            initializeDescription();
+        }
     }
 }

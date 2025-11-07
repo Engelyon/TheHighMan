@@ -23,6 +23,7 @@ public class Ronco extends BaseCard {
 
     public Ronco() {
         super(ID, info);
+        this.rawDescription = "Escolhe aleatoriamente um inimigo e remove todos os seus poderes. Exaure.";
         this.exhaust = true;
         initializeDescription();
     }
@@ -43,6 +44,15 @@ public class Ronco extends BaseCard {
             for (AbstractPower power : target.powers) {
                 addToBot(new RemoveSpecificPowerAction(target, p, power.ID));
             }
+        }
+    }
+    @Override
+    public void upgrade() {
+        if (!upgraded) {
+            upgradeName();
+            this.target = CardTarget.ENEMY; // permite selecionar o alvo
+            this.rawDescription = "Remova todos os poderes de um inimigo à sua escolha. Exaure.";
+            initializeDescription();
         }
     }
 }

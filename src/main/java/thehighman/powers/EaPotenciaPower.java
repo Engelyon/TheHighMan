@@ -3,7 +3,6 @@ package thehighman.powers;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import thehighman.powers.Erva;
 
 public class EaPotenciaPower extends AbstractPower {
     public static final String POWER_ID = "thehighman:EaPotenciaPower";
@@ -21,7 +20,7 @@ public class EaPotenciaPower extends AbstractPower {
     @Override
     public void atStartOfTurn() {
         flash();
-        addToBot(new ApplyPowerAction(owner, owner, new Erva(owner, owner, 1), 1));
+        addToBot(new ApplyPowerAction(owner, owner, new ErvaPower(owner, 1), 1));
     }
 
     @Override

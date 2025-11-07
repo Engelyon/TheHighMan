@@ -7,8 +7,8 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thehighman.character.TheHighman;
-import thehighman.powers.Chapado;
-import thehighman.powers.Seda;
+import thehighman.powers.ChapadoPower;
+import thehighman.powers.SedaPower;
 import thehighman.util.CardStats;
 
 public class Vaporizador extends BaseCard {
@@ -31,6 +31,9 @@ public class Vaporizador extends BaseCard {
         super(ID, info);
         setDamage(DAMAGE, UPG_DAMAGE);
         setMagic(CHAPADO_AMOUNT);
+        this.rawDescription = "Cause !D! de dano. Aplique !M! de Chapado ao inimigo. Ganhe 1 de Seda.";
+        this.keywords.add("chapado");
+        this.keywords.add("seda");
         initializeDescription();
     }
 
@@ -41,9 +44,17 @@ public class Vaporizador extends BaseCard {
                 AbstractGameAction.AttackEffect.FIRE));
 
         // Aplica Chapado no inimigo
-        addToBot(new ApplyPowerAction(m, p, new Chapado(m, this.magicNumber), this.magicNumber));
+        addToBot(new ApplyPowerAction(m, p, new ChapadoPower(m, this.magicNumber), this.magicNumber));
 
         // Ganha Seda
-        addToBot(new ApplyPowerAction(p, p, new Seda(p, p, SEDA_GAIN), SEDA_GAIN));
+        addToBot(new ApplyPowerAction(p, p, new SedaPower(p, p, SEDA_GAIN), SEDA_GAIN));
+    }
+    @Override
+    public void upgrade() {
+        if (!upgraded) {
+            upgradeName();
+            upgradeDamage(UPG_DAMAGE); // 6 → 9 de dano
+            initializeDescription();
+        }
     }
 }

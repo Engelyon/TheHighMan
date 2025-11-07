@@ -12,6 +12,7 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.blue.Defend_Blue;
 import com.megacrit.cardcrawl.cards.green.Neutralize;
+import com.megacrit.cardcrawl.cards.red.Defend_Red;
 import com.megacrit.cardcrawl.cards.red.Strike_Red;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -22,7 +23,9 @@ import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.relics.BurningBlood;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
-import thehighman.cards.Tapa;
+import com.megacrit.cardcrawl.unlock.UnlockTracker;
+import thehighman.cards.*;
+import thehighman.relics.BongLimpo;
 
 import java.util.ArrayList;
 
@@ -69,7 +72,7 @@ public class TheHighman extends CustomPlayer {
         private static final String SMALL_ORB = characterPath("cardback/small_orb.png");
 
         //This is used to color *some* images, but NOT the actual cards. For that, edit the images in the cardback folder!
-        private static final Color cardColor = new Color(128f/255f, 128f/255f, 128f/255f, 1f);
+        private static final Color cardColor = new Color(90f/255f, 180f/255f, 90f/255f, 1f);
 
         //Methods that will be used in the main mod file
         public static void registerColor() {
@@ -122,6 +125,7 @@ public class TheHighman extends CustomPlayer {
                 new CustomEnergyOrb(orbTextures, characterPath("energyorb/vfx.png"), layerSpeeds), //Energy Orb
                 new SpriterAnimation(characterPath("animation/default.scml"))); //Animation
 
+
         initializeClass(null,
                 SHOULDER_2,
                 SHOULDER_1,
@@ -138,27 +142,36 @@ public class TheHighman extends CustomPlayer {
     @Override
     public ArrayList<String> getStartingDeck() {
         ArrayList<String> retVal = new ArrayList<>();
-        //List of IDs of cards for your starting deck.
-        //If you want multiple of the same card, you have to add it multiple times.
+        // Cartas iniciais — adicione múltiplas instâncias manualmente
         retVal.add(Tapa.ID);
+        retVal.add(Tapa.ID);
+        retVal.add(Tapa.ID);
+        retVal.add(Tapa.ID);
+        retVal.add(Relaxar.ID);
+        retVal.add(Relaxar.ID);
+        retVal.add(Relaxar.ID);
+        retVal.add(Relaxar.ID);
+        retVal.add(Relaxar.ID);
+        retVal.add(BrigarPorBatata.ID);
+        retVal.add(MaoSanta.ID);
+        retVal.add(Inspiracao.ID);
+        retVal.add(SoproRelaxante.ID);
         return retVal;
     }
 
     @Override
     public ArrayList<String> getStartingRelics() {
         ArrayList<String> retVal = new ArrayList<>();
-        //IDs of starting relics. You can have multiple, but one is recommended.
-        retVal.add(BurningBlood.ID);
-
+        retVal.add(BongLimpo.ID); // substitui BurningBlood
+        UnlockTracker.markRelicAsSeen(BongLimpo.ID); // garante que aparece no compêndio
         return retVal;
     }
 
     @Override
     public AbstractCard getStartCardForEvent() {
-        //This card is used for the Gremlin card matching game.
-        //It should be a non-strike non-defend starter card, but it doesn't have to be.
-        return new Strike_Red();
+        return new Tapa(); // carta personalizada para o evento dos Gremlins
     }
+
 
     /*- Below this is methods that you should *probably* adjust, but don't have to. -*/
 
@@ -200,7 +213,7 @@ public class TheHighman extends CustomPlayer {
         //Font used to display your current energy.
         //energyNumFontRed, Blue, Green, and Purple are used by the basegame characters.
         //It is possible to make your own, but not convenient.
-        return FontHelper.energyNumFontRed;
+        return FontHelper.energyNumFontGreen;
     }
 
     @Override

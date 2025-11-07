@@ -2,11 +2,8 @@ package thehighman.relics;
 
 import basemod.AutoAdd;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.powers.StrengthPower;
-import thehighman.character.TheHighman;
-import thehighman.powers.Seda;
+import thehighman.powers.SedaPower;
 
 import static thehighman.InimigosDoSpire.makeID;
 @AutoAdd.Seen
@@ -22,6 +19,6 @@ public class CinzeiroAbencoado extends BaseRelic {
 
     @Override
     public void atBattleStart() {
-        addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new Seda(AbstractDungeon.player,AbstractDungeon.player,1)));
+        addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new SedaPower(AbstractDungeon.player,AbstractDungeon.player,1)));
     }
 }

@@ -4,8 +4,10 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thehighman.character.TheHighman;
-import thehighman.powers.Chapado;
+import thehighman.powers.ChapadoPower;
 import thehighman.util.CardStats;
+
+import static basemod.BaseMod.addKeyword;
 
 public class Alivio extends BaseCard {
     public static final String ID = makeID("Alivio");
@@ -24,11 +26,21 @@ public class Alivio extends BaseCard {
     public Alivio() {
         super(ID, info);
         setMagic(CHAPADO_AMOUNT, UPG_CHAPADO);
+        this.rawDescription = "Aplique !M! de Chapado em um inimigo.";
+        this.keywords.add("chapado");
         initializeDescription();
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(m, p, new Chapado(m, this.magicNumber), this.magicNumber));
+        addToBot(new ApplyPowerAction(m, p, new ChapadoPower(m, this.magicNumber), this.magicNumber));
+    }
+    @Override
+    public void upgrade() {
+        if (!upgraded) {
+            upgradeName();
+            upgradeMagicNumber(UPG_CHAPADO); // Aumenta de 3 para 4
+            initializeDescription();
+        }
     }
 }

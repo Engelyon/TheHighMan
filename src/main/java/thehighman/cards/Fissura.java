@@ -6,10 +6,9 @@ import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thehighman.character.TheHighman;
-import thehighman.powers.Erva;
+import thehighman.powers.ErvaPower;
 import thehighman.util.CardStats;
 
 public class Fissura extends BaseCard {
@@ -30,6 +29,10 @@ public class Fissura extends BaseCard {
     public Fissura() {
         super(ID, info);
         setDamage(DAMAGE, UPG_DAMAGE);
+        setMagic(BLOCK_GAIN, BLOCK_GAIN + 2); // 3 → 5 de Bloqueio com upgrade
+
+        this.rawDescription = "Cause !D! de dano. Se tiver Erva, consuma 1 e ganhe !M! de Bloqueio.";
+        this.keywords.add("erva");
         initializeDescription();
     }
 
@@ -40,9 +43,18 @@ public class Fissura extends BaseCard {
                 AbstractGameAction.AttackEffect.SLASH_HEAVY));
 
         // Se tiver Erva, consome 1 e ganha Bloqueio
-        if (p.hasPower(Erva.POWER_ID) && p.getPower(Erva.POWER_ID).amount >= 1) {
-            addToBot(new ReducePowerAction(p, p, Erva.POWER_ID, 1));
+        if (p.hasPower(ErvaPower.POWER_ID) && p.getPower(ErvaPower.POWER_ID).amount >= 1) {
+            addToBot(new ReducePowerAction(p, p, ErvaPower.POWER_ID, 1));
             addToBot(new GainBlockAction(p, BLOCK_GAIN));
+        }
+    }
+    @Override
+    public void upgrade() {
+        if (!upgraded) {
+            upgradeName();
+            upgradeDamage(UPG_DAMAGE);     // 7 → 10 de dano
+            upgradeMagicNumber(2);         // 3 → 5 de Bloqueio
+            initializeDescription();
         }
     }
 }

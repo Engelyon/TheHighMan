@@ -5,7 +5,7 @@ import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thehighman.character.TheHighman;
-import thehighman.powers.Chapado;
+import thehighman.powers.ChapadoPower;
 import thehighman.util.CardStats;
 
 public class FocoFino extends BaseCard {
@@ -26,15 +26,25 @@ public class FocoFino extends BaseCard {
     public FocoFino() {
         super(ID, info);
         setMagic(CHAPADO_AMOUNT, UPG_CHAPADO);
+        this.rawDescription = "Aplique !M! de Chapado ao inimigo. Compre 1 carta.";
+        this.keywords.add("chapado");
         initializeDescription();
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         // Aplica Chapado ao inimigo
-        addToBot(new ApplyPowerAction(m, p, new Chapado(m, this.magicNumber), this.magicNumber));
+        addToBot(new ApplyPowerAction(m, p, new ChapadoPower(m, this.magicNumber), this.magicNumber));
 
         // Compra 1 carta
         addToBot(new DrawCardAction(p, DRAW_AMOUNT));
+    }
+    @Override
+    public void upgrade() {
+        if (!upgraded) {
+            upgradeName();
+            upgradeMagicNumber(UPG_CHAPADO); // 2 → 3 de Chapado
+            initializeDescription();
+        }
     }
 }

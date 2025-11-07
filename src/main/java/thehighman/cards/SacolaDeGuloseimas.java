@@ -8,8 +8,8 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thehighman.character.TheHighman;
-import thehighman.powers.Comido;
-import thehighman.powers.Larica;
+import thehighman.powers.ComidoPower;
+import thehighman.powers.LaricaPower;
 import thehighman.util.CardStats;
 
 public class SacolaDeGuloseimas extends BaseCard {
@@ -31,6 +31,9 @@ public class SacolaDeGuloseimas extends BaseCard {
         super(ID, info);
         setDamage(DAMAGE, UPG_DAMAGE);
         this.isMultiDamage = true;
+        this.rawDescription = "Cause !D! de dano a um inimigo. Ganhe 1 de Comido. Se ele tiver Larica, cause 5 de dano a todos os inimigos.";
+        this.keywords.add("comido");
+        this.keywords.add("larica");
         initializeDescription();
     }
 
@@ -41,14 +44,22 @@ public class SacolaDeGuloseimas extends BaseCard {
                 AbstractGameAction.AttackEffect.BLUNT_HEAVY));
 
         // Ganha 1 stack de Comido
-        addToBot(new ApplyPowerAction(p, p, new Comido(p, 1), 1));
+        addToBot(new ApplyPowerAction(p, p, new ComidoPower(p, 1), 1));
 
         // Se o inimigo tiver Larica, causa 5 de dano a todos os inimigos
-        if (m.hasPower(Larica.POWER_ID)) {
+        if (m.hasPower(LaricaPower.POWER_ID)) {
             addToBot(new DamageAllEnemiesAction(p,
                     DamageInfo.createDamageMatrix(BONUS_DAMAGE, true),
                     DamageInfo.DamageType.THORNS,
                     AbstractGameAction.AttackEffect.FIRE));
+        }
+    }
+    @Override
+    public void upgrade() {
+        if (!upgraded) {
+            upgradeName();
+            upgradeDamage(UPG_DAMAGE); // 10 → 14 de dano
+            initializeDescription();
         }
     }
 }

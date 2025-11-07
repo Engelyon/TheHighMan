@@ -6,11 +6,10 @@ import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thehighman.character.TheHighman;
-import thehighman.powers.Comido;
-import thehighman.powers.Larica;
+import thehighman.powers.ComidoPower;
+import thehighman.powers.LaricaPower;
 import thehighman.util.CardStats;
 
 public class BrigarPorBatata extends BaseCard {
@@ -30,6 +29,7 @@ public class BrigarPorBatata extends BaseCard {
     public BrigarPorBatata() {
         super(ID, info);
         setDamage(DAMAGE, UPG_DAMAGE);
+        this.rawDescription = "Cause !D! de dano. Se o inimigo tiver Larica, remova 1 e ganhe 1 de Comido.";
         this.keywords.add("larica");
         this.keywords.add("comido");
         initializeDescription();
@@ -40,11 +40,20 @@ public class BrigarPorBatata extends BaseCard {
         addToBot(new DamageAction(m, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL),
                 AbstractGameAction.AttackEffect.BLUNT_LIGHT));
 
-        if (m.hasPower(Larica.POWER_ID)) {
+        if (m.hasPower(LaricaPower.POWER_ID)) {
             // Remove 1 de Larica do inimigo
-            addToBot(new ReducePowerAction(m, p, Larica.POWER_ID, 1));
+            addToBot(new ReducePowerAction(m, p, LaricaPower.POWER_ID, 1));
             // Ganha 1 stack de Comido
-            addToBot(new ApplyPowerAction(p, p, new Comido(p, 1), 1));
+            addToBot(new ApplyPowerAction(p, p, new ComidoPower(p, 1), 1));
+        }
+    }
+    @Override
+    public void upgrade() {
+        if (!upgraded) {
+            upgradeName();
+            upgradeDamage(UPG_DAMAGE);     // 6 → 9 de dano
+            upgradeMagicNumber(1);         // opcional: se quiser escalar Comido ou remover mais Larica
+            initializeDescription();
         }
     }
 }

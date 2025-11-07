@@ -5,10 +5,9 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thehighman.character.TheHighman;
-import thehighman.powers.Larica;
+import thehighman.powers.LaricaPower;
 import thehighman.util.CardStats;
 
 public class Aperitivo extends BaseCard {
@@ -30,6 +29,7 @@ public class Aperitivo extends BaseCard {
         super(ID, info);
         setDamage(DAMAGE, UPG_DAMAGE);
         setMagic(LARICA_AMOUNT);
+        this.rawDescription = "Cause !D! de dano. Ganha !M! de Larica.";
         this.keywords.add("larica");
         initializeDescription();
     }
@@ -39,6 +39,14 @@ public class Aperitivo extends BaseCard {
         addToBot(new DamageAction(m, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL),
                 AbstractGameAction.AttackEffect.BLUNT_HEAVY));
 
-        addToBot(new ApplyPowerAction(p, p, new Larica(p, this.magicNumber), this.magicNumber));
+        addToBot(new ApplyPowerAction(p, p, new LaricaPower(p, this.magicNumber), this.magicNumber));
+    }
+    @Override
+    public void upgrade() {
+        if (!upgraded) {
+            upgradeName();
+            upgradeDamage(UPG_DAMAGE); // Aumenta o dano de 6 para 9
+            initializeDescription();
+        }
     }
 }

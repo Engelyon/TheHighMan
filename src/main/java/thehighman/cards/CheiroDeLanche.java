@@ -4,10 +4,9 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thehighman.character.TheHighman;
-import thehighman.powers.Larica;
+import thehighman.powers.LaricaPower;
 import thehighman.util.CardStats;
 
 public class CheiroDeLanche extends BaseCard {
@@ -28,6 +27,8 @@ public class CheiroDeLanche extends BaseCard {
     public CheiroDeLanche() {
         super(ID, info);
         setDamage(BASE_DAMAGE, UPG_DAMAGE);
+        this.rawDescription = "Cause !D! de dano. Se o inimigo tiver Larica, cause +10.";
+        this.keywords.add("larica");
         initializeDescription();
     }
 
@@ -35,11 +36,19 @@ public class CheiroDeLanche extends BaseCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         int finalDamage = this.damage;
 
-        if (m.hasPower(Larica.POWER_ID)) {
+        if (m.hasPower(LaricaPower.POWER_ID)) {
             finalDamage += BONUS_DAMAGE;
         }
 
         addToBot(new DamageAction(m, new DamageInfo(p, finalDamage, DamageInfo.DamageType.NORMAL),
                 AbstractGameAction.AttackEffect.SMASH));
+    }
+    @Override
+    public void upgrade() {
+        if (!upgraded) {
+            upgradeName();
+            upgradeDamage(UPG_DAMAGE); // 5 → 8 de dano base
+            initializeDescription();
+        }
     }
 }

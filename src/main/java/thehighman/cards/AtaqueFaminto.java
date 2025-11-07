@@ -2,12 +2,11 @@ package thehighman.cards;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thehighman.character.TheHighman;
-import thehighman.powers.Comido;
+import thehighman.powers.ComidoPower;
 import thehighman.util.CardStats;
 
 public class AtaqueFaminto extends BaseCard {
@@ -27,6 +26,8 @@ public class AtaqueFaminto extends BaseCard {
     public AtaqueFaminto() {
         super(ID, info);
         setDamage(DAMAGE, UPG_DAMAGE);
+        this.rawDescription = "Cause !D! de dano. Se tiver Comido, repita o ataque e consuma 1 de Comido.";
+        this.keywords.add("comido");
         initializeDescription();
     }
 
@@ -37,9 +38,17 @@ public class AtaqueFaminto extends BaseCard {
                 AbstractGameAction.AttackEffect.BLUNT_LIGHT));
 
         // Verifica e consome Comido para repetir o ataque
-        if (Comido.consumirComido(p)) {
+        if (ComidoPower.consumirComido(p)) {
             addToBot(new DamageAction(m, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL),
                     AbstractGameAction.AttackEffect.BLUNT_LIGHT));
+        }
+    }
+    @Override
+    public void upgrade() {
+        if (!upgraded) {
+            upgradeName();
+            upgradeDamage(UPG_DAMAGE); // Aumenta o dano de 7 para 10
+            initializeDescription();
         }
     }
 }

@@ -10,15 +10,15 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static thehighman.InimigosDoSpire.makeID;
 
-public class Seda extends BasePower {
+public class SedaPower extends BasePower {
     public static final String POWER_ID = makeID("Seda");
     private static final int DEFAULT_AMOUNT = 1;
 
-    public Seda(AbstractCreature owner, AbstractCreature source, int amount) {
+    public SedaPower(AbstractCreature owner, AbstractCreature source, int amount) {
         super(POWER_ID, PowerType.BUFF, false, owner, source, amount);
     }
 
-    public Seda(AbstractCreature owner, AbstractCreature source) {
+    public SedaPower(AbstractCreature owner, AbstractCreature source) {
         this(owner, source, DEFAULT_AMOUNT);
     }
 
@@ -41,7 +41,7 @@ public class Seda extends BasePower {
             if (target != null && amount > 0) {
                 int bonus = Math.max(1, amount / 2); // garante pelo menos 1
                 AbstractDungeon.actionManager.addToBottom(
-                        new ApplyPowerAction(target, owner, new Chapado(target, bonus), bonus)
+                        new ApplyPowerAction(target, owner, new ChapadoPower(target, bonus), bonus)
                 );
             }
         }

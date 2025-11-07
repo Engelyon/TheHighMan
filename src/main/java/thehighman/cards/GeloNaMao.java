@@ -30,6 +30,10 @@ public class GeloNaMao extends BaseCard {
         super(ID, info);
         setDamage(DAMAGE);
         this.exhaust = false;
+        setDamage(DAMAGE, 2); // 3 → 5 de dano com upgrade
+
+        this.rawDescription = "Cause !D! de dano. Exaure 1 carta aleatória da sua mão (exceto Bad Trip e esta).";
+        this.keywords.add("bad trip");
         initializeDescription();
     }
 
@@ -47,6 +51,14 @@ public class GeloNaMao extends BaseCard {
             Collections.shuffle(validCards);
             AbstractCard toExhaust = validCards.get(0);
             addToBot(new ExhaustSpecificCardAction(toExhaust, p.hand));
+        }
+    }
+    @Override
+    public void upgrade() {
+        if (!upgraded) {
+            upgradeName();
+            upgradeDamage(2); // 3 → 5
+            initializeDescription();
         }
     }
 }

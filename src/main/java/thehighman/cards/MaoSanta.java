@@ -7,8 +7,8 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.InflameEffect;
 import thehighman.character.TheHighman;
-import thehighman.powers.Erva;
-import thehighman.powers.Seda;
+import thehighman.powers.ErvaPower;
+import thehighman.powers.SedaPower;
 import thehighman.util.CardStats;
 
 /**
@@ -43,12 +43,9 @@ public class MaoSanta extends BaseCard {
 
         // Sets the magic number (buff amount) and its upgrade value
         setMagic(BUFF_AMOUNT, UPG_BUFF);
-
-        // Adds tooltips for the powers applied by this card
+        this.rawDescription = "Ganhe !M! de Seda e !M! de Erva.";
         this.keywords.add("seda");
         this.keywords.add("erva");
-
-        // Finalizes the card's description
         initializeDescription();
     }
 
@@ -64,12 +61,20 @@ public class MaoSanta extends BaseCard {
         // Apply the Seda power to the player
         addToBot(new VFXAction(new InflameEffect(p)));
         AbstractDungeon.actionManager.addToBottom(
-                new ApplyPowerAction(p, p, new Seda(p, p, this.magicNumber), this.magicNumber)
+                new ApplyPowerAction(p, p, new SedaPower(p, p, this.magicNumber), this.magicNumber)
         );
 
         // Apply the Erva power to the player
         AbstractDungeon.actionManager.addToBottom(
-                new ApplyPowerAction(p, p, new Erva(p, p, this.magicNumber), this.magicNumber)
+                new ApplyPowerAction(p, p, new ErvaPower(p, this.magicNumber), this.magicNumber)
         );
+    }
+    @Override
+    public void upgrade() {
+        if (!upgraded) {
+            upgradeName();
+            upgradeMagicNumber(UPG_BUFF); // 1 → 2 de cada poder
+            initializeDescription();
+        }
     }
 }

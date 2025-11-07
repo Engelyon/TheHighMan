@@ -4,10 +4,9 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thehighman.character.TheHighman;
-import thehighman.powers.Larica;
+import thehighman.powers.LaricaPower;
 import thehighman.util.CardStats;
 
 public class PizzaAtomica extends BaseCard {
@@ -28,6 +27,8 @@ public class PizzaAtomica extends BaseCard {
     public PizzaAtomica() {
         super(ID, info);
         setDamage(HIT_DAMAGE, UPG_HIT_DAMAGE);
+        this.rawDescription = "Cause !D! de dano 2 vezes. Se o inimigo tiver Larica, cause 7 de dano adicional.";
+        this.keywords.add("larica");
         initializeDescription();
     }
 
@@ -40,9 +41,17 @@ public class PizzaAtomica extends BaseCard {
         }
 
         // Se o inimigo tiver Larica, causa 7 de dano adicional
-        if (m.hasPower(Larica.POWER_ID)) {
+        if (m.hasPower(LaricaPower.POWER_ID)) {
             addToBot(new DamageAction(m, new DamageInfo(p, BONUS_DAMAGE, DamageInfo.DamageType.NORMAL),
                     AbstractGameAction.AttackEffect.FIRE));
+        }
+    }
+    @Override
+    public void upgrade() {
+        if (!upgraded) {
+            upgradeName();
+            upgradeDamage(UPG_HIT_DAMAGE); // 3 → 5 por golpe
+            initializeDescription();
         }
     }
 }

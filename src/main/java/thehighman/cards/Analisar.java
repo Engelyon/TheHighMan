@@ -7,7 +7,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import thehighman.character.TheHighman;
-import thehighman.powers.Chapado;
+import thehighman.powers.ChapadoPower;
 import thehighman.util.CardStats;
 
 public class Analisar extends BaseCard {
@@ -27,6 +27,8 @@ public class Analisar extends BaseCard {
 
     public Analisar() {
         super(ID, info);
+        this.rawDescription = "Compre 2 cartas. Se algum inimigo tiver 5 ou mais de Chapado, ganhe 1 de Força.";
+        this.keywords.add("chapado");
         initializeDescription();
     }
 
@@ -37,11 +39,19 @@ public class Analisar extends BaseCard {
 
         // Verifica se algum inimigo tem 5 ou mais de Chapado
         boolean chapadoDetectado = AbstractDungeon.getCurrRoom().monsters.monsters.stream()
-                .anyMatch(mo -> mo.hasPower(Chapado.POWER_ID) && mo.getPower(Chapado.POWER_ID).amount >= CHAPADO_THRESHOLD);
+                .anyMatch(mo -> mo.hasPower(ChapadoPower.POWER_ID) && mo.getPower(ChapadoPower.POWER_ID).amount >= CHAPADO_THRESHOLD);
 
         // Se sim, ganha 1 de Força
         if (chapadoDetectado) {
             addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, STRENGTH_GAIN), STRENGTH_GAIN));
+        }
+    }
+    @Override
+    public void upgrade() {
+        if (!upgraded) {
+            upgradeName();
+            this.upgradeMagicNumber(1); // Compra 3 cartas em vez de 2
+            initializeDescription();
         }
     }
 }

@@ -6,7 +6,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.powers.LoseStrengthPower;
 import thehighman.character.TheHighman;
-import thehighman.powers.Larica;
+import thehighman.powers.LaricaPower;
 import thehighman.util.CardStats;
 
 public class Fritura extends BaseCard {
@@ -25,6 +25,10 @@ public class Fritura extends BaseCard {
 
     public Fritura() {
         super(ID, info);
+        setMagic(TEMP_STRENGTH, TEMP_STRENGTH + 1); // 2 → 3 de Força temporária com upgrade
+
+        this.rawDescription = "Ganhe !M! de Força temporária. Perda 1 de Larica.";
+        this.keywords.add("larica");
         initializeDescription();
     }
 
@@ -35,15 +39,23 @@ public class Fritura extends BaseCard {
         addToBot(new ApplyPowerAction(p, p, new LoseStrengthPower(p, TEMP_STRENGTH), TEMP_STRENGTH));
 
         // Perde 1 de Larica se tiver
-        if (p.hasPower(Larica.POWER_ID)) {
-            int atual = p.getPower(Larica.POWER_ID).amount;
+        if (p.hasPower(LaricaPower.POWER_ID)) {
+            int atual = p.getPower(LaricaPower.POWER_ID).amount;
             if (atual > 0) {
-                p.getPower(Larica.POWER_ID).amount -= LARICA_LOSS;
-                if (p.getPower(Larica.POWER_ID).amount <= 0) {
-                    p.getPower(Larica.POWER_ID).onRemove();
-                    p.powers.remove(p.getPower(Larica.POWER_ID));
+                p.getPower(LaricaPower.POWER_ID).amount -= LARICA_LOSS;
+                if (p.getPower(LaricaPower.POWER_ID).amount <= 0) {
+                    p.getPower(LaricaPower.POWER_ID).onRemove();
+                    p.powers.remove(p.getPower(LaricaPower.POWER_ID));
                 }
             }
+        }
+    }
+    @Override
+    public void upgrade() {
+        if (!upgraded) {
+            upgradeName();
+            upgradeMagicNumber(1); // 2 → 3 de Força temporária
+            initializeDescription();
         }
     }
 }

@@ -5,7 +5,7 @@ import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thehighman.character.TheHighman;
-import thehighman.powers.Larica;
+import thehighman.powers.LaricaPower;
 import thehighman.util.CardStats;
 
 public class Desconfianca extends BaseCard {
@@ -26,6 +26,8 @@ public class Desconfianca extends BaseCard {
     public Desconfianca() {
         super(ID, info);
         setBlock(BLOCK, UPG_BLOCK);
+        this.rawDescription = "Ganhe !B! de Bloqueio. Aplique 1 de Larica ao inimigo.";
+        this.keywords.add("larica");
         initializeDescription();
     }
 
@@ -35,6 +37,14 @@ public class Desconfianca extends BaseCard {
         addToBot(new GainBlockAction(p, this.block));
 
         // Aplica Larica ao inimigo
-        addToBot(new ApplyPowerAction(m, p, new Larica(m, LARICA_AMOUNT), LARICA_AMOUNT));
+        addToBot(new ApplyPowerAction(m, p, new LaricaPower(m, LARICA_AMOUNT), LARICA_AMOUNT));
+    }
+    @Override
+    public void upgrade() {
+        if (!upgraded) {
+            upgradeName();
+            upgradeBlock(UPG_BLOCK); // 12 → 16 de Bloqueio
+            initializeDescription();
+        }
     }
 }

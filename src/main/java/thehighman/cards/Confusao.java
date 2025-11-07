@@ -26,6 +26,8 @@ public class Confusao extends BaseCard {
     public Confusao() {
         super(ID, info);
         setDamage(DAMAGE);
+        this.rawDescription = "Cause !D! de dano. Adicione 1 Bad Trip à pilha de descarte.";
+        this.keywords.add("bad trip");
         initializeDescription();
     }
 
@@ -36,5 +38,13 @@ public class Confusao extends BaseCard {
 
         // Adiciona 1 Bad Trip na pilha de descarte
         addToBot(new MakeTempCardInDiscardAction(new BadTrip(), 1));
+    }
+    @Override
+    public void upgrade() {
+        if (!upgraded) {
+            upgradeName();
+            upgradeDamage(3); // 5 → 8 de dano
+            initializeDescription();
+        }
     }
 }

@@ -7,7 +7,7 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thehighman.character.TheHighman;
-import thehighman.powers.Comido;
+import thehighman.powers.ComidoPower;
 import thehighman.util.CardStats;
 
 public class LaricaDePoder extends BaseCard {
@@ -28,6 +28,8 @@ public class LaricaDePoder extends BaseCard {
     public LaricaDePoder() {
         super(ID, info);
         setDamage(BASE_DAMAGE, UPG_DAMAGE);
+        this.rawDescription = "Cause !D! de dano. Ganha +5 de dano para cada Comido. Remove todos os Comidos.";
+        this.keywords.add("comido");
         initializeDescription();
     }
 
@@ -35,17 +37,25 @@ public class LaricaDePoder extends BaseCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         int bonus = 0;
 
-        if (p.hasPower(Comido.POWER_ID)) {
-            int stacks = p.getPower(Comido.POWER_ID).amount;
+        if (p.hasPower(ComidoPower.POWER_ID)) {
+            int stacks = p.getPower(ComidoPower.POWER_ID).amount;
             bonus = stacks * BONUS_PER_COMIDO;
 
             // Remove todos os stacks de Comido
-            addToBot(new ReducePowerAction(p, p, Comido.POWER_ID, stacks));
+            addToBot(new ReducePowerAction(p, p, ComidoPower.POWER_ID, stacks));
         }
 
         // Causa dano base + bônus
         addToBot(new DamageAction(m,
                 new DamageInfo(p, this.damage + bonus, DamageInfo.DamageType.NORMAL),
                 AbstractGameAction.AttackEffect.BLUNT_HEAVY));
+    }
+    @Override
+    public void upgrade() {
+        if (!upgraded) {
+            upgradeName();
+            upgradeDamage(UPG_DAMAGE); // 15 → 20 de dano base
+            initializeDescription();
+        }
     }
 }

@@ -5,11 +5,9 @@ package thehighman.cards;
         import com.megacrit.cardcrawl.actions.common.DamageAction;
         import com.megacrit.cardcrawl.cards.DamageInfo;
         import com.megacrit.cardcrawl.characters.AbstractPlayer;
-        import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
         import com.megacrit.cardcrawl.monsters.AbstractMonster;
         import thehighman.character.TheHighman;
-        import thehighman.powers.Chapado;
-        import thehighman.powers.Seda;
+        import thehighman.powers.ChapadoPower;
         import thehighman.util.CardStats;
 
         /**
@@ -52,7 +50,7 @@ package thehighman.cards;
                 // Adiciona a palavra-chave "chapado" para exibição de tooltip
                 this.keywords.add("chapado");
 
-                // Inicializa a descrição da carta com os valores dinâmicos (!D!)
+                this.rawDescription = "Cause !D! de dano. Aplique 1 de Chapado.";
                 initializeDescription();
             }
 
@@ -68,7 +66,15 @@ package thehighman.cards;
                 // Causa dano ao inimigo alvo
                 addToBot(new DamageAction(m, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL),
                         AbstractGameAction.AttackEffect.SLASH_VERTICAL));
-                addToBot(new ApplyPowerAction(m, p, new Chapado(m, 1), 1));
+                addToBot(new ApplyPowerAction(m, p, new ChapadoPower(m, 1), 1));
+            }
+            @Override
+            public void upgrade() {
+                if (!upgraded) {
+                    upgradeName();
+                    upgradeDamage(UPG_DAMAGE); // 6 → 9 de dano
+                    initializeDescription();
+                }
             }
 
         }

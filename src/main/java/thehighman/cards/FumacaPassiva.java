@@ -10,8 +10,8 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.InflameEffect;
 import thehighman.character.TheHighman;
-import thehighman.powers.Chapado;
-import thehighman.powers.Seda;
+import thehighman.powers.ChapadoPower;
+import thehighman.powers.SedaPower;
 import thehighman.util.CardStats;
 
 public class FumacaPassiva extends BaseCard {
@@ -34,7 +34,9 @@ public class FumacaPassiva extends BaseCard {
         setDamage(DAMAGE, UPG_DAMAGE);
         isMultiDamage = true;
         setMagic(CHAPADO);
+        this.rawDescription = "Cause !D! de dano a todos os inimigos. Aplique !M! de Chapado a cada um. Ganha dano extra por cada Seda.";
         this.keywords.add("chapado");
+        this.keywords.add("seda");
         initializeDescription();
     }
 
@@ -43,7 +45,7 @@ public class FumacaPassiva extends BaseCard {
         addToBot(new DamageAllEnemiesAction(p, this.multiDamage, DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.POISON));
         addToBot(new VFXAction(new InflameEffect(p)));
         for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
-            addToBot(new ApplyPowerAction(mo, p, new Chapado(mo, magicNumber), magicNumber));
+            addToBot(new ApplyPowerAction(mo, p, new ChapadoPower(mo, magicNumber), magicNumber));
         }
     }
 
@@ -60,8 +62,8 @@ public class FumacaPassiva extends BaseCard {
     }
 
     private void applySedaBonus() {
-        if (AbstractDungeon.player != null && AbstractDungeon.player.hasPower(Seda.POWER_ID)) {
-            int stacks = AbstractDungeon.player.getPower(Seda.POWER_ID).amount;
+        if (AbstractDungeon.player != null && AbstractDungeon.player.hasPower(SedaPower.POWER_ID)) {
+            int stacks = AbstractDungeon.player.getPower(SedaPower.POWER_ID).amount;
 
             // Aplica o bônus de Seda ao dano em área
             for (int i = 0; i < this.multiDamage.length; i++) {
@@ -70,6 +72,14 @@ public class FumacaPassiva extends BaseCard {
 
             this.damage += stacks;
             this.isDamageModified = true;
+        }
+    }
+    @Override
+    public void upgrade() {
+        if (!upgraded) {
+            upgradeName();
+            upgradeDamage(UPG_DAMAGE); // 4 → 6 de dano base
+            initializeDescription();
         }
     }
 }

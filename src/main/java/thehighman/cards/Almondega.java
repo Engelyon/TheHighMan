@@ -4,8 +4,8 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thehighman.character.TheHighman;
-import thehighman.powers.Comido;
-import thehighman.powers.Larica;
+import thehighman.powers.ComidoPower;
+import thehighman.powers.LaricaPower;
 import thehighman.util.CardStats;
 
 public class Almondega extends BaseCard {
@@ -24,15 +24,26 @@ public class Almondega extends BaseCard {
 
     public Almondega() {
         super(ID, info);
+        this.rawDescription = "Ganha 1 de Comido e 1 de Larica.";
+        this.keywords.add("comido");
+        this.keywords.add("larica");
         initializeDescription();
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         // Ganha 1 de Comido
-        addToBot(new ApplyPowerAction(p, p, new Comido(p, COMIDO_AMOUNT), COMIDO_AMOUNT));
+        addToBot(new ApplyPowerAction(p, p, new ComidoPower(p, COMIDO_AMOUNT), COMIDO_AMOUNT));
 
         // Ganha 1 de Larica
-        addToBot(new ApplyPowerAction(p, p, new Larica(p, LARICA_AMOUNT), LARICA_AMOUNT));
+        addToBot(new ApplyPowerAction(p, p, new LaricaPower(p, LARICA_AMOUNT), LARICA_AMOUNT));
+    }
+    @Override
+    public void upgrade() {
+        if (!upgraded) {
+            upgradeName();
+            this.upgradeBaseCost(0); // Reduz o custo de 1 para 0
+            initializeDescription();
+        }
     }
 }

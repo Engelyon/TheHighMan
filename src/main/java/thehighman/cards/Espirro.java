@@ -29,6 +29,8 @@ public class Espirro extends BaseCard {
         super(ID, info);
         setDamage(DAMAGE, UPG_DAMAGE);
         this.isMultiDamage = true;
+        this.rawDescription = "Cause !D! de dano a todos os inimigos. Adicione 1 Bad Trip à pilha de descarte.";
+        this.keywords.add("bad trip");
         initializeDescription();
     }
 
@@ -41,5 +43,13 @@ public class Espirro extends BaseCard {
         // Cria uma cópia de Bad Trip e coloca no topo da pilha de descarte
         AbstractCard badTrip = new BadTrip();
         AbstractDungeon.player.discardPile.addToTop(badTrip);
+    }
+    @Override
+    public void upgrade() {
+        if (!upgraded) {
+            upgradeName();
+            upgradeDamage(UPG_DAMAGE); // 2 → 3 de dano em área
+            initializeDescription();
+        }
     }
 }

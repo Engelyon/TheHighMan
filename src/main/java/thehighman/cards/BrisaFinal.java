@@ -5,11 +5,10 @@ import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thehighman.character.TheHighman;
-import thehighman.powers.Chapado;
+import thehighman.powers.ChapadoPower;
 import thehighman.util.CardStats;
 
 public class BrisaFinal extends BaseCard {
@@ -30,6 +29,8 @@ public class BrisaFinal extends BaseCard {
         super(ID, info);
         setDamage(DAMAGE, UPG_DAMAGE);
         this.isMultiDamage = true;
+        this.rawDescription = "Para cada energia usada: cause !D! de dano e aplique 1 de Chapado a todos os inimigos.";
+        this.keywords.add("chapado");
         initializeDescription();
     }
 
@@ -51,13 +52,21 @@ public class BrisaFinal extends BaseCard {
                 // Aplica 1 de Chapado a todos os inimigos
                 for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
                     if (!mo.isDeadOrEscaped()) {
-                        addToBot(new ApplyPowerAction(mo, p, new Chapado(mo, 1), 1));
+                        addToBot(new ApplyPowerAction(mo, p, new ChapadoPower(mo, 1), 1));
                     }
                 }
 
                 // Pequeno delay visual entre os hits
                 addToBot(new WaitAction(0.1f));
             }
+        }
+    }
+    @Override
+    public void upgrade() {
+        if (!upgraded) {
+            upgradeName();
+            upgradeDamage(UPG_DAMAGE); // 5 → 7 de dano por energia
+            initializeDescription();
         }
     }
 }

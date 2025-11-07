@@ -26,6 +26,7 @@ public class Ponderar extends BaseCard {
     public Ponderar() {
         super(ID, info);
         setBlock(BLOCK);
+        this.rawDescription = "Descarte 2 cartas. Compre 1 carta. Ganhe !B! de Bloqueio.";
         initializeDescription();
     }
 
@@ -39,5 +40,13 @@ public class Ponderar extends BaseCard {
 
         // Ganhar 15 de bloqueio
         addToBot(new GainBlockAction(p, this.block));
+    }
+    @Override
+    public void upgrade() {
+        if (!upgraded) {
+            upgradeName();
+            upgradeBlock(5); // 15 → 20 de Bloqueio
+            initializeDescription();
+        }
     }
 }

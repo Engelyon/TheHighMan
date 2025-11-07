@@ -4,7 +4,7 @@ import basemod.AutoAdd;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import thehighman.powers.Erva;
+import thehighman.powers.ErvaPower;
 @AutoAdd.Seen
 public class IsqueiroInfinito extends BaseRelic {
     public static final String ID = "highman:IsqueiroInfinito";
@@ -25,7 +25,7 @@ public class IsqueiroInfinito extends BaseRelic {
             addToBot(new ApplyPowerAction(
                     AbstractDungeon.player,
                     AbstractDungeon.player,
-                    new Erva(AbstractDungeon.player, AbstractDungeon.player, 1),
+                    new ErvaPower(AbstractDungeon.player, 1),
                     1
             ));
         }

@@ -6,11 +6,10 @@ import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thehighman.character.TheHighman;
-import thehighman.powers.Comido;
-import thehighman.powers.Larica;
+import thehighman.powers.ComidoPower;
+import thehighman.powers.LaricaPower;
 import thehighman.util.CardStats;
 
 public class TragadaProfunda extends BaseCard {
@@ -32,6 +31,9 @@ public class TragadaProfunda extends BaseCard {
     public TragadaProfunda() {
         super(ID, info);
         setDamage(DAMAGE, UPG_DAMAGE);
+        this.rawDescription = "Requer 2 de Comido. Cause !D! de dano. Consuma 2 de Comido e ganhe 2 de Larica.";
+        this.keywords.add("comido");
+        this.keywords.add("larica");
         initializeDescription();
     }
 
@@ -39,7 +41,7 @@ public class TragadaProfunda extends BaseCard {
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
         if (!super.canUse(p, m)) return false;
 
-        if (!p.hasPower(Comido.POWER_ID) || p.getPower(Comido.POWER_ID).amount < COMIDO_COST) {
+        if (!p.hasPower(ComidoPower.POWER_ID) || p.getPower(ComidoPower.POWER_ID).amount < COMIDO_COST) {
             this.cantUseMessage = "Você precisa de pelo menos 2 de Comido.";
             return false;
         }
@@ -54,9 +56,17 @@ public class TragadaProfunda extends BaseCard {
                 AbstractGameAction.AttackEffect.SLASH_HEAVY));
 
         // Consome 2 de Comido
-        addToBot(new ReducePowerAction(p, p, Comido.POWER_ID, COMIDO_COST));
+        addToBot(new ReducePowerAction(p, p, ComidoPower.POWER_ID, COMIDO_COST));
 
         // Aplica 2 de Larica ao jogador
-        addToBot(new ApplyPowerAction(p, p, new Larica(p, LARICA_GAIN), LARICA_GAIN));
+        addToBot(new ApplyPowerAction(p, p, new LaricaPower(p, LARICA_GAIN), LARICA_GAIN));
+    }
+    @Override
+    public void upgrade() {
+        if (!upgraded) {
+            upgradeName();
+            upgradeDamage(UPG_DAMAGE); // 15 → 20 de dano
+            initializeDescription();
+        }
     }
 }

@@ -3,7 +3,6 @@ package thehighman.powers;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import thehighman.powers.Chapado;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 public class CompreensaoElevadaPower extends AbstractPower {
@@ -29,7 +28,7 @@ public class CompreensaoElevadaPower extends AbstractPower {
         if (power.ID.equals("thehighman:Chapado") && source == owner && target != null && target != owner) {
             if (AbstractDungeon.cardRandomRng.randomBoolean(0.5f)) {
                 flash();
-                addToBot(new ApplyPowerAction(target, owner, new Chapado(target, 1), 1));
+                addToBot(new ApplyPowerAction(target, owner, new ChapadoPower(target, 1), 1));
             }
         }
     }

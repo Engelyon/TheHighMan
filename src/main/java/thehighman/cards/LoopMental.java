@@ -29,6 +29,8 @@ public class LoopMental extends BaseCard {
     public LoopMental() {
         super(ID, info);
         setDamage(DAMAGE, UPG_DAMAGE);
+        this.rawDescription = "Cause !D! de dano. Se houver 3 ou mais Bad Trips no deck, compre 3 cartas.";
+        this.keywords.add("bad trip");
         initializeDescription();
     }
 
@@ -59,6 +61,14 @@ public class LoopMental extends BaseCard {
         // Se tiver 3 ou mais, compra 3 cartas
         if (badTrips >= REQUIRED_BAD_TRIPS) {
             addToBot(new DrawCardAction(p, DRAW_AMOUNT));
+        }
+    }
+    @Override
+    public void upgrade() {
+        if (!upgraded) {
+            upgradeName();
+            upgradeDamage(UPG_DAMAGE); // 10 → 14 de dano
+            initializeDescription();
         }
     }
 }

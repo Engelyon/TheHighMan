@@ -5,10 +5,9 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thehighman.character.TheHighman;
-import thehighman.powers.Larica;
+import thehighman.powers.LaricaPower;
 import thehighman.util.CardStats;
 
 public class LaricaPesada extends BaseCard {
@@ -31,6 +30,7 @@ public class LaricaPesada extends BaseCard {
         setDamage(DAMAGE, UPG_DAMAGE);
         setMagic(LARICA_AMOUNT);
         this.isMultiDamage = true;
+        this.rawDescription = "Cause !D! de dano a todos os inimigos. Ganhe !M! de Larica.";
         this.keywords.add("larica");
         initializeDescription();
     }
@@ -42,6 +42,14 @@ public class LaricaPesada extends BaseCard {
                 AbstractGameAction.AttackEffect.BLUNT_HEAVY));
 
         // Aplica Larica ao jogador
-        addToBot(new ApplyPowerAction(p, p, new Larica(p, this.magicNumber), this.magicNumber));
+        addToBot(new ApplyPowerAction(p, p, new LaricaPower(p, this.magicNumber), this.magicNumber));
+    }
+    @Override
+    public void upgrade() {
+        if (!upgraded) {
+            upgradeName();
+            upgradeDamage(UPG_DAMAGE);     // 10 → 14 de dano em área
+            initializeDescription();
+        }
     }
 }

@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 
 import static thehighman.InimigosDoSpire.makeID;
 
-public class Chapado extends BasePower{
+public class ChapadoPower extends BasePower{
     public static final String POWER_ID = makeID("Chapado");
     private static final AbstractPower.PowerType TYPE = PowerType.DEBUFF;
     private static final boolean TURN_BASED = false;
@@ -18,12 +18,12 @@ public class Chapado extends BasePower{
     //For a power to actually decrease/go away on its own they do it themselves.
     //Look at powers that do this like VulnerablePower and DoubleTapPower.
 
-    public Chapado(AbstractCreature owner, int amount) {
+    public ChapadoPower(AbstractCreature owner, int amount) {
         super(POWER_ID, TYPE, TURN_BASED, owner, amount);
         // Aplica stacks extras se o jogador tiver Seda
         AbstractCreature player = AbstractDungeon.player;
-        if (player != null && player.hasPower(Seda.POWER_ID)) {
-            int extra = player.getPower(Seda.POWER_ID).amount;
+        if (player != null && player.hasPower(SedaPower.POWER_ID)) {
+            int extra = player.getPower(SedaPower.POWER_ID).amount;
             this.amount += extra;
         }
         updateDescription();
@@ -43,14 +43,14 @@ public class Chapado extends BasePower{
         this.fontScale = 8.0F;
 
         AbstractCreature player = AbstractDungeon.player;
-        if (player != null && player.hasPower(Seda.POWER_ID)) {
-            int extra = player.getPower(Seda.POWER_ID).amount;
+        if (player != null && player.hasPower(SedaPower.POWER_ID)) {
+            int extra = player.getPower(SedaPower.POWER_ID).amount;
             stackAmount += extra;
         }
         this.amount += stackAmount;
         if (this.amount >= 20) {
             AbstractDungeon.actionManager.addToBottom(
-                    new ApplyPowerAction(owner, owner, new Larica(owner, 1), 1)
+                    new ApplyPowerAction(owner, owner, new LaricaPower(owner, 1), 1)
             );
             AbstractDungeon.actionManager.addToBottom(
                     new RemoveSpecificPowerAction(owner, owner, this.ID)

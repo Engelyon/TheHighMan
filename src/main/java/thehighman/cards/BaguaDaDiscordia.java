@@ -29,6 +29,8 @@ public class BaguaDaDiscordia extends BaseCard {
         super(ID, info);
         setDamage(DAMAGE, UPG_DAMAGE);
         this.isMultiDamage = true;
+        this.rawDescription = "Cause !D! de dano a todos os inimigos. Adicione 2 Bad Trip à pilha de descarte.";
+        this.keywords.add("bad trip");
         initializeDescription();
     }
 
@@ -43,6 +45,15 @@ public class BaguaDaDiscordia extends BaseCard {
             AbstractCard badTrip = new BadTrip();
             badTrip.modifyCostForCombat(0); // opcional: custo 0 se quiser que seja jogável
             AbstractDungeon.player.discardPile.addToTop(badTrip);
+        }
+    }
+    @Override
+    public void upgrade() {
+        if (!upgraded) {
+            upgradeName();
+            upgradeDamage(UPG_DAMAGE);   // 10 → 14
+            upgradeBaseCost(1);          // 2 → 1
+            initializeDescription();
         }
     }
 }

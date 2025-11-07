@@ -5,7 +5,6 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import thehighman.powers.Seda;
 
 import java.util.Collections;
 import java.util.List;
@@ -36,7 +35,7 @@ public class TrancePower extends AbstractPower {
                 Collections.shuffle(hand);
                 AbstractCard toExhaust = hand.get(0);
                 AbstractDungeon.player.hand.moveToExhaustPile(toExhaust);
-                addToBot(new ApplyPowerAction(owner, owner, new Seda(owner, owner, 1), 1));
+                addToBot(new ApplyPowerAction(owner, owner, new SedaPower(owner, owner, 1), 1));
             }
         }
     }

@@ -2,15 +2,14 @@ package thehighman.powers;
 
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.core.AbstractCreature;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 
-public class EnergiaExtraProximoTurno extends AbstractPower {
+public class EnergiaExtraProximoTurnoPower extends AbstractPower {
     public static final String POWER_ID = "thehighman:energiaExtraProximoTurno";
 
     private final int energyGain;
 
-    public EnergiaExtraProximoTurno(AbstractCreature owner, int amount) {
+    public EnergiaExtraProximoTurnoPower(AbstractCreature owner, int amount) {
         this.name = "Energia Extra";
         this.ID = POWER_ID;
         this.owner = owner;

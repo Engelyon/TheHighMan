@@ -20,11 +20,21 @@ public class Hypar extends BaseCard {
 
     public Hypar() {
         super(ID, info);
+        this.rawDescription = "Ganhe o poder Hypar.";
+        this.keywords.add("hypar");
         initializeDescription();
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new ApplyPowerAction(p, p, new HyparPower(p)));
+    }
+    @Override
+    public void upgrade() {
+        if (!upgraded) {
+            upgradeName();
+            upgradeBaseCost(0); // 1 → 0 de custo
+            initializeDescription();
+        }
     }
 }

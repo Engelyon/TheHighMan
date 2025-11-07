@@ -26,5 +26,12 @@
     "DESCRIPTIONS": [
       "Gain [E] at the start of your turn. [E] is an energy icon."
     ]
+  },
+  "${modID}:BongLimpo": {
+    "NAME": "Bong Limpo",
+    "FLAVOR": "Brilha como novo. Quase dá gosto de não usar.",
+    "DESCRIPTIONS": [
+      "No início de cada combate, adicione um Limpar o Bong à sua mão."
+    ]
   }
 }

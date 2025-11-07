@@ -4,7 +4,7 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thehighman.character.TheHighman;
-import thehighman.powers.Erva;
+import thehighman.powers.ErvaPower;
 import thehighman.util.CardStats;
 
 public class Inspiracao extends BaseCard {
@@ -25,11 +25,21 @@ public class Inspiracao extends BaseCard {
         super(ID, info);
         setMagic(ERVA_GAIN, UPG_ERVA);
         this.exhaust = true;
+        this.rawDescription = "Ganhe !M! de Erva. Exaure.";
+        this.keywords.add("erva");
         initializeDescription();
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new Erva(p, p, this.magicNumber), this.magicNumber));
+        addToBot(new ApplyPowerAction(p, p, new ErvaPower(p,this.magicNumber), this.magicNumber));
+    }
+    @Override
+    public void upgrade() {
+        if (!upgraded) {
+            upgradeName();
+            upgradeMagicNumber(UPG_ERVA); // 2 → 3 de Erva
+            initializeDescription();
+        }
     }
 }

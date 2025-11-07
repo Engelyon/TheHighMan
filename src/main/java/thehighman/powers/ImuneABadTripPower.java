@@ -3,10 +3,10 @@ package thehighman.powers;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 
-public class ImuneABadTrip extends AbstractPower {
+public class ImuneABadTripPower extends AbstractPower {
     public static final String POWER_ID = "thehighman:ImuneABadTrip";
 
-    public ImuneABadTrip(AbstractCreature owner) {
+    public ImuneABadTripPower(AbstractCreature owner) {
         this.name = "Imune à Bad Trip";
         this.ID = POWER_ID;
         this.owner = owner;

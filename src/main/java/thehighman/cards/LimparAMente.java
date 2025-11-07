@@ -5,7 +5,7 @@ import com.megacrit.cardcrawl.actions.common.DiscardAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thehighman.character.TheHighman;
-import thehighman.powers.Erva;
+import thehighman.powers.ErvaPower;
 import thehighman.util.CardStats;
 
 public class LimparAMente extends BaseCard {
@@ -24,6 +24,10 @@ public class LimparAMente extends BaseCard {
 
     public LimparAMente() {
         super(ID, info);
+        setMagic(ERVA_GAIN, ERVA_GAIN + 1); // 2 → 3 de Erva com upgrade
+
+        this.rawDescription = "Descarte 2 cartas. Ganhe !M! de Erva.";
+        this.keywords.add("erva");
         initializeDescription();
     }
 
@@ -33,6 +37,14 @@ public class LimparAMente extends BaseCard {
         addToBot(new DiscardAction(p, p, DISCARD_AMOUNT, false));
 
         // Ganha 2 de Erva
-        addToBot(new ApplyPowerAction(p, p, new Erva(p, p, ERVA_GAIN), ERVA_GAIN));
+        addToBot(new ApplyPowerAction(p, p, new ErvaPower(p, ERVA_GAIN), ERVA_GAIN));
+    }
+    @Override
+    public void upgrade() {
+        if (!upgraded) {
+            upgradeName();
+            upgradeMagicNumber(1); // 2 → 3 de Erva
+            initializeDescription();
+        }
     }
 }
