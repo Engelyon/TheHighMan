@@ -1,0 +1,49 @@
+package thehighman.powers;
+
+import com.megacrit.cardcrawl.actions.GameActionManager;
+import com.megacrit.cardcrawl.actions.utility.UseCardAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.core.AbstractCreature;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.AbstractPower;
+
+public class NirvanaPower extends AbstractPower {
+    public static final String POWER_ID = "thehighman:NirvanaPower";
+
+    public NirvanaPower(AbstractCreature owner) {
+        this.name = "Nirvana";
+        this.ID = POWER_ID;
+        this.owner = owner;
+        this.type = PowerType.BUFF;
+        this.isTurnBased = false;
+        this.amount = -1;
+        updateDescription();
+    }
+
+    @Override
+    public void updateDescription() {
+        this.description = "Todas as suas cartas com Exaustão são jogadas duas vezes.";
+    }
+
+    @Override
+    public void onAfterUseCard(AbstractCard card, UseCardAction action) {
+        if (card.exhaust && !card.purgeOnUse && !card.dontTriggerOnUseCard) {
+            flash();
+            AbstractCard copy = card.makeSameInstanceOf();
+            copy.freeToPlayOnce = true;
+            copy.purgeOnUse = true;
+            AbstractDungeon.player.limbo.addToBottom(copy);
+            copy.current_x = card.current_x;
+            copy.current_y = card.current_y;
+            copy.target_x = card.target_x;
+            copy.target_y = card.target_y;
+            copy.applyPowers();
+            copy.calculateCardDamage(null);
+
+            if (action.target instanceof AbstractMonster) {
+                GameActionManager.queueExtraCard(copy, (AbstractMonster) action.target);
+            }
+        }
+    }
+}
