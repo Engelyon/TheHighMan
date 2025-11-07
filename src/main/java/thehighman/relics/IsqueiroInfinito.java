@@ -1,15 +1,16 @@
 package thehighman.relics;
 
+import basemod.AutoAdd;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import thehighman.powers.Erva;
-
-public class IsqueiroInfinito extends AbstractRelic {
-    public static final String ID = "thehighman:IsqueiroInfinito";
+@AutoAdd.Seen
+public class IsqueiroInfinito extends BaseRelic {
+    public static final String ID = "highman:IsqueiroInfinito";
 
     public IsqueiroInfinito() {
-        super(ID, "isqueiro.png", RelicTier.COMMON, LandingSound.CLINK);
+        super(ID,  RelicTier.COMMON, LandingSound.CLINK);
     }
 
     @Override

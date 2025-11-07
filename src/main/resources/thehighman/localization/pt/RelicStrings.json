@@ -1,7 +1,28 @@
 {
-  "${modID}:RelicID": {
+  "${modID}:CinzeiroAbencoado": {
     "NAME": "Good Relic",
     "FLAVOR": "Flavor text displayed in detailed relic view.",
+    "DESCRIPTIONS": [
+      "Gain [E] at the start of your turn. [E] is an energy icon."
+    ]
+  },
+  "${modID}:IsqueiroInfinito": {
+    "NAME": "Good Relic",
+    "FLAVOR": "heh",
+    "DESCRIPTIONS": [
+      "Gain [E] at the start of your turn. [E] is an energy icon."
+    ]
+  },
+  "${modID}:MaconhaMedicinal": {
+    "NAME": "Good Relic",
+    "FLAVOR": "heh",
+    "DESCRIPTIONS": [
+      "Gain [E] at the start of your turn. [E] is an energy icon."
+    ]
+  },
+  "${modID}:SacoDeLanchesSemFundo": {
+    "NAME": "Good Relic",
+    "FLAVOR": "heh",
     "DESCRIPTIONS": [
       "Gain [E] at the start of your turn. [E] is an energy icon."
     ]

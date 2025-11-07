@@ -1,14 +1,15 @@
 package thehighman.relics;
 
+import basemod.AutoAdd;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
-
-public class SacoDeLanchesSemFundo extends AbstractRelic {
-    public static final String ID = "thehighman:SacoDeLanchesSemFundo";
+@AutoAdd.Seen
+public class SacoDeLanchesSemFundo extends BaseRelic {
+    public static final String ID = "highman:SacoDeLanchesSemFundo";
 
     public SacoDeLanchesSemFundo() {
-        super(ID, "sacolanches.png", RelicTier.UNCOMMON, LandingSound.SOLID);
+        super(ID,  RelicTier.UNCOMMON, LandingSound.SOLID);
     }
 
     @Override

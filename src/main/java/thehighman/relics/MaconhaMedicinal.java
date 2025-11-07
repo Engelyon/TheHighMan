@@ -1,14 +1,15 @@
 package thehighman.relics;
 
+import basemod.AutoAdd;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.actions.common.HealAction;
-
-public class MaconhaMedicinal extends AbstractRelic {
-    public static final String ID = "thehighman:MaconhaMedicinal";
+@AutoAdd.Seen
+public class MaconhaMedicinal extends BaseRelic {
+    public static final String ID = "highman:MaconhaMedicinal";
 
     public MaconhaMedicinal() {
-        super(ID, "maconha.png", RelicTier.RARE, LandingSound.MAGICAL);
+        super(ID, RelicTier.RARE, LandingSound.MAGICAL);
     }
 
     @Override
