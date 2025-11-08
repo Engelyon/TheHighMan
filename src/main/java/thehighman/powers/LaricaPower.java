@@ -13,7 +13,7 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import static thehighman.InimigosDoSpire.makeID;
 
 public class LaricaPower extends AbstractPower {
-    public static final String POWER_ID = makeID("Larica");
+    public static final String POWER_ID = makeID("LaricaPower");
     private static final PowerStrings powerStrings =
             CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
 

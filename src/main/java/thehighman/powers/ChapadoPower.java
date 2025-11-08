@@ -10,7 +10,7 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import static thehighman.InimigosDoSpire.makeID;
 
 public class ChapadoPower extends BasePower{
-    public static final String POWER_ID = makeID("Chapado");
+    public static final String POWER_ID = makeID("ChapadoPower");
     private static final AbstractPower.PowerType TYPE = PowerType.DEBUFF;
     private static final boolean TURN_BASED = false;
     //The only thing TURN_BASED controls is the color of the number on the power icon.
