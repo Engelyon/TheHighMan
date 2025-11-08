@@ -20,14 +20,13 @@ public class BuchimChei extends BaseCard {
 
     public BuchimChei() {
         super(ID, info);
-        this.rawDescription = "Ganhe o poder Buchim Chei.";
         this.keywords.add("buchim");
         initializeDescription();
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new BuchimCheiPower(p)));
+        addToBot(new ApplyPowerAction(p, p, new BuchimCheiPower(p,p)));
     }
     @Override
     public void upgrade() {

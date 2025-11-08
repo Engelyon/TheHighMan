@@ -9,17 +9,17 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import java.util.Collections;
 import java.util.List;
 
-public class TrancePower extends AbstractPower {
-    public static final String POWER_ID = "thehighman:TrancePower";
+import static thehighman.InimigosDoSpire.makeID;
 
-    public TrancePower(AbstractCreature owner) {
-        this.name = "Trance";
-        this.ID = POWER_ID;
-        this.owner = owner;
-        this.type = PowerType.BUFF;
-        this.isTurnBased = true;
-        this.amount = 1;
-        updateDescription();
+public class TrancePower extends BasePower {
+    public static final String POWER_ID = makeID("TrancePower");
+
+    public TrancePower(AbstractCreature owner, AbstractCreature source, int amount) {
+        super(POWER_ID, PowerType.BUFF, true, owner, source, amount);
+    }
+
+    public TrancePower(AbstractCreature owner, AbstractCreature source) {
+        this(owner, source, 1);
     }
 
     @Override
@@ -29,7 +29,7 @@ public class TrancePower extends AbstractPower {
 
     @Override
     public void onApplyPower(AbstractPower power, AbstractCreature target, AbstractCreature source) {
-        if (target == owner && power.ID.equals("thehighman:Larica")) {
+        if (target == owner && power.ID.equals(makeID("Larica"))) {
             List<AbstractCard> hand = AbstractDungeon.player.hand.group;
             if (!hand.isEmpty()) {
                 Collections.shuffle(hand);
@@ -42,6 +42,8 @@ public class TrancePower extends AbstractPower {
 
     @Override
     public void atEndOfTurn(boolean isPlayer) {
-        this.amount = 0;
+        if (isPlayer) {
+            this.amount = 0;
+        }
     }
 }

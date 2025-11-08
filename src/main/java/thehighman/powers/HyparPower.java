@@ -3,20 +3,19 @@ package thehighman.powers;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
-import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.EnergizedPower;
 
-public class HyparPower extends AbstractPower {
-    public static final String POWER_ID = "thehighman:HyparPower";
+import static thehighman.InimigosDoSpire.makeID;
 
-    public HyparPower(AbstractCreature owner) {
-        this.name = "Hypar";
-        this.ID = POWER_ID;
-        this.owner = owner;
-        this.type = PowerType.BUFF;
-        this.isTurnBased = false;
-        this.amount = -1;
-        updateDescription();
+public class HyparPower extends BasePower {
+    public static final String POWER_ID = makeID("HyparPower");
+
+    public HyparPower(AbstractCreature owner, AbstractCreature source, int amount) {
+        super(POWER_ID, PowerType.BUFF, false, owner, source, amount);
+    }
+
+    public HyparPower(AbstractCreature owner, AbstractCreature source) {
+        this(owner, source, -1);
     }
 
     @Override

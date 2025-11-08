@@ -20,9 +20,9 @@ public class ReservaNutricional extends BaseCard {
     );
 
     private static final int COMIDO_GAIN = 2;
-    private static final int ERVA_GAIN = 3;
+    private static final int ERVA_GAIN = 2;
     private static final int UPG_COMIDO = 1;
-    private static final int UPG_ERVA = 2;
+    private static final int UPG_ERVA = 1;
 
     private int ervaAmount;
 
@@ -30,7 +30,6 @@ public class ReservaNutricional extends BaseCard {
         super(ID, info);
         setMagic(COMIDO_GAIN, UPG_COMIDO); // usa magicNumber para Comido
         this.ervaAmount = ERVA_GAIN;
-        this.rawDescription = "Ganhe !M! de Comido e " + ervaAmount + " de Erva.";
         this.keywords.add("comido");
         this.keywords.add("erva");
         initializeDescription();
@@ -48,7 +47,7 @@ public class ReservaNutricional extends BaseCard {
             upgradeName();
             upgradeMagicNumber(UPG_COMIDO); // Comido: 2 → 3
             this.ervaAmount += UPG_ERVA;    // Erva: 3 → 5
-            this.rawDescription = "Ganhe !M! de Comido e " + ervaAmount + " de Erva.";
+            this.rawDescription = "Ganhe !M! de Comido e de Erva.";
             initializeDescription();
         }
     }

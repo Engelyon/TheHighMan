@@ -27,7 +27,6 @@ public class TapaRapido extends BaseCard {
         super(ID, info);
         setDamage(DAMAGE, UPG_DAMAGE);
         this.exhaust = true;
-        this.rawDescription = "Cause !D! de dano. Exaure.";
         initializeDescription();
     }
 

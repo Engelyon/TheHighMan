@@ -28,7 +28,6 @@ public class VisaoDistorcida extends BaseCard {
         super(ID, info);
         this.selfRetain = true;
         this.exhaust = true;
-        this.rawDescription = "Aplique 5 de Chapado a todos os inimigos. Perca 10 de Vida. No próximo turno, entre em Visão Distorcida. Exaure.";
         this.keywords.add("chapado");
         this.keywords.add("visão distorcida");
         initializeDescription();
@@ -47,7 +46,7 @@ public class VisaoDistorcida extends BaseCard {
         addToBot(new LoseHPAction(p, p, SELF_DAMAGE));
 
         // Aplica o efeito para o próximo turno
-        addToBot(new ApplyPowerAction(p, p, new VisaoDistorcidaPower(p)));
+        addToBot(new ApplyPowerAction(p, p, new VisaoDistorcidaPower(p, p)));
     }
     @Override
     public void upgrade() {

@@ -29,7 +29,6 @@ public class ComeAi extends BaseCard {
     public ComeAi() {
         super(ID, info);
         setDamage(DAMAGE, UPG_DAMAGE);
-        this.rawDescription = "Cause !D! de dano. Se tiver 3+ de Larica, consuma tudo e ganhe 1 de energia por stack.";
         this.keywords.add("larica");
         initializeDescription();
     }

@@ -50,7 +50,6 @@ package thehighman.cards;
                 // Adiciona a palavra-chave "chapado" para exibição de tooltip
                 this.keywords.add("chapado");
 
-                this.rawDescription = "Cause !D! de dano. Aplique 1 de Chapado.";
                 initializeDescription();
             }
 

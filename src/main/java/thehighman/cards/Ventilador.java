@@ -25,7 +25,6 @@ public class Ventilador extends BaseCard {
     public Ventilador() {
         super(ID, info);
         setMagic(CHAPADO_AMOUNT, UPG_CHAPADO);
-        this.rawDescription = "Aplique !M! de Chapado a todos os inimigos.";
         this.keywords.add("chapado");
         initializeDescription();
     }

@@ -25,7 +25,6 @@ public class CheirinhoBom extends BaseCard {
     public CheirinhoBom() {
         super(ID, info);
         setMagic(DEX_GAIN, UPG_DEX);
-        this.rawDescription = "Se o inimigo estiver Chapado, ganhe !M! de Destreza.";
         this.keywords.add("chapado");
         initializeDescription();
     }

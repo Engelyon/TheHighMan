@@ -24,7 +24,6 @@ public class Marmita extends BaseCard {
     public Marmita() {
         super(ID, info);
         setMagic(COMIDO_AMOUNT, UPG_COMIDO);
-        this.rawDescription = "Ganhe !M! de Comido.";
         this.keywords.add("comido");
         initializeDescription();
     }

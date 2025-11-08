@@ -28,7 +28,6 @@ public class PassadaDeNivel extends BaseCard {
     public PassadaDeNivel() {
         super(ID, info);
         setDamage(DAMAGE, UPG_DAMAGE);
-        this.rawDescription = "Cause !D! de dano. Se o inimigo tiver 7 ou mais de Chapado, compre 1 carta.";
         this.keywords.add("chapado");
         initializeDescription();
     }

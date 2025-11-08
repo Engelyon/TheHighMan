@@ -31,7 +31,6 @@ public class BaforadaEmCadeia extends BaseCard {
         super(ID, info);
         setDamage(DAMAGE, UPG_DAMAGE);
         setMagic(CHAPADO_AMOUNT);
-        this.rawDescription = "Cause !D! de dano e aplique !M! de Chapado. Adicione uma Baforada Etérea à sua mão.";
         this.keywords.add("chapado");
         initializeDescription();
     }

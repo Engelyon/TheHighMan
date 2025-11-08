@@ -47,17 +47,17 @@ public class ChapadoPower extends BasePower{
             int extra = player.getPower(SedaPower.POWER_ID).amount;
             stackAmount += extra;
         }
+
         this.amount += stackAmount;
-        if (this.amount >= 20) {
+
+        if (this.amount >= 15) {
             AbstractDungeon.actionManager.addToBottom(
                     new ApplyPowerAction(owner, owner, new LaricaPower(owner, 1), 1)
             );
-            AbstractDungeon.actionManager.addToBottom(
-                    new RemoveSpecificPowerAction(owner, owner, this.ID)
-            );
-        } else {
-            updateDescription();
+            this.amount = 5;
         }
+
+        updateDescription();
     }
 
     public void updateDescription() {

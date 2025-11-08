@@ -31,7 +31,6 @@ public class SacolaDeGuloseimas extends BaseCard {
         super(ID, info);
         setDamage(DAMAGE, UPG_DAMAGE);
         this.isMultiDamage = true;
-        this.rawDescription = "Cause !D! de dano a um inimigo. Ganhe 1 de Comido. Se ele tiver Larica, cause 5 de dano a todos os inimigos.";
         this.keywords.add("comido");
         this.keywords.add("larica");
         initializeDescription();

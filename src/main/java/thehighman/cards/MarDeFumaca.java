@@ -26,7 +26,6 @@ public class MarDeFumaca extends BaseCard {
     public MarDeFumaca() {
         super(ID, info);
         setMagic(CHAPADO_AMOUNT, 1); // upgrade aumenta o Chapado de 3 → 4
-        this.rawDescription = "Aplique !M! de Chapado a todos os inimigos. Ganhe Bloqueio igual a !M! × 3.";
         this.keywords.add("chapado");
         initializeDescription();
     }

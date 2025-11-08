@@ -27,7 +27,6 @@ public class PizzaAtomica extends BaseCard {
     public PizzaAtomica() {
         super(ID, info);
         setDamage(HIT_DAMAGE, UPG_HIT_DAMAGE);
-        this.rawDescription = "Cause !D! de dano 2 vezes. Se o inimigo tiver Larica, cause 7 de dano adicional.";
         this.keywords.add("larica");
         initializeDescription();
     }

@@ -2,19 +2,17 @@ package thehighman.powers;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
-import com.megacrit.cardcrawl.powers.AbstractPower;
+import static thehighman.InimigosDoSpire.makeID;
 
-public class EaPotenciaPower extends AbstractPower {
-    public static final String POWER_ID = "thehighman:EaPotenciaPower";
+public class EaPotenciaPower extends BasePower {
+    public static final String POWER_ID = makeID("EaPotenciaPower");
 
-    public EaPotenciaPower(AbstractCreature owner) {
-        this.name = "É a Potência";
-        this.ID = POWER_ID;
-        this.owner = owner;
-        this.type = PowerType.BUFF;
-        this.isTurnBased = false;
-        this.amount = -1;
-        updateDescription();
+    public EaPotenciaPower(AbstractCreature owner, AbstractCreature source, int amount) {
+        super(POWER_ID, PowerType.BUFF, false, owner, source, amount);
+    }
+
+    public EaPotenciaPower(AbstractCreature owner, AbstractCreature source) {
+        this(owner, source, -1);
     }
 
     @Override

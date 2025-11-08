@@ -26,7 +26,6 @@ public class FocoFino extends BaseCard {
     public FocoFino() {
         super(ID, info);
         setMagic(CHAPADO_AMOUNT, UPG_CHAPADO);
-        this.rawDescription = "Aplique !M! de Chapado ao inimigo. Compre 1 carta.";
         this.keywords.add("chapado");
         initializeDescription();
     }

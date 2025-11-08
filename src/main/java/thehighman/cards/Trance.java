@@ -21,14 +21,13 @@ public class Trance extends BaseCard {
     public Trance() {
         super(ID, info);
         this.exhaust = true;
-        this.rawDescription = "Entre em Transe. Exaure.";
         this.keywords.add("transe");
         initializeDescription();
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new TrancePower(p), 1));
+        addToBot(new ApplyPowerAction(p, p, new TrancePower(p,p), 1));
     }
     @Override
     public void upgrade() {

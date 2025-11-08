@@ -26,7 +26,6 @@ public class Desconfianca extends BaseCard {
     public Desconfianca() {
         super(ID, info);
         setBlock(BLOCK, UPG_BLOCK);
-        this.rawDescription = "Ganhe !B! de Bloqueio. Aplique 1 de Larica ao inimigo.";
         this.keywords.add("larica");
         initializeDescription();
     }

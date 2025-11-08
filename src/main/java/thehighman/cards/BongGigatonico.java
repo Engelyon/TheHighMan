@@ -29,7 +29,6 @@ public class BongGigatonico extends BaseCard {
         super(ID, info);
         setDamage(DAMAGE, UPG_DAMAGE);
         this.exhaust = true;
-        this.rawDescription = "Cause !D! de dano. Se o inimigo tiver Larica, aplique 3 de Vulnerável.";
         this.keywords.add("larica");
         initializeDescription();
     }

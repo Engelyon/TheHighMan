@@ -28,7 +28,6 @@ public class AtaqueDeVazio extends BaseCard {
         super(ID, info);
         setDamage(BASE_DAMAGE);
         this.exhaust = true;
-        this.rawDescription = "Cause !D! de dano. Se tiver Larica, cause 10 de dano adicional e perca 1 de Larica.";
         this.keywords.add("larica");
         initializeDescription();
     }

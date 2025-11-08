@@ -26,7 +26,6 @@ public class Burgao extends BaseCard {
         super(ID, info);
         setBlock(BLOCK);
         this.exhaust = true;
-        this.rawDescription = "Ganhe !B! de Bloqueio e 1 de Comido. Exaure.";
         this.keywords.add("comido");
         initializeDescription();
     }

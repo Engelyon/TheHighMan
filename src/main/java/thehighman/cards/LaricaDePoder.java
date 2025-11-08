@@ -28,7 +28,6 @@ public class LaricaDePoder extends BaseCard {
     public LaricaDePoder() {
         super(ID, info);
         setDamage(BASE_DAMAGE, UPG_DAMAGE);
-        this.rawDescription = "Cause !D! de dano. Ganha +5 de dano para cada Comido. Remove todos os Comidos.";
         this.keywords.add("comido");
         initializeDescription();
     }

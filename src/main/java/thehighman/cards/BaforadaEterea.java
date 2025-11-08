@@ -35,7 +35,6 @@ public class BaforadaEterea extends BaseCard {
         setMagic(CHAPADO_AMOUNT);
         this.exhaust = true;
         this.isEthereal = true;
-        this.rawDescription = "Use se tiver Erva. Consome 1. Cause !D! de dano, aplique !M! de Chapado e copie esta carta.";
         this.keywords.add("erva");
         this.keywords.add("chapado");
         initializeDescription();

@@ -26,7 +26,6 @@ public class LimparAMente extends BaseCard {
         super(ID, info);
         setMagic(ERVA_GAIN, ERVA_GAIN + 1); // 2 → 3 de Erva com upgrade
 
-        this.rawDescription = "Descarte 2 cartas. Ganhe !M! de Erva.";
         this.keywords.add("erva");
         initializeDescription();
     }

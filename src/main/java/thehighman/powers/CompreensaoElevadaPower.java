@@ -5,17 +5,17 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
-public class CompreensaoElevadaPower extends AbstractPower {
-    public static final String POWER_ID = "thehighman:CompreensaoElevadaPower";
+import static thehighman.InimigosDoSpire.makeID;
 
-    public CompreensaoElevadaPower(AbstractCreature owner) {
-        this.name = "Compreensão Elevada";
-        this.ID = POWER_ID;
-        this.owner = owner;
-        this.type = PowerType.BUFF;
-        this.isTurnBased = false;
-        this.amount = -1;
-        updateDescription();
+public class CompreensaoElevadaPower extends BasePower {
+    public static final String POWER_ID = makeID("CompreensaoElevadaPower");
+
+    public CompreensaoElevadaPower(AbstractCreature owner, AbstractCreature source, int amount) {
+        super(POWER_ID, PowerType.BUFF, false, owner, source, amount);
+    }
+
+    public CompreensaoElevadaPower(AbstractCreature owner, AbstractCreature source) {
+        this(owner, source, -1);
     }
 
     @Override
@@ -25,7 +25,7 @@ public class CompreensaoElevadaPower extends AbstractPower {
 
     @Override
     public void onApplyPower(AbstractPower power, AbstractCreature target, AbstractCreature source) {
-        if (power.ID.equals("thehighman:Chapado") && source == owner && target != null && target != owner) {
+        if (power.ID.equals(makeID("Chapado")) && source == owner && target != null && target != owner) {
             if (AbstractDungeon.cardRandomRng.randomBoolean(0.5f)) {
                 flash();
                 addToBot(new ApplyPowerAction(target, owner, new ChapadoPower(target, 1), 1));

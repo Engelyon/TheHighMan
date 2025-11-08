@@ -27,7 +27,6 @@ public class Fritura extends BaseCard {
         super(ID, info);
         setMagic(TEMP_STRENGTH, TEMP_STRENGTH + 1); // 2 → 3 de Força temporária com upgrade
 
-        this.rawDescription = "Ganhe !M! de Força temporária. Perda 1 de Larica.";
         this.keywords.add("larica");
         initializeDescription();
     }

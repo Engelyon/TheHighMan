@@ -26,7 +26,6 @@ public class LimparOBong extends BaseCard {
         super(ID, info);
         this.selfRetain = true;
         this.exhaust = true;
-        this.rawDescription = "Gaste 10 Ervas para ganhar 3 de Seda. Exaure.";
         this.keywords.add("ervas");
         this.keywords.add("seda");
         initializeDescription();
@@ -38,5 +37,18 @@ public class LimparOBong extends BaseCard {
             addToBot(new ApplyPowerAction(p, p, new ErvaPower(p, -ERVAS_COST), -ERVAS_COST));
             addToBot(new ApplyPowerAction(p, p, new SedaPower(p, p, SEDA_GAIN), SEDA_GAIN));
         }
+    }
+    @Override
+    public boolean canUse(AbstractPlayer p, AbstractMonster m) {
+        if (!super.canUse(p, m)) {
+            return false;
+        }
+
+        if (!p.hasPower(ErvaPower.POWER_ID) || p.getPower(ErvaPower.POWER_ID).amount < ERVAS_COST) {
+            this.cantUseMessage = "Você precisa de pelo menos " + ERVAS_COST + " Ervas.";
+            return false;
+        }
+
+        return true;
     }
 }

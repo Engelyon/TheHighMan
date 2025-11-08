@@ -27,7 +27,6 @@ public class ViagemSoDeIda extends BaseCard {
     public ViagemSoDeIda() {
         super(ID, info);
         setDamage(BASE_DAMAGE, UPG_DAMAGE);
-        this.rawDescription = "Cause !D! de dano. Se Bad Trip foi jogada neste turno, cause +6 de dano.";
         this.keywords.add("bad trip");
         initializeDescription();
     }

@@ -6,18 +6,18 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import thehighman.relics.SacoDeLanchesSemFundo;
 
-public class ComidoPower extends AbstractPower {
-    public static final String POWER_ID = "thehighman:Comido";
+import static thehighman.InimigosDoSpire.makeID;
+
+public class ComidoPower extends BasePower {
+    public static final String POWER_ID = makeID("Comido");
     private static final PowerStrings powerStrings = com.megacrit.cardcrawl.core.CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
 
+    public ComidoPower(AbstractCreature owner, AbstractCreature source, int amount) {
+        super(POWER_ID, PowerType.BUFF, false, owner, source, amount);
+    }
+
     public ComidoPower(AbstractCreature owner, int amount) {
-        this.name = powerStrings.NAME;
-        this.ID = POWER_ID;
-        this.owner = owner;
-        this.amount = Math.min(amount, 5); // máximo 5
-        this.type = PowerType.BUFF;
-        this.isTurnBased = false;
-        updateDescription();
+        this(owner, owner, amount);
     }
 
     @Override
@@ -25,16 +25,14 @@ public class ComidoPower extends AbstractPower {
         this.description = "Evita efeitos negativos da Larica. Máximo de 5. Cada stack bloqueia 1 penalidade.";
     }
 
-    // Método auxiliar para consumir Comido
     public static boolean consumirComido(AbstractCreature target) {
         AbstractPower comido = target.getPower(POWER_ID);
         if (comido != null && comido.amount > 0) {
             comido.amount--;
             comido.updateDescription();
 
-            // Ativa a relíquia se for o jogador
-            if (target.isPlayer && AbstractDungeon.player.hasRelic("thehighman:SacoDeLanchesSemFundo")) {
-                ((SacoDeLanchesSemFundo) AbstractDungeon.player.getRelic("thehighman:SacoDeLanchesSemFundo")).onComidoConsumido();
+            if (target.isPlayer && AbstractDungeon.player.hasRelic("SacoDeLanchesSemFundo")) {
+                ((SacoDeLanchesSemFundo) AbstractDungeon.player.getRelic("SacoDeLanchesSemFundo")).onComidoConsumido();
             }
 
             if (comido.amount == 0) {

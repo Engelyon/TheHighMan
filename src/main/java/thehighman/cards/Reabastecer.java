@@ -26,7 +26,6 @@ public class Reabastecer extends BaseCard {
         super(ID, info);
         setMagic(ERVA_GAIN, 2); // upgrade aumenta Erva de 8 → 10
 
-        this.rawDescription = "Ganhe !M! de Erva. Se estiver com 3 ou mais de Chapado, compre 1 carta.";
         this.keywords.add("erva");
         this.keywords.add("chapado");
         initializeDescription();

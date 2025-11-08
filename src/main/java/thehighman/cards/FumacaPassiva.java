@@ -34,7 +34,6 @@ public class FumacaPassiva extends BaseCard {
         setDamage(DAMAGE, UPG_DAMAGE);
         isMultiDamage = true;
         setMagic(CHAPADO);
-        this.rawDescription = "Cause !D! de dano a todos os inimigos. Aplique !M! de Chapado a cada um. Ganha dano extra por cada Seda.";
         this.keywords.add("chapado");
         this.keywords.add("seda");
         initializeDescription();

@@ -2,32 +2,32 @@ package thehighman.powers;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
-import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.DexterityPower;
 
-public class CozinharPower extends AbstractPower {
-    public static final String POWER_ID = "thehighman:CozinharPower";
+import static thehighman.InimigosDoSpire.makeID;
 
-    public CozinharPower(AbstractCreature owner) {
-        this.name = "Cozinhar";
-        this.ID = POWER_ID;
-        this.owner = owner;
-        this.type = PowerType.BUFF;
-        this.isTurnBased = false;
-        this.amount = -1;
-        updateDescription();
+public class CozinharPower extends BasePower {
+    public static final String POWER_ID = makeID("CozinharPower");
+
+    public CozinharPower(AbstractCreature owner, AbstractCreature source, int amount) {
+        super(POWER_ID, PowerType.BUFF, false, owner, source, amount);
+    }
+
+    public CozinharPower(AbstractCreature owner, AbstractCreature source) {
+        this(owner, source, -1);
     }
 
     @Override
     public void updateDescription() {
-        this.description = "Sempre que você ganhar Larica, ganhe 2 de Destreza.";
+        this.description = "Sempre que você sofrer dano, ganhe 1 de Destreza.";
     }
 
     @Override
-    public void onApplyPower(AbstractPower power, AbstractCreature target, AbstractCreature source) {
-        if (target == owner && power.ID.equals("thehighman:Larica")) {
+    public int onLoseHp(int damageAmount) {
+        if (damageAmount > 0) {
             flash();
-            addToBot(new ApplyPowerAction(owner, owner, new DexterityPower(owner, 2), 2));
+            addToBot(new ApplyPowerAction(owner, owner, new DexterityPower(owner, 1), 1));
         }
+        return damageAmount;
     }
 }

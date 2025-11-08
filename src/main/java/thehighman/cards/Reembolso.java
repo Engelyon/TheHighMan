@@ -31,7 +31,6 @@ public class Reembolso extends BaseCard {
     public Reembolso() {
         super(ID, info);
         setDamage(DAMAGE, UPG_DAMAGE);
-        this.rawDescription = "Cause !D! de dano. Ganhe 1 de Erva. Perda 1 de Seda, se tiver.";
         this.keywords.add("erva");
         this.keywords.add("seda");
         initializeDescription();

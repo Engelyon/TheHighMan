@@ -30,7 +30,6 @@ public class TiroCerto extends BaseCard {
     public TiroCerto() {
         super(ID, info);
         setDamage(DAMAGE, UPG_DAMAGE);
-        this.rawDescription = "Cause !D! de dano. Se o inimigo tiver 5 ou mais de Chapado, ganhe 1 de Força temporária.";
         this.keywords.add("chapado");
         this.keywords.add("força");
         initializeDescription();

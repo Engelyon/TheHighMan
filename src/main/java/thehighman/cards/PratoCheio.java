@@ -18,13 +18,13 @@ public class PratoCheio extends BaseCard {
             1
     );
 
-    private static final int COMIDO_AMOUNT = 2;
+    private static final int COMIDO_AMOUNT = 4;
     private static final int UPG_COMIDO = 1;
 
     public PratoCheio() {
         super(ID, info);
         setMagic(COMIDO_AMOUNT, UPG_COMIDO);
-        this.rawDescription = "Ganhe !M! de Comido.";
+        this.setExhaust(true);
         this.keywords.add("comido");
         initializeDescription();
     }

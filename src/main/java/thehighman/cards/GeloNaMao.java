@@ -32,7 +32,6 @@ public class GeloNaMao extends BaseCard {
         this.exhaust = false;
         setDamage(DAMAGE, 2); // 3 → 5 de dano com upgrade
 
-        this.rawDescription = "Cause !D! de dano. Exaure 1 carta aleatória da sua mão (exceto Bad Trip e esta).";
         this.keywords.add("bad trip");
         initializeDescription();
     }

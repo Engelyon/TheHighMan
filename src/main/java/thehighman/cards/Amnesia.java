@@ -28,7 +28,6 @@ public class Amnesia extends BaseCard {
     public Amnesia() {
         super(ID, info);
         this.exhaust = true;
-        this.rawDescription = "Exausta 2 cartas aleatórias da sua mão. Para cada Bad Trip exaurida, ganhe 2 de Erva.";
         this.keywords.add("erva");
         this.keywords.add("bad trip");
         initializeDescription();

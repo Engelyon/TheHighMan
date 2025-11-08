@@ -43,7 +43,6 @@ public class MaoSanta extends BaseCard {
 
         // Sets the magic number (buff amount) and its upgrade value
         setMagic(BUFF_AMOUNT, UPG_BUFF);
-        this.rawDescription = "Ganhe !M! de Seda e !M! de Erva.";
         this.keywords.add("seda");
         this.keywords.add("erva");
         initializeDescription();

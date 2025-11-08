@@ -26,7 +26,6 @@ public class Alivio extends BaseCard {
     public Alivio() {
         super(ID, info);
         setMagic(CHAPADO_AMOUNT, UPG_CHAPADO);
-        this.rawDescription = "Aplique !M! de Chapado em um inimigo.";
         this.keywords.add("chapado");
         initializeDescription();
     }

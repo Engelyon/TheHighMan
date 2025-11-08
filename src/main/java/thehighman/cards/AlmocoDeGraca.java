@@ -25,7 +25,6 @@ public class AlmocoDeGraca extends BaseCard {
 
     public AlmocoDeGraca() {
         super(ID, info);
-        this.rawDescription = "Ganha 2 de Comido. Se estiver com 10 de Comido, ganhe 2 de Energia.";
         this.keywords.add("comido");
         initializeDescription();
     }

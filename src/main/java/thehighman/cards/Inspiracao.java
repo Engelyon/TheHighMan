@@ -25,7 +25,6 @@ public class Inspiracao extends BaseCard {
         super(ID, info);
         setMagic(ERVA_GAIN, UPG_ERVA);
         this.exhaust = true;
-        this.rawDescription = "Ganhe !M! de Erva. Exaure.";
         this.keywords.add("erva");
         initializeDescription();
     }

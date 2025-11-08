@@ -29,7 +29,6 @@ public class LoopMental extends BaseCard {
     public LoopMental() {
         super(ID, info);
         setDamage(DAMAGE, UPG_DAMAGE);
-        this.rawDescription = "Cause !D! de dano. Se houver 3 ou mais Bad Trips no deck, compre 3 cartas.";
         this.keywords.add("bad trip");
         initializeDescription();
     }

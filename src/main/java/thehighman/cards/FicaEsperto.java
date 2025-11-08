@@ -27,7 +27,6 @@ public class FicaEsperto extends BaseCard {
     public FicaEsperto() {
         super(ID, info);
         setDamage(DAMAGE, UPG_DAMAGE);
-        this.rawDescription = "Cause !D! de dano. Se o inimigo não estiver Chapado, compre 1 carta.";
         this.keywords.add("chapado");
         initializeDescription();
     }

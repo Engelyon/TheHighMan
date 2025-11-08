@@ -27,7 +27,6 @@ public class Analisar extends BaseCard {
 
     public Analisar() {
         super(ID, info);
-        this.rawDescription = "Compre 2 cartas. Se algum inimigo tiver 5 ou mais de Chapado, ganhe 1 de Força.";
         this.keywords.add("chapado");
         initializeDescription();
     }

@@ -31,7 +31,6 @@ public class Fissura extends BaseCard {
         setDamage(DAMAGE, UPG_DAMAGE);
         setMagic(BLOCK_GAIN, BLOCK_GAIN + 2); // 3 → 5 de Bloqueio com upgrade
 
-        this.rawDescription = "Cause !D! de dano. Se tiver Erva, consuma 1 e ganhe !M! de Bloqueio.";
         this.keywords.add("erva");
         initializeDescription();
     }

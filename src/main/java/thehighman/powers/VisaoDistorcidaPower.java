@@ -3,19 +3,18 @@ package thehighman.powers;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
-import com.megacrit.cardcrawl.powers.AbstractPower;
 
-public class VisaoDistorcidaPower extends AbstractPower {
-    public static final String POWER_ID = "thehighman:VisaoDistorcidaPower";
+import static thehighman.InimigosDoSpire.makeID;
 
-    public VisaoDistorcidaPower(AbstractCreature owner) {
-        this.name = "Visão Distorcida";
-        this.ID = POWER_ID;
-        this.owner = owner;
-        this.type = PowerType.BUFF;
-        this.isTurnBased = true;
-        this.amount = 1;
-        updateDescription();
+public class VisaoDistorcidaPower extends BasePower {
+    public static final String POWER_ID = makeID("VisaoDistorcidaPower");
+
+    public VisaoDistorcidaPower(AbstractCreature owner, AbstractCreature source, int amount) {
+        super(POWER_ID, PowerType.BUFF, true, owner, source, amount);
+    }
+
+    public VisaoDistorcidaPower(AbstractCreature owner, AbstractCreature source) {
+        this(owner, source, 1);
     }
 
     @Override

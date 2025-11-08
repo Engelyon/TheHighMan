@@ -31,7 +31,6 @@ public class Vaporizador extends BaseCard {
         super(ID, info);
         setDamage(DAMAGE, UPG_DAMAGE);
         setMagic(CHAPADO_AMOUNT);
-        this.rawDescription = "Cause !D! de dano. Aplique !M! de Chapado ao inimigo. Ganhe 1 de Seda.";
         this.keywords.add("chapado");
         this.keywords.add("seda");
         initializeDescription();

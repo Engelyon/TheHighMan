@@ -29,7 +29,6 @@ public class BrigarPorBatata extends BaseCard {
     public BrigarPorBatata() {
         super(ID, info);
         setDamage(DAMAGE, UPG_DAMAGE);
-        this.rawDescription = "Cause !D! de dano. Se o inimigo tiver Larica, remova 1 e ganhe 1 de Comido.";
         this.keywords.add("larica");
         this.keywords.add("comido");
         initializeDescription();

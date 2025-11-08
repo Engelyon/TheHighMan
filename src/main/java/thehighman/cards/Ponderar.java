@@ -26,7 +26,6 @@ public class Ponderar extends BaseCard {
     public Ponderar() {
         super(ID, info);
         setBlock(BLOCK);
-        this.rawDescription = "Descarte 2 cartas. Compre 1 carta. Ganhe !B! de Bloqueio.";
         initializeDescription();
     }
 

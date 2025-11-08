@@ -24,7 +24,6 @@ public class AlimentoDivino extends BaseCard {
 
     public AlimentoDivino() {
         super(ID, info);
-        this.rawDescription = "Ganha 5 de Comido. Se estiver com 10 de Comido, ganha Imunidade à Bad Trip.";
         initializeDescription();
     }
 
@@ -35,7 +34,7 @@ public class AlimentoDivino extends BaseCard {
 
         // Se Comido estiver no máximo, aplica imunidade a Bad Trip
         if (p.hasPower(ComidoPower.POWER_ID) && p.getPower(ComidoPower.POWER_ID).amount >= COMIDO_MAX) {
-            addToBot(new ApplyPowerAction(p, p, new ImuneABadTripPower(p), 1));
+            addToBot(new ApplyPowerAction(p, p, new ImuneABadTripPower(p,p), 1));
         }
     }
     @Override

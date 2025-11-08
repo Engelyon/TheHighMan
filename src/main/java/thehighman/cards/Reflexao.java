@@ -27,7 +27,6 @@ public class Reflexao extends BaseCard {
         this.exhaust = true;
         setMagic(LARICA_AMOUNT, 1); // upgrade aumenta Larica de 2 → 3
 
-        this.rawDescription = "Remova todos os efeitos de Chapado do inimigo. Aplique !M! de Larica.";
         this.keywords.add("chapado");
         this.keywords.add("larica");
         initializeDescription();

@@ -23,7 +23,6 @@ public class Ronco extends BaseCard {
 
     public Ronco() {
         super(ID, info);
-        this.rawDescription = "Escolhe aleatoriamente um inimigo e remove todos os seus poderes. Exaure.";
         this.exhaust = true;
         initializeDescription();
     }

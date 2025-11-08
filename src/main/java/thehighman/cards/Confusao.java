@@ -26,7 +26,6 @@ public class Confusao extends BaseCard {
     public Confusao() {
         super(ID, info);
         setDamage(DAMAGE);
-        this.rawDescription = "Cause !D! de dano. Adicione 1 Bad Trip à pilha de descarte.";
         this.keywords.add("bad trip");
         initializeDescription();
     }

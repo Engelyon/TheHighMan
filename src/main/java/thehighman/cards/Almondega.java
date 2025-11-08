@@ -24,7 +24,6 @@ public class Almondega extends BaseCard {
 
     public Almondega() {
         super(ID, info);
-        this.rawDescription = "Ganha 1 de Comido e 1 de Larica.";
         this.keywords.add("comido");
         this.keywords.add("larica");
         initializeDescription();

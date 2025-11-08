@@ -29,7 +29,6 @@ public class MordidaNoLanche extends BaseCard {
     public MordidaNoLanche() {
         super(ID, info);
         setDamage(BASE_DAMAGE, UPG_DAMAGE);
-        this.rawDescription = "Cause !D! de dano 3 vezes. Se tiver 2 ou mais de Comido, cada golpe causa +1 de dano.";
         this.keywords.add("comido");
         initializeDescription();
     }

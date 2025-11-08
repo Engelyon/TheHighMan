@@ -26,8 +26,6 @@ public class NuvemToxica extends BaseCard {
     public NuvemToxica() {
         super(ID, info);
         setMagic(CHAPADO_AMOUNT, 2); // 5 → 7 de Chapado com upgrade
-
-        this.rawDescription = "Aplique !M! de Chapado a um inimigo. Se ele tiver Larica, aplique 1 de Vulnerável.";
         this.keywords.add("chapado");
         this.keywords.add("larica");
         initializeDescription();

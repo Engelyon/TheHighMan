@@ -5,7 +5,7 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 
 public class EnergiaExtraProximoTurnoPower extends AbstractPower {
-    public static final String POWER_ID = "thehighman:energiaExtraProximoTurno";
+    public static final String POWER_ID = "energiaExtraProximoTurno";
 
     private final int energyGain;
 

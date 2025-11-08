@@ -29,7 +29,6 @@ public class Enrolar extends BaseCard {
         super(ID, info);
         setDamage(DAMAGE, UPG_DAMAGE);
         setMagic(ERVA_AMOUNT);
-        this.rawDescription = "Cause !D! de dano. Ganhe !M! de Erva.";
         this.keywords.add("erva");
         initializeDescription();
     }

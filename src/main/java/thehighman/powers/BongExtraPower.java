@@ -5,19 +5,20 @@ import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
-public class BongExtraPower extends AbstractPower {
-    public static final String POWER_ID = "thehighman:BongExtraPower";
+import static thehighman.InimigosDoSpire.makeID;
+
+public class BongExtraPower extends BasePower {
+    public static final String POWER_ID = makeID("BongExtraPower");
+    private static final int DEFAULT_AMOUNT = -1;
 
     private int pendingBlock = 0;
 
-    public BongExtraPower(AbstractCreature owner) {
-        this.name = "Bong Extra";
-        this.ID = POWER_ID;
-        this.owner = owner;
-        this.type = PowerType.BUFF;
-        this.isTurnBased = false;
-        this.amount = -1;
-        updateDescription();
+    public BongExtraPower(AbstractCreature owner, AbstractCreature source, int amount) {
+        super(POWER_ID, PowerType.BUFF, false, owner, source, amount);
+    }
+
+    public BongExtraPower(AbstractCreature owner, AbstractCreature source) {
+        this(owner, source, DEFAULT_AMOUNT);
     }
 
     @Override

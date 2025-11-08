@@ -30,7 +30,6 @@ public class Recompensa extends BaseCard {
     public Recompensa() {
         super(ID, info);
         setDamage(DAMAGE, UPG_DAMAGE);
-        this.rawDescription = "Cause !D! de dano. Se tiver Erva, consuma 1 para aplicar 2 de Vulnerável.";
         this.keywords.add("erva");
         initializeDescription();
     }

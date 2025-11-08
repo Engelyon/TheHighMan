@@ -28,7 +28,6 @@ public class CuidadoAlimentar extends BaseCard {
         setBlock(BLOCK, BLOCK + 4); // 12 → 16 de Bloqueio com upgrade
         setMagic(HEAL, HEAL + 1);   // 2 → 3 de Cura com upgrade
 
-        this.rawDescription = "Se tiver 3+ de Comido, ganhe !B! de Bloqueio e cure !M! de vida.";
         this.keywords.add("comido");
         initializeDescription();
     }

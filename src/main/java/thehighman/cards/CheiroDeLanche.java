@@ -27,7 +27,6 @@ public class CheiroDeLanche extends BaseCard {
     public CheiroDeLanche() {
         super(ID, info);
         setDamage(BASE_DAMAGE, UPG_DAMAGE);
-        this.rawDescription = "Cause !D! de dano. Se o inimigo tiver Larica, cause +10.";
         this.keywords.add("larica");
         initializeDescription();
     }

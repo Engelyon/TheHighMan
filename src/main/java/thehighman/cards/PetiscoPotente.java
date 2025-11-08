@@ -26,8 +26,6 @@ public class PetiscoPotente extends BaseCard {
     public PetiscoPotente() {
         super(ID, info);
         setMagic(COMIDO_GAIN, 1); // upgrade aumenta Comido de 1 → 2
-
-        this.rawDescription = "Ganhe !M! de Comido. Se tiver 5 ou mais de Comido, ganhe 2 de energia no próximo turno.";
         this.keywords.add("comido");
         initializeDescription();
     }

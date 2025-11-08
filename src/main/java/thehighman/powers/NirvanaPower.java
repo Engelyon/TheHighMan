@@ -6,19 +6,18 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.AbstractPower;
 
-public class NirvanaPower extends AbstractPower {
-    public static final String POWER_ID = "thehighman:NirvanaPower";
+import static thehighman.InimigosDoSpire.makeID;
 
-    public NirvanaPower(AbstractCreature owner) {
-        this.name = "Nirvana";
-        this.ID = POWER_ID;
-        this.owner = owner;
-        this.type = PowerType.BUFF;
-        this.isTurnBased = false;
-        this.amount = -1;
-        updateDescription();
+public class NirvanaPower extends BasePower {
+    public static final String POWER_ID = makeID("NirvanaPower");
+
+    public NirvanaPower(AbstractCreature owner, AbstractCreature source, int amount) {
+        super(POWER_ID, PowerType.BUFF, false, owner, source, amount);
+    }
+
+    public NirvanaPower(AbstractCreature owner, AbstractCreature source) {
+        this(owner, source, -1);
     }
 
     @Override

@@ -26,7 +26,6 @@ public class AtaqueFaminto extends BaseCard {
     public AtaqueFaminto() {
         super(ID, info);
         setDamage(DAMAGE, UPG_DAMAGE);
-        this.rawDescription = "Cause !D! de dano. Se tiver Comido, repita o ataque e consuma 1 de Comido.";
         this.keywords.add("comido");
         initializeDescription();
     }

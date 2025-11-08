@@ -25,8 +25,6 @@ public class IdeiaDeStartup extends BaseCard {
         super(ID, info);
         setMagic(ERVA_GAIN);
         setMagic(ERVA_GAIN, ERVA_GAIN + 2); // 5 → 7 de Erva com upgrade
-
-        this.rawDescription = "Ganhe !M! de Erva. Consome toda a energia restante pq vc faliu a Piticas.";
         this.keywords.add("erva");
         initializeDescription();
     }

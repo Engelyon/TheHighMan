@@ -29,7 +29,6 @@ public class BrisaFinal extends BaseCard {
         super(ID, info);
         setDamage(DAMAGE, UPG_DAMAGE);
         this.isMultiDamage = true;
-        this.rawDescription = "Para cada energia usada: cause !D! de dano e aplique 1 de Chapado a todos os inimigos.";
         this.keywords.add("chapado");
         initializeDescription();
     }

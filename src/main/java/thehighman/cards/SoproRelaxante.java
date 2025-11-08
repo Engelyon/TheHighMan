@@ -31,7 +31,6 @@ public class SoproRelaxante extends BaseCard {
         super(ID, info);
         setDamage(DAMAGE, UPG_DAMAGE);
         setMagic(CHAPADO_AMOUNT);
-        this.rawDescription = "Cause !D! de dano. Aplique !M! de Chapado e 1 de Vulnerável.";
         this.keywords.add("chapado");
         this.keywords.add("vulnerável");
         initializeDescription();

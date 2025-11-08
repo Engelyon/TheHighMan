@@ -26,7 +26,6 @@ public class SemPressa extends BaseCard {
         setBlock(BASE_BLOCK);
         this.selfRetain = true;
         this.exhaust = true;
-        this.rawDescription = "Retenha esta carta. Se for usada após ser retida, custa 0 e ganha +2 de Bloqueio.";
         initializeDescription();
     }
 

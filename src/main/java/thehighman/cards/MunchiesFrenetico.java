@@ -30,7 +30,6 @@ public class MunchiesFrenetico extends BaseCard {
         super(ID, info);
         setDamage(DAMAGE, UPG_DAMAGE);
         setMagic(LARICA_AMOUNT);
-        this.rawDescription = "Cause !D! de dano 3 vezes. Ganhe !M! de Larica.";
         this.keywords.add("larica");
         initializeDescription();
     }

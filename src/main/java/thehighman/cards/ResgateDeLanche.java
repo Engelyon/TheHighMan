@@ -28,7 +28,6 @@ public class ResgateDeLanche extends BaseCard {
     public ResgateDeLanche() {
         super(ID, info);
         setDamage(DAMAGE, UPG_DAMAGE);
-        this.rawDescription = "Cause !D! de dano. Se o inimigo tiver Larica, cure 3 de Vida.";
         this.keywords.add("larica");
         initializeDescription();
     }

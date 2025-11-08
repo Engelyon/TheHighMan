@@ -24,7 +24,6 @@ public class BadTrip extends BaseCard {
         super(ID, info);
         this.exhaust = false;
         this.dontTriggerOnUseCard = true;
-        this.rawDescription = "No fim do turno, se estiver na mão: perca 1 de vida e ganhe 1 de Larica.";
         this.keywords.add("larica");
         this.keywords.add("maldição");
         initializeDescription();

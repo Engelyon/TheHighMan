@@ -20,14 +20,13 @@ public class Cozinhar extends BaseCard {
 
     public Cozinhar() {
         super(ID, info);
-        this.rawDescription = "Ganhe o poder Cozinhar.";
         this.keywords.add("cozinhar");
         initializeDescription();
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new CozinharPower(p)));
+        addToBot(new ApplyPowerAction(p, p, new CozinharPower(p,p)));
     }
 
     @Override

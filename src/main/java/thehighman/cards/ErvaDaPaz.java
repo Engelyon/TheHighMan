@@ -28,7 +28,6 @@ public class ErvaDaPaz extends BaseCard {
         setMagic(CHAPADO_AMOUNT, CHAPADO_AMOUNT + 1); // 4 → 5 Chapado com upgrade
         setBlock(BLOCK_AMOUNT, BLOCK_AMOUNT + 4);     // 10 → 14 Bloqueio com upgrade
 
-        this.rawDescription = "Todos ganham !M! de Chapado e !B! de Bloqueio.";
         this.keywords.add("chapado");
         initializeDescription();
     }

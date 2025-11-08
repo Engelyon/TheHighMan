@@ -20,14 +20,13 @@ public class EaPotencia extends BaseCard {
 
     public EaPotencia() {
         super(ID, info);
-        this.rawDescription = "Ganhe o poder É a Potência.";
         this.keywords.add("potência");
         initializeDescription();
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new EaPotenciaPower(p)));
+        addToBot(new ApplyPowerAction(p, p, new EaPotenciaPower(p,p)));
     }
     @Override
     public void upgrade() {

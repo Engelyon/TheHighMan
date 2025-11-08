@@ -27,7 +27,6 @@ public class ColheitaGenerosa extends BaseCard {
     public ColheitaGenerosa() {
         super(ID, info);
         this.exhaust = true;
-        this.rawDescription = "Ganhe 2 de Erva. Se tiver 3+ de Comido, ganhe 1 de Seda. Exaure.";
         this.keywords.add("erva");
         this.keywords.add("comido");
         this.keywords.add("seda");

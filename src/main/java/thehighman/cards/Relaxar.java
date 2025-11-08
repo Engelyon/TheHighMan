@@ -24,7 +24,6 @@ public class Relaxar extends BaseCard {
         super(ID, info);
         setBlock(BLOCK, UPG_BLOCK);
         this.tags.add(CardTags.STARTER_DEFEND);
-        this.rawDescription = "Ganhe !B! de Bloqueio.";
         initializeDescription();
     }
 

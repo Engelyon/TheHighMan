@@ -1,26 +1,23 @@
 package thehighman.powers;
 
 import com.megacrit.cardcrawl.core.AbstractCreature;
-import com.megacrit.cardcrawl.powers.AbstractPower;
+import static thehighman.InimigosDoSpire.makeID;
 
-public class BuchimCheiPower extends AbstractPower {
-    public static final String POWER_ID = "thehighman:BuchimCheiPower";
-
-    public static int COMIDO_BASE_MAX = 10; // valor padrão do limite
+public class BuchimCheiPower extends BasePower {
+    public static final String POWER_ID = makeID("BuchimCheiPower");
+    public static int COMIDO_BASE_MAX = 10;
     public static int COMIDO_MAX = COMIDO_BASE_MAX * 2;
 
-    public BuchimCheiPower(AbstractCreature owner) {
-        this.name = "Buchim Chei";
-        this.ID = POWER_ID;
-        this.owner = owner;
-        this.type = PowerType.BUFF;
-        this.isTurnBased = false;
-        this.amount = -1;
-        updateDescription();
+    public BuchimCheiPower(AbstractCreature owner, AbstractCreature source, int amount) {
+        super(POWER_ID, PowerType.BUFF, false, owner, source, amount);
+    }
+
+    public BuchimCheiPower(AbstractCreature owner, AbstractCreature source) {
+        this(owner, source, -1);
     }
 
     @Override
     public void updateDescription() {
-        this.description = "O limite de Comido é dobrado neste combate.";
+        this.description = "Dobre seu limite de Comido.";
     }
 }

@@ -31,7 +31,6 @@ public class TragadaProfunda extends BaseCard {
     public TragadaProfunda() {
         super(ID, info);
         setDamage(DAMAGE, UPG_DAMAGE);
-        this.rawDescription = "Requer 2 de Comido. Cause !D! de dano. Consuma 2 de Comido e ganhe 2 de Larica.";
         this.keywords.add("comido");
         this.keywords.add("larica");
         initializeDescription();

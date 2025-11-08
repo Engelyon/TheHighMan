@@ -29,7 +29,6 @@ public class BaguaDaDiscordia extends BaseCard {
         super(ID, info);
         setDamage(DAMAGE, UPG_DAMAGE);
         this.isMultiDamage = true;
-        this.rawDescription = "Cause !D! de dano a todos os inimigos. Adicione 2 Bad Trip à pilha de descarte.";
         this.keywords.add("bad trip");
         initializeDescription();
     }
