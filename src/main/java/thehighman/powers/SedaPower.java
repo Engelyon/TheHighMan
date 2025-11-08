@@ -11,7 +11,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import static thehighman.InimigosDoSpire.makeID;
 
 public class SedaPower extends BasePower {
-    public static final String POWER_ID = makeID("Seda");
+    public static final String POWER_ID = makeID("SedaPower");
     private static final int DEFAULT_AMOUNT = 1;
 
     public SedaPower(AbstractCreature owner, AbstractCreature source, int amount) {

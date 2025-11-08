@@ -20,14 +20,14 @@
       " vez(es)."
     ]
   },
-  "${modID}:Seda": {
+  "${modID}:SedaPower": {
     "NAME": "Seda",
     "DESCRIPTIONS": [
       "Recebe +",
       " de dano em ataques físicos."
     ]
   },
-  "${modID}:Erva": {
+  "${modID}:ErvaPower": {
     "NAME": "Erva",
     "DESCRIPTIONS": [
       "Você possui ",

@@ -1,5 +1,6 @@
 package thehighman.powers;
 
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.localization.PowerStrings;
@@ -7,24 +8,19 @@ import com.megacrit.cardcrawl.helpers.ImageMaster;
 
 import static thehighman.InimigosDoSpire.makeID;
 
-public class ErvaPower extends AbstractPower {
-    public static final String POWER_ID = makeID("Erva");
-    private static final PowerStrings powerStrings = com.megacrit.cardcrawl.core.CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
+public class ErvaPower extends BasePower {
+    public static final String POWER_ID = makeID("ErvaPower");
+    //private static final PowerStrings powerStrings = com.megacrit.cardcrawl.core.CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
 
     public ErvaPower(AbstractCreature owner, int amount) {
-        this.name = powerStrings.NAME;
-        this.ID = POWER_ID;
-        this.owner = owner;
-        this.amount = amount;
-        this.type = PowerType.BUFF;
-        this.isTurnBased = false;
+        super(POWER_ID, PowerType.BUFF, false, owner, amount);
 
-        this.img = ImageMaster.loadImage("thehighman/images/powers/erva.png");
+        //this.img = ImageMaster.loadImage("thehighman/images/powers/large/ErvaPower.jpg");
         this.updateDescription();
     }
 
     @Override
     public void updateDescription() {
-        this.description = powerStrings.DESCRIPTIONS[0] + this.amount + powerStrings.DESCRIPTIONS[1];
+        this.description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1];
     }
 }
