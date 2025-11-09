@@ -201,8 +201,8 @@
   },
   "${modID}:IdeiaDeStartup": {
     "NAME": "Ideia De Startup",
-    "DESCRIPTION": "Ganhe !M! de ${modID}:Erva. Consome toda a energia restante pq vc faliu a Piticas.",
-    "UPGRADE_DESCRIPTION": "Ganhe !M! de ${modID}:Erva. Consome toda a energia restante pq vc faliu a Piticas."
+    "DESCRIPTION": "Ganhe !M! de ${modID}:Erva. Consome toda a energia restante pq vc faliu a ${modID}:Piticas.",
+    "UPGRADE_DESCRIPTION": "Ganhe !M! de ${modID}:Erva. Consome toda a energia restante pq vc faliu a ${modID}:Piticas."
   },
   "${modID}:Inspiracao": {
     "NAME": "Inspiracao",

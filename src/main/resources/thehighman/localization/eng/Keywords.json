@@ -28,5 +28,11 @@
     "NAMES": ["comido","Comido"],
     "DESCRIPTION": "Evita o dano colateral de 1 stack de Larica",
     "COLOR": "3cb371"
+  },
+  {
+    "PROPER_NAME": "Piticas",
+    "NAMES": ["piticas","Piticas"],
+    "DESCRIPTION": "Loja Geek Brasileira de produtos variados da qual um dos devs faliu uma loja da franquia.",
+    "COLOR": "3cb371"
   }
 ]
