@@ -20,10 +20,6 @@ public class ComidoPower extends BasePower {
         this(owner, owner, amount);
     }
 
-    @Override
-    public void updateDescription() {
-        this.description = "Evita efeitos negativos da Larica. Máximo de 5. Cada stack bloqueia 1 penalidade.";
-    }
 
     public static boolean consumirComido(AbstractCreature target) {
         AbstractPower comido = target.getPower(POWER_ID);

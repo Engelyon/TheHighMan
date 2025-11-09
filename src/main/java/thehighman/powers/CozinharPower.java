@@ -18,11 +18,6 @@ public class CozinharPower extends BasePower {
     }
 
     @Override
-    public void updateDescription() {
-        this.description = "Sempre que você sofrer dano, ganhe 1 de Destreza.";
-    }
-
-    @Override
     public int onLoseHp(int damageAmount) {
         if (damageAmount > 0) {
             flash();

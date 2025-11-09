@@ -21,11 +21,6 @@ public class NirvanaPower extends BasePower {
     }
 
     @Override
-    public void updateDescription() {
-        this.description = "Todas as suas cartas com Exaustão são jogadas duas vezes.";
-    }
-
-    @Override
     public void onAfterUseCard(AbstractCard card, UseCardAction action) {
         if (card.exhaust && !card.purgeOnUse && !card.dontTriggerOnUseCard) {
             flash();

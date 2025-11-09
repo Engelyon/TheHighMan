@@ -18,10 +18,6 @@ public class CompreensaoElevadaPower extends BasePower {
         this(owner, source, -1);
     }
 
-    @Override
-    public void updateDescription() {
-        this.description = "Ao aplicar Chapado, há 50% de chance de aplicar 1 stack adicional.";
-    }
 
     @Override
     public void onApplyPower(AbstractPower power, AbstractCreature target, AbstractCreature source) {

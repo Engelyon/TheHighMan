@@ -14,8 +14,4 @@ public class ImuneABadTripPower extends BasePower {
         this(owner, source, -1);
     }
 
-    @Override
-    public void updateDescription() {
-        this.description = "Você não recebe mais dano de Bad Trip neste combate.";
-    }
 }

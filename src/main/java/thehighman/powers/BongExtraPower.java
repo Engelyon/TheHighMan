@@ -22,11 +22,6 @@ public class BongExtraPower extends BasePower {
     }
 
     @Override
-    public void updateDescription() {
-        this.description = "Sempre que um inimigo ganhar Larica, compre 1 carta e ganhe 5 de Bloqueio no final do turno.";
-    }
-
-    @Override
     public void onApplyPower(AbstractPower power, AbstractCreature target, AbstractCreature source) {
         if (target != owner && power.ID.equals("thehighman:Larica")) {
             flash();

@@ -24,9 +24,4 @@ public class VisaoDistorcidaPower extends BasePower {
         addToBot(new GainEnergyAction(1));
         this.amount = 0;
     }
-
-    @Override
-    public void updateDescription() {
-        this.description = "No início do próximo turno, compre 2 cartas e ganhe 1 de energia.";
-    }
 }

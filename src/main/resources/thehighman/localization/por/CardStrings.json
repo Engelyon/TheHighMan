@@ -312,7 +312,7 @@
   "${modID}:Reembolso": {
     "NAME": "Reembolso",
     "DESCRIPTION": "Cause !D! de dano. Ganhe 1 de Erva. Perda 1 de Seda, se tiver.",
-    "UPGRADE_DESCRIPTION": "Cause !D! de dano. Ganhe 1 de Erva. Perda 1 de Seda, se tiver."
+    "UPGRADE_DESCRIPTION": "Cause !D! de dano. Ganhe 1 de Erva. Perca 1 de Seda se tiver."
   },
   "${modID}:Reflexao": {
     "NAME": "Reflexao",

@@ -23,11 +23,6 @@ public class TrancePower extends BasePower {
     }
 
     @Override
-    public void updateDescription() {
-        this.description = "Sempre que você ganhar Larica neste turno, exaure 1 carta da sua mão e ganhe 1 de Seda.";
-    }
-
-    @Override
     public void onApplyPower(AbstractPower power, AbstractCreature target, AbstractCreature source) {
         if (target == owner && power.ID.equals(makeID("Larica"))) {
             List<AbstractCard> hand = AbstractDungeon.player.hand.group;

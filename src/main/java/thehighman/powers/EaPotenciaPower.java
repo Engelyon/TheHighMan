@@ -20,9 +20,4 @@ public class EaPotenciaPower extends BasePower {
         flash();
         addToBot(new ApplyPowerAction(owner, owner, new ErvaPower(owner, 1), 1));
     }
-
-    @Override
-    public void updateDescription() {
-        this.description = "No início de cada turno, ganhe 1 de Erva.";
-    }
 }

@@ -27,8 +27,4 @@ public class EnergiaExtraProximoTurnoPower extends AbstractPower {
         this.amount = 0;
     }
 
-    @Override
-    public void updateDescription() {
-        this.description = "No início do próximo turno, ganhe " + energyGain + " de energia.";
-    }
 }

@@ -19,11 +19,6 @@ public class HyparPower extends BasePower {
     }
 
     @Override
-    public void updateDescription() {
-        this.description = "Sempre que você exaurir uma carta, ganhe 1 de energia no próximo turno.";
-    }
-
-    @Override
     public void onExhaust(AbstractCard card) {
         flash();
         addToBot(new ApplyPowerAction(owner, owner, new EnergizedPower(owner, 1), 1));

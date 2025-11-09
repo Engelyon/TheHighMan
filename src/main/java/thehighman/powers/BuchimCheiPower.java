@@ -15,9 +15,4 @@ public class BuchimCheiPower extends BasePower {
     public BuchimCheiPower(AbstractCreature owner, AbstractCreature source) {
         this(owner, source, -1);
     }
-
-    @Override
-    public void updateDescription() {
-        this.description = "Dobre seu limite de Comido.";
-    }
 }
