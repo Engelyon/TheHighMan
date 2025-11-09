@@ -16,5 +16,17 @@
     "NAMES": ["erva","Erva"],
     "DESCRIPTION": "Recurso especial usado por cartas da sua classe para ativar efeitos únicos.",
     "COLOR": "3cb371"
+  },
+  {
+    "PROPER_NAME": "Larica",
+    "NAMES": ["larica","Larica"],
+    "DESCRIPTION": "Ganha 1 de força e leva mais 3 de dano de ataque.",
+    "COLOR": "3cb371"
+  },
+  {
+    "PROPER_NAME": "Comido",
+    "NAMES": ["comido","Comido"],
+    "DESCRIPTION": "Evita o dano colateral de 1 stack de Larica",
+    "COLOR": "3cb371"
   }
 ]

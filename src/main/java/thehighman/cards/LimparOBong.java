@@ -26,7 +26,7 @@ public class LimparOBong extends BaseCard {
         super(ID, info);
         this.selfRetain = true;
         this.exhaust = true;
-        this.keywords.add("ervas");
+        this.keywords.add("erva");
         this.keywords.add("seda");
         initializeDescription();
     }

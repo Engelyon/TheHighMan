@@ -1,68 +1,68 @@
 {
   "${modID}:AlimentoDivino": {
     "NAME": "Alimento Divino",
-    "DESCRIPTION": "Ganha 5 de Comido. Se estiver com 10 de Comido, ganha Imunidade à Bad Trip.",
-    "UPGRADE_DESCRIPTION": "Ganha 5 de Comido. Se estiver com 10 de Comido, ganha Imunidade à Bad Trip."
+    "DESCRIPTION": "Ganha 5 de ${modID}:Comido. Se estiver com 10 de ${modID}:Comido, ganha Imunidade à Bad Trip.",
+    "UPGRADE_DESCRIPTION": "Ganha 5 de ${modID}:Comido. Se estiver com 10 de ${modID}:Comido, ganha Imunidade à Bad Trip."
   },
   "${modID}:Alivio": {
     "NAME": "Alivio",
-    "DESCRIPTION": "Aplique !M! de Chapado em um inimigo.",
-    "UPGRADE_DESCRIPTION": "Aplique !M! de Chapado em um inimigo."
+    "DESCRIPTION": "Aplique !M! de ${modID}:Chapado em um inimigo.",
+    "UPGRADE_DESCRIPTION": "Aplique !M! de ${modID}:Chapado em um inimigo."
   },
   "${modID}:AlmocoDeGraca": {
     "NAME": "Almoco De Graca",
-    "DESCRIPTION": "Ganha 2 de Comido. Se estiver com 10 de Comido, ganhe 2 de Energia.",
-    "UPGRADE_DESCRIPTION": "Ganha 2 de Comido. Se estiver com 10 de Comido, ganhe 2 de Energia."
+    "DESCRIPTION": "Ganha 2 de ${modID}:Comido. Se estiver com 10 de ${modID}:Comido, ganhe 2 de Energia.",
+    "UPGRADE_DESCRIPTION": "Ganha 2 de ${modID}:Comido. Se estiver com 10 de ${modID}:Comido, ganhe 2 de Energia."
   },
   "${modID}:Almondega": {
     "NAME": "Almondega",
-    "DESCRIPTION": "Ganha 1 de Comido e 1 de Larica.",
-    "UPGRADE_DESCRIPTION": "Ganha 1 de Comido e 1 de Larica."
+    "DESCRIPTION": "Ganha 1 de ${modID}:Comido e 1 de ${modID}:Larica.",
+    "UPGRADE_DESCRIPTION": "Ganha 1 de ${modID}:Comido e 1 de ${modID}:Larica."
   },
   "${modID}:Amnesia": {
     "NAME": "Amnesia",
-    "DESCRIPTION": "Exausta 2 cartas aleatórias da sua mão. Para cada Bad Trip exaurida, ganhe 2 de Erva. Exaurir",
-    "UPGRADE_DESCRIPTION": "Exausta 2 cartas aleatórias da sua mão. Para cada Bad Trip exaurida, ganhe 2 de Erva."
+    "DESCRIPTION": "Exausta 2 cartas aleatórias da sua mão. Para cada Bad Trip exaurida, ganhe 2 de ${modID}:Erva. Exaurir",
+    "UPGRADE_DESCRIPTION": "Exausta 2 cartas aleatórias da sua mão. Para cada Bad Trip exaurida, ganhe 2 de ${modID}:Erva."
   },
   "${modID}:Analisar": {
     "NAME": "Analisar",
-    "DESCRIPTION": "Compre 2 cartas. Se algum inimigo tiver 5 ou mais de Chapado, ganhe 1 de Força.",
-    "UPGRADE_DESCRIPTION": "Compre 3 cartas. Se algum inimigo tiver 5 ou mais de Chapado, ganhe 1 de Força."
+    "DESCRIPTION": "Compre 2 cartas. Se algum inimigo tiver 5 ou mais de ${modID}:Chapado, ganhe 1 de Força.",
+    "UPGRADE_DESCRIPTION": "Compre 3 cartas. Se algum inimigo tiver 5 ou mais de ${modID}:Chapado, ganhe 1 de Força."
   },
   "${modID}:Aperitivo": {
     "NAME": "Aperitivo",
-    "DESCRIPTION": "Cause !D! de dano. Ganha !M! de Larica.",
-    "UPGRADE_DESCRIPTION": "Cause !D! de dano. Ganha !M! de Larica."
+    "DESCRIPTION": "Cause !D! de dano. Ganha !M! de ${modID}:Larica.",
+    "UPGRADE_DESCRIPTION": "Cause !D! de dano. Ganha !M! de ${modID}:Larica."
   },
   "${modID}:AtaqueDeVazio": {
     "NAME": "Ataque De Vazio",
-    "DESCRIPTION": "Cause !D! de dano. Se tiver Larica, cause 10 de dano adicional e perca 1 de Larica. Exaurir",
-    "UPGRADE_DESCRIPTION": "Cause !D! de dano. Se tiver Larica, cause 10 de dano adicional e perca 1 de Larica."
+    "DESCRIPTION": "Cause !D! de dano. Se tiver ${modID}:Larica, cause 10 de dano adicional e perca 1 de ${modID}:Larica. Exaurir",
+    "UPGRADE_DESCRIPTION": "Cause !D! de dano. Se tiver ${modID}:Larica, cause 10 de dano adicional e perca 1 de ${modID}:Larica."
   },
   "${modID}:AtaqueFaminto": {
     "NAME": "Ataque Faminto",
-    "DESCRIPTION": "Cause !D! de dano. Se tiver Comido, repita o ataque e consuma 1 de Comido.",
-    "UPGRADE_DESCRIPTION": "Cause !D! de dano. Se tiver Comido, repita o ataque e consuma 1 de Comido."
+    "DESCRIPTION": "Cause !D! de dano. Se tiver ${modID}:Comido, repita o ataque e consuma 1 de ${modID}:Comido.",
+    "UPGRADE_DESCRIPTION": "Cause !D! de dano. Se tiver ${modID}:Comido, repita o ataque e consuma 1 de ${modID}:Comido."
   },
   "${modID}:BadTrip": {
     "NAME": "Bad Trip",
-    "DESCRIPTION": "No fim do turno, se estiver na mão: perca 1 de vida e ganhe 1 de Larica.",
-    "UPGRADE_DESCRIPTION": "No fim do turno, se estiver na mão: perca 1 de vida e ganhe 1 de Larica."
+    "DESCRIPTION": "No fim do turno, se estiver na mão: perca 1 de vida e ganhe 1 de ${modID}:Larica.",
+    "UPGRADE_DESCRIPTION": "No fim do turno, se estiver na mão: perca 1 de vida e ganhe 1 de ${modID}:Larica."
   },
   "${modID}:BaforadaEmCadeia": {
     "NAME": "Baforada Em Cadeia",
-    "DESCRIPTION": "Cause !D! de dano e aplique !M! de Chapado. Adicione uma Baforada Etérea à sua mão.",
-    "UPGRADE_DESCRIPTION": "Cause !D! de dano e aplique !M! de Chapado. Adicione uma Baforada Etérea à sua mão."
+    "DESCRIPTION": "Cause !D! de dano e aplique !M! de ${modID}:Chapado. Adicione uma Baforada Etérea à sua mão.",
+    "UPGRADE_DESCRIPTION": "Cause !D! de dano e aplique !M! de ${modID}:Chapado. Adicione uma Baforada Etérea à sua mão."
   },
   "${modID}:BaforadaEterea": {
     "NAME": "Baforada Eterea",
-    "DESCRIPTION": "Use se tiver Erva. Consome 1. Cause !D! de dano, aplique !M! de Chapado e copie esta carta.",
-    "UPGRADE_DESCRIPTION": "Use se tiver Erva. Consome 1. Cause !D! de dano, aplique !M! de Chapado e copie esta carta."
+    "DESCRIPTION": "Use se tiver ${modID}:Erva. Consome 1. Cause !D! de dano, aplique !M! de ${modID}:Chapado e copie esta carta.",
+    "UPGRADE_DESCRIPTION": "Use se tiver ${modID}:Erva. Consome 1. Cause !D! de dano, aplique !M! de ${modID}:Chapado e copie esta carta."
   },
   "${modID}:BaforadaForte": {
     "NAME": "Baforada Forte",
-    "DESCRIPTION": "Cause !D! de dano e aplique !M! de Chapado.",
-    "UPGRADE_DESCRIPTION": "Cause !D! de dano e aplique !M! de Chapado."
+    "DESCRIPTION": "Cause !D! de dano e aplique !M! de ${modID}:Chapado.",
+    "UPGRADE_DESCRIPTION": "Cause !D! de dano e aplique !M! de ${modID}:Chapado."
   },
   "${modID}:BaguaDaDiscordia": {
     "NAME": "Bagua Da Discordia",
@@ -71,58 +71,58 @@
   },
   "${modID}:BongExtra": {
     "NAME": "Bong Extra",
-    "DESCRIPTION": "Sempre que um inimigo ganhar Larica, compre 1 carta e ganhe 5 de Bloqueio no final do turno.",
-    "UPGRADE_DESCRIPTION": "Sempre que um inimigo ganhar Larica, compre 1 carta e ganhe 5 de Bloqueio no final do turno."
+    "DESCRIPTION": "Sempre que um inimigo ganhar ${modID}:Larica, compre 1 carta e ganhe 5 de Bloqueio no final do turno.",
+    "UPGRADE_DESCRIPTION": "Sempre que um inimigo ganhar ${modID}:Larica, compre 1 carta e ganhe 5 de Bloqueio no final do turno."
   },
   "${modID}:BongGigatonico": {
     "NAME": "Bong Gigatonico",
-    "DESCRIPTION": "Cause !D! de dano. Se o inimigo tiver Larica, aplique 3 de Vulnerável.",
-    "UPGRADE_DESCRIPTION": "Cause !D! de dano. Se o inimigo tiver Larica, aplique 4 de Vulnerável."
+    "DESCRIPTION": "Cause !D! de dano. Se o inimigo tiver ${modID}:Larica, aplique 3 de Vulnerável.",
+    "UPGRADE_DESCRIPTION": "Cause !D! de dano. Se o inimigo tiver ${modID}:Larica, aplique 4 de Vulnerável."
   },
   "${modID}:BrigarPorBatata": {
     "NAME": "Brigar Por Batata",
-    "DESCRIPTION": "Cause !D! de dano. Se o inimigo tiver Larica, remova 1 e ganhe 1 de Comido.",
-    "UPGRADE_DESCRIPTION": "Cause !D! de dano. Se o inimigo tiver Larica, remova 1 e ganhe 1 de Comido."
+    "DESCRIPTION": "Cause !D! de dano. Se o inimigo tiver ${modID}:Larica, remova 1 e ganhe 1 de ${modID}:Comido.",
+    "UPGRADE_DESCRIPTION": "Cause !D! de dano. Se o inimigo tiver ${modID}:Larica, remova 1 e ganhe 1 de ${modID}:Comido."
   },
   "${modID}:BrisaFinal": {
     "NAME": "Brisa Final",
-    "DESCRIPTION": "Para cada energia usada: cause !D! de dano e aplique 1 de Chapado a todos os inimigos.",
-    "UPGRADE_DESCRIPTION": "Para cada energia usada: cause !D! de dano e aplique 1 de Chapado a todos os inimigos."
+    "DESCRIPTION": "Para cada energia usada: cause !D! de dano e aplique 1 de ${modID}:Chapado a todos os inimigos.",
+    "UPGRADE_DESCRIPTION": "Para cada energia usada: cause !D! de dano e aplique 1 de ${modID}:Chapado a todos os inimigos."
   },
   "${modID}:BuchimChei": {
     "NAME": "Buchim Chei",
-    "DESCRIPTION": "Dobre seu limite de Comido.",
-    "UPGRADE_DESCRIPTION": "Dobre seu limite de Comido."
+    "DESCRIPTION": "Dobre seu limite de ${modID}:Comido.",
+    "UPGRADE_DESCRIPTION": "Dobre seu limite de ${modID}:Comido."
   },
   "${modID}:Burgao": {
     "NAME": "Burgao",
-    "DESCRIPTION": "Ganhe !B! de Bloqueio e 1 de Comido. Exaure.",
-    "UPGRADE_DESCRIPTION": "Ganhe !B! de Bloqueio e 1 de Comido. Exaure."
+    "DESCRIPTION": "Ganhe !B! de Bloqueio e 1 de ${modID}:Comido. Exaure.",
+    "UPGRADE_DESCRIPTION": "Ganhe !B! de Bloqueio e 1 de ${modID}:Comido. Exaure."
   },
   "${modID}:CheirinhoBom": {
     "NAME": "Cheirinho Bom",
-    "DESCRIPTION": "Se o inimigo estiver Chapado, ganhe !M! de Destreza.",
-    "UPGRADE_DESCRIPTION": "Se o inimigo estiver Chapado, ganhe !M! de Destreza."
+    "DESCRIPTION": "Se o inimigo estiver ${modID}:Chapado, ganhe !M! de Destreza.",
+    "UPGRADE_DESCRIPTION": "Se o inimigo estiver ${modID}:Chapado, ganhe !M! de Destreza."
   },
   "${modID}:CheiroDeLanche": {
     "NAME": "Cheiro De Lanche",
-    "DESCRIPTION": "Cause !D! de dano. Se o inimigo tiver Larica, cause +10.",
-    "UPGRADE_DESCRIPTION": "Cause !D! de dano. Se o inimigo tiver Larica, cause +10."
+    "DESCRIPTION": "Cause !D! de dano. Se o inimigo tiver ${modID}:Larica, cause +10.",
+    "UPGRADE_DESCRIPTION": "Cause !D! de dano. Se o inimigo tiver ${modID}:Larica, cause +10."
   },
   "${modID}:ColheitaGenerosa": {
     "NAME": "Colheita Generosa",
-    "DESCRIPTION": "Ganhe 2 de Erva. Se tiver 3+ de Comido, ganhe 1 de Seda. Exaure.",
-    "UPGRADE_DESCRIPTION": "Ganhe 3 de Erva. Se tiver 3+ de Comido, ganhe 1 de Seda. Exaure."
+    "DESCRIPTION": "Ganhe 2 de ${modID}:Erva. Se tiver 3+ de ${modID}:Comido, ganhe 1 de ${modID}:Seda. Exaure.",
+    "UPGRADE_DESCRIPTION": "Ganhe 3 de ${modID}:Erva. Se tiver 3+ de ${modID}:Comido, ganhe 1 de ${modID}:Seda. Exaure."
   },
   "${modID}:ComeAi": {
     "NAME": "Come Aí",
-    "DESCRIPTION": "Cause !D! de dano. Se tiver 3+ de Larica, consuma tudo e ganhe 1 de energia por stack.",
-    "UPGRADE_DESCRIPTION": "Cause !D! de dano. Se tiver 3+ de Larica, consuma tudo e ganhe 1 de energia por stack."
+    "DESCRIPTION": "Cause !D! de dano. Se tiver 3+ de ${modID}:Larica, consuma tudo e ganhe 1 de energia por stack.",
+    "UPGRADE_DESCRIPTION": "Cause !D! de dano. Se tiver 3+ de ${modID}:Larica, consuma tudo e ganhe 1 de energia por stack."
   },
   "${modID}:CompreensaoElevada": {
     "NAME": "Compreensao Elevada",
-    "DESCRIPTION": "Ao aplicar Chapado, há 50% de chance de aplicar 1 stack adicional.",
-    "UPGRADE_DESCRIPTION": "Ao aplicar Chapado, há 50% de chance de aplicar 1 stack adicional."
+    "DESCRIPTION": "Ao aplicar ${modID}:Chapado, há 50% de chance de aplicar 1 stack adicional.",
+    "UPGRADE_DESCRIPTION": "Ao aplicar ${modID}:Chapado, há 50% de chance de aplicar 1 stack adicional."
   },
   "${modID}:Confusao": {
     "NAME": "Confusao",
@@ -136,28 +136,28 @@
   },
   "${modID}:CuidadoAlimentar": {
     "NAME": "Cuidado Alimentar",
-    "DESCRIPTION": "Se tiver 3+ de Comido, ganhe !B! de Bloqueio e cure !M! de vida.",
-    "UPGRADE_DESCRIPTION": "Se tiver 3+ de Comido, ganhe !B! de Bloqueio e cure !M! de vida."
+    "DESCRIPTION": "Se tiver 3+ de ${modID}:Comido, ganhe !B! de Bloqueio e cure !M! de vida.",
+    "UPGRADE_DESCRIPTION": "Se tiver 3+ de ${modID}:Comido, ganhe !B! de Bloqueio e cure !M! de vida."
   },
   "${modID}:Desconfianca": {
     "NAME": "Desconfiança",
-    "DESCRIPTION": "Ganhe !B! de Bloqueio. Aplique 1 de Larica ao inimigo.",
-    "UPGRADE_DESCRIPTION": "Ganhe !B! de Bloqueio. Aplique 1 de Larica ao inimigo."
+    "DESCRIPTION": "Ganhe !B! de Bloqueio. Aplique 1 de ${modID}:Larica ao inimigo.",
+    "UPGRADE_DESCRIPTION": "Ganhe !B! de Bloqueio. Aplique 1 de ${modID}:Larica ao inimigo."
   },
   "${modID}:EaPotencia": {
     "NAME": "É a Potencia",
-    "DESCRIPTION": "No início de cada turno, ganhe 1 de Erva.",
-    "UPGRADE_DESCRIPTION": "No início de cada turno, ganhe 1 de Erva."
+    "DESCRIPTION": "No início de cada turno, ganhe 1 de ${modID}:Erva.",
+    "UPGRADE_DESCRIPTION": "No início de cada turno, ganhe 1 de ${modID}:Erva."
   },
   "${modID}:Enrolar": {
     "NAME": "Enrolar",
-    "DESCRIPTION": "Cause !D! de dano. Ganhe !M! de Erva.",
-    "UPGRADE_DESCRIPTION": "Cause !D! de dano. Ganhe !M! de Erva."
+    "DESCRIPTION": "Cause !D! de dano. Ganhe !M! de ${modID}:Erva.",
+    "UPGRADE_DESCRIPTION": "Cause !D! de dano. Ganhe !M! de ${modID}:Erva."
   },
   "${modID}:ErvaDaPaz": {
     "NAME": "Erva Da Paz",
-    "DESCRIPTION": "Todos ganham !M! de Chapado e !B! de Bloqueio.",
-    "UPGRADE_DESCRIPTION": "Todos ganham !M! de Chapado e !B! de Bloqueio."
+    "DESCRIPTION": "Todos ganham !M! de ${modID}:Chapado e !B! de Bloqueio.",
+    "UPGRADE_DESCRIPTION": "Todos ganham !M! de ${modID}:Chapado e !B! de Bloqueio."
   },
   "${modID}:Espirro": {
     "NAME": "Espirro",
@@ -166,28 +166,28 @@
   },
   "${modID}:FicaEsperto": {
     "NAME": "Fica Esperto",
-    "DESCRIPTION": "Cause !D! de dano. Se o inimigo não estiver Chapado, compre 1 carta.",
-    "UPGRADE_DESCRIPTION": "Cause !D! de dano. Se o inimigo não estiver Chapado, compre 1 carta."
+    "DESCRIPTION": "Cause !D! de dano. Se o inimigo não estiver ${modID}:Chapado, compre 1 carta.",
+    "UPGRADE_DESCRIPTION": "Cause !D! de dano. Se o inimigo não estiver ${modID}:Chapado, compre 1 carta."
   },
   "${modID}:Fissura": {
     "NAME": "Fissura",
-    "DESCRIPTION": "Cause !D! de dano. Se tiver Erva, consuma 1 e ganhe !M! de Bloqueio.",
-    "UPGRADE_DESCRIPTION": "Cause !D! de dano. Se tiver Erva, consuma 1 e ganhe !M! de Bloqueio."
+    "DESCRIPTION": "Cause !D! de dano. Se tiver ${modID}:Erva, consuma 1 e ganhe !M! de Bloqueio.",
+    "UPGRADE_DESCRIPTION": "Cause !D! de dano. Se tiver ${modID}:Erva, consuma 1 e ganhe !M! de Bloqueio."
   },
   "${modID}:FocoFino": {
     "NAME": "FocoFino",
-    "DESCRIPTION": "Aplique !M! de Chapado ao inimigo. Compre 1 carta.",
-    "UPGRADE_DESCRIPTION": "Aplique !M! de Chapado ao inimigo. Compre 1 carta."
+    "DESCRIPTION": "Aplique !M! de ${modID}:Chapado ao inimigo. Compre 1 carta.",
+    "UPGRADE_DESCRIPTION": "Aplique !M! de ${modID}:Chapado ao inimigo. Compre 1 carta."
   },
   "${modID}:Fritura": {
     "NAME": "Fritura",
-    "DESCRIPTION": "Ganhe !M! de Força temporária. Perda 1 de Larica.",
-    "UPGRADE_DESCRIPTION": "Ganhe !M! de Força temporária. Perda 1 de Larica."
+    "DESCRIPTION": "Ganhe !M! de Força temporária. Perda 1 de ${modID}:Larica.",
+    "UPGRADE_DESCRIPTION": "Ganhe !M! de Força temporária. Perda 1 de ${modID}:Larica."
   },
   "${modID}:FumacaPassiva": {
     "NAME": "Fumaca Passiva",
-    "DESCRIPTION": "Cause !D! de dano a todos os inimigos. Aplique !M! de Chapado a cada um. Ganha dano extra por cada Seda.",
-    "UPGRADE_DESCRIPTION": "Cause !D! de dano a todos os inimigos. Aplique !M! de Chapado a cada um. Ganha dano extra por cada Seda."
+    "DESCRIPTION": "Cause !D! de dano a todos os inimigos. Aplique !M! de ${modID}:Chapado a cada um. Ganha dano extra por cada ${modID}:Seda.",
+    "UPGRADE_DESCRIPTION": "Cause !D! de dano a todos os inimigos. Aplique !M! de ${modID}:Chapado a cada um. Ganha dano extra por cada ${modID}:Seda."
   },
   "${modID}:GeloNaMao": {
     "NAME": "Gelo Na Mao",
@@ -201,33 +201,33 @@
   },
   "${modID}:IdeiaDeStartup": {
     "NAME": "Ideia De Startup",
-    "DESCRIPTION": "Ganhe !M! de Erva. Consome toda a energia restante pq vc faliu a Piticas.",
-    "UPGRADE_DESCRIPTION": "Ganhe !M! de Erva. Consome toda a energia restante pq vc faliu a Piticas."
+    "DESCRIPTION": "Ganhe !M! de ${modID}:Erva. Consome toda a energia restante pq vc faliu a Piticas.",
+    "UPGRADE_DESCRIPTION": "Ganhe !M! de ${modID}:Erva. Consome toda a energia restante pq vc faliu a Piticas."
   },
   "${modID}:Inspiracao": {
     "NAME": "Inspiracao",
-    "DESCRIPTION": "Ganhe !M! de Erva. Exaure.",
-    "UPGRADE_DESCRIPTION": "Ganhe !M! de Erva. Exaure."
+    "DESCRIPTION": "Ganhe !M! de ${modID}:Erva. Exaure.",
+    "UPGRADE_DESCRIPTION": "Ganhe !M! de ${modID}:Erva. Exaure."
   },
   "${modID}:LaricaDePoder": {
     "NAME": "Larica De Poder",
-    "DESCRIPTION": "Cause !D! de dano. Ganha +5 de dano para cada Comido. Remove todos os Comidos.",
-    "UPGRADE_DESCRIPTION": "Cause !D! de dano. Ganha +5 de dano para cada Comido. Remove todos os Comidos."
+    "DESCRIPTION": "Cause !D! de dano. Ganha +5 de dano para cada ${modID}:Comido. Remove todos os ${modID}:Comidos.",
+    "UPGRADE_DESCRIPTION": "Cause !D! de dano. Ganha +5 de dano para cada ${modID}:Comido. Remove todos os ${modID}:Comidos."
   },
   "${modID}:LaricaPesada": {
     "NAME": "Larica Pesada",
-    "DESCRIPTION": "Cause !D! de dano a todos os inimigos. Ganhe !M! de Larica.",
-    "UPGRADE_DESCRIPTION": "Cause !D! de dano a todos os inimigos. Ganhe !M! de Larica."
+    "DESCRIPTION": "Cause !D! de dano a todos os inimigos. Ganhe !M! de ${modID}:Larica.",
+    "UPGRADE_DESCRIPTION": "Cause !D! de dano a todos os inimigos. Ganhe !M! de ${modID}:Larica."
   },
   "${modID}:LimparAMente": {
     "NAME": "Limpar A Mente",
-    "DESCRIPTION": "Descarte 2 cartas. Ganhe !M! de Erva.",
-    "UPGRADE_DESCRIPTION": "Descarte 2 cartas. Ganhe !M! de Erva."
+    "DESCRIPTION": "Descarte 2 cartas. Ganhe !M! de ${modID}:Erva.",
+    "UPGRADE_DESCRIPTION": "Descarte 2 cartas. Ganhe !M! de ${modID}:Erva."
   },
   "${modID}:LimparOBong": {
     "NAME": "Limpar O Bong",
-    "DESCRIPTION": "Gaste 10 Ervas para ganhar 3 de Seda. Exaure.",
-    "UPGRADE_DESCRIPTION": "Gaste 10 Ervas para ganhar 3 de Seda. Exaure."
+    "DESCRIPTION": "Gaste 10 ${modID}:Erva para ganhar 3 de ${modID}:Seda. Exaure.",
+    "UPGRADE_DESCRIPTION": "Gaste 10 ${modID}:Erva para ganhar 3 de ${modID}:Seda. Exaure."
   },
   "${modID}:LoopMental": {
     "NAME": "Loop Mental",
@@ -236,28 +236,28 @@
   },
   "${modID}:MaoSanta": {
     "NAME": "Mao Santa",
-    "DESCRIPTION": "Ganhe !M! de Seda e !M! de Erva.",
-    "UPGRADE_DESCRIPTION": "Ganhe !M! de Seda e !M! de Erva."
+    "DESCRIPTION": "Ganhe !M! de ${modID}:Seda e !M! de ${modID}:Erva.",
+    "UPGRADE_DESCRIPTION": "Ganhe !M! de ${modID}:Seda e !M! de ${modID}:Erva."
   },
   "${modID}:MarDeFumaca": {
     "NAME": "Mar De Fumaca",
-    "DESCRIPTION": "Aplique !M! de Chapado a todos os inimigos. Ganhe Bloqueio igual a seu Chapado (!M!) × 3.",
-    "UPGRADE_DESCRIPTION": "Aplique !M! de Chapado a todos os inimigos. Ganhe Bloqueio igual a seu Chapado(!M!) × 3."
+    "DESCRIPTION": "Aplique !M! de ${modID}:Chapado a todos os inimigos. Ganhe Bloqueio igual a seu ${modID}:Chapado (!M!) × 3.",
+    "UPGRADE_DESCRIPTION": "Aplique !M! de ${modID}:Chapado a todos os inimigos. Ganhe Bloqueio igual a seu ${modID}:Chapado(!M!) × 3."
   },
   "${modID}:Marmita": {
     "NAME": "Marmita",
-    "DESCRIPTION": "Ganhe !M! de Comido.",
-    "UPGRADE_DESCRIPTION": "Ganhe !M! de Comido."
+    "DESCRIPTION": "Ganhe !M! de ${modID}:Comido.",
+    "UPGRADE_DESCRIPTION": "Ganhe !M! de ${modID}:Comido."
   },
   "${modID}:MordidaNoLanche": {
     "NAME": "Mordida No Lanche",
-    "DESCRIPTION": "Cause !D! de dano 3 vezes. Se tiver 2 ou mais de Comido, cada golpe causa +1 de dano.",
-    "UPGRADE_DESCRIPTION": "Cause !D! de dano 3 vezes. Se tiver 2 ou mais de Comido, cada golpe causa +1 de dano."
+    "DESCRIPTION": "Cause !D! de dano 3 vezes. Se tiver 2 ou mais de ${modID}:Comido, cada golpe causa +1 de dano.",
+    "UPGRADE_DESCRIPTION": "Cause !D! de dano 3 vezes. Se tiver 2 ou mais de ${modID}:Comido, cada golpe causa +1 de dano."
   },
   "${modID}:MunchiesFrenetico": {
     "NAME": "Munchies Frenetico",
-    "DESCRIPTION": "Cause !D! de dano 3 vezes. Ganhe !M! de Larica.",
-    "UPGRADE_DESCRIPTION": "Cause !D! de dano 3 vezes. Ganhe !M! de Larica."
+    "DESCRIPTION": "Cause !D! de dano 3 vezes. Ganhe !M! de ${modID}:Larica.",
+    "UPGRADE_DESCRIPTION": "Cause !D! de dano 3 vezes. Ganhe !M! de ${modID}:Larica."
   },
   "${modID}:Nirvana": {
     "NAME": "Nirvana",
@@ -266,28 +266,28 @@
   },
   "${modID}:NuvemToxica": {
     "NAME": "Nuvem Toxica",
-    "DESCRIPTION": "Aplique !M! de Chapado a um inimigo. Se ele tiver Larica, aplique 1 de Vulnerável.",
-    "UPGRADE_DESCRIPTION": "Aplique !M! de Chapado a um inimigo. Se ele tiver Larica, aplique 1 de Vulnerável."
+    "DESCRIPTION": "Aplique !M! de ${modID}:Chapado a um inimigo. Se ele tiver ${modID}:Larica, aplique 1 de Vulnerável.",
+    "UPGRADE_DESCRIPTION": "Aplique !M! de ${modID}:Chapado a um inimigo. Se ele tiver ${modID}:Larica, aplique 1 de Vulnerável."
   },
   "${modID}:OndaLenta": {
     "NAME": "Onda Lenta",
-    "DESCRIPTION": "Cause !D! de dano. Se o inimigo não tiver nenhum debuff, aplique !M! de Chapado.",
-    "UPGRADE_DESCRIPTION": "Cause !D! de dano. Se o inimigo não tiver nenhum debuff, aplique !M! de Chapado."
+    "DESCRIPTION": "Cause !D! de dano. Se o inimigo não tiver nenhum debuff, aplique !M! de ${modID}:Chapado.",
+    "UPGRADE_DESCRIPTION": "Cause !D! de dano. Se o inimigo não tiver nenhum debuff, aplique !M! de ${modID}:Chapado."
   },
   "${modID}:PassadaDeNivel": {
     "NAME": "Passada De Nivel",
-    "DESCRIPTION": "Cause !D! de dano. Se o inimigo tiver 7 ou mais de Chapado, compre 1 carta.",
-    "UPGRADE_DESCRIPTION": "Cause !D! de dano. Se o inimigo tiver 7 ou mais de Chapado, compre 1 carta."
+    "DESCRIPTION": "Cause !D! de dano. Se o inimigo tiver 7 ou mais de ${modID}:Chapado, compre 1 carta.",
+    "UPGRADE_DESCRIPTION": "Cause !D! de dano. Se o inimigo tiver 7 ou mais de ${modID}:Chapado, compre 1 carta."
   },
   "${modID}:PetiscoPotente": {
     "NAME": "Petisco Potente",
-    "DESCRIPTION": "Ganhe !M! de Comido. Se tiver 5 ou mais de Comido, ganhe 2 de energia no próximo turno.",
-    "UPGRADE_DESCRIPTION": "Ganhe !M! de Comido. Se tiver 5 ou mais de Comido, ganhe 2 de energia no próximo turno."
+    "DESCRIPTION": "Ganhe !M! de ${modID}:Comido. Se tiver 5 ou mais de ${modID}:Comido, ganhe 2 de energia no próximo turno.",
+    "UPGRADE_DESCRIPTION": "Ganhe !M! de ${modID}:Comido. Se tiver 5 ou mais de ${modID}:Comido, ganhe 2 de energia no próximo turno."
   },
   "${modID}:PizzaAtomica": {
     "NAME": "Pizza Atomica",
-    "DESCRIPTION": "Cause !D! de dano 2 vezes. Se o inimigo tiver Larica, cause 7 de dano adicional.",
-    "UPGRADE_DESCRIPTION": "Cause !D! de dano 2 vezes. Se o inimigo tiver Larica, cause 7 de dano adicional."
+    "DESCRIPTION": "Cause !D! de dano 2 vezes. Se o inimigo tiver ${modID}:Larica, cause 7 de dano adicional.",
+    "UPGRADE_DESCRIPTION": "Cause !D! de dano 2 vezes. Se o inimigo tiver ${modID}:Larica, cause 7 de dano adicional."
   },
   "${modID}:Ponderar": {
     "NAME": "Ponderar",
@@ -296,28 +296,28 @@
   },
   "${modID}:PratoCheio": {
     "NAME": "Prato Cheio",
-    "DESCRIPTION": "Ganhe !M! de Comido. Exaurir",
-    "UPGRADE_DESCRIPTION": "Ganhe !M! de Comido. Exaurir"
+    "DESCRIPTION": "Ganhe !M! de ${modID}:Comido. Exaurir",
+    "UPGRADE_DESCRIPTION": "Ganhe !M! de ${modID}:Comido. Exaurir"
   },
   "${modID}:Reabastecer": {
     "NAME": "Reabastecer",
-    "DESCRIPTION": "Ganhe !M! de Erva. Se estiver com 3 ou mais de Chapado, compre 1 carta.",
-    "UPGRADE_DESCRIPTION": "Ganhe !M! de Erva. Se estiver com 3 ou mais de Chapado, compre 1 carta."
+    "DESCRIPTION": "Ganhe !M! de ${modID}:Erva. Se estiver com 3 ou mais de ${modID}:Chapado, compre 1 carta.",
+    "UPGRADE_DESCRIPTION": "Ganhe !M! de ${modID}:Erva. Se estiver com 3 ou mais de ${modID}:Chapado, compre 1 carta."
   },
   "${modID}:Recompensa": {
     "NAME": "Recompensa",
-    "DESCRIPTION": "Cause !D! de dano. Se tiver Erva, consuma 1 para aplicar 2 de Vulnerável.",
-    "UPGRADE_DESCRIPTION": "Cause !D! de dano. Se tiver Erva, consuma 1 para aplicar 2 de Vulnerável."
+    "DESCRIPTION": "Cause !D! de dano. Se tiver ${modID}:Erva, consuma 1 para aplicar 2 de Vulnerável.",
+    "UPGRADE_DESCRIPTION": "Cause !D! de dano. Se tiver ${modID}:Erva, consuma 1 para aplicar 2 de Vulnerável."
   },
   "${modID}:Reembolso": {
     "NAME": "Reembolso",
-    "DESCRIPTION": "Cause !D! de dano. Ganhe 1 de Erva. Perda 1 de Seda, se tiver.",
-    "UPGRADE_DESCRIPTION": "Cause !D! de dano. Ganhe 1 de Erva. Perda 1 de Seda, se tiver."
+    "DESCRIPTION": "Cause !D! de dano. Ganhe 1 de ${modID}:Erva. Perda 1 de ${modID}:Seda, se tiver.",
+    "UPGRADE_DESCRIPTION": "Cause !D! de dano. Ganhe 1 de ${modID}:Erva. Perca 1 de ${modID}:Seda se tiver."
   },
   "${modID}:Reflexao": {
     "NAME": "Reflexao",
-    "DESCRIPTION": "Remova todos os efeitos de Chapado do inimigo. Aplique !M! de Larica.",
-    "UPGRADE_DESCRIPTION": "Remova todos os efeitos de Chapado do inimigo. Aplique !M! de Larica."
+    "DESCRIPTION": "Remova todos os efeitos de ${modID}:Chapado do inimigo. Aplique !M! de ${modID}:Larica.",
+    "UPGRADE_DESCRIPTION": "Remova todos os efeitos de ${modID}:Chapado do inimigo. Aplique !M! de ${modID}:Larica."
   },
   "${modID}:Relaxar": {
     "NAME": "Relaxar",
@@ -326,13 +326,13 @@
   },
   "${modID}:ReservaNutricional": {
     "NAME": "Reserva Nutricional",
-    "DESCRIPTION": "Ganhe !M! de Comido e de Erva.",
-    "UPGRADE_DESCRIPTION": "Ganhe !M! de Comido e de Erva."
+    "DESCRIPTION": "Ganhe !M! de ${modID}:Comido e de ${modID}:Erva.",
+    "UPGRADE_DESCRIPTION": "Ganhe !M! de ${modID}:Comido e de ${modID}:Erva."
   },
   "${modID}:ResgateDeLanche": {
     "NAME": "Resgate De Lanche",
-    "DESCRIPTION": "Cause !D! de dano. Se o inimigo tiver Larica, cure 3 de Vida.",
-    "UPGRADE_DESCRIPTION": "Cause !D! de dano. Se o inimigo tiver Larica, cure 3 de Vida."
+    "DESCRIPTION": "Cause !D! de dano. Se o inimigo tiver ${modID}:Larica, cure 3 de Vida.",
+    "UPGRADE_DESCRIPTION": "Cause !D! de dano. Se o inimigo tiver ${modID}:Larica, cure 3 de Vida."
   },
   "${modID}:Ronco": {
     "NAME": "Ronco",
@@ -341,8 +341,8 @@
   },
   "${modID}:SacolaDeGuloseimas": {
     "NAME": "Sacola De Guloseimas",
-    "DESCRIPTION": "Cause !D! de dano a um inimigo. Ganhe 1 de Comido. Se ele tiver Larica, cause 5 de dano a todos os inimigos.",
-    "UPGRADE_DESCRIPTION": "Cause !D! de dano a um inimigo. Ganhe 1 de Comido. Se ele tiver Larica, cause 5 de dano a todos os inimigos."
+    "DESCRIPTION": "Cause !D! de dano a um inimigo. Ganhe 1 de ${modID}:Comido. Se ele tiver ${modID}:Larica, cause 5 de dano a todos os inimigos.",
+    "UPGRADE_DESCRIPTION": "Cause !D! de dano a um inimigo. Ganhe 1 de ${modID}:Comido. Se ele tiver ${modID}:Larica, cause 5 de dano a todos os inimigos."
   },
   "${modID}:SemPressa": {
     "NAME": "Sem Pressa",
@@ -351,13 +351,13 @@
   },
   "${modID}:SoproRelaxante": {
     "NAME": "Sopro Relaxante",
-    "DESCRIPTION": "Cause !D! de dano. Aplique !M! de Chapado e 1 de Vulnerável.",
-    "UPGRADE_DESCRIPTION": "Cause !D! de dano. Aplique !M! de Chapado e 1 de Vulnerável."
+    "DESCRIPTION": "Cause !D! de dano. Aplique !M! de ${modID}:Chapado e 1 de Vulnerável.",
+    "UPGRADE_DESCRIPTION": "Cause !D! de dano. Aplique !M! de ${modID}:Chapado e 1 de Vulnerável."
   },
   "${modID}:Tapa": {
     "NAME": "Tapa",
-    "DESCRIPTION": "Cause !D! de dano. Aplique 1 de Chapado.",
-    "UPGRADE_DESCRIPTION": "Cause !D! de dano. Aplique 1 de Chapado."
+    "DESCRIPTION": "Cause !D! de dano. Aplique 1 de ${modID}:Chapado.",
+    "UPGRADE_DESCRIPTION": "Cause !D! de dano. Aplique 1 de ${modID}:Chapado."
   },
   "${modID}:TapaRapido": {
     "NAME": "Tapa Rapido",
@@ -366,28 +366,28 @@
   },
   "${modID}:TiroCerto": {
     "NAME": "Tiro Certo",
-    "DESCRIPTION": "Cause !D! de dano. Se o inimigo tiver 5 ou mais de Chapado, ganhe 1 de Força temporária.",
-    "UPGRADE_DESCRIPTION": "Cause !D! de dano. Se o inimigo tiver 5 ou mais de Chapado, ganhe 1 de Força temporária."
+    "DESCRIPTION": "Cause !D! de dano. Se o inimigo tiver 5 ou mais de ${modID}:Chapado, ganhe 1 de Força temporária.",
+    "UPGRADE_DESCRIPTION": "Cause !D! de dano. Se o inimigo tiver 5 ou mais de ${modID}:Chapado, ganhe 1 de Força temporária."
   },
   "${modID}:TragadaProfunda": {
     "NAME": "Tragada Profunda",
-    "DESCRIPTION": "Requer 2 de Comido. Cause !D! de dano. Consuma 2 de Comido e ganhe 2 de Larica.",
-    "UPGRADE_DESCRIPTION": "Requer 2 de Comido. Cause !D! de dano. Consuma 2 de Comido e ganhe 2 de Larica."
+    "DESCRIPTION": "Requer 2 de ${modID}:Comido. Cause !D! de dano. Consuma 2 de ${modID}:Comido e ganhe 2 de ${modID}:Larica.",
+    "UPGRADE_DESCRIPTION": "Requer 2 de ${modID}:Comido. Cause !D! de dano. Consuma 2 de ${modID}:Comido e ganhe 2 de ${modID}:Larica."
   },
   "${modID}:Trance": {
     "NAME": "Trance",
-    "DESCRIPTION": "Entre em transe. Sempre que você ganhar Larica neste turno, exaure 1 carta da sua mão e ganhe 1 de Seda.",
-    "UPGRADE_DESCRIPTION": "Entre em transe. Sempre que você ganhar Larica neste turno, exaure 1 carta da sua mão e ganhe 1 de Seda."
+    "DESCRIPTION": "Entre em transe. Sempre que você ganhar ${modID}:Larica neste turno, exaure 1 carta da sua mão e ganhe 1 de ${modID}:Seda.",
+    "UPGRADE_DESCRIPTION": "Entre em transe. Sempre que você ganhar ${modID}:Larica neste turno, exaure 1 carta da sua mão e ganhe 1 de ${modID}:Seda."
   },
   "${modID}:Vaporizador": {
     "NAME": "Vaporizador",
-    "DESCRIPTION": "Cause !D! de dano. Aplique !M! de Chapado ao inimigo. Ganhe 1 de Seda.",
-    "UPGRADE_DESCRIPTION": "Cause !D! de dano. Aplique !M! de Chapado ao inimigo. Ganhe 1 de Seda."
+    "DESCRIPTION": "Cause !D! de dano. Aplique !M! de ${modID}:Chapado ao inimigo. Ganhe 1 de ${modID}:Seda.",
+    "UPGRADE_DESCRIPTION": "Cause !D! de dano. Aplique !M! de ${modID}:Chapado ao inimigo. Ganhe 1 de ${modID}:Seda."
   },
   "${modID}:Ventilador": {
     "NAME": "Ventilador",
-    "DESCRIPTION": "Aplique !M! de Chapado a todos os inimigos.",
-    "UPGRADE_DESCRIPTION": "Aplique !M! de Chapado a todos os inimigos."
+    "DESCRIPTION": "Aplique !M! de ${modID}:Chapado a todos os inimigos.",
+    "UPGRADE_DESCRIPTION": "Aplique !M! de ${modID}:Chapado a todos os inimigos."
   },
   "${modID}:ViagemSoDeIda": {
     "NAME": "Viagem So DeIda",
@@ -396,7 +396,7 @@
   },
   "${modID}:VisaoDistorcida": {
     "NAME": "Visao Distorcida",
-    "DESCRIPTION": "Aplique 5 de Chapado a todos os inimigos. Perca 10 de Vida. No próximo turno, entre em Visão Distorcida. Exaure.",
-    "UPGRADE_DESCRIPTION": "Aplique 5 de Chapado a todos os inimigos. Perca 10 de Vida. No próximo turno, entre em Visão Distorcida."
+    "DESCRIPTION": "Aplique 5 de ${modID}:Chapado a todos os inimigos. Perca 10 de Vida. No próximo turno, entre em Visão Distorcida. Exaure.",
+    "UPGRADE_DESCRIPTION": "Aplique 5 de ${modID}:Chapado a todos os inimigos. Perca 10 de Vida. No próximo turno, entre em Visão Distorcida."
   }
 }
