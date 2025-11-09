@@ -207,7 +207,7 @@
   "${modID}:Inspiracao": {
     "NAME": "Inspiracao",
     "DESCRIPTION": "Ganhe !M! de ${modID}:Erva. Exaure.",
-    "UPGRADE_DESCRIPTION": "Ganhe !M! de ${modID}:Erva. Exaure."
+    "UPGRADE_DESCRIPTION": "Ganhe !M! de ${modID}:Erva. Compre 1 carta. Exaure."
   },
   "${modID}:LaricaDePoder": {
     "NAME": "Larica De Poder",
@@ -376,8 +376,8 @@
   },
   "${modID}:Trance": {
     "NAME": "Trance",
-    "DESCRIPTION": "Entre em transe. Sempre que você ganhar ${modID}:Larica neste turno, exaure 1 carta da sua mão e ganhe 1 de ${modID}:Seda.",
-    "UPGRADE_DESCRIPTION": "Entre em transe. Sempre que você ganhar ${modID}:Larica neste turno, exaure 1 carta da sua mão e ganhe 1 de ${modID}:Seda."
+    "DESCRIPTION": "Entre em trance. Sempre que você ganhar ${modID}:Larica neste turno, exaure 1 carta da sua mão e ganhe 1 de ${modID}:Seda.",
+    "UPGRADE_DESCRIPTION": "Entre em trance. Sempre que você ganhar ${modID}:Larica neste turno, exaure 1 carta da sua mão e ganhe 1 de ${modID}:Seda."
   },
   "${modID}:Vaporizador": {
     "NAME": "Vaporizador",

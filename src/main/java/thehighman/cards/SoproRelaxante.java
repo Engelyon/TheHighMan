@@ -21,6 +21,7 @@ public class SoproRelaxante extends BaseCard {
             CardTarget.ENEMY,
             1
     );
+//EDU ACHOU ESTRANHO O VULNERAVEL
 
     private static final int DAMAGE = 5;
     private static final int UPG_DAMAGE = 3;

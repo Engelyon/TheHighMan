@@ -32,7 +32,7 @@ public class EaPotencia extends BaseCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeBaseCost(1); // 2 → 1 de custo
+            //Colocar innate
             initializeDescription();
         }
     }

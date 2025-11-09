@@ -207,7 +207,7 @@
   "${modID}:Inspiracao": {
     "NAME": "Inspiracao",
     "DESCRIPTION": "Ganhe !M! de ${modID}:Erva. Exaure.",
-    "UPGRADE_DESCRIPTION": "Ganhe !M! de ${modID}:Erva. Exaure."
+    "UPGRADE_DESCRIPTION": "Ganhe !M! de ${modID}:Erva. Compre 1 carta. Exaure."
   },
   "${modID}:LaricaDePoder": {
     "NAME": "Larica De Poder",
@@ -226,8 +226,8 @@
   },
   "${modID}:LimparOBong": {
     "NAME": "Limpar O Bong",
-    "DESCRIPTION": "Reter. Gaste 10 ${modID}:Erva para ganhar 3 de ${modID}:Seda. Exaure.",
-    "UPGRADE_DESCRIPTION": "Gaste 10 ${modID}:Erva para ganhar 3 de ${modID}:Seda. Exaure."
+    "DESCRIPTION": "Reter. Gaste toda sua ${modID}:Erva. Para cada ponto gasto, ganhe 1 de Força temporária. Exaure.",
+    "UPGRADE_DESCRIPTION": "Gaste toda sua ${modID}:Erva. Para cada ponto gasto, ganhe 1 de Força temporária. Exaure."
   },
   "${modID}:LoopMental": {
     "NAME": "Loop Mental",
@@ -376,8 +376,8 @@
   },
   "${modID}:Trance": {
     "NAME": "Trance",
-    "DESCRIPTION": "Entre em transe. Sempre que você ganhar ${modID}:Larica neste turno, exaure 1 carta da sua mão e ganhe 1 de ${modID}:Seda.",
-    "UPGRADE_DESCRIPTION": "Entre em transe. Sempre que você ganhar ${modID}:Larica neste turno, exaure 1 carta da sua mão e ganhe 1 de ${modID}:Seda."
+    "DESCRIPTION": "Entre em trance. Sempre que você ganhar ${modID}:Larica neste turno, exaure 1 carta da sua mão e ganhe 1 de ${modID}:Seda.",
+    "UPGRADE_DESCRIPTION": "Entre em trance. Sempre que você ganhar ${modID}:Larica neste turno, exaure 1 carta da sua mão e ganhe 1 de ${modID}:Seda."
   },
   "${modID}:Vaporizador": {
     "NAME": "Vaporizador",

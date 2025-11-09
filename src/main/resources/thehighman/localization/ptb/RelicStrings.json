@@ -1,30 +1,30 @@
 {
   "${modID}:CinzeiroAbencoado": {
-    "NAME": "Good Relic",
-    "FLAVOR": "Flavor text displayed in detailed relic view.",
+    "NAME": "Cinzeiro Abençoado",
+    "FLAVOR": "Cheira a velas",
     "DESCRIPTIONS": [
-      "Gain [E] at the start of your turn. [E] is an energy icon."
+      "No início do combate, ganhe 1 de ${modID}:Seda"
     ]
   },
   "${modID}:IsqueiroInfinito": {
-    "NAME": "Good Relic",
-    "FLAVOR": "heh",
+    "NAME": "Isqueiro Infinito",
+    "FLAVOR": "Nunca acaba",
     "DESCRIPTIONS": [
-      "Gain [E] at the start of your turn. [E] is an energy icon."
+      "No início de cada turno, se você tiver 0 de Erva, ganhe 1 de Erva."
     ]
   },
   "${modID}:MaconhaMedicinal": {
-    "NAME": "Good Relic",
-    "FLAVOR": "heh",
+    "NAME": "Maconha Medicinal",
+    "FLAVOR": "Good vibes?",
     "DESCRIPTIONS": [
-      "Gain [E] at the start of your turn. [E] is an energy icon."
+      "Toda vez que você perder HP devido à Bad Trip, cure 2 de HP."
     ]
   },
   "${modID}:SacoDeLanchesSemFundo": {
-    "NAME": "Good Relic",
-    "FLAVOR": "heh",
+    "NAME": "Saco De Lanches Sem Fundo",
+    "FLAVOR": "Tem gosto de papel",
     "DESCRIPTIONS": [
-      "Gain [E] at the start of your turn. [E] is an energy icon."
+      "Sempre que você consumir um stack de Comido, compre 1 carta."
     ]
   },
   "${modID}:BongLimpo": {

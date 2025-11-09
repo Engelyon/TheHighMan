@@ -22,11 +22,10 @@ public class VisaoDistorcida extends BaseCard {
     );
 
     private static final int CHAPADO_AMOUNT = 5;
-    private static final int SELF_DAMAGE = 10;
+    private static final int SELF_DAMAGE = 5;
 
     public VisaoDistorcida() {
         super(ID, info);
-        this.selfRetain = true;
         this.exhaust = true;
         this.keywords.add("chapado");
         this.keywords.add("visão distorcida");

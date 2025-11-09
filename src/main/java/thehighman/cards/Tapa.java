@@ -28,10 +28,10 @@ package thehighman.cards;
             );
 
             // Dano base da carta
-            private static final int DAMAGE = 6;
+            private static final int DAMAGE = 4;
 
             // Dano adicional ao aprimorar a carta
-            private static final int UPG_DAMAGE = 3;
+            private static final int UPG_DAMAGE = 1;
 
             /**
              * Construtor da carta "Tapa".
