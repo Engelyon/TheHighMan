@@ -9,7 +9,7 @@ import thehighman.relics.SacoDeLanchesSemFundo;
 import static thehighman.InimigosDoSpire.makeID;
 
 public class ComidoPower extends BasePower {
-    public static final String POWER_ID = makeID("Comido");
+    public static final String POWER_ID = makeID("ComidoPower");
     private static final PowerStrings powerStrings = com.megacrit.cardcrawl.core.CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
 
     public ComidoPower(AbstractCreature owner, AbstractCreature source, int amount) {
