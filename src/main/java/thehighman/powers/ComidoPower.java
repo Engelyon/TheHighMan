@@ -19,6 +19,10 @@ public class ComidoPower extends BasePower {
     public ComidoPower(AbstractCreature owner, int amount) {
         this(owner, owner, amount);
     }
+    @Override
+    public void updateDescription() {
+        description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
+    }
 
 
     public static boolean consumirComido(AbstractCreature target) {

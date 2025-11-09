@@ -13,5 +13,9 @@ public class ImuneABadTripPower extends BasePower {
     public ImuneABadTripPower(AbstractCreature owner, AbstractCreature source) {
         this(owner, source, -1);
     }
+    @Override
+    public void updateDescription() {
+        description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
+    }
 
 }

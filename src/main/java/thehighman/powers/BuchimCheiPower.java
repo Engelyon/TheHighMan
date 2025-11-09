@@ -11,6 +11,10 @@ public class BuchimCheiPower extends BasePower {
     public BuchimCheiPower(AbstractCreature owner, AbstractCreature source, int amount) {
         super(POWER_ID, PowerType.BUFF, false, owner, source, amount);
     }
+    @Override
+    public void updateDescription() {
+        description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
+    }
 
     public BuchimCheiPower(AbstractCreature owner, AbstractCreature source) {
         this(owner, source, -1);
