@@ -27,7 +27,6 @@ public class LimparOBong extends BaseCard {
         this.exhaust = true;
         this.keywords.add("erva");
         this.keywords.add("força");
-        this.rawDescription = "Gaste toda sua Erva. Para cada ponto gasto, ganhe 1 de Força temporária.";
         initializeDescription();
     }
 

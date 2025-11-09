@@ -1,8 +1,8 @@
 {
   "${modID}:AlimentoDivino": {
     "NAME": "Alimento Divino",
-    "DESCRIPTION": "Ganha 5 de ${modID}:Comido. Se estiver com 10 de ${modID}:Comido, ganha Imunidade à Bad Trip.",
-    "UPGRADE_DESCRIPTION": "Ganha 5 de ${modID}:Comido. Se estiver com 10 de ${modID}:Comido, ganha Imunidade à Bad Trip."
+    "DESCRIPTION": "Ganha 5 de ${modID}:Comido. Se estiver com 10 de ${modID}:Comido, ganha Imunidade à ${modID}:BadTrip.",
+    "UPGRADE_DESCRIPTION": "Ganha 5 de ${modID}:Comido. Se estiver com 10 de ${modID}:Comido, ganha Imunidade à ${modID}:BadTrip."
   },
   "${modID}:Alivio": {
     "NAME": "Alivio",
@@ -21,8 +21,8 @@
   },
   "${modID}:Amnesia": {
     "NAME": "Amnesia",
-    "DESCRIPTION": "Exausta 2 cartas aleatórias da sua mão. Para cada Bad Trip exaurida, ganhe 2 de ${modID}:Erva. Exaurir",
-    "UPGRADE_DESCRIPTION": "Exausta 2 cartas aleatórias da sua mão. Para cada Bad Trip exaurida, ganhe 2 de ${modID}:Erva."
+    "DESCRIPTION": "Exausta 2 cartas aleatórias da sua mão. Para cada ${modID}:BadTrip exaurida, ganhe 2 de ${modID}:Erva. Exaurir",
+    "UPGRADE_DESCRIPTION": "Exausta 2 cartas aleatórias da sua mão. Para cada ${modID}:BadTrip exaurida, ganhe 2 de ${modID}:Erva."
   },
   "${modID}:Analisar": {
     "NAME": "Analisar",
@@ -66,8 +66,8 @@
   },
   "${modID}:BaguaDaDiscordia": {
     "NAME": "Bagua Da Discordia",
-    "DESCRIPTION": "Cause !D! de dano a todos os inimigos. Adicione 2 Bad Trip à pilha de descarte.",
-    "UPGRADE_DESCRIPTION": "Cause !D! de dano a todos os inimigos. Adicione 2 Bad Trip à pilha de descarte."
+    "DESCRIPTION": "Cause !D! de dano a todos os inimigos. Adicione 2 ${modID}:BadTrip à pilha de descarte.",
+    "UPGRADE_DESCRIPTION": "Cause !D! de dano a todos os inimigos. Adicione 2 ${modID}:BadTrip à pilha de descarte."
   },
   "${modID}:BongExtra": {
     "NAME": "Bong Extra",
@@ -126,8 +126,8 @@
   },
   "${modID}:Confusao": {
     "NAME": "Confusao",
-    "DESCRIPTION": "Cause !D! de dano. Adicione 1 Bad Trip à pilha de descarte.",
-    "UPGRADE_DESCRIPTION": "Cause !D! de dano. Adicione 1 Bad Trip à pilha de descarte."
+    "DESCRIPTION": "Cause !D! de dano. Adicione 1 ${modID}:BadTrip à pilha de descarte.",
+    "UPGRADE_DESCRIPTION": "Cause !D! de dano. Adicione 1 ${modID}:BadTrip à pilha de descarte."
   },
   "${modID}:Cozinhar": {
     "NAME": "Cozinhar",
@@ -161,8 +161,8 @@
   },
   "${modID}:Espirro": {
     "NAME": "Espirro",
-    "DESCRIPTION": "Cause !D! de dano a todos os inimigos. Adicione 1 Bad Trip à pilha de descarte.",
-    "UPGRADE_DESCRIPTION": "Cause !D! de dano a todos os inimigos. Adicione 1 Bad Trip à pilha de descarte."
+    "DESCRIPTION": "Cause !D! de dano a todos os inimigos. Adicione 1 ${modID}:BadTrip à pilha de descarte.",
+    "UPGRADE_DESCRIPTION": "Cause !D! de dano a todos os inimigos. Adicione 1 ${modID}:BadTrip à pilha de descarte."
   },
   "${modID}:FicaEsperto": {
     "NAME": "Fica Esperto",
@@ -191,8 +191,8 @@
   },
   "${modID}:GeloNaMao": {
     "NAME": "Gelo Na Mao",
-    "DESCRIPTION": "Cause !D! de dano. Exaure 1 carta aleatória da sua mão exceto Bad Trip.",
-    "UPGRADE_DESCRIPTION": "Cause !D! de dano. Exaure 1 carta aleatória da sua mão exceto Bad Trip"
+    "DESCRIPTION": "Cause !D! de dano. Exaure 1 carta aleatória da sua mão exceto ${modID}:BadTrip.",
+    "UPGRADE_DESCRIPTION": "Cause !D! de dano. Exaure 1 carta aleatória da sua mão exceto ${modID}:BadTrip"
   },
   "${modID}:Hypar": {
     "NAME": "Hypar",
@@ -211,8 +211,8 @@
   },
   "${modID}:LaricaDePoder": {
     "NAME": "Larica De Poder",
-    "DESCRIPTION": "Cause !D! de dano. Ganha +5 de dano para cada ${modID}:Comido. Remove todos os ${modID}:Comidos.",
-    "UPGRADE_DESCRIPTION": "Cause !D! de dano. Ganha +5 de dano para cada ${modID}:Comido. Remove todos os ${modID}:Comidos."
+    "DESCRIPTION": "Cause !D! de dano. Ganha +5 de dano para cada ${modID}:Comido. Remove todos os ${modID}:Comido.",
+    "UPGRADE_DESCRIPTION": "Cause !D! de dano. Ganha +5 de dano para cada ${modID}:Comido. Remove todos os ${modID}:Comido."
   },
   "${modID}:LaricaPesada": {
     "NAME": "Larica Pesada",
@@ -231,8 +231,8 @@
   },
   "${modID}:LoopMental": {
     "NAME": "Loop Mental",
-    "DESCRIPTION": "Cause !D! de dano. Se houver 3 ou mais Bad Trips no deck, compre 3 cartas.",
-    "UPGRADE_DESCRIPTION": "Cause !D! de dano. Se houver 3 ou mais Bad Trips no deck, compre 3 cartas."
+    "DESCRIPTION": "Cause !D! de dano. Se houver 3 ou mais ${modID}:BadTrip no deck, compre 3 cartas.",
+    "UPGRADE_DESCRIPTION": "Cause !D! de dano. Se houver 3 ou mais ${modID}:BadTrip no deck, compre 3 cartas."
   },
   "${modID}:MaoSanta": {
     "NAME": "Mao Santa",
@@ -391,8 +391,8 @@
   },
   "${modID}:ViagemSoDeIda": {
     "NAME": "Viagem So DeIda",
-    "DESCRIPTION": "Cause !D! de dano. Se Bad Trip foi jogada neste turno, cause +6 de dano.",
-    "UPGRADE_DESCRIPTION": "Cause !D! de dano. Se Bad Trip foi jogada neste turno, cause +6 de dano."
+    "DESCRIPTION": "Cause !D! de dano. Se ${modID}:BadTrip foi jogada neste turno, cause +6 de dano.",
+    "UPGRADE_DESCRIPTION": "Cause !D! de dano. Se ${modID}:BadTrip foi jogada neste turno, cause +6 de dano."
   },
   "${modID}:VisaoDistorcida": {
     "NAME": "Visao Distorcida",
