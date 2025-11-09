@@ -34,7 +34,7 @@ public class LaricaPower extends BasePower {
     @Override
     public float atDamageReceive(float damage, DamageInfo.DamageType damageType) {
         if (damageType == DamageInfo.DamageType.NORMAL) {
-            return damage + (5 * amount);
+            return damage + (3 * amount);
         }
         return damage;
     }

@@ -71,7 +71,7 @@
         "No início de cada turno, ganhe 1 de Erva."
         ]
     },
-  "${modID}:energiaExtraProximoTurno": {
+  "${modID}:EnergiaExtraProximoTurno": {
     "NAME": "Passar a Energia",
     "DESCRIPTIONS": [
       "No início do seu turno, ganhe 1 de Energia."

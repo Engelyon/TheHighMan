@@ -44,7 +44,7 @@ public class Amnesia extends BaseCard {
         for (int i = 0; i < EXHAUST_AMOUNT; i++) {
             AbstractCard c = hand.get(i);
             p.hand.moveToExhaustPile(c);
-            if (c.cardID.equals("thehighman:BadTrip")) {
+            if (c.cardID.equals("BadTrip")) {
                 badTripCount++;
             }
         }

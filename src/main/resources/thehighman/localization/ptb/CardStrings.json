@@ -226,7 +226,7 @@
   },
   "${modID}:LimparOBong": {
     "NAME": "Limpar O Bong",
-    "DESCRIPTION": "Gaste 10 ${modID}:Erva para ganhar 3 de ${modID}:Seda. Exaure.",
+    "DESCRIPTION": "Reter. Gaste 10 ${modID}:Erva para ganhar 3 de ${modID}:Seda. Exaure.",
     "UPGRADE_DESCRIPTION": "Gaste 10 ${modID}:Erva para ganhar 3 de ${modID}:Seda. Exaure."
   },
   "${modID}:LoopMental": {

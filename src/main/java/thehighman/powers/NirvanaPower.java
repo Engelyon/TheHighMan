@@ -1,6 +1,7 @@
 package thehighman.powers;
 
 import com.megacrit.cardcrawl.actions.GameActionManager;
+import com.megacrit.cardcrawl.actions.utility.UnlimboAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -23,7 +24,6 @@ public class NirvanaPower extends BasePower {
     @Override
     public void onAfterUseCard(AbstractCard card, UseCardAction action) {
         if (card.exhaust && !card.purgeOnUse && !card.dontTriggerOnUseCard) {
-            flash();
             AbstractCard copy = card.makeSameInstanceOf();
             copy.freeToPlayOnce = true;
             copy.purgeOnUse = true;
@@ -34,10 +34,10 @@ public class NirvanaPower extends BasePower {
             copy.target_y = card.target_y;
             copy.applyPowers();
             copy.calculateCardDamage(null);
-
             if (action.target instanceof AbstractMonster) {
                 GameActionManager.queueExtraCard(copy, (AbstractMonster) action.target);
             }
+            AbstractDungeon.actionManager.addToBottom(new UnlimboAction(copy));
         }
     }
 }
