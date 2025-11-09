@@ -18,6 +18,10 @@ public class CinzeiroAbencoado extends BaseRelic {
     }
 
     @Override
+    public String getUpdatedDescription() {
+        return "No início do combate, ganhe 1 de ${modID}:Seda";
+    }
+    @Override
     public void atBattleStart() {
         addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new SedaPower(AbstractDungeon.player,AbstractDungeon.player,1)));
     }
