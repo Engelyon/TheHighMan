@@ -17,6 +17,10 @@ public class HyparPower extends BasePower {
     public HyparPower(AbstractCreature owner, AbstractCreature source) {
         this(owner, source, -1);
     }
+    @Override
+    public void updateDescription() {
+        description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
+    }
 
     @Override
     public void onExhaust(AbstractCard card) {

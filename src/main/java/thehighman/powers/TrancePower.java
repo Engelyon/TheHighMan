@@ -34,6 +34,10 @@ public class TrancePower extends BasePower {
             }
         }
     }
+    @Override
+    public void updateDescription() {
+        description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
+    }
 
     @Override
     public void atEndOfTurn(boolean isPlayer) {

@@ -20,6 +20,10 @@ public class NirvanaPower extends BasePower {
     public NirvanaPower(AbstractCreature owner, AbstractCreature source) {
         this(owner, source, -1);
     }
+    @Override
+    public void updateDescription() {
+        description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
+    }
 
     @Override
     public void onAfterUseCard(AbstractCard card, UseCardAction action) {

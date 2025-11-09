@@ -16,6 +16,10 @@ public class BongExtraPower extends BasePower {
     public BongExtraPower(AbstractCreature owner, AbstractCreature source, int amount) {
         super(POWER_ID, PowerType.BUFF, false, owner, source, amount);
     }
+    @Override
+    public void updateDescription() {
+        description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
+    }
 
     public BongExtraPower(AbstractCreature owner, AbstractCreature source) {
         this(owner, source, DEFAULT_AMOUNT);
