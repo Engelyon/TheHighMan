@@ -40,8 +40,7 @@ public class NirvanaPower extends BasePower {
             } else {
                 copy.calculateCardDamage(null);
             }
-
-            GameActionManager.queueExtraCard(copy, target);
+            copy.use(AbstractDungeon.player, target);
             AbstractDungeon.actionManager.addToBottom(new UnlimboAction(copy));
         }
     }
