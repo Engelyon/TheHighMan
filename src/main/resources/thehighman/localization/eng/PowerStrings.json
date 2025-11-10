@@ -16,8 +16,7 @@
   "${modID}:LaricaPower": {
     "NAME": "Larica",
     "DESCRIPTIONS": [
-      "Recebe +2 de força e leva +5 de dano de ataques. Aplicado ",
-      " vez(es)."
+      "Você está com larica. Recebe !M! de dano extra de ataques normais."
     ]
   },
   "${modID}:SedaPower": {
@@ -46,32 +45,30 @@
       "Dobre seu limite de Comido."
     ]
   },  "${modID}:ComidoPower": {
-    "NAME": "Comido",
+  "NAME": "Comido",
+  "DESCRIPTIONS": [
+    "Você tem !M! Comido. Nega !M! do dano adicional de Larica."
+  ]
+},
+  "${modID}:CompreensaoElevadaPower": {
+    "NAME": "Compreensão Elevada",
     "DESCRIPTIONS": [
-      "Você está comido. Limite de Comido: ",
-      ". Comido atual: ",
-      "Evita efeitos negativos da Larica. Máximo de 5. Cada stack bloqueia 1 penalidade."
+      "Ao aplicar Chapado, há 50% de chance de aplicar 1 stack adicional."
     ]
   },
-    "${modID}:CompreensaoElevadaPower": {
-        "NAME": "Compreensão Elevada",
-        "DESCRIPTIONS": [
-        "Ao aplicar Chapado, há 50% de chance de aplicar 1 stack adicional."
-        ]
-    },
   "${modID}:CozinharPower": {
     "NAME": "Cozinhar",
     "DESCRIPTIONS": [
       "Sempre que você sofrer dano, ganhe 1 de Destreza."
     ]
   },
-    "${modID}:EaPotenciaPower": {
-        "NAME": "É a Potência",
-        "DESCRIPTIONS": [
-        "No início de cada turno, ganhe 1 de Erva."
-        ]
-    },
-  "${modID}:energiaExtraProximoTurno": {
+  "${modID}:EaPotenciaPower": {
+    "NAME": "É a Potência",
+    "DESCRIPTIONS": [
+      "No início de cada turno, ganhe 1 de Erva."
+    ]
+  },
+  "${modID}:EnergiaExtraProximoTurno": {
     "NAME": "Passar a Energia",
     "DESCRIPTIONS": [
       "No início do seu turno, ganhe 1 de Energia."
@@ -83,24 +80,24 @@
       "Sempre que você exaurir uma carta, ganhe 1 de energia no próximo turno."
     ]
   },
-    "${modID}:ImuneABadTrip": {
-        "NAME": "Imune a Bad Trip",
-        "DESCRIPTIONS": [
-        "Você não recebe mais dano de Bad Trip neste combate."
-        ]
-    },
-    "${modID}:NirvanaPower": {
-      "NAME": "Nirvana",
-      "DESCRIPTIONS": [
-        "Todas as suas cartas com Exaustão são jogadas duas vezes."
-      ]
-    },
-    "${modID}:TrancePower": {
-      "NAME": "Transe",
-      "DESCRIPTIONS": [
-        "Sempre que você ganhar Larica neste turno, exaure 1 carta da sua mão e ganhe 1 de Seda."
-      ]
-    },
+  "${modID}:ImuneABadTrip": {
+    "NAME": "Imune a Bad Trip",
+    "DESCRIPTIONS": [
+      "Você não recebe mais dano de Bad Trip neste combate."
+    ]
+  },
+  "${modID}:NirvanaPower": {
+    "NAME": "Nirvana",
+    "DESCRIPTIONS": [
+      "Todas as suas cartas com Exaustão são jogadas duas vezes."
+    ]
+  },
+  "${modID}:TrancePower": {
+    "NAME": "Transe",
+    "DESCRIPTIONS": [
+      "Sempre que você ganhar Larica neste turno, exaure 1 carta da sua mão e ganhe 1 de Seda."
+    ]
+  },
   "${modID}:VisaoDistorcidaPower": {
     "NAME": "Visao Distorcida",
     "DESCRIPTIONS": [

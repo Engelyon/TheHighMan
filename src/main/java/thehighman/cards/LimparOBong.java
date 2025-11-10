@@ -53,6 +53,7 @@ public class LimparOBong extends BaseCard {
             initializeDescription();
         }
     }
+
     @Override
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
         if (!super.canUse(p, m)) {

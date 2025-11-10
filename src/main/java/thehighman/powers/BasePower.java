@@ -84,4 +84,5 @@ public abstract class BasePower extends AbstractPower {
             FontHelper.renderFontRightTopAligned(sb, FontHelper.powerAmountFont, Integer.toString(this.amount2), x, y + 15.0F * Settings.scale, this.fontScale, c);
         }
     }
+
 }

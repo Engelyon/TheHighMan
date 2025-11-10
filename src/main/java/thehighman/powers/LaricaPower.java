@@ -48,6 +48,6 @@ public class LaricaPower extends BasePower {
 
     @Override
     public void updateDescription() {
-        this.description = powerStrings.DESCRIPTIONS[0] + amount + powerStrings.DESCRIPTIONS[1];
+        this.description = powerStrings.DESCRIPTIONS[0].replace("!M!", Integer.toString(amount));
     }
 }

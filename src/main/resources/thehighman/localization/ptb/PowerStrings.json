@@ -16,8 +16,7 @@
   "${modID}:LaricaPower": {
     "NAME": "Larica",
     "DESCRIPTIONS": [
-      "Recebe +2 de força e leva +5 de dano de ataques. Aplicado ",
-      " vez(es)."
+        "Você está com larica. Recebe !M! de dano extra de ataques normais."
     ]
   },
   "${modID}:SedaPower": {
@@ -48,9 +47,7 @@
   },  "${modID}:ComidoPower": {
     "NAME": "Comido",
     "DESCRIPTIONS": [
-      "Você está comido. Limite de Comido: ",
-      ". Comido atual: ",
-      "Evita efeitos negativos da Larica. Máximo de 5. Cada stack bloqueia 1 penalidade."
+      "Você tem !M! Comido. Nega !M! do dano adicional de Larica."
     ]
   },
     "${modID}:CompreensaoElevadaPower": {
