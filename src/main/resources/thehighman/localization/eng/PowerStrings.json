@@ -13,6 +13,15 @@
       "%."
     ]
   },
+  "${modID}:ChapadoProximoTurnoPower": {
+    "NAME": "Chapado Depois",
+    "DESCRIPTIONS": [
+      "No próximo turno ganhará ",
+      " de Chapado nos próximos ",
+      " turno(s)."
+    ]
+  }
+,
   "${modID}:LaricaPower": {
     "NAME": "Larica",
     "DESCRIPTIONS": [

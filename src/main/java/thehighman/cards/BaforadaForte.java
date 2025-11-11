@@ -23,7 +23,7 @@ public class BaforadaForte extends BaseCard {
 
     private static final int DAMAGE = 12;
     private static final int UPG_DAMAGE = 4;
-    private static final int CHAPADO_AMOUNT = 3;
+    private static final int CHAPADO_AMOUNT = 1;
 
     public BaforadaForte() {
         super(ID, info);
@@ -43,8 +43,7 @@ public class BaforadaForte extends BaseCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeDamage(UPG_DAMAGE); // 12 → 16 de dano
-            upgradeMagicNumber(1);     // 3 → 4 de Chapado
+            upgradeDamage(UPG_DAMAGE);
             initializeDescription();
         }
     }

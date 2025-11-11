@@ -301,8 +301,8 @@
   },
   "${modID}:Reembolso": {
     "NAME": "Reembolso",
-    "DESCRIPTION": "Cause !D! de dano. ${modID}:Fume 1 e Ganhe !M! de ${modID}:Seda.",
-    "UPGRADE_DESCRIPTION": "Cause !D! de dano. ${modID}:Fume 1 e Ganhe !M! de ${modID}:Seda."
+    "DESCRIPTION": "Cause !D! de dano. ${modID}:Fume 1 e Ganhe !M! de ${modID}:Seda. Exaurir",
+    "UPGRADE_DESCRIPTION": "Cause !D! de dano. ${modID}:Fume 1 e Ganhe !M! de ${modID}:Seda. Exaurir"
   },
   "${modID}:Reflexao": {
     "NAME": "Reflexao",

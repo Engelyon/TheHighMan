@@ -43,11 +43,7 @@ public class OndaLenta extends BaseCard {
         // Dano direto
         addToBot(new DamageAction(m, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL),
                 AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
-
-        // Chapado imediato
         addToBot(new ApplyPowerAction(m, p, new ChapadoPower(m, this.magicNumber), this.magicNumber));
-
-        // Chapado nos próximos turnos
         int delayedTurns = upgraded ? 2 : 1;
         addToBot(new ApplyPowerAction(m, p, new ChapadoProximoTurnoPower(m, delayedTurns, this.magicNumber), this.magicNumber));
     }
