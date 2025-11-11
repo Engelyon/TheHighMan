@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thehighman.character.TheHighman;
 import thehighman.powers.ChapadoPower;
+import thehighman.powers.ErvaPower;
 import thehighman.util.CardStats;
 
 public class PassadaDeNivel extends BaseCard {
@@ -15,39 +16,37 @@ public class PassadaDeNivel extends BaseCard {
 
     private static final CardStats info = new CardStats(
             TheHighman.Meta.CARD_COLOR,
-            CardType.ATTACK,
+            CardType.SKILL,
             CardRarity.UNCOMMON,
-            CardTarget.ENEMY,
+            CardTarget.SELF,
             1
     );
 
-    private static final int DAMAGE = 8;
-    private static final int UPG_DAMAGE = 3;
-    private static final int CHAPADO_THRESHOLD = 7;
+    public static int DRAW = 2;
+        public static int UPG_DRAW = 1;
+        public static int C_ERVA = 2;
+        public static int ENERGIA = 1;
 
     public PassadaDeNivel() {
         super(ID, info);
-        setDamage(DAMAGE, UPG_DAMAGE);
+        setMagic(DRAW, UPG_DRAW);
         this.keywords.add("chapado");
         initializeDescription();
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        // Causa dano
-        addToBot(new DamageAction(m, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL),
-                AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
-
-        // Se o inimigo tiver 7 ou mais de Chapado, compra 1 carta
-        if (m.hasPower(ChapadoPower.POWER_ID) && m.getPower(ChapadoPower.POWER_ID).amount >= CHAPADO_THRESHOLD) {
-            addToBot(new DrawCardAction(p, 1));
+        addToBot(new DrawCardAction(p, this.magicNumber));
+        int ervaStacks = p.getPower(ErvaPower.POWER_ID).amount;
+        if (ervaStacks >= C_ERVA) {
+            addToBot(new com.megacrit.cardcrawl.actions.common.GainEnergyAction(ENERGIA));
         }
     }
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeDamage(UPG_DAMAGE); // 8 → 11 de dano
+            upgradeMagicNumber(UPG_DRAW);
             initializeDescription();
         }
     }

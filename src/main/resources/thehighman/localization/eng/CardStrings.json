@@ -6,8 +6,8 @@
   },
   "${modID}:Alivio": {
     "NAME": "Alivio",
-    "DESCRIPTION": "Ganhe !B! de Proteção. Se tiver ${modID}:Erva, ${modID}:Fume 1 para aplicar !M! de ${modID}:Chapado em um inimigo.",
-    "UPGRADE_DESCRIPTION": "Ganhe !B! de Proteção. Se tiver ${modID}:Erva, ${modID}:Fume1 para aplicar !M! de ${modID}:Chapado em um inimigo."
+    "DESCRIPTION": "Ganhe !B! de Proteção. ${modID}:Fume 1 para aplicar !M! de ${modID}:Chapado em um inimigo.",
+    "UPGRADE_DESCRIPTION": "Ganhe !B! de Proteção. ${modID}:Fume1 para aplicar !M! de ${modID}:Chapado em um inimigo."
   },
   "${modID}:AlmocoDeGraca": {
     "NAME": "Almoco De Graca",
@@ -91,8 +91,8 @@
   },
   "${modID}:BuchimChei": {
     "NAME": "Buchim Chei",
-    "DESCRIPTION": "Dobre seu limite de ${modID}:Comido.",
-    "UPGRADE_DESCRIPTION": "Dobre seu limite de ${modID}:Comido."
+    "DESCRIPTION": "Dobre seu ${modID}:Comido.",
+    "UPGRADE_DESCRIPTION": "Triplique seu ${modID}:Comido."
   },
   "${modID}:Burgao": {
     "NAME": "Burgao",
@@ -101,12 +101,12 @@
   },
   "${modID}:CheirinhoBom": {
     "NAME": "Cheirinho Bom",
-    "DESCRIPTION": "Ganhe !B! de Bloqueio. Se o inimigo estiver ${modID}:Chapado, ganhe !M! de Destreza.",
-    "UPGRADE_DESCRIPTION": "Ganhe !B! de Bloqueio. Se o inimigo estiver ${modID}:Chapado, ganhe !M! de Destreza."
+    "DESCRIPTION": "Ganhe !B! de Bloqueio. Se qualquer estiver ${modID}:Chapado, ganhe !M! de Destreza.",
+    "UPGRADE_DESCRIPTION": "Ganhe !B! de Bloqueio. Se qualquer estiver ${modID}:Chapado, ganhe !M! de Destreza."
   },
   "${modID}:CheiroDeLanche": {
     "NAME": "Cheiro De Lanche",
-    "DESCRIPTION": "Cause !D! de dano. Se o inimigo tiver ${modID}:Larica, cause +10.",
+    "DESCRIPTION": "Cause !D! de dano. Se o inimigo tiver ${modID}:Larica, cause +5.",
     "UPGRADE_DESCRIPTION": "Cause !D! de dano. Se o inimigo tiver ${modID}:Larica, cause +10."
   },
   "${modID}:ColheitaGenerosa": {
@@ -171,8 +171,8 @@
   },
   "${modID}:Fissura": {
     "NAME": "Fissura",
-    "DESCRIPTION": "Cause !D! de dano. Se tiver ${modID}:Erva, ${modID}:Fume 1 e ganhe !M! de Bloqueio.",
-    "UPGRADE_DESCRIPTION": "Cause !D! de dano. Se tiver ${modID}:Erva, ${modID}:Fume 1 e ganhe !M! de Bloqueio."
+    "DESCRIPTION": "Cause !D! de dano. ${modID}:Fume 1 e ganhe !M! de Bloqueio.",
+    "UPGRADE_DESCRIPTION": "Cause !D! de dano. ${modID}:Fume 1 e ganhe !M! de Bloqueio."
   },
   "${modID}:FocoFino": {
     "NAME": "FocoFino",
@@ -265,9 +265,9 @@
   "UPGRADE_DESCRIPTION": "Cause !D! de dano. Aplique !M! de ${modID}:Chapado agora e nos próximos 2 turnos. Exaure."
 },
   "${modID}:PassadaDeNivel": {
-    "NAME": "Passada De Nivel",
-    "DESCRIPTION": "Cause !D! de dano. Se o inimigo tiver 7 ou mais de ${modID}:Chapado, compre 1 carta.",
-    "UPGRADE_DESCRIPTION": "Cause !D! de dano. Se o inimigo tiver 7 ou mais de ${modID}:Chapado, compre 1 carta."
+    "NAME": "Passada De Nível",
+    "DESCRIPTION": "Compre !M! cartas. ${modID}:Fume 2, ganhe 1 de Energia",
+    "UPGRADE_DESCRIPTION": "Compre !M! cartas. ${modID}:Fume 2, ganhe 1 de Energia"
   },
   "${modID}:PetiscoPotente": {
     "NAME": "Petisco Potente",
@@ -296,8 +296,8 @@
   },
   "${modID}:Recompensa": {
     "NAME": "Recompensa",
-    "DESCRIPTION": "Cause !D! de dano. Se tiver ${modID}:Erva, ${modID}:Fume 1 para aplicar !M! de Vulnerável.",
-    "UPGRADE_DESCRIPTION": "Cause !D! de dano. Se tiver ${modID}:Erva, ${modID}:Fume 1 para aplicar !M! de Vulnerável."
+    "DESCRIPTION": "Cause !D! de dano. ${modID}:Fume 1 para aplicar !M! de Vulnerável.",
+    "UPGRADE_DESCRIPTION": "Cause !D! de dano. ${modID}:Fume 1 para aplicar !M! de Vulnerável."
   },
   "${modID}:Reembolso": {
     "NAME": "Reembolso",
@@ -316,8 +316,8 @@
   },
   "${modID}:ResgateDeLanche": {
     "NAME": "Resgate De Lanche",
-    "DESCRIPTION": "Cause !D! de dano. Se o inimigo tiver ${modID}:Larica, cure 3 de Vida.",
-    "UPGRADE_DESCRIPTION": "Cause !D! de dano. Se o inimigo tiver ${modID}:Larica, cure 3 de Vida."
+    "DESCRIPTION": "Ganhe !B! de Proteção. ${modID}:Coma 1, Cure !M! de Vida.",
+    "UPGRADE_DESCRIPTION": "Ganhe !B! de Proteção. ${modID}:Coma 1, Cure !M! de Vida."
   },
   "${modID}:Ronco": {
     "NAME": "Ronco",
@@ -351,8 +351,8 @@
   },
   "${modID}:TiroCerto": {
     "NAME": "Tiro Certo",
-    "DESCRIPTION": "Cause !D! de dano. Se o inimigo tiver !M! ou mais de ${modID}:Chapado, aplique 1 Stun",
-    "UPGRADE_DESCRIPTION": "Cause !D! de dano. Se o inimigo tiver !M! ou mais de ${modID}:Chapado, aplique 1 Stun."
+    "DESCRIPTION": "Cause !D! de dano. Se o inimigo tiver !M! ou mais de ${modID}:Chapado, aplique 1 Atordoado",
+    "UPGRADE_DESCRIPTION": "Cause !D! de dano. Se o inimigo tiver !M! ou mais de ${modID}:Chapado, aplique 1 Atordoado."
   },
   "${modID}:TragadaProfunda": {
     "NAME": "Tragada Profunda",

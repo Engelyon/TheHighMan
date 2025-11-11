@@ -20,7 +20,6 @@ public class CompreensaoElevada extends BaseCard {
 
     public CompreensaoElevada() {
         super(ID, info);
-        this.keywords.add("compreensão");
         this.isEthereal=true;
         initializeDescription();
     }

@@ -29,24 +29,21 @@ package thehighman.cards;
                     1                           // Custo de energia
             );
 
-            private static final int DAMAGE = 4;
-            private static final int UPG_DAMAGE = 1;
+            private static final int DAMAGE = 5;
+            private static final int UPG_DAMAGE = 2;
             private static final int CHAPADO = 1;
             private static final int UPG_CHAPADO = 1;
 
             public Tapa() {
                 super(ID, info);
-
                 // Define o dano base e o dano adicional ao aprimorar
                 setDamage(DAMAGE, UPG_DAMAGE);
                 setMagic(CHAPADO, UPG_CHAPADO);
                 // Adiciona tags relacionadas a cartas iniciais e de ataque
                 tags.add(CardTags.STARTER_STRIKE);
                 tags.add(CardTags.STRIKE);
-
                 // Adiciona a palavra-chave "chapado" para exibição de tooltip
                 this.keywords.add("chapado");
-
                 initializeDescription();
             }
             @Override

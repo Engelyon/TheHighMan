@@ -48,12 +48,6 @@
       "Sempre que um inimigo ganhar Larica, compre 1 carta e ganhe ",
       " de Bloqueio no final do turno."
     ]
-  },
-  "${modID}:BuchimCheiPower": {
-    "NAME": "Buchim Chei",
-    "DESCRIPTIONS": [
-      "Dobre seu limite de Comido."
-    ]
   },  "${modID}:ComidoPower": {
     "NAME": "Comido",
     "DESCRIPTIONS": [

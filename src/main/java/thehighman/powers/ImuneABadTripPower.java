@@ -15,7 +15,7 @@ public class ImuneABadTripPower extends BasePower {
     }
     @Override
     public void updateDescription() {
-        description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
+        description = DESCRIPTIONS[0];
     }
 
 }

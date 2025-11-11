@@ -21,12 +21,11 @@ public class CheiroDeLanche extends BaseCard {
     );
 
     private static final int BASE_DAMAGE = 5;
-    private static final int BONUS_DAMAGE = 10;
-    private static final int UPG_DAMAGE = 3;
+    private static final int BONUS_DAMAGE = 5;
 
     public CheiroDeLanche() {
         super(ID, info);
-        setDamage(BASE_DAMAGE, UPG_DAMAGE);
+        setDamage(BASE_DAMAGE);
         this.keywords.add("larica");
         initializeDescription();
     }
@@ -34,11 +33,12 @@ public class CheiroDeLanche extends BaseCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         int finalDamage = this.damage;
-
         if (m.hasPower(LaricaPower.POWER_ID)) {
             finalDamage += BONUS_DAMAGE;
+            if (upgraded){
+                finalDamage += 5;
+            }
         }
-
         addToBot(new DamageAction(m, new DamageInfo(p, finalDamage, DamageInfo.DamageType.NORMAL),
                 AbstractGameAction.AttackEffect.SMASH));
     }
@@ -46,7 +46,6 @@ public class CheiroDeLanche extends BaseCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeDamage(UPG_DAMAGE); // 5 → 8 de dano base
             initializeDescription();
         }
     }

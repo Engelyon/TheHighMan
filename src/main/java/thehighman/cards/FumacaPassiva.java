@@ -43,18 +43,14 @@ public class FumacaPassiva extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractPower erva = p.getPower(ErvaPower.POWER_ID);
-        erva.amount -= 1;
-        erva.updateDescription();
-        if (erva.amount == 0) {
-            p.powers.remove(erva);
-        }
         addToBot(new DamageAllEnemiesAction(p, this.multiDamage, DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.POISON));
-        addToBot(new VFXAction(new InflameEffect(p)));
-        int sedaBonus = p.hasPower(SedaPower.POWER_ID) ? p.getPower(SedaPower.POWER_ID).amount : 0;
-        int totalChapado = this.magicNumber + sedaBonus;
-        for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
-            addToBot(new ApplyPowerAction(mo, p, new ChapadoPower(mo, totalChapado), totalChapado));
+        int ervas = p.getPower(ErvaPower.POWER_ID).amount;
+        if (ervas>=1) {
+            int sedaBonus = p.hasPower(SedaPower.POWER_ID) ? p.getPower(SedaPower.POWER_ID).amount : 0;
+            int totalChapado = this.magicNumber + sedaBonus;
+            for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
+                addToBot(new ApplyPowerAction(mo, p, new ChapadoPower(mo, totalChapado), totalChapado));
+            }
         }
     }
     @Override

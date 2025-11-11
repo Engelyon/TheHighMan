@@ -2,11 +2,14 @@ package thehighman.cards;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.common.HealAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thehighman.character.TheHighman;
+import thehighman.powers.ComidoPower;
+import thehighman.powers.ErvaPower;
 import thehighman.powers.LaricaPower;
 import thehighman.util.CardStats;
 
@@ -15,39 +18,39 @@ public class ResgateDeLanche extends BaseCard {
 
     private static final CardStats info = new CardStats(
             TheHighman.Meta.CARD_COLOR,
-            CardType.ATTACK,
+            CardType.SKILL,
             CardRarity.UNCOMMON,
-            CardTarget.ENEMY,
+            CardTarget.SELF,
             1
     );
 
-    private static final int DAMAGE = 5;
-    private static final int UPG_DAMAGE = 3;
     private static final int HEAL_AMOUNT = 3;
+    private static final int HEAL_UPG = 2;
+    private static final int BLOCK = 8;
+    private static final int BLOCK_UPG = 3;
 
     public ResgateDeLanche() {
         super(ID, info);
-        setDamage(DAMAGE, UPG_DAMAGE);
-        this.keywords.add("larica");
+        setBlock(BLOCK, BLOCK_UPG);
+        setMagic(HEAL_AMOUNT,HEAL_UPG);
         initializeDescription();
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        // Causa dano
-        addToBot(new DamageAction(m, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL),
-                AbstractGameAction.AttackEffect.BLUNT_LIGHT));
-
-        // Se o inimigo tiver Larica, cura o jogador
-        if (m.hasPower(LaricaPower.POWER_ID)) {
-            addToBot(new HealAction(p, p, HEAL_AMOUNT));
+        addToBot(new GainBlockAction(p, p, block));
+        int ComidoStacks = p.getPower(ComidoPower.POWER_ID).amount;
+        if (ComidoStacks >= 2) {
+            addToBot(new HealAction(p, p, magicNumber));
         }
     }
+
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeDamage(UPG_DAMAGE); // 5 → 8 de dano
+            upgradeBlock(BLOCK_UPG);
+            upgradeMagicNumber(HEAL_UPG);
             initializeDescription();
         }
     }

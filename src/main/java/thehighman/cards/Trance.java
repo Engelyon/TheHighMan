@@ -12,10 +12,10 @@ public class Trance extends BaseCard {
 
     private static final CardStats info = new CardStats(
             TheHighman.Meta.CARD_COLOR,
-            CardType.SKILL,
+            CardType.POWER,
             CardRarity.RARE,
             CardTarget.SELF,
-            1
+            2
     );
 
     public Trance() {
@@ -33,7 +33,6 @@ public class Trance extends BaseCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeBaseCost(0);
             initializeDescription();
         }
     }

@@ -44,7 +44,7 @@ public class ChapadoPower extends BasePower{
 
         this.amount += stackAmount;
 
-        if (this.amount >= 15) {
+        if (this.amount >= 20) {
             AbstractDungeon.actionManager.addToBottom(
                     new ApplyPowerAction(owner, owner, new LaricaPower(owner, 1), 1)
             );
