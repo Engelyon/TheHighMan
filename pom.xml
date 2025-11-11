@@ -23,7 +23,7 @@
     </properties>
 
     <!-- This information will be displayed in ModTheSpire, the modded launcher. -->
-    <name>Edu</name>
+    <name>TheHighman</name>
     <version>0.0.1</version>
     <!-- Avoid using \ in this description, as they can cause the description to fail to load. -->
     <!-- If you really want to use them, you'll need to "escape" them by putting another one in front, like \\ -->
@@ -33,8 +33,8 @@
     <!--You'll get a warning regarding these when you package your mod, but don't worry, it's just set up like this for convenience.-->
     <!--Technically these should be changed individually, but this allows you to just set it in one place.-->
     <!--Absolutely a no-go for larger projects, but for a personal mod it's fine.-->
-    <groupId>123</groupId>
-    <artifactId>123</artifactId>
+    <groupId>InimigosDoSlay</groupId>
+    <artifactId>InimigosDoSlay</artifactId>
 
     <dependencies>
         <dependency>

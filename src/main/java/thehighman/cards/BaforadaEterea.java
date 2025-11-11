@@ -20,7 +20,7 @@ public class BaforadaEterea extends BaseCard {
     private static final CardStats info = new CardStats(
             TheHighman.Meta.CARD_COLOR,
             CardType.ATTACK,
-            CardRarity.SPECIAL,
+            CardRarity.UNCOMMON,
             CardTarget.ENEMY,
             -2 // custo especial: não usa energia
     );

@@ -5,9 +5,11 @@ package thehighman.cards;
         import com.megacrit.cardcrawl.actions.common.DamageAction;
         import com.megacrit.cardcrawl.cards.DamageInfo;
         import com.megacrit.cardcrawl.characters.AbstractPlayer;
+        import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
         import com.megacrit.cardcrawl.monsters.AbstractMonster;
         import thehighman.character.TheHighman;
         import thehighman.powers.ChapadoPower;
+        import thehighman.powers.SedaPower;
         import thehighman.util.CardStats;
 
         /**
@@ -27,22 +29,17 @@ package thehighman.cards;
                     1                           // Custo de energia
             );
 
-            // Dano base da carta
             private static final int DAMAGE = 4;
-
-            // Dano adicional ao aprimorar a carta
             private static final int UPG_DAMAGE = 1;
+            private static final int CHAPADO = 1;
+            private static final int UPG_CHAPADO = 1;
 
-            /**
-             * Construtor da carta "Tapa".
-             * Define as propriedades da carta, como dano, palavras-chave e tags.
-             */
             public Tapa() {
                 super(ID, info);
 
                 // Define o dano base e o dano adicional ao aprimorar
                 setDamage(DAMAGE, UPG_DAMAGE);
-
+                setMagic(CHAPADO, UPG_CHAPADO);
                 // Adiciona tags relacionadas a cartas iniciais e de ataque
                 tags.add(CardTags.STARTER_STRIKE);
                 tags.add(CardTags.STRIKE);
@@ -52,20 +49,12 @@ package thehighman.cards;
 
                 initializeDescription();
             }
-
-            /**
-             * Define o comportamento da carta quando utilizada.
-             * Causa dano a um inimigo e aplica o efeito "Chapado".
-             *
-             * @param p O jogador que está utilizando a carta.
-             * @param m O monstro alvo.
-             */
             @Override
             public void use(AbstractPlayer p, AbstractMonster m) {
                 // Causa dano ao inimigo alvo
                 addToBot(new DamageAction(m, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL),
                         AbstractGameAction.AttackEffect.SLASH_VERTICAL));
-                addToBot(new ApplyPowerAction(m, p, new ChapadoPower(m, 1), 1));
+                addToBot(new ApplyPowerAction(m, p, new ChapadoPower(m, this.magicNumber), this.magicNumber));
             }
             @Override
             public void upgrade() {
@@ -75,5 +64,19 @@ package thehighman.cards;
                     initializeDescription();
                 }
             }
-
+            //atualiza o magic number com a quantidade de SedaPower
+            @Override
+            public void applyPowers() {
+                super.applyPowers();
+                if (AbstractDungeon.player.hasPower(SedaPower.POWER_ID)) {
+                    int seda = AbstractDungeon.player.getPower(SedaPower.POWER_ID).amount;
+                    int bonus = Math.max(1, seda);
+                    this.magicNumber = this.baseMagicNumber + bonus;
+                    isMagicNumberModified = true;
+                } else {
+                    this.magicNumber = this.baseMagicNumber;
+                    isMagicNumberModified = false;
+                }
+                initializeDescription();
+            }
         }

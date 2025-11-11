@@ -186,11 +186,11 @@
   },
   "${modID}:FumacaPassiva": {
     "NAME": "Fumaca Passiva",
-    "DESCRIPTION": "Cause !D! de dano a todos os inimigos. Aplique !M! de ${modID}:Chapado a cada um. Ganha dano extra por cada ${modID}:Seda.",
-    "UPGRADE_DESCRIPTION": "Cause !D! de dano a todos os inimigos. Aplique !M! de ${modID}:Chapado a cada um. Ganha dano extra por cada ${modID}:Seda."
+    "DESCRIPTION": "Cause !D! de dano a todos os inimigos. Aplique !M! de ${modID}:Chapado a cada um.",
+    "UPGRADE_DESCRIPTION": "Cause !D! de dano a todos os inimigos. Aplique !M! de ${modID}:Chapado a cada um."
   },
   "${modID}:GeloNaMao": {
-    "NAME": "Gelo Na Mao",
+    "NAME": "Ice Na Mao",
     "DESCRIPTION": "Cause !D! de dano. Exaure 1 carta aleatória da sua mão exceto ${modID}:BadTrip.",
     "UPGRADE_DESCRIPTION": "Cause !D! de dano. Exaure 1 carta aleatória da sua mão exceto ${modID}:BadTrip"
   },
@@ -251,8 +251,8 @@
   },
   "${modID}:MordidaNoLanche": {
     "NAME": "Mordida No Lanche",
-    "DESCRIPTION": "Cause !D! de dano 3 vezes. Se tiver 2 ou mais de ${modID}:Comido, cada golpe causa +1 de dano.",
-    "UPGRADE_DESCRIPTION": "Cause !D! de dano 3 vezes. Se tiver 2 ou mais de ${modID}:Comido, cada golpe causa +1 de dano."
+    "DESCRIPTION": "Cause !D! de dano 3 vezes. Se tiver 2 ou mais de ${modID}:Comido, causa +1.",
+    "UPGRADE_DESCRIPTION": "Cause !D! de dano 3 vezes. Se tiver 2 ou mais de ${modID}:Comido, causa +1."
   },
   "${modID}:MunchiesFrenetico": {
     "NAME": "Munchies Frenetico",
@@ -356,8 +356,8 @@
   },
   "${modID}:Tapa": {
     "NAME": "Tapa",
-    "DESCRIPTION": "Cause !D! de dano. Aplique 1 de ${modID}:Chapado.",
-    "UPGRADE_DESCRIPTION": "Cause !D! de dano. Aplique 1 de ${modID}:Chapado."
+    "DESCRIPTION": "Cause !D! de dano. Aplique !M! de ${modID}:Chapado.",
+    "UPGRADE_DESCRIPTION": "Cause !D! de dano. Aplique !M! de ${modID}:Chapado."
   },
   "${modID}:TapaRapido": {
     "NAME": "Tapa Rapido",

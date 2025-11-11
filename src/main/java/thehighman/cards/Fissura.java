@@ -17,7 +17,7 @@ public class Fissura extends BaseCard {
     private static final CardStats info = new CardStats(
             TheHighman.Meta.CARD_COLOR,
             CardType.ATTACK,
-            CardRarity.UNCOMMON,
+            CardRarity.COMMON,
             CardTarget.ENEMY,
             1
     );
