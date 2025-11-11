@@ -29,6 +29,7 @@ public class Espirro extends BaseCard {
         super(ID, info);
         setDamage(DAMAGE, UPG_DAMAGE);
         this.isMultiDamage = true;
+        this.cardsToPreview = new BadTrip();
         this.keywords.add("bad trip");
         initializeDescription();
     }

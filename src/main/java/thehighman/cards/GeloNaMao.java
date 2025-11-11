@@ -30,8 +30,7 @@ public class GeloNaMao extends BaseCard {
         super(ID, info);
         setDamage(DAMAGE);
         this.exhaust = false;
-        setDamage(DAMAGE, 2); // 3 → 5 de dano com upgrade
-
+        setDamage(DAMAGE, 2);
         this.keywords.add("bad trip");
         initializeDescription();
     }
@@ -59,7 +58,7 @@ public class GeloNaMao extends BaseCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeDamage(2); // 3 → 5
+            upgradeDamage(2);
             initializeDescription();
         }
     }

@@ -263,7 +263,7 @@
   "NAME": "Onda Lenta",
   "DESCRIPTION": "Cause !D! de dano. Aplique !M! de ${modID}:Chapado agora e nos próximos turno(s). Exaure.",
   "UPGRADE_DESCRIPTION": "Cause !D! de dano. Aplique !M! de ${modID}:Chapado agora e nos próximos 2 turnos. Exaure."
-},
+  },
   "${modID}:PassadaDeNivel": {
     "NAME": "Passada De Nível",
     "DESCRIPTION": "Compre !M! cartas. ${modID}:Fume 2, ganhe 1 de Energia",

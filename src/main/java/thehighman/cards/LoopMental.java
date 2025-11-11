@@ -30,6 +30,7 @@ public class LoopMental extends BaseCard {
         super(ID, info);
         setDamage(DAMAGE);
         this.keywords.add("bad trip");
+        this.cardsToPreview = new BadTrip();
         initializeDescription();
     }
 

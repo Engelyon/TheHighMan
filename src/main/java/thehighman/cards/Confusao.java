@@ -24,6 +24,7 @@ public class Confusao extends BaseCard {
     public Confusao() {
         super(ID, info);
         setDamage(DAMAGE);
+        this.cardsToPreview = new BadTrip();
         this.keywords.add("bad trip");
         initializeDescription();
     }

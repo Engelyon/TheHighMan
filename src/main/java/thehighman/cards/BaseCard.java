@@ -708,10 +708,5 @@ public abstract class BaseCard extends CustomCard {
         }
     }
 
-    public int getSedaStacksOnPlayer(int baseBonus){
-        int sedaStacks = AbstractDungeon.player.hasPower(SedaPower.POWER_ID) ?
-                AbstractDungeon.player.getPower(SedaPower.POWER_ID).amount : 0;
-        // Retorna o bônus base somado aos stacks de "Seda"
-        return baseBonus + sedaStacks;
-    }
+
 }

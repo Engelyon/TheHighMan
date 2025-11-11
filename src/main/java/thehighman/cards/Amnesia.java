@@ -33,6 +33,7 @@ public class Amnesia extends BaseCard {
         this.exhaust = true;
         this.keywords.add("erva");
         this.keywords.add("bad trip");
+        this.cardsToPreview = new BadTrip();
         initializeDescription();
     }
 

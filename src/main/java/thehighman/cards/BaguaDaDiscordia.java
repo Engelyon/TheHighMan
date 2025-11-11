@@ -28,6 +28,7 @@ public class BaguaDaDiscordia extends BaseCard {
         setDamage(DAMAGE, UPG_DAMAGE);
         this.isMultiDamage = true;
         this.exhaust=true;
+        this.cardsToPreview = new BadTrip();
         this.keywords.add("bad trip");
         initializeDescription();
     }

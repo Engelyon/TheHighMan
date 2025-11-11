@@ -28,6 +28,7 @@ public class ViagemSoDeIda extends BaseCard {
         super(ID, info);
         setDamage(BASE_DAMAGE, UPG_DAMAGE);
         this.keywords.add("bad trip");
+        this.cardsToPreview = new BadTrip();
         initializeDescription();
     }
 

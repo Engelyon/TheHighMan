@@ -24,6 +24,7 @@ public class AlimentoDivino extends BaseCard {
 
     public AlimentoDivino() {
         super(ID, info);
+        this.cardsToPreview = new BadTrip();
         initializeDescription();
     }
 
