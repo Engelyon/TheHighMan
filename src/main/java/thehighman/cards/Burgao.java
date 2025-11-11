@@ -19,51 +19,29 @@ public class Burgao extends BaseCard {
             0
     );
 
-    private static final int BLOCK_PER_COMIDO = 4;
-    private static final int BLOCK_PER_COMIDO_UPG = 6;
+    private static final int BLOCK = 4;
+    private static final int BLOCK_UPG = 2;
 
     public Burgao() {
         super(ID, info);
         this.exhaust = true;
+        setBlock(BLOCK, BLOCK_UPG);
         this.keywords.add("comido");
         initializeDescription();
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (p == null) {
-            return;
-        }
-        int comidoAmount = 0;
-        if (p.hasPower(ComidoPower.POWER_ID)) {
-            comidoAmount = p.getPower(ComidoPower.POWER_ID).amount;
-        }
-        int per = upgraded ? BLOCK_PER_COMIDO_UPG : BLOCK_PER_COMIDO;
-        int totalBlock = comidoAmount * per;
-        if (totalBlock > 0) {
-            addToBot(new GainBlockAction(p, p, totalBlock));
+        int comidoStacks = p.getPower(ComidoPower.POWER_ID).amount;
+        for (int i = 0; i < comidoStacks; i++) {
+            AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, block));
         }
     }
 
-    @Override
-    public void applyPowers() {
-        super.applyPowers();
-        int comidoAmount = 0;
-        if (AbstractDungeon.player != null && AbstractDungeon.player.hasPower(ComidoPower.POWER_ID)) {
-            comidoAmount = AbstractDungeon.player.getPower(ComidoPower.POWER_ID).amount;
-        }
-        int per = upgraded ? BLOCK_PER_COMIDO_UPG : BLOCK_PER_COMIDO;
-        int displayBlock = comidoAmount * per;
-        this.baseBlock = displayBlock;
-        this.block = displayBlock;
-        this.isBlockModified = false;
-        initializeDescription();
-    }
-
-    @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
+            upgradeBlock(BLOCK_UPG);
             initializeDescription();
         }
     }

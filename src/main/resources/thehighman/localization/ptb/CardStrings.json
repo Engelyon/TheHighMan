@@ -96,8 +96,8 @@
   },
   "${modID}:Burgao": {
     "NAME": "Burgao",
-    "DESCRIPTION": "Ganhe 4 de Bloqueio por ${modID}:Comido. Exaure.",
-    "UPGRADE_DESCRIPTION": "Ganhe 6 de Bloqueio por ${modID}:Comido. Exaure."
+    "DESCRIPTION": "Ganhe !B! de Bloqueio por ${modID}:Comido. Exaure.",
+    "UPGRADE_DESCRIPTION": "Ganhe !B! de Bloqueio por ${modID}:Comido. Exaure."
   },
   "${modID}:CheirinhoBom": {
     "NAME": "Cheirinho Bom",
@@ -370,7 +370,7 @@
     "UPGRADE_DESCRIPTION": "Aplique !M! de ${modID}:Chapado a todos os inimigos. Ganhe 5 de Bloqueio para cada inimigo afetado."
   },
   "${modID}:ViagemSoDeIda": {
-    "NAME": "Viagem So DeIda",
+    "NAME": "Viagem So De Ida",
     "DESCRIPTION": "Cause !D! de dano. Se você tem BadTrip na mão, cause +6 de dano.",
     "UPGRADE_DESCRIPTION": "Cause !D! de dano. Se você tem BadTrip na mão, cause +6 de dano."
   }
