@@ -64,7 +64,7 @@ public class Burgao extends BaseCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            refreshDescription();
+            initializeDescription();
         }
     }
 }
