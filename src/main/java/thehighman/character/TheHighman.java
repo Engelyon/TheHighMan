@@ -152,8 +152,8 @@ public class TheHighman extends CustomPlayer {
         retVal.add(Relaxar.ID);
         retVal.add(Relaxar.ID);
         retVal.add(Relaxar.ID);
-        retVal.add(BrigarPorBatata.ID);
-        retVal.add(MaoSanta.ID);
+        retVal.add(Enrolar.ID);
+        retVal.add(Alivio.ID);
         retVal.add(Inspiracao.ID);
         retVal.add(SoproRelaxante.ID);
         return retVal;

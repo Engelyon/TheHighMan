@@ -2,11 +2,13 @@ package thehighman.cards;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thehighman.character.TheHighman;
 import thehighman.powers.ChapadoPower;
+import thehighman.powers.ErvaPower;
 import thehighman.powers.SedaPower;
 import thehighman.util.CardStats;
 
@@ -24,6 +26,7 @@ public class Alivio extends BaseCard {
     private static final int CHAPADO = 1;
     private static final int BLOCK = 5;
     private static final int BLOCK_UPG = 3;
+    private static final int ERVA_COST = 1;
 
     public Alivio() {
         super(ID, info);
@@ -35,9 +38,10 @@ public class Alivio extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        // aplica Chapado no alvo
+        if (p != null && p.hasPower(ErvaPower.POWER_ID) && p.getPower(ErvaPower.POWER_ID).amount >= ERVA_COST) {
+            addToBot(new ReducePowerAction(p, p, ErvaPower.POWER_ID, ERVA_COST));
+        }
         addToBot(new ApplyPowerAction(m, p, new ChapadoPower(m, this.magicNumber), this.magicNumber));
-        // dá block ao jogador
         addToBot(new GainBlockAction(p, p, this.block));
     }
 

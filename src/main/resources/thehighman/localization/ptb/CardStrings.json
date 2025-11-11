@@ -6,8 +6,8 @@
   },
   "${modID}:Alivio": {
     "NAME": "Alivio",
-    "DESCRIPTION": "Ganhe !B! de Proteção. Aplique !M! de ${modID}:Chapado em um inimigo.",
-    "UPGRADE_DESCRIPTION": "Ganhe !B! de Proteção. Aplique !M! de ${modID}:Chapado em um inimigo."
+    "DESCRIPTION": "Ganhe !B! de Proteção. Se tiver ${modID}:Erva, ${modID}:Fume 1 para aplicar !M! de ${modID}:Chapado em um inimigo.",
+    "UPGRADE_DESCRIPTION": "Ganhe !B! de Proteção. Se tiver ${modID}:Erva, ${modID}:Fume1 para aplicar !M! de ${modID}:Chapado em um inimigo."
   },
   "${modID}:AlmocoDeGraca": {
     "NAME": "Almoco De Graca",
@@ -56,8 +56,8 @@
   },
   "${modID}:BaforadaEterea": {
     "NAME": "Baforada Eterea",
-    "DESCRIPTION": "Use se tiver ${modID}:Erva. Consome 1. Cause !D! de dano, aplique !M! de ${modID}:Chapado e copie esta carta.",
-    "UPGRADE_DESCRIPTION": "Use se tiver ${modID}:Erva. Consome 1. Cause !D! de dano, aplique !M! de ${modID}:Chapado e copie esta carta."
+    "DESCRIPTION": "${modID}:Fume 1. Cause !D! de dano, aplique !M! de ${modID}:Chapado e copie esta carta.",
+    "UPGRADE_DESCRIPTION": "${modID}:Fume 1. Cause !D! de dano, aplique !M! de ${modID}:Chapado e copie esta carta."
   },
   "${modID}:BaforadaForte": {
     "NAME": "Baforada Forte",
@@ -171,8 +171,8 @@
   },
   "${modID}:Fissura": {
     "NAME": "Fissura",
-    "DESCRIPTION": "Cause !D! de dano. Se tiver ${modID}:Erva, consuma 1 e ganhe !M! de Bloqueio.",
-    "UPGRADE_DESCRIPTION": "Cause !D! de dano. Se tiver ${modID}:Erva, consuma 1 e ganhe !M! de Bloqueio."
+    "DESCRIPTION": "Cause !D! de dano. Se tiver ${modID}:Erva, ${modID}:Fume 1 e ganhe !M! de Bloqueio.",
+    "UPGRADE_DESCRIPTION": "Cause !D! de dano. Se tiver ${modID}:Erva, ${modID}:Fume 1 e ganhe !M! de Bloqueio."
   },
   "${modID}:FocoFino": {
     "NAME": "FocoFino",
@@ -186,8 +186,8 @@
   },
   "${modID}:FumacaPassiva": {
     "NAME": "Fumaca Passiva",
-    "DESCRIPTION": "Causa !D! de dano a todos os inimigos. Consome 1 ${modID}:Erva e aplica !M! de Chapado a todos os inimigos.",
-    "UPGRADE_DESCRIPTION": "Causa !D! de dano a todos os inimigos. Consome 1 ${modID}:Erva e aplica !M! de Chapado a todos os inimigos."
+    "DESCRIPTION": "Causa !D! de dano a todos os inimigos. ${modID}:Fume 1 e aplica !M! de Chapado a todos os inimigos.",
+    "UPGRADE_DESCRIPTION": "Causa !D! de dano a todos os inimigos. ${modID}:Fume 1 e aplica !M! de Chapado a todos os inimigos."
   },
   "${modID}:GeloNaMao": {
     "NAME": "Ice Na Mao",

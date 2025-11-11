@@ -34,5 +34,29 @@
     "NAMES": ["piticas","Piticas"],
     "DESCRIPTION": "Loja Geek Brasileira de produtos variados da qual um dos devs faliu uma loja da franquia.",
     "COLOR": "3cb371"
+  },
+  {
+    "PROPER_NAME": "Fume",
+    "NAMES": ["fume","Fume"],
+    "DESCRIPTION": "Consuma x Erva",
+    "COLOR": "3cb371"
+  },
+  {
+    "PROPER_NAME": "Coma",
+    "NAMES": ["coma","Coma"],
+    "DESCRIPTION": "Consuma 1 Comido",
+    "COLOR": "3cb371"
+  },
+  {
+    "PROPER_NAME": "BadTrip",
+    "NAMES": ["badtrip","Badtrip","Bad Trip", "BadTrip","bad trip"],
+    "DESCRIPTION": "maldiçaaaao",
+    "COLOR": "3cb371"
+  },
+  {
+    "PROPER_NAME": "Potencia",
+    "NAMES": ["Potencia","potencia"],
+    "DESCRIPTION": "N tem como",
+    "COLOR": "3cb371"
   }
 ]
