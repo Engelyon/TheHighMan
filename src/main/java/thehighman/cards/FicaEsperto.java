@@ -22,11 +22,12 @@ public class FicaEsperto extends BaseCard {
     );
 
     private static final int DAMAGE = 8;
-    private static final int UPG_DAMAGE = 3;
-
+    private static final int DRAW_CARD = 1;
+    private static final int DRAW_CARD_UPG = 1;
     public FicaEsperto() {
         super(ID, info);
-        setDamage(DAMAGE, UPG_DAMAGE);
+        setDamage(DAMAGE);
+        setMagic(DRAW_CARD, DRAW_CARD_UPG);
         this.keywords.add("chapado");
         initializeDescription();
     }
@@ -36,16 +37,19 @@ public class FicaEsperto extends BaseCard {
         addToBot(new DamageAction(m, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL),
                 AbstractGameAction.AttackEffect.BLUNT_LIGHT));
 
-        if (!m.hasPower(ChapadoPower.POWER_ID)) {
-            addToBot(new DrawCardAction(p, 1));
+        if (m.hasPower(ChapadoPower.POWER_ID)) {
+            addToBot(new DrawCardAction(p, this.magicNumber));
         }
     }
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeDamage(UPG_DAMAGE); // 8 → 11 de dano
+            upgradeMagic();
             initializeDescription();
         }
+    }
+
+    private void upgradeMagic() {
     }
 }

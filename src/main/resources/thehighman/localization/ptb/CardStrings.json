@@ -116,8 +116,8 @@
   },
   "${modID}:ComeAi": {
     "NAME": "Come Aí",
-    "DESCRIPTION": "Cause !D! de dano. Se tiver 3+ de ${modID}:Larica, consuma tudo e ganhe 1 de energia por stack.",
-    "UPGRADE_DESCRIPTION": "Cause !D! de dano. Se tiver 3+ de ${modID}:Larica, consuma tudo e ganhe 1 de energia por stack."
+    "DESCRIPTION": "Cause !D! de dano. Se tiver 3+ de ${modID}:Comido, consuma tudo e ganhe 1 de energia por stack.",
+    "UPGRADE_DESCRIPTION": "Cause !D! de dano. Se tiver 3+ de ${modID}:Comido, consuma tudo e ganhe 1 de energia por stack."
   },
   "${modID}:CompreensaoElevada": {
     "NAME": "Compreensao Elevada",
@@ -166,8 +166,8 @@
   },
   "${modID}:FicaEsperto": {
     "NAME": "Fica Esperto",
-    "DESCRIPTION": "Cause !D! de dano. Se o inimigo não estiver ${modID}:Chapado, compre 1 carta.",
-    "UPGRADE_DESCRIPTION": "Cause !D! de dano. Se o inimigo não estiver ${modID}:Chapado, compre 1 carta."
+    "DESCRIPTION": "Cause !D! de dano. Se o inimigo estiver ${modID}:Chapado, compre !M! carta.",
+    "UPGRADE_DESCRIPTION": "Cause !D! de dano. Se o inimigo estiver ${modID}:Chapado, compre !M! carta."
   },
   "${modID}:Fissura": {
     "NAME": "Fissura",
@@ -186,13 +186,13 @@
   },
   "${modID}:FumacaPassiva": {
     "NAME": "Fumaca Passiva",
-    "DESCRIPTION": "Cause !D! de dano a todos os inimigos. Aplique !M! de ${modID}:Chapado a cada um.",
-    "UPGRADE_DESCRIPTION": "Cause !D! de dano a todos os inimigos. Aplique !M! de ${modID}:Chapado a cada um."
+    "DESCRIPTION": "Causa !D! de dano a todos os inimigos. Consome 1 ${modID}:Erva e aplica !M! de Chapado a todos os inimigos.",
+    "UPGRADE_DESCRIPTION": "Causa !D! de dano a todos os inimigos. Consome 1 ${modID}:Erva e aplica !M! de Chapado a todos os inimigos."
   },
   "${modID}:GeloNaMao": {
     "NAME": "Ice Na Mao",
-    "DESCRIPTION": "Cause !D! de dano. Exaure 1 carta aleatória da sua mão exceto ${modID}:BadTrip.",
-    "UPGRADE_DESCRIPTION": "Cause !D! de dano. Exaure 1 carta aleatória da sua mão exceto ${modID}:BadTrip"
+    "DESCRIPTION": "Cause !D! de dano. Exaure 1 carta aleatória da sua mão.",
+    "UPGRADE_DESCRIPTION": "Cause !D! de dano. Exaure uma carta à sua escolha da sua mão"
   },
   "${modID}:Hypar": {
     "NAME": "Hypar",
@@ -249,11 +249,6 @@
     "DESCRIPTION": "Ganhe !M! de ${modID}:Comido.",
     "UPGRADE_DESCRIPTION": "Ganhe !M! de ${modID}:Comido."
   },
-  "${modID}:MordidaNoLanche": {
-    "NAME": "Mordida No Lanche",
-    "DESCRIPTION": "Cause !D! de dano 3 vezes. Se tiver 2 ou mais de ${modID}:Comido, causa +1.",
-    "UPGRADE_DESCRIPTION": "Cause !D! de dano 3 vezes. Se tiver 2 ou mais de ${modID}:Comido, causa +1."
-  },
   "${modID}:MunchiesFrenetico": {
     "NAME": "Munchies Frenetico",
     "DESCRIPTION": "Cause !D! de dano 3 vezes. Ganhe !M! de ${modID}:Larica.",
@@ -264,16 +259,11 @@
     "DESCRIPTION": "Todas as suas cartas com Exaustão são jogadas duas vezes.",
     "UPGRADE_DESCRIPTION": "Todas as suas cartas com Exaustão são jogadas duas vezes."
   },
-  "${modID}:NuvemToxica": {
-    "NAME": "Nuvem Toxica",
-    "DESCRIPTION": "Aplique !M! de ${modID}:Chapado a um inimigo. Se ele tiver ${modID}:Larica, aplique 1 de Vulnerável.",
-    "UPGRADE_DESCRIPTION": "Aplique !M! de ${modID}:Chapado a um inimigo. Se ele tiver ${modID}:Larica, aplique 1 de Vulnerável."
-  },
   "${modID}:OndaLenta": {
-    "NAME": "Onda Lenta",
-    "DESCRIPTION": "Cause !D! de dano. Se o inimigo não tiver nenhum debuff, aplique !M! de ${modID}:Chapado.",
-    "UPGRADE_DESCRIPTION": "Cause !D! de dano. Se o inimigo não tiver nenhum debuff, aplique !M! de ${modID}:Chapado."
-  },
+  "NAME": "Onda Lenta",
+  "DESCRIPTION": "Cause !D! de dano. Aplique !M! de ${modID}:Chapado agora e nos próximos turno(s). Exaure.",
+  "UPGRADE_DESCRIPTION": "Cause !D! de dano. Aplique !M! de ${modID}:Chapado agora e nos próximos 2 turnos. Exaure."
+},
   "${modID}:PassadaDeNivel": {
     "NAME": "Passada De Nivel",
     "DESCRIPTION": "Cause !D! de dano. Se o inimigo tiver 7 ou mais de ${modID}:Chapado, compre 1 carta.",
@@ -324,11 +314,6 @@
     "DESCRIPTION": "Ganhe !B! de Bloqueio.",
     "UPGRADE_DESCRIPTION": "Ganhe !B! de Bloqueio."
   },
-  "${modID}:ReservaNutricional": {
-    "NAME": "Reserva Nutricional",
-    "DESCRIPTION": "Ganhe !M! de ${modID}:Comido e de ${modID}:Erva.",
-    "UPGRADE_DESCRIPTION": "Ganhe !M! de ${modID}:Comido e de ${modID}:Erva."
-  },
   "${modID}:ResgateDeLanche": {
     "NAME": "Resgate De Lanche",
     "DESCRIPTION": "Cause !D! de dano. Se o inimigo tiver ${modID}:Larica, cure 3 de Vida.",
@@ -341,8 +326,8 @@
   },
   "${modID}:SacolaDeGuloseimas": {
     "NAME": "Sacola De Guloseimas",
-    "DESCRIPTION": "Cause !D! de dano a um inimigo. Ganhe 1 de ${modID}:Comido. Se ele tiver ${modID}:Larica, cause 5 de dano a todos os inimigos.",
-    "UPGRADE_DESCRIPTION": "Cause !D! de dano a um inimigo. Ganhe 1 de ${modID}:Comido. Se ele tiver ${modID}:Larica, cause 5 de dano a todos os inimigos."
+    "DESCRIPTION": "Cause !D! de dano a um inimigo. Se ele tiver ${modID}:Larica, cause 5 de dano a todos os inimigos. Ganhe 1 de ${modID}:Comido. Exaure.",
+    "UPGRADE_DESCRIPTION": "Cause !D! de dano a um inimigo. Se ele tiver ${modID}:Larica, cause 5 de dano a todos os inimigos. Ganhe 1 de ${modID}:Comido.  Ganhe !B! de proteção. Exaure. "
   },
   "${modID}:SemPressa": {
     "NAME": "Sem Pressa",
@@ -351,8 +336,8 @@
   },
   "${modID}:SoproRelaxante": {
     "NAME": "Sopro Relaxante",
-    "DESCRIPTION": "Cause !D! de dano. Aplique !M! de ${modID}:Chapado e 1 de Vulnerável.",
-    "UPGRADE_DESCRIPTION": "Cause !D! de dano. Aplique !M! de ${modID}:Chapado e 1 de Vulnerável."
+    "DESCRIPTION": "Causa !D! de dano. Aplica !M! de Chapado e !SECOND! de Vulnerável.",
+    "UPGRADE_DESCRIPTION": "Causa !D! de dano. Aplica !M! de Chapado e !SECOND! de Vulnerável."
   },
   "${modID}:Tapa": {
     "NAME": "Tapa",
@@ -379,11 +364,6 @@
     "DESCRIPTION": "Entre em trance. Sempre que você ganhar ${modID}:Larica neste turno, exaure 1 carta da sua mão e ganhe 1 de ${modID}:Seda.",
     "UPGRADE_DESCRIPTION": "Entre em trance. Sempre que você ganhar ${modID}:Larica neste turno, exaure 1 carta da sua mão e ganhe 1 de ${modID}:Seda."
   },
-  "${modID}:Vaporizador": {
-    "NAME": "Vaporizador",
-    "DESCRIPTION": "Cause !D! de dano. Aplique !M! de ${modID}:Chapado ao inimigo. Ganhe 1 de ${modID}:Seda.",
-    "UPGRADE_DESCRIPTION": "Cause !D! de dano. Aplique !M! de ${modID}:Chapado ao inimigo. Ganhe 1 de ${modID}:Seda."
-  },
   "${modID}:Ventilador": {
     "NAME": "Ventilador",
     "DESCRIPTION": "Aplique !M! de ${modID}:Chapado a todos os inimigos.",
@@ -393,10 +373,5 @@
     "NAME": "Viagem So DeIda",
     "DESCRIPTION": "Cause !D! de dano. Se ${modID}:BadTrip foi jogada neste turno, cause +6 de dano.",
     "UPGRADE_DESCRIPTION": "Cause !D! de dano. Se ${modID}:BadTrip foi jogada neste turno, cause +6 de dano."
-  },
-  "${modID}:VisaoDistorcida": {
-    "NAME": "Visao Distorcida",
-    "DESCRIPTION": "Aplique 5 de ${modID}:Chapado a todos os inimigos. Perca 10 de Vida. No próximo turno, entre em Visão Distorcida. Exaure.",
-    "UPGRADE_DESCRIPTION": "Aplique 5 de ${modID}:Chapado a todos os inimigos. Perca 10 de Vida. No próximo turno, entre em Visão Distorcida."
   }
 }

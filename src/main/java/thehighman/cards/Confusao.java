@@ -4,10 +4,8 @@ import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDiscardAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thehighman.character.TheHighman;
-import thehighman.cards.BadTrip;
 import thehighman.util.CardStats;
 
 public class Confusao extends BaseCard {
@@ -21,7 +19,7 @@ public class Confusao extends BaseCard {
             1
     );
 
-    private static final int DAMAGE = 5;
+    private static final int DAMAGE = 6;
 
     public Confusao() {
         super(ID, info);
@@ -32,17 +30,14 @@ public class Confusao extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        // Causa 5 de dano
         addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn)));
-
-        // Adiciona 1 Bad Trip na pilha de descarte
         addToBot(new MakeTempCardInDiscardAction(new BadTrip(), 1));
     }
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeDamage(3); // 5 → 8 de dano
+            upgradeDamage(5); // 5 → 8 de dano
             initializeDescription();
         }
     }

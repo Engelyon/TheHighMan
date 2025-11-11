@@ -4,6 +4,7 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -24,13 +25,16 @@ public class SacolaDeGuloseimas extends BaseCard {
     );
 
     private static final int DAMAGE = 10;
-    private static final int UPG_DAMAGE = 4;
+    private static final int UPG_DAMAGE = 0; // mantemos dano base; ‘upgrade’ dá proteção
     private static final int BONUS_DAMAGE = 5;
+    private static final int UPG_BLOCK = 5;
 
     public SacolaDeGuloseimas() {
         super(ID, info);
         setDamage(DAMAGE, UPG_DAMAGE);
+        setBlock(0, UPG_BLOCK);
         this.isMultiDamage = true;
+        this.exhaust = true;
         this.keywords.add("comido");
         this.keywords.add("larica");
         initializeDescription();
@@ -46,18 +50,24 @@ public class SacolaDeGuloseimas extends BaseCard {
         addToBot(new ApplyPowerAction(p, p, new ComidoPower(p, 1), 1));
 
         // Se o inimigo tiver Larica, causa 5 de dano a todos os inimigos
-        if (m.hasPower(LaricaPower.POWER_ID)) {
+        if (m != null && m.hasPower(LaricaPower.POWER_ID)) {
             addToBot(new DamageAllEnemiesAction(p,
                     DamageInfo.createDamageMatrix(BONUS_DAMAGE, true),
                     DamageInfo.DamageType.THORNS,
                     AbstractGameAction.AttackEffect.FIRE));
         }
+
+        // Upgrade: ganha 5 de proteção (block)
+        if (upgraded) {
+            addToBot(new GainBlockAction(p, p, UPG_BLOCK));
+        }
     }
+
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeDamage(UPG_DAMAGE); // 10 → 14 de dano
+            upgradeBlock(UPG_BLOCK);
             initializeDescription();
         }
     }

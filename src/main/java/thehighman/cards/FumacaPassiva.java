@@ -8,9 +8,11 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.vfx.combat.InflameEffect;
 import thehighman.character.TheHighman;
 import thehighman.powers.ChapadoPower;
+import thehighman.powers.ErvaPower;
 import thehighman.powers.SedaPower;
 import thehighman.util.CardStats;
 
@@ -41,38 +43,46 @@ public class FumacaPassiva extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        AbstractPower erva = p.getPower(ErvaPower.POWER_ID);
+        erva.amount -= 1;
+        erva.updateDescription();
+        if (erva.amount == 0) {
+            p.powers.remove(erva);
+        }
         addToBot(new DamageAllEnemiesAction(p, this.multiDamage, DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.POISON));
         addToBot(new VFXAction(new InflameEffect(p)));
+        int sedaBonus = p.hasPower(SedaPower.POWER_ID) ? p.getPower(SedaPower.POWER_ID).amount : 0;
+        int totalChapado = this.magicNumber + sedaBonus;
         for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
-            addToBot(new ApplyPowerAction(mo, p, new ChapadoPower(mo, magicNumber), magicNumber));
+            addToBot(new ApplyPowerAction(mo, p, new ChapadoPower(mo, totalChapado), totalChapado));
         }
     }
+    @Override
+    public boolean canUse(AbstractPlayer p, AbstractMonster m) {
+        if (!super.canUse(p, m)) return false;
 
+        if (!p.hasPower(ErvaPower.POWER_ID) || p.getPower(ErvaPower.POWER_ID).amount < 1) {
+            this.cantUseMessage = "Preciso de Erva para usar esta carta.";
+            return false;
+        }
+
+        return true;
+    }
     @Override
     public void applyPowers() {
         super.applyPowers();
-        applySedaBonus();
-    }
-
-    @Override
-    public void calculateCardDamage(AbstractMonster mo) {
-        super.calculateCardDamage(mo);
-        applySedaBonus();
-    }
-
-    private void applySedaBonus() {
-        if (AbstractDungeon.player != null && AbstractDungeon.player.hasPower(SedaPower.POWER_ID)) {
-            int stacks = AbstractDungeon.player.getPower(SedaPower.POWER_ID).amount;
-
-            // Aplica o bônus de Seda ao dano em área
-            for (int i = 0; i < this.multiDamage.length; i++) {
-                this.multiDamage[i] += stacks;
-            }
-
-            this.damage += stacks;
-            this.isDamageModified = true;
+        if (AbstractDungeon.player.hasPower(SedaPower.POWER_ID)) {
+            int seda = AbstractDungeon.player.getPower(SedaPower.POWER_ID).amount;
+            int bonus = Math.max(1, seda);
+            this.magicNumber = this.baseMagicNumber + bonus;
+            isMagicNumberModified = true;
+        } else {
+            this.magicNumber = this.baseMagicNumber;
+            isMagicNumberModified = false;
         }
+        initializeDescription();
     }
+
     @Override
     public void upgrade() {
         if (!upgraded) {

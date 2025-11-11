@@ -38,18 +38,21 @@ public class GeloNaMao extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        // Causa 3 de dano
         addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn)));
 
-        // Exaure 1 carta da mão que não seja Bad Trip
-        List<AbstractCard> validCards = p.hand.group.stream()
-                .filter(c -> !c.cardID.equals("thehighman:BadTrip") && c != this)
-                .collect(Collectors.toList());
-
-        if (!validCards.isEmpty()) {
-            Collections.shuffle(validCards);
-            AbstractCard toExhaust = validCards.get(0);
-            addToBot(new ExhaustSpecificCardAction(toExhaust, p.hand));
+        if (upgraded) {
+            addToBot(new com.megacrit.cardcrawl.actions.common.ExhaustAction(
+                    p, p, 1, false
+            ));
+        } else {
+            List<AbstractCard> validCards = p.hand.group.stream()
+                    .filter(c -> c != this)
+                    .collect(Collectors.toList());
+            if (!validCards.isEmpty()) {
+                Collections.shuffle(validCards);
+                AbstractCard toExhaust = validCards.get(0);
+                addToBot(new ExhaustSpecificCardAction(toExhaust, p.hand));
+            }
         }
     }
     @Override
