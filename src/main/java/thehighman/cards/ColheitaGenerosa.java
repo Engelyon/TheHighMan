@@ -1,6 +1,7 @@
 package thehighman.cards;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thehighman.character.TheHighman;
@@ -21,7 +22,7 @@ public class ColheitaGenerosa extends BaseCard {
     );
 
     private static final int ERVA_GAIN = 2;
-    private static final int COMIDO_THRESHOLD = 3;
+    private static final int COMIDO_GAIN= 3;
     private static final int SEDA_GAIN = 1;
 
     public ColheitaGenerosa() {
@@ -35,19 +36,17 @@ public class ColheitaGenerosa extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        // Ganha 2 de Erva
         addToBot(new ApplyPowerAction(p, p, new ErvaPower(p, ERVA_GAIN), ERVA_GAIN));
-
-        // Se tiver 3 ou mais de Comido, ganha 1 de Seda
-        if (p.hasPower(ComidoPower.POWER_ID) && p.getPower(ComidoPower.POWER_ID).amount >= COMIDO_THRESHOLD) {
-            addToBot(new ApplyPowerAction(p, p, new SedaPower(p, p, SEDA_GAIN), SEDA_GAIN));
+        addToBot(new ApplyPowerAction(p, p, new ComidoPower(p, COMIDO_GAIN), COMIDO_GAIN));
+        addToBot(new ApplyPowerAction(p, p, new SedaPower(p, p, SEDA_GAIN), SEDA_GAIN));
+        if (upgraded){
+            addToBot(new DrawCardAction(1));
         }
     }
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(1); // 2 → 3 de Erva
             initializeDescription();
         }
     }

@@ -1,8 +1,8 @@
 package thehighman.cards;
 
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thehighman.character.TheHighman;
 import thehighman.powers.ComidoPower;
@@ -19,12 +19,11 @@ public class Burgao extends BaseCard {
             0
     );
 
-    private static final int BLOCK = 3;
-    private static final int COMIDO_GAIN = 1;
+    private static final int BLOCK_PER_COMIDO = 4;
+    private static final int BLOCK_PER_COMIDO_UPG = 6;
 
     public Burgao() {
         super(ID, info);
-        setBlock(BLOCK);
         this.exhaust = true;
         this.keywords.add("comido");
         initializeDescription();
@@ -32,15 +31,39 @@ public class Burgao extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new GainBlockAction(p, this.block));
-        addToBot(new ApplyPowerAction(p, p, new ComidoPower(p, COMIDO_GAIN), COMIDO_GAIN));
+        if (p == null) {
+            return;
+        }
+        int comidoAmount = 0;
+        if (p.hasPower(ComidoPower.POWER_ID)) {
+            comidoAmount = p.getPower(ComidoPower.POWER_ID).amount;
+        }
+        int per = upgraded ? BLOCK_PER_COMIDO_UPG : BLOCK_PER_COMIDO;
+        int totalBlock = comidoAmount * per;
+        if (totalBlock > 0) {
+            addToBot(new GainBlockAction(p, p, totalBlock));
+        }
     }
+
+    @Override
+    public void applyPowers() {
+        super.applyPowers();
+        int comidoAmount = 0;
+        if (AbstractDungeon.player != null && AbstractDungeon.player.hasPower(ComidoPower.POWER_ID)) {
+            comidoAmount = AbstractDungeon.player.getPower(ComidoPower.POWER_ID).amount;
+        }
+        int per = upgraded ? BLOCK_PER_COMIDO_UPG : BLOCK_PER_COMIDO;
+        int displayBlock = comidoAmount * per;
+        this.baseBlock = displayBlock;
+        this.block = displayBlock;
+        this.isBlockModified = false;
+        initializeDescription();
+    }
+
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeBlock(3); // 3 → 6 de Bloqueio
-            upgradeMagicNumber(1); // 1 → 2 de Comido
             initializeDescription();
         }
     }

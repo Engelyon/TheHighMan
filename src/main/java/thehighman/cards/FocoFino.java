@@ -3,9 +3,11 @@ package thehighman.cards;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thehighman.character.TheHighman;
 import thehighman.powers.ChapadoPower;
+import thehighman.powers.SedaPower;
 import thehighman.util.CardStats;
 
 public class FocoFino extends BaseCard {
@@ -19,9 +21,10 @@ public class FocoFino extends BaseCard {
             1
     );
 
-    private static final int CHAPADO_AMOUNT = 2;
+    private static final int CHAPADO_AMOUNT = 1;
     private static final int UPG_CHAPADO = 1;
     private static final int DRAW_AMOUNT = 1;
+    private static final int DRAW_BONUS_UPG = 1; // no upgrade compra +1 carta
 
     public FocoFino() {
         super(ID, info);
@@ -32,18 +35,38 @@ public class FocoFino extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        // Aplica Chapado ao inimigo
+        // Aplica Chapado ao inimigo (usa magicNumber, que já pode ser modificado por Seda)
         addToBot(new ApplyPowerAction(m, p, new ChapadoPower(m, this.magicNumber), this.magicNumber));
 
-        // Compra 1 carta
-        addToBot(new DrawCardAction(p, DRAW_AMOUNT));
+        // Compra cartas: base DRAW_AMOUNT, se upada compra DRAW_BONUS_UPG a mais
+        int draws = DRAW_AMOUNT + (upgraded ? DRAW_BONUS_UPG : 0);
+        addToBot(new DrawCardAction(p, draws));
     }
+
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(UPG_CHAPADO); // 2 → 3 de Chapado
+            upgradeMagicNumber(UPG_CHAPADO); // aumenta o valor de Chapado por upgrade
             initializeDescription();
         }
+    }
+
+    @Override
+    public void applyPowers() {
+        super.applyPowers();
+
+        int base = this.baseMagicNumber;
+        int newMagic = base;
+
+        if (AbstractDungeon.player != null && AbstractDungeon.player.hasPower(SedaPower.POWER_ID)) {
+            int seda = AbstractDungeon.player.getPower(SedaPower.POWER_ID).amount;
+            newMagic = base + Math.max(0, seda);
+        }
+
+        this.magicNumber = newMagic;
+        this.isMagicNumberModified = (this.magicNumber != this.baseMagicNumber);
+
+        initializeDescription();
     }
 }

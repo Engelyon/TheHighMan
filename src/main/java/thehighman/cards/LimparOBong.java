@@ -35,12 +35,16 @@ public class LimparOBong extends BaseCard {
         if (p.hasPower(ErvaPower.POWER_ID)) {
             int erva = p.getPower(ErvaPower.POWER_ID).amount;
             if (erva > 0) {
-                // Remove toda a Erva
+                // consome toda a Erva
                 addToBot(new ReducePowerAction(p, p, ErvaPower.POWER_ID, erva));
 
-                // Aplica Força temporária
-                addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, erva), erva));
-                addToBot(new ApplyPowerAction(p, p, new LoseStrengthPower(p, erva), erva));
+                // quantidade de força por 1 de Erva: 2 se upada, 1 se não
+                int strengthPerErva = upgraded ? 2 : 1;
+                int totalStrength = erva * strengthPerErva;
+
+                // aplica Força temporária (Strength + LoseStrength)
+                addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, totalStrength), totalStrength));
+                addToBot(new ApplyPowerAction(p, p, new LoseStrengthPower(p, totalStrength), totalStrength));
             }
         }
     }
@@ -59,12 +63,10 @@ public class LimparOBong extends BaseCard {
         if (!super.canUse(p, m)) {
             return false;
         }
-
-        if (!p.hasPower(ErvaPower.POWER_ID) || p.getPower(ErvaPower.POWER_ID).amount <= 0) {
+        if (p == null || !p.hasPower(ErvaPower.POWER_ID) || p.getPower(ErvaPower.POWER_ID).amount <= 0) {
             this.cantUseMessage = "Preciso de pelo menos 1 de Erva.";
             return false;
         }
-
         return true;
     }
 }

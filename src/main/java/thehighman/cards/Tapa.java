@@ -70,7 +70,7 @@ package thehighman.cards;
                 super.applyPowers();
                 if (AbstractDungeon.player.hasPower(SedaPower.POWER_ID)) {
                     int seda = AbstractDungeon.player.getPower(SedaPower.POWER_ID).amount;
-                    int bonus = Math.max(1, seda);
+                    int bonus = Math.max(0, seda);
                     this.magicNumber = this.baseMagicNumber + bonus;
                     isMagicNumberModified = true;
                 } else {

@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thehighman.character.TheHighman;
 import thehighman.powers.ChapadoPower;
+import thehighman.powers.SedaPower;
 import thehighman.util.CardStats;
 
 public class ErvaDaPaz extends BaseCard {
@@ -20,39 +21,65 @@ public class ErvaDaPaz extends BaseCard {
             2
     );
 
-    private static final int CHAPADO_AMOUNT = 4;
+    private static final int CHAPADO_AMOUNT = 1;
     private static final int BLOCK_AMOUNT = 10;
-
+    private static final int BLOCK_UPG = 4;
     public ErvaDaPaz() {
         super(ID, info);
-        setMagic(CHAPADO_AMOUNT, CHAPADO_AMOUNT + 1); // 4 → 5 Chapado com upgrade
-        setBlock(BLOCK_AMOUNT, BLOCK_AMOUNT + 4);     // 10 → 14 Bloqueio com upgrade
-
+        setMagic(CHAPADO_AMOUNT);
+        setBlock(BLOCK_AMOUNT, BLOCK_UPG);
+        this.exhaust = true;
         this.keywords.add("chapado");
         initializeDescription();
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        // Aplica 4 de Chapado e 10 de Bloqueio ao jogador
-        addToBot(new ApplyPowerAction(p, p, new ChapadoPower(p, CHAPADO_AMOUNT), CHAPADO_AMOUNT));
-        addToBot(new GainBlockAction(p, p, this.block));
-
-        // Aplica 4 de Chapado e 10 de Bloqueio a todos os inimigos
-        for (AbstractMonster mo : AbstractDungeon.getMonsters().monsters) {
-            if (!mo.isDeadOrEscaped()) {
-                addToBot(new ApplyPowerAction(mo, p, new ChapadoPower(mo, CHAPADO_AMOUNT), CHAPADO_AMOUNT));
-                addToBot(new GainBlockAction(mo, p, this.block));
+        int chapadoToApply = this.magicNumber;
+        int blockToGive = this.block;
+        if (p != null) {
+            if (chapadoToApply > 0) {
+                addToBot(new ApplyPowerAction(p, p, new ChapadoPower(p, chapadoToApply), chapadoToApply));
+            }
+            if (blockToGive > 0) {
+                addToBot(new GainBlockAction(p, p, blockToGive));
+            }
+        }
+        if (AbstractDungeon.getCurrRoom() != null && AbstractDungeon.getCurrRoom().monsters != null) {
+            for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
+                if (mo != null && !mo.isDeadOrEscaped()) {
+                    if (chapadoToApply > 0) {
+                        addToBot(new ApplyPowerAction(mo, p, new ChapadoPower(mo, chapadoToApply), chapadoToApply));
+                    }
+                    if (blockToGive > 0) {
+                        addToBot(new GainBlockAction(mo, p, blockToGive));
+                    }
+                }
             }
         }
     }
+
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(1); // Chapado: 4 → 5
-            upgradeBlock(4);       // Bloqueio: 10 → 14
+            upgradeBlock(BLOCK_UPG);
+            this.selfRetain = true;
             initializeDescription();
         }
+    }
+
+    @Override
+    public void applyPowers() {
+        super.applyPowers();
+        int base = this.baseMagicNumber;
+        int newMagic = base;
+        if (AbstractDungeon.player != null && AbstractDungeon.player.hasPower(SedaPower.POWER_ID)) {
+            int seda = AbstractDungeon.player.getPower(SedaPower.POWER_ID).amount;
+            newMagic = base + Math.max(0, seda);
+        }
+        this.magicNumber = newMagic;
+        this.isMagicNumberModified = (this.magicNumber != this.baseMagicNumber);
+        initializeDescription();
     }
 }

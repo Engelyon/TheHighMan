@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thehighman.character.TheHighman;
 import thehighman.powers.ChapadoPower;
+import thehighman.powers.SedaPower;
 import thehighman.util.CardStats;
 
 public class MarDeFumaca extends BaseCard {
@@ -20,37 +21,54 @@ public class MarDeFumaca extends BaseCard {
             1
     );
 
-    private static final int CHAPADO_AMOUNT = 3;
-    private static final int BLOCK_PER_STACK = 3;
+    private static final int CHAPADO_AMOUNT = 1;
 
     public MarDeFumaca() {
         super(ID, info);
-        setMagic(CHAPADO_AMOUNT, 1); // upgrade aumenta o Chapado de 3 → 4
+        setMagic(CHAPADO_AMOUNT);
         this.keywords.add("chapado");
         initializeDescription();
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        int totalStacks = 0;
-
-        for (AbstractMonster mo : AbstractDungeon.getMonsters().monsters) {
-            if (!mo.isDeadOrEscaped()) {
-                addToBot(new ApplyPowerAction(mo, p, new ChapadoPower(mo, CHAPADO_AMOUNT), CHAPADO_AMOUNT));
-                totalStacks += CHAPADO_AMOUNT;
+        if (p == null) return;
+        int totalStacksApplied = 0;
+        if (AbstractDungeon.getCurrRoom() != null && AbstractDungeon.getCurrRoom().monsters != null) {
+            for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
+                if (mo != null && !mo.isDeadOrEscaped()) {
+                    addToBot(new ApplyPowerAction(mo, p, new ChapadoPower(mo, this.magicNumber), this.magicNumber));
+                    totalStacksApplied += this.magicNumber;
+                }
             }
         }
 
-        // Ganha bloqueio proporcional ao total de stacks aplicados
-        int totalBlock = totalStacks * BLOCK_PER_STACK;
-        addToBot(new GainBlockAction(p, totalBlock));
+        if (totalStacksApplied > 0) {
+            int blockMultiplier = upgraded ? 2 : 1;
+            int totalBlock = totalStacksApplied * blockMultiplier;
+            addToBot(new GainBlockAction(p, p, totalBlock));
+        }
     }
+
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(1); // Chapado: 3 → 4
             initializeDescription();
         }
+    }
+
+    @Override
+    public void applyPowers() {
+        super.applyPowers();
+        int base = this.baseMagicNumber;
+        int newMagic = base;
+        if (AbstractDungeon.player != null && AbstractDungeon.player.hasPower(SedaPower.POWER_ID)) {
+            int seda = AbstractDungeon.player.getPower(SedaPower.POWER_ID).amount;
+            newMagic = base + Math.max(0, seda);
+        }
+        this.magicNumber = newMagic;
+        this.isMagicNumberModified = (this.magicNumber != this.baseMagicNumber);
+        initializeDescription();
     }
 }

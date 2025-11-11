@@ -15,12 +15,13 @@ public class CompreensaoElevada extends BaseCard {
             CardType.POWER,
             CardRarity.RARE,
             CardTarget.SELF,
-            2
+            3
     );
 
     public CompreensaoElevada() {
         super(ID, info);
         this.keywords.add("compreensão");
+        this.isEthereal=true;
         initializeDescription();
     }
 
@@ -32,7 +33,7 @@ public class CompreensaoElevada extends BaseCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeBaseCost(1); // 2 → 1 de custo
+            this.isEthereal=false;
             initializeDescription();
         }
     }

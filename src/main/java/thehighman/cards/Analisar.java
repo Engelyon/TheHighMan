@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import thehighman.character.TheHighman;
 import thehighman.powers.ChapadoPower;
+import thehighman.powers.SedaPower;
 import thehighman.util.CardStats;
 
 public class Analisar extends BaseCard {
@@ -22,7 +23,6 @@ public class Analisar extends BaseCard {
     );
 
     private static final int DRAW_AMOUNT = 2;
-    private static final int STRENGTH_GAIN = 1;
     private static final int CHAPADO_THRESHOLD = 5;
 
     public Analisar() {
@@ -36,13 +36,11 @@ public class Analisar extends BaseCard {
         // Compra 2 cartas
         addToBot(new DrawCardAction(p, DRAW_AMOUNT));
 
-        // Verifica se algum inimigo tem 5 ou mais de Chapado
         boolean chapadoDetectado = AbstractDungeon.getCurrRoom().monsters.monsters.stream()
                 .anyMatch(mo -> mo.hasPower(ChapadoPower.POWER_ID) && mo.getPower(ChapadoPower.POWER_ID).amount >= CHAPADO_THRESHOLD);
 
-        // Se sim, ganha 1 de Força
         if (chapadoDetectado) {
-            addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, STRENGTH_GAIN), STRENGTH_GAIN));
+            new ApplyPowerAction(p, p, new SedaPower(p, p, 1), 1);
         }
     }
     @Override

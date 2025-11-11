@@ -1,6 +1,7 @@
 package thehighman.cards;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.StrengthPower;
@@ -17,43 +18,47 @@ public class Fritura extends BaseCard {
             CardType.SKILL,
             CardRarity.COMMON,
             CardTarget.SELF,
-            1
+            0
     );
 
     private static final int TEMP_STRENGTH = 2;
+    private static final int UPG_TEMP_STRENGTH = 1;
     private static final int LARICA_LOSS = 1;
 
     public Fritura() {
         super(ID, info);
-        setMagic(TEMP_STRENGTH, TEMP_STRENGTH + 1); // 2 → 3 de Força temporária com upgrade
-
+        setMagic(TEMP_STRENGTH, UPG_TEMP_STRENGTH);
         this.keywords.add("larica");
         initializeDescription();
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        // Ganha 2 de Força temporária
-        addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, TEMP_STRENGTH), TEMP_STRENGTH));
-        addToBot(new ApplyPowerAction(p, p, new LoseStrengthPower(p, TEMP_STRENGTH), TEMP_STRENGTH));
+        if (p == null) return;
+        int strengthToApply = this.magicNumber;
+        int laricaToRemove = LARICA_LOSS;
+        if (upgraded) {
+            strengthToApply *= 2;
+            laricaToRemove *= 2;
+        }
 
-        // Perde 1 de Larica se tiver
+        if (strengthToApply > 0) {
+            addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, strengthToApply), strengthToApply));
+            addToBot(new ApplyPowerAction(p, p, new LoseStrengthPower(p, strengthToApply), strengthToApply));
+        }
         if (p.hasPower(LaricaPower.POWER_ID)) {
-            int atual = p.getPower(LaricaPower.POWER_ID).amount;
-            if (atual > 0) {
-                p.getPower(LaricaPower.POWER_ID).amount -= LARICA_LOSS;
-                if (p.getPower(LaricaPower.POWER_ID).amount <= 0) {
-                    p.getPower(LaricaPower.POWER_ID).onRemove();
-                    p.powers.remove(p.getPower(LaricaPower.POWER_ID));
-                }
+            int current = p.getPower(LaricaPower.POWER_ID).amount;
+            int amountToRemove = Math.min(current, laricaToRemove);
+            if (amountToRemove > 0) {
+                addToBot(new ReducePowerAction(p, p, LaricaPower.POWER_ID, amountToRemove));
             }
         }
     }
+
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(1); // 2 → 3 de Força temporária
             initializeDescription();
         }
     }

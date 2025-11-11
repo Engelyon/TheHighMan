@@ -32,7 +32,7 @@ public class EaPotencia extends BaseCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            //Colocar innate
+            this.isInnate=true;
             initializeDescription();
         }
     }

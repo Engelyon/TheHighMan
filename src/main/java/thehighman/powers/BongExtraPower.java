@@ -10,15 +10,13 @@ import static thehighman.InimigosDoSpire.makeID;
 public class BongExtraPower extends BasePower {
     public static final String POWER_ID = makeID("BongExtraPower");
     private static final int DEFAULT_AMOUNT = -1;
+    private static final int DEFAULT_BLOCK_PER_TRIGGER = 5;
 
     private int pendingBlock = 0;
 
+    // amount aqui representa blockPerTrigger quando > 0
     public BongExtraPower(AbstractCreature owner, AbstractCreature source, int amount) {
         super(POWER_ID, PowerType.BUFF, false, owner, source, amount);
-    }
-    @Override
-    public void updateDescription() {
-        description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
     }
 
     public BongExtraPower(AbstractCreature owner, AbstractCreature source) {
@@ -26,11 +24,25 @@ public class BongExtraPower extends BasePower {
     }
 
     @Override
+    public void updateDescription() {
+        int blockPerTrigger = getBlockPerTrigger();
+        // DESCRIPTIONS vem do PowerStrings carregado pelo BasePower/arquitetura do mod
+        description = DESCRIPTIONS[0] + blockPerTrigger + DESCRIPTIONS[1];
+    }
+
+    private int getBlockPerTrigger() {
+        if (this.amount > 0) {
+            return this.amount;
+        }
+        return DEFAULT_BLOCK_PER_TRIGGER;
+    }
+
+    @Override
     public void onApplyPower(AbstractPower power, AbstractCreature target, AbstractCreature source) {
         if (target != owner && power.ID.equals("thehighman:Larica")) {
             flash();
             addToBot(new DrawCardAction(1));
-            pendingBlock += 5;
+            pendingBlock += getBlockPerTrigger();
         }
     }
 

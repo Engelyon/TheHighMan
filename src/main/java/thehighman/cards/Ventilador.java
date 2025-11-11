@@ -1,11 +1,13 @@
 package thehighman.cards;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thehighman.character.TheHighman;
 import thehighman.powers.ChapadoPower;
+import thehighman.powers.SedaPower;
 import thehighman.util.CardStats;
 
 public class Ventilador extends BaseCard {
@@ -19,30 +21,55 @@ public class Ventilador extends BaseCard {
             1
     );
 
-    private static final int CHAPADO_AMOUNT = 2;
-    private static final int UPG_CHAPADO = 1;
+    private static final int CHAPADO_AMOUNT = 1;
+    private static final int BLOCK_PER_HIT = 3;
+    private static final int BLOCK_PER_HIT_UPG = 5;
 
     public Ventilador() {
         super(ID, info);
-        setMagic(CHAPADO_AMOUNT, UPG_CHAPADO);
+        setMagic(CHAPADO_AMOUNT);
         this.keywords.add("chapado");
         initializeDescription();
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
-            if (!mo.isDeadOrEscaped()) {
-                addToBot(new ApplyPowerAction(mo, p, new ChapadoPower(mo, this.magicNumber), this.magicNumber));
+        int hits = 0;
+        if (AbstractDungeon.getCurrRoom() != null && AbstractDungeon.getCurrRoom().monsters != null) {
+            for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
+                if (mo != null && !mo.isDeadOrEscaped()) {
+                    addToBot(new ApplyPowerAction(mo, p, new ChapadoPower(mo, this.magicNumber), this.magicNumber));
+                    hits++;
+                }
             }
         }
+
+        if (hits > 0) {
+            int perHit = upgraded ? BLOCK_PER_HIT_UPG : BLOCK_PER_HIT;
+            int totalBlock = hits * perHit;
+            addToBot(new GainBlockAction(p, p, totalBlock));
+        }
     }
+
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(UPG_CHAPADO); // 2 → 3 de Chapado
             initializeDescription();
         }
+    }
+
+    @Override
+    public void applyPowers() {
+        super.applyPowers();
+        int base = this.baseMagicNumber;
+        int newMagic = base;
+        if (AbstractDungeon.player != null && AbstractDungeon.player.hasPower(SedaPower.POWER_ID)) {
+            int seda = AbstractDungeon.player.getPower(SedaPower.POWER_ID).amount;
+            newMagic = base + Math.max(0, seda);
+        }
+        this.magicNumber = newMagic;
+        this.isMagicNumberModified = (this.magicNumber != this.baseMagicNumber);
+        initializeDescription();
     }
 }

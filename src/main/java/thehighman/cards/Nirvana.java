@@ -13,26 +13,28 @@ public class Nirvana extends BaseCard {
     private static final CardStats info = new CardStats(
             TheHighman.Meta.CARD_COLOR,
             CardType.POWER,
-            CardRarity.UNCOMMON,
+            CardRarity.RARE,
             CardTarget.SELF,
             2
     );
 
+    private static final int POWER_AMOUNT = 1;
+
     public Nirvana() {
         super(ID, info);
-        this.keywords.add("nirvana");
         initializeDescription();
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new NirvanaPower(p,p)));
+        addToBot(new ApplyPowerAction(p, p, new NirvanaPower(p, p, POWER_AMOUNT), POWER_AMOUNT));
     }
+
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeBaseCost(1); // 2 → 1 de custo
+            this.isInnate = true;
             initializeDescription();
         }
     }

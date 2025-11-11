@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thehighman.character.TheHighman;
 import thehighman.powers.ChapadoPower;
+import thehighman.powers.SedaPower;
 import thehighman.util.CardStats;
 
 public class BrisaFinal extends BaseCard {
@@ -23,11 +24,13 @@ public class BrisaFinal extends BaseCard {
     );
 
     private static final int DAMAGE = 5;
-    private static final int UPG_DAMAGE = 2;
+    private static final int UPG_X_PLUS = 1; // upgrade: X + 1
+    private static final int CHAPADO_AMOUNT = 1;
 
     public BrisaFinal() {
         super(ID, info);
-        setDamage(DAMAGE, UPG_DAMAGE);
+        setDamage(DAMAGE);
+        setMagic(CHAPADO_AMOUNT); // define baseMagicNumber e magicNumber
         this.isMultiDamage = true;
         this.keywords.add("chapado");
         initializeDescription();
@@ -42,30 +45,49 @@ public class BrisaFinal extends BaseCard {
             p.getRelic("Chemical X").flash();
         }
 
+        // upgrade dá +1 ao X
+        if (upgraded) {
+            effect += UPG_X_PLUS;
+        }
+
         if (effect > 0) {
             for (int i = 0; i < effect; i++) {
                 // Causa dano a todos os inimigos
                 addToBot(new DamageAllEnemiesAction(p, this.multiDamage, DamageInfo.DamageType.NORMAL,
                         com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
-
-                // Aplica 1 de Chapado a todos os inimigos
+                // Aplica magicNumber de Chapado a todos os inimigos
                 for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
                     if (!mo.isDeadOrEscaped()) {
-                        addToBot(new ApplyPowerAction(mo, p, new ChapadoPower(mo, 1), 1));
+                        addToBot(new ApplyPowerAction(mo, p, new ChapadoPower(mo, this.magicNumber), this.magicNumber));
                     }
                 }
-
                 // Pequeno delay visual entre os hits
                 addToBot(new WaitAction(0.1f));
             }
         }
     }
+
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeDamage(UPG_DAMAGE); // 5 → 7 de dano por energia
             initializeDescription();
         }
+    }
+
+    // atualiza o magicNumber com a quantidade de SedaPower
+    @Override
+    public void applyPowers() {
+        super.applyPowers();
+        int base = this.baseMagicNumber;
+        int newMagic = base;
+        if (AbstractDungeon.player != null && AbstractDungeon.player.hasPower(SedaPower.POWER_ID)) {
+            int seda = AbstractDungeon.player.getPower(SedaPower.POWER_ID).amount;
+            newMagic = base + Math.max(0, seda);
+        }
+        this.magicNumber = newMagic;
+        this.isMagicNumberModified = (this.magicNumber != this.baseMagicNumber);
+
+        initializeDescription();
     }
 }

@@ -26,10 +26,12 @@ public class Recompensa extends BaseCard {
     private static final int DAMAGE = 6;
     private static final int UPG_DAMAGE = 3;
     private static final int VULNERABLE_AMOUNT = 2;
+    private static final int VULNERABLE_AMOUNT_UPG = 2;
 
     public Recompensa() {
         super(ID, info);
         setDamage(DAMAGE, UPG_DAMAGE);
+        setMagic(VULNERABLE_AMOUNT, VULNERABLE_AMOUNT_UPG);
         this.keywords.add("erva");
         initializeDescription();
     }
@@ -43,14 +45,15 @@ public class Recompensa extends BaseCard {
         // Se tiver Erva, consome 1 e aplica Vulnerável
         if (p.hasPower(ErvaPower.POWER_ID) && p.getPower(ErvaPower.POWER_ID).amount >= 1) {
             addToBot(new ReducePowerAction(p, p, ErvaPower.POWER_ID, 1));
-            addToBot(new ApplyPowerAction(m, p, new VulnerablePower(m, VULNERABLE_AMOUNT, false), VULNERABLE_AMOUNT));
+            addToBot(new ApplyPowerAction(m, p, new VulnerablePower(m, magicNumber, false), magicNumber));
         }
     }
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeDamage(UPG_DAMAGE); // 6 → 9 de dano
+            upgradeDamage(UPG_DAMAGE);
+            upgradeMagicNumber(VULNERABLE_AMOUNT_UPG);
             initializeDescription();
         }
     }

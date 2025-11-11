@@ -8,7 +8,7 @@
   "${modID}:ChapadoPower": {
     "NAME": "Chapado",
     "DESCRIPTIONS": [
-      "Ao atingir 15 stacks, perde 10 stacks e recebe Larica. Stacks atuais: ",
+      "Reduz 1 no final do turno. Ao atingir 15 stacks, perde 10 stacks e recebe Larica. Stacks atuais: ",
       ". Redução de dano: ",
       "%."
     ]
@@ -36,7 +36,8 @@
   "${modID}:BongExtraPower": {
     "NAME": "Bong Extra",
     "DESCRIPTIONS": [
-      "Sempre que um inimigo ganhar Larica, compre 1 carta e ganhe 5 de Bloqueio no final do turno."
+      "Sempre que um inimigo ganhar Larica, compre 1 carta e ganhe ",
+      " de Bloqueio no final do turno."
     ]
   },
   "${modID}:BuchimCheiPower": {

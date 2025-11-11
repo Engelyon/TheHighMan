@@ -22,13 +22,13 @@ public class BongGigatonico extends BaseCard {
     );
 
     private static final int DAMAGE = 30;
-    private static final int UPG_DAMAGE = 8;
     private static final int VULNERABLE_AMOUNT = 3;
 
     public BongGigatonico() {
         super(ID, info);
-        setDamage(DAMAGE, UPG_DAMAGE);
+        setDamage(DAMAGE);
         this.exhaust = true;
+        this.magicNumber=VULNERABLE_AMOUNT;
         this.keywords.add("larica");
         initializeDescription();
     }
@@ -38,19 +38,14 @@ public class BongGigatonico extends BaseCard {
         boolean upgradedEffect = this.upgraded && m.hasPower(LaricaPower.POWER_ID);
 
         if (upgradedEffect) {
-            // Aplica Vulnerável primeiro
-            addToBot(new ApplyPowerAction(m, p,
+           addToBot(new ApplyPowerAction(m, p,
                     new com.megacrit.cardcrawl.powers.VulnerablePower(m, this.magicNumber, false),
                     this.magicNumber));
         }
-
-        // Causa dano
         addToBot(new DamageAction(m, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL),
                 AbstractGameAction.AttackEffect.FIRE));
-
         if (!upgradedEffect && m.hasPower(LaricaPower.POWER_ID)) {
-            // Aplica Vulnerável depois (versão não aprimorada)
-            addToBot(new ApplyPowerAction(m, p,
+                    addToBot(new ApplyPowerAction(m, p,
                     new com.megacrit.cardcrawl.powers.VulnerablePower(m, this.magicNumber, false),
                     this.magicNumber));
         }
@@ -59,8 +54,6 @@ public class BongGigatonico extends BaseCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeDamage(UPG_DAMAGE);     // 30 → 38 de dano
-            upgradeMagicNumber(1);         // 3 → 4 de Vulnerável
             initializeDescription();
         }
     }

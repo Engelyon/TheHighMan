@@ -15,8 +15,11 @@ public class BongExtra extends BaseCard {
             CardType.POWER,
             CardRarity.UNCOMMON,
             CardTarget.SELF,
-            2
+            1
     );
+
+    private static final int BLOCK_PER_TRIGGER = 5;
+    private static final int BLOCK_PER_TRIGGER_UPG = 8;
 
     public BongExtra() {
         super(ID, info);
@@ -26,13 +29,14 @@ public class BongExtra extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new BongExtraPower(p,p)));
+        int blockPerTrigger = upgraded ? BLOCK_PER_TRIGGER_UPG : BLOCK_PER_TRIGGER;
+        addToBot(new ApplyPowerAction(p, p, new BongExtraPower(p, p, blockPerTrigger), blockPerTrigger));
     }
+
     @Override
     public void upgrade() {
         if (!upgraded) {
-            upgradeName();
-            upgradeBaseCost(1); // 2 → 1 de custo
+            upgradeName(); // ajustar custo aqui se quiser
             initializeDescription();
         }
     }

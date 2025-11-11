@@ -16,10 +16,10 @@ public class Desconfianca extends BaseCard {
             CardType.SKILL,
             CardRarity.COMMON,
             CardTarget.ENEMY,
-            2
+            1
     );
 
-    private static final int BLOCK = 12;
+    private static final int BLOCK = 6;
     private static final int UPG_BLOCK = 4;
     private static final int LARICA_AMOUNT = 1;
 

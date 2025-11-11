@@ -1,13 +1,14 @@
 package thehighman.cards;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thehighman.character.TheHighman;
 import thehighman.powers.ChapadoPower;
+import thehighman.powers.SedaPower;
 import thehighman.util.CardStats;
-
-import static basemod.BaseMod.addKeyword;
 
 public class Alivio extends BaseCard {
     public static final String ID = makeID("Alivio");
@@ -20,26 +21,50 @@ public class Alivio extends BaseCard {
             1
     );
 
-    private static final int CHAPADO_AMOUNT = 3;
-    private static final int UPG_CHAPADO = 1;
+    private static final int CHAPADO = 1;
+    private static final int BLOCK = 5;
+    private static final int BLOCK_UPG = 3;
 
     public Alivio() {
         super(ID, info);
-        setMagic(CHAPADO_AMOUNT, UPG_CHAPADO);
+        setBlock(BLOCK);
+        setMagic(CHAPADO);
         this.keywords.add("chapado");
         initializeDescription();
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        // aplica Chapado no alvo
         addToBot(new ApplyPowerAction(m, p, new ChapadoPower(m, this.magicNumber), this.magicNumber));
+        // dá block ao jogador
+        addToBot(new GainBlockAction(p, p, this.block));
     }
+
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(UPG_CHAPADO); // Aumenta de 3 para 4
+            upgradeBlock(BLOCK_UPG);
             initializeDescription();
         }
+    }
+
+    @Override
+    public void applyPowers() {
+        super.applyPowers();
+
+        int base = this.baseMagicNumber;
+        int newMagic = base;
+
+        if (AbstractDungeon.player != null && AbstractDungeon.player.hasPower(SedaPower.POWER_ID)) {
+            int seda = AbstractDungeon.player.getPower(SedaPower.POWER_ID).amount;
+            newMagic = base + Math.max(0, seda);
+        }
+
+        this.magicNumber = newMagic;
+        this.isMagicNumberModified = (this.magicNumber != this.baseMagicNumber);
+
+        initializeDescription();
     }
 }

@@ -13,9 +13,9 @@ public class PratoCheio extends BaseCard {
     private static final CardStats info = new CardStats(
             TheHighman.Meta.CARD_COLOR,
             CardType.SKILL,
-            CardRarity.COMMON,
+            CardRarity.UNCOMMON,
             CardTarget.SELF,
-            1
+            0
     );
 
     private static final int COMIDO_AMOUNT = 4;

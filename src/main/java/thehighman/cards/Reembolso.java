@@ -25,36 +25,35 @@ public class Reembolso extends BaseCard {
 
     private static final int DAMAGE = 6;
     private static final int UPG_DAMAGE = 3;
-    private static final int ERVA_GAIN = 1;
-    private static final int SEDA_LOSS = 1;
+    private static final int CHANGE = 1;
+    private static final int CHANGE_UPG = 1;
 
     public Reembolso() {
         super(ID, info);
         setDamage(DAMAGE, UPG_DAMAGE);
-        this.keywords.add("erva");
+        setMagic(CHANGE, CHANGE_UPG);
+        this.exhaust=true;
+        this.keywords.add("fume");
         this.keywords.add("seda");
         initializeDescription();
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        // Causa dano
         addToBot(new DamageAction(m, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL),
                 AbstractGameAction.AttackEffect.BLUNT_HEAVY));
 
-        // Ganha 1 de Erva
-        addToBot(new ApplyPowerAction(p, p, new ErvaPower(p, ERVA_GAIN), ERVA_GAIN));
-
-        // Perde 1 de Seda se tiver
-        if (p.hasPower(SedaPower.POWER_ID)) {
-            addToBot(new ReducePowerAction(p, p, SedaPower.POWER_ID, SEDA_LOSS));
+        if (p.hasPower(ErvaPower.POWER_ID)) {
+            addToBot(new ReducePowerAction(p, p, ErvaPower.POWER_ID, 1));
+            new ApplyPowerAction(p, p, new SedaPower(p, p, this.magicNumber), this.magicNumber);
         }
     }
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeDamage(UPG_DAMAGE); // 6 → 9 de dano
+            upgradeDamage(UPG_DAMAGE);
+            upgradeMagicNumber(CHANGE_UPG);
             initializeDescription();
         }
     }

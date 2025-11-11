@@ -1,6 +1,7 @@
 package thehighman.cards;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thehighman.character.TheHighman;
@@ -20,16 +21,19 @@ public class Marmita extends BaseCard {
 
     private static final int COMIDO_AMOUNT = 2;
     private static final int UPG_COMIDO = 1;
+    private static final int BLOCK = 5;
 
     public Marmita() {
         super(ID, info);
         setMagic(COMIDO_AMOUNT, UPG_COMIDO);
+        setBlock(BLOCK);
         this.keywords.add("comido");
         initializeDescription();
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        addToBot(new GainBlockAction(p, p, this.block));
         addToBot(new ApplyPowerAction(p, p, new ComidoPower(p, this.magicNumber), this.magicNumber));
     }
     @Override

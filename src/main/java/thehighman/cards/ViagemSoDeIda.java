@@ -35,9 +35,9 @@ public class ViagemSoDeIda extends BaseCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         int finalDamage = this.damage;
 
-        // Verifica se Bad Trip foi jogada neste turno
-        if (AbstractDungeon.actionManager.cardsPlayedThisTurn.stream()
-                .anyMatch(card -> card.cardID.equals(makeID("BadTrip")))) {
+        // Verifica se BadTrip está atualmente na mão do jogador
+        if (p != null && p.hand != null && p.hand.group != null &&
+                p.hand.group.stream().anyMatch(card -> card.cardID.equals(makeID("BadTrip")))) {
             finalDamage += BONUS_DAMAGE;
         }
 

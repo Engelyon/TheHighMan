@@ -1,6 +1,8 @@
 package thehighman.cards;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInDiscardAction;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -23,6 +25,7 @@ public class IdeiaDeStartup extends BaseCard {
 
     public IdeiaDeStartup() {
         super(ID, info);
+        this.exhaust=true;
         setMagic(ERVA_GAIN);
         setMagic(ERVA_GAIN, ERVA_GAIN + 2); // 5 → 7 de Erva com upgrade
         this.keywords.add("erva");
@@ -31,17 +34,16 @@ public class IdeiaDeStartup extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        // Ganha 5 de Erva
         addToBot(new ApplyPowerAction(p, p, new ErvaPower(p, this.magicNumber), this.magicNumber));
-
-        // Zera a energia restante
         AbstractDungeon.player.energy.use(AbstractDungeon.player.energy.energy);
+        addToBot(new MakeTempCardInDrawPileAction(new BadTrip(), 1, true, true));
     }
+
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(2); // 5 → 7 de Erva
+            upgradeMagicNumber(2);
             initializeDescription();
         }
     }
