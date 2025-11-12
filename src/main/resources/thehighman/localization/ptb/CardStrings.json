@@ -241,8 +241,8 @@
   },
   "${modID}:MarDeFumaca": {
     "NAME": "Mar De Fumaca",
-    "DESCRIPTION": "Aplique !M! de ${modID}:Chapado a todos os inimigos. Ganhe Bloqueio igual ao ${modID}:Chapado aplicado.",
-    "UPGRADE_DESCRIPTION": "Aplique !M! de ${modID}:Chapado a todos os inimigos. Ganhe Bloqueio igual ao dobro do ${modID}:Chapado aplicado."
+    "DESCRIPTION": "Aplique !M! de ${modID}:Chapado a todos os inimigos. Ganhe Bloqueio igual ao ${modID}:Chapado total de todos os inimigos.",
+    "UPGRADE_DESCRIPTION": "Aplique !M! de ${modID}:Chapado a todos os inimigos. Ganhe Bloqueio igual ao dobro do ${modID}:Chapado total de todos os inimigos."
   },
   "${modID}:Marmita": {
     "NAME": "Marmita",
