@@ -351,8 +351,8 @@
   },
   "${modID}:TiroCerto": {
     "NAME": "Tiro Certo",
-    "DESCRIPTION": "Cause !D! de dano. Se o inimigo tiver !M! ou mais de ${modID}:Chapado, aplique 1 Atordoado",
-    "UPGRADE_DESCRIPTION": "Cause !D! de dano. Se o inimigo tiver !M! ou mais de ${modID}:Chapado, aplique 1 Atordoado."
+    "DESCRIPTION": "Cause !D! de dano. Se o inimigo tiver !M! ou mais de ${modID}:Chapado, aplique 1 Atordoado. Exaurir.",
+    "UPGRADE_DESCRIPTION": "Cause !D! de dano. Se o inimigo tiver !M! ou mais de ${modID}:Chapado, aplique 1 Atordoado. Exaurir."
   },
   "${modID}:TragadaProfunda": {
     "NAME": "Tragada Profunda",

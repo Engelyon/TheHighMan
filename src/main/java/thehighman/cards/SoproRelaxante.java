@@ -50,7 +50,6 @@ public class SoproRelaxante extends BaseCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new DamageAction(m, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL),
                 AbstractGameAction.AttackEffect.LIGHTNING));
-
         addToBot(new ApplyPowerAction(m, p, new ChapadoPower(m, CHAPADO_AMOUNT), CHAPADO_AMOUNT));
         addToBot(new ApplyPowerAction(m, p, new VulnerablePower(m, this.secondMagicNumber, false), this.secondMagicNumber));
     }
@@ -58,13 +57,14 @@ public class SoproRelaxante extends BaseCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeDamage(UPG_DAMAGE); // 5 → 8
-            this.baseSecondMagicNumber += UPG_VULNERABLE; // 1 → 2 de vulnerável
+            upgradeDamage(UPG_DAMAGE);
+            this.baseSecondMagicNumber += UPG_VULNERABLE;
             this.secondMagicNumber = this.baseSecondMagicNumber;
             this.upgradedSecondMagicNumber = true;
             initializeDescription();
         }
     }
+
     @Override
     public void applyPowers() {
         super.applyPowers();

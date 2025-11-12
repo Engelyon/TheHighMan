@@ -28,20 +28,21 @@ public class BongGigatonico extends BaseCard {
     public BongGigatonico() {
         super(ID, info);
         setDamage(DAMAGE);
-        this.exhaust = true;
         setMagic(VULNERABLE_AMOUNT);
-        this.keywords.add("larica");
         initializeDescription();
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (!upgraded){
-            addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
+            addToBot(new DamageAction(m, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL),
+                    AbstractGameAction.AttackEffect.BLUNT_HEAVY));
             addToBot(new ApplyPowerAction(m,p, new VulnerablePower(m, this.magicNumber, false),this.magicNumber));
-        }else{
+        }
+        if (upgraded){
             addToBot(new ApplyPowerAction(m,p, new VulnerablePower(m, this.magicNumber, false),this.magicNumber));
-            addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
+            addToBot(new DamageAction(m, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL),
+                    AbstractGameAction.AttackEffect.BLUNT_HEAVY));
         }
     }
     @Override

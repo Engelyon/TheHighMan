@@ -46,9 +46,9 @@ public class FocoFino extends BaseCard {
     @Override
     public void upgrade() {
         if (!upgraded) {
+            super.upgrade();
             upgradeName();
-            upgradeMagicNumber(UPG_CHAPADO); // aumenta o valor de Chapado por upgrade
-            initializeDescription();
+            upgradeMagicNumber(UPG_CHAPADO);
         }
     }
 
