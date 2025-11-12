@@ -47,26 +47,20 @@ public class FocoFino extends BaseCard {
     public void upgrade() {
         if (!upgraded) {
             super.upgrade();
-            upgradeName();
-            upgradeMagicNumber(UPG_CHAPADO);
         }
     }
 
     @Override
     public void applyPowers() {
         super.applyPowers();
-
         int base = this.baseMagicNumber;
         int newMagic = base;
-
         if (AbstractDungeon.player != null && AbstractDungeon.player.hasPower(SedaPower.POWER_ID)) {
             int seda = AbstractDungeon.player.getPower(SedaPower.POWER_ID).amount;
             newMagic = base + Math.max(0, seda);
         }
-
         this.magicNumber = newMagic;
         this.isMagicNumberModified = (this.magicNumber != this.baseMagicNumber);
-
         initializeDescription();
     }
 }

@@ -33,19 +33,31 @@ public class MarDeFumaca extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        int defesa = 0;
-        if (AbstractDungeon.getCurrRoom() != null && AbstractDungeon.getCurrRoom().monsters != null) {
-            for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
-                if (mo != null && !mo.isDeadOrEscaped()) {
-                    addToBot(new ApplyPowerAction(mo, p, new ChapadoPower(mo, magicNumber), magicNumber));
-                }
+        if (AbstractDungeon.getCurrRoom() == null || AbstractDungeon.getCurrRoom().monsters == null) {
+            return;
+        }
+        for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
+            if (mo != null && !mo.isDeadOrEscaped()) {
+                addToBot(new ApplyPowerAction(mo, p, new ChapadoPower(mo, magicNumber), magicNumber));
             }
         }
-        for (int i = 0; i < AbstractDungeon.getCurrRoom().monsters.monsters.size(); i++)
-            if (!AbstractDungeon.getCurrRoom().monsters.monsters.get(i).isDead){
-                defesa += magicNumber;
+        addToBot(new com.megacrit.cardcrawl.actions.AbstractGameAction() {
+            @Override
+            public void update() {
+                int defesa = 0;
+                if (AbstractDungeon.getCurrRoom() != null && AbstractDungeon.getCurrRoom().monsters != null) {
+                    for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
+                        if (mo != null && !mo.isDeadOrEscaped()) {
+                            if (mo.hasPower(ChapadoPower.POWER_ID)) {
+                                defesa += mo.getPower(ChapadoPower.POWER_ID).amount;
+                            }
+                        }
+                    }
+                }
+                AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, defesa));
+                this.isDone = true;
             }
-        addToBot(new GainBlockAction(p, p, defesa));
+        });
     }
 
     @Override
