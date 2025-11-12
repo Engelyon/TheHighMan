@@ -26,7 +26,7 @@ public class TragadaProfunda extends BaseCard {
 
     private static final int DAMAGE = 15;
     private static final int Erva = 2;
-    private static final int ErvaUpg = 2;
+    private static final int ErvaUpg = -1;
     private static final int LARICA_GAIN = 2;
 
     public TragadaProfunda() {
@@ -39,26 +39,15 @@ public class TragadaProfunda extends BaseCard {
     }
 
     @Override
-    public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-        if (!super.canUse(p, m)) return false;
-
-        if (!p.hasPower(ErvaPower.POWER_ID) || p.getPower(ErvaPower.POWER_ID).amount < magicNumber) {
-            this.cantUseMessage = "Você precisa de pelo menos !M! de Comido.";
-            return false;
-        }
-        return true;
-    }
-
-    @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
 
         addToBot(new DamageAction(m, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL),
                 AbstractGameAction.AttackEffect.SLASH_HEAVY));
-        // Consome 2 de Erva
-        addToBot(new ReducePowerAction(p, p, ErvaPower.POWER_ID, magicNumber));
-
-        // Aplica 2 de Larica ao jogador
-        addToBot(new ApplyPowerAction(p, p, new LaricaPower(p, LARICA_GAIN), LARICA_GAIN));
+        int ervaAmount = p.getPower(ErvaPower.POWER_ID).amount;
+        if (ervaAmount >=2) {
+            addToBot(new ReducePowerAction(p, p, ErvaPower.POWER_ID, magicNumber));
+            addToBot(new ApplyPowerAction(p, p, new LaricaPower(p, LARICA_GAIN), LARICA_GAIN));
+        }
     }
     @Override
     public void upgrade() {
