@@ -1,6 +1,9 @@
 package thehighman.cards;
 
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thehighman.character.TheHighman;
@@ -31,28 +34,18 @@ public class LoopMental extends BaseCard {
         initializeDescription();
     }
 
-   /* @Override
-    public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
-        addToBot(new DrawCardAction(p, magicNumber));
-    }*/
-
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        //addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
-        addToBot(new DrawCardAction(1));
-        if (Objects.equals(p.hand.getTopCard().cardID, BadTrip.ID)) {;
-            addToBot(new DrawCardAction(p, 1));
-        }
-        addToBot(new DrawCardAction(1));
-        if (Objects.equals(p.hand.getTopCard().cardID, BadTrip.ID)) {;
-            addToBot(new DrawCardAction(p, 1));
-        }
-        if(upgraded){
-            addToBot(new DrawCardAction(1));
-            if (Objects.equals(p.hand.getTopCard().cardID, BadTrip.ID)) {;
-                addToBot(new DrawCardAction(p, 1));
+        addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
+        boolean badtrip = false;
+        for (int i = 0; i < magicNumber; i++) {
+            if (Objects.equals(p.drawPile.getNCardFromTop(i).cardID, BadTrip.ID)){
+                badtrip = true;
+                break;
             }
+        }
+        if (badtrip){
+            addToBot(new DrawCardAction(p, magicNumber));
         }
     }
 
