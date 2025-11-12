@@ -27,20 +27,11 @@ public class SoproRelaxante extends BaseCard {
     private static final int DAMAGE = 5;
     private static final int UPG_DAMAGE = 3;
     private static final int CHAPADO_AMOUNT = 1;
-    private static final int VULNERABLE_AMOUNT = 1;
-    private static final int VULNERABLE = 1;
-    private static final int UPG_VULNERABLE = 1;
-    public int secondMagicNumber;
-    public int baseSecondMagicNumber;
-    public boolean upgradedSecondMagicNumber;
 
     public SoproRelaxante() {
         super(ID, info);
         setDamage(DAMAGE, UPG_DAMAGE);
         setMagic(CHAPADO_AMOUNT);
-        setMagic(CHAPADO_AMOUNT); // continua sendo o chapado
-        this.baseSecondMagicNumber = VULNERABLE;
-        this.secondMagicNumber = this.baseSecondMagicNumber;
         this.keywords.add("chapado");
         this.keywords.add("vulnerável");
         initializeDescription();
@@ -48,19 +39,20 @@ public class SoproRelaxante extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new DamageAction(m, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL),
-                AbstractGameAction.AttackEffect.LIGHTNING));
-        addToBot(new ApplyPowerAction(m, p, new ChapadoPower(m, CHAPADO_AMOUNT), CHAPADO_AMOUNT));
-        addToBot(new ApplyPowerAction(m, p, new VulnerablePower(m, this.secondMagicNumber, false), this.secondMagicNumber));
+        addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
+        addToBot(new ApplyPowerAction(m, p, new ChapadoPower(m, this.magicNumber), this.magicNumber));
+        if(upgraded){
+            addToBot(new ApplyPowerAction(m,p, new VulnerablePower(m,2,false),1));
+        }else{
+            addToBot(new ApplyPowerAction(m,p, new VulnerablePower(m,1,false),1));
+        }
     }
+
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
             upgradeDamage(UPG_DAMAGE);
-            this.baseSecondMagicNumber += UPG_VULNERABLE;
-            this.secondMagicNumber = this.baseSecondMagicNumber;
-            this.upgradedSecondMagicNumber = true;
             initializeDescription();
         }
     }
