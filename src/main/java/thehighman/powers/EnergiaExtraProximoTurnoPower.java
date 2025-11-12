@@ -17,8 +17,8 @@ public class EnergiaExtraProximoTurnoPower extends AbstractPower {
         this.energyGain = amount;
         this.type = PowerType.BUFF;
         this.isTurnBased = true;
-        updateDescription();
     }
+
     @Override
     public void updateDescription() {
                 this.description = DESCRIPTIONS[0];
