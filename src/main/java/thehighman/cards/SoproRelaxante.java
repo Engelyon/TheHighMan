@@ -5,10 +5,12 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 import thehighman.character.TheHighman;
 import thehighman.powers.ChapadoPower;
+import thehighman.powers.SedaPower;
 import thehighman.util.CardStats;
 
 public class SoproRelaxante extends BaseCard {
@@ -62,5 +64,19 @@ public class SoproRelaxante extends BaseCard {
             this.upgradedSecondMagicNumber = true;
             initializeDescription();
         }
+    }
+    @Override
+    public void applyPowers() {
+        super.applyPowers();
+        if (AbstractDungeon.player.hasPower(SedaPower.POWER_ID)) {
+            int seda = AbstractDungeon.player.getPower(SedaPower.POWER_ID).amount;
+            int bonus = Math.max(0, seda);
+            this.magicNumber = this.baseMagicNumber + bonus;
+            isMagicNumberModified = true;
+        } else {
+            this.magicNumber = this.baseMagicNumber;
+            isMagicNumberModified = false;
+        }
+        initializeDescription();
     }
 }

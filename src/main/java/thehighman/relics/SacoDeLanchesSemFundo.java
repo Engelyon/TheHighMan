@@ -13,11 +13,6 @@ public class SacoDeLanchesSemFundo extends BaseRelic {
     }
 
     @Override
-    public String getUpdatedDescription() {
-        return "Sempre que você consumir um stack de Comido, compre 1 carta.";
-    }
-
-    @Override
     public AbstractRelic makeCopy() {
         return new SacoDeLanchesSemFundo();
     }

@@ -4,6 +4,7 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.common.HealAction;
+import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -43,8 +44,9 @@ public class ResgateDeLanche extends BaseCard {
         addToBot(new GainBlockAction(p, p, block));
         if (p.hasPower(ComidoPower.POWER_ID)) {
             int ComidoStacks = p.getPower(ComidoPower.POWER_ID).amount;
-            if (ComidoStacks >= 2) {
+            if (ComidoStacks >= 1) {
                 addToBot(new HealAction(p, p, magicNumber));
+                addToBot(new ReducePowerAction(p, p, ComidoPower.POWER_ID, 1));
             }
         }
     }

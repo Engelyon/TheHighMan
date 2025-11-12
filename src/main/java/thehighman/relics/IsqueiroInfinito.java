@@ -14,11 +14,6 @@ public class IsqueiroInfinito extends BaseRelic {
     }
 
     @Override
-    public String getUpdatedDescription() {
-        return "No início de cada turno, se você tiver 0 de Erva, ganhe 1 de Erva.";
-    }
-
-    @Override
     public void atTurnStart() {
         if (!AbstractDungeon.player.hasPower("thehighman:Erva")) {
             flash();

@@ -13,11 +13,6 @@ public class MaconhaMedicinal extends BaseRelic {
     }
 
     @Override
-    public String getUpdatedDescription() {
-        return "Toda vez que você perder HP devido à Bad Trip, cure 2 de HP.";
-    }
-
-    @Override
     public AbstractRelic makeCopy() {
         return new MaconhaMedicinal();
     }

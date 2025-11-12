@@ -14,6 +14,7 @@ public class ChapadoPower extends BasePower{
     private static final AbstractPower.PowerType TYPE = PowerType.DEBUFF;
     private static final boolean TURN_BASED = false;
 
+
     public ChapadoPower(AbstractCreature owner, int amount) {
         super(POWER_ID, TYPE, TURN_BASED, owner, amount);
         AbstractCreature player = AbstractDungeon.player;
