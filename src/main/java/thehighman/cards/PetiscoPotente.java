@@ -5,10 +5,9 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.EnergizedPower;
 import thehighman.character.TheHighman;
 import thehighman.powers.ComidoPower;
-import thehighman.powers.EnergiaExtraProximoTurnoPower;
-import thehighman.powers.ErvaPower;
 import thehighman.util.CardStats;
 
 public class PetiscoPotente extends BaseCard {
@@ -37,7 +36,7 @@ public class PetiscoPotente extends BaseCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new ApplyPowerAction(p, p, new ComidoPower(p, COMIDO_GAIN), COMIDO_GAIN));
         if (p.hasPower(ComidoPower.POWER_ID) && p.getPower(ComidoPower.POWER_ID).amount >= COMIDO_THRESHOLD) {
-            addToBot(new ApplyPowerAction(p, p, new EnergiaExtraProximoTurnoPower(p, ENERGY_NEXT_TURN), ENERGY_NEXT_TURN));
+            addToBot(new ApplyPowerAction(p,p, new EnergizedPower(p, ENERGY_NEXT_TURN), ENERGY_NEXT_TURN));
         }
     }
     @Override
