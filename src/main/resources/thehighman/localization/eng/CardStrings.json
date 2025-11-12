@@ -181,8 +181,8 @@
   },
   "${modID}:Fritura": {
     "NAME": "Fritura",
-    "DESCRIPTION": "Ganhe 2 de Força temporária. Perca 1 de ${modID}:Larica.",
-    "UPGRADE_DESCRIPTION": "Ganhe 4 de Força temporária. Perca 2 de ${modID}:Larica."
+    "DESCRIPTION": "Ganhe !M! de Força temporária. Perca 1 de ${modID}:Larica.",
+    "UPGRADE_DESCRIPTION": "Ganhe !M! de Força temporária. Perca 2 de ${modID}:Larica."
   },
   "${modID}:FumacaPassiva": {
     "NAME": "Fumaca Passiva",
