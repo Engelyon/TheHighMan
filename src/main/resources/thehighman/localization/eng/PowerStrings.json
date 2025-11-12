@@ -31,8 +31,8 @@
   "${modID}:SedaPower": {
     "NAME": "Seda",
     "DESCRIPTIONS": [
-      "Recebe +",
-      " de dano em ataques físicos."
+      "Causa +",
+      " de dano em ataques físicos. Aplica +"," de Chapado."
     ]
   },
   "${modID}:ErvaPower": {

@@ -346,8 +346,8 @@
   },
   "${modID}:TapaRapido": {
     "NAME": "Tapa Rapido",
-    "DESCRIPTION": "Cause !D! de dano. Exaure.",
-    "UPGRADE_DESCRIPTION": "Cause !D! de dano. Exaure."
+    "DESCRIPTION": "Cause !D! de dano. Exaurir.",
+    "UPGRADE_DESCRIPTION": "Cause !D! de dano. Exaurir."
   },
   "${modID}:TiroCerto": {
     "NAME": "Tiro Certo",

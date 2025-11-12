@@ -3,7 +3,7 @@
     "NAME": "Cinzeiro Abençoado",
     "FLAVOR": "Cheira a velas",
     "DESCRIPTIONS": [
-      "No início do combate, ganhe 1 de ${modID}:Seda"
+      "No início do combate, ganhe 1 de Seda"
     ]
   },
   "${modID}:IsqueiroInfinito": {
