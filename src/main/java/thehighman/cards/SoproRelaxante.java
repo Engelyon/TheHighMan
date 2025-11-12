@@ -19,7 +19,7 @@ public class SoproRelaxante extends BaseCard {
     private static final CardStats info = new CardStats(
             TheHighman.Meta.CARD_COLOR,
             CardType.ATTACK,
-            CardRarity.COMMON,
+            CardRarity.BASIC,
             CardTarget.ENEMY,
             1
     );

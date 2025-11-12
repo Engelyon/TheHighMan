@@ -12,7 +12,7 @@ public class Relaxar extends BaseCard {
     private static final CardStats info = new CardStats(
             TheHighman.Meta.CARD_COLOR,
             CardType.SKILL,
-            CardRarity.COMMON,
+            CardRarity.BASIC,
             CardTarget.SELF,
             1
     );

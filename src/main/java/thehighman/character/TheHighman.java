@@ -142,12 +142,10 @@ public class TheHighman extends CustomPlayer {
     @Override
     public ArrayList<String> getStartingDeck() {
         ArrayList<String> retVal = new ArrayList<>();
-        // Cartas iniciais — adicione múltiplas instâncias manualmente
         retVal.add(Tapa.ID);
         retVal.add(Tapa.ID);
         retVal.add(Tapa.ID);
         retVal.add(Tapa.ID);
-        retVal.add(Relaxar.ID);
         retVal.add(Relaxar.ID);
         retVal.add(Relaxar.ID);
         retVal.add(Relaxar.ID);
