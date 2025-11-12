@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thehighman.character.TheHighman;
 import thehighman.powers.ErvaPower;
+import thehighman.powers.SedaPower;
 import thehighman.util.CardStats;
 
 public class Inspiracao extends BaseCard {
@@ -33,15 +34,13 @@ public class Inspiracao extends BaseCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new ApplyPowerAction(p, p, new ErvaPower(p,this.magicNumber), this.magicNumber));
-        if(this.upgraded){
-            addToBot(new DrawCardAction(p, 1));
-        }
+        addToBot(new ApplyPowerAction(p, p, new SedaPower(p,p,1),1));
     }
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(UPG_ERVA); // 2 → 3 de Erva
+            upgradeMagicNumber(UPG_ERVA);
             initializeDescription();
         }
     }
