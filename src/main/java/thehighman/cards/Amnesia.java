@@ -105,10 +105,7 @@ public class Amnesia extends BaseCard {
 
     @Override
     public void upgrade() {
-        if (!upgraded) {
-            upgradeName();
-            this.exhaust = false;
-            initializeDescription();
-        }
+        super.upgrade();
+        this.exhaust = false;
     }
 }

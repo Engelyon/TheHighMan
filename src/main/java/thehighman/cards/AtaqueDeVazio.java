@@ -47,10 +47,7 @@ public class AtaqueDeVazio extends BaseCard {
     }
     @Override
     public void upgrade() {
-        if (!upgraded) {
-            upgradeName();
-            this.exhaust = false; // Remove o exaust da carta
-            initializeDescription();
-        }
+        super.upgrade();
+        this.exhaust = false;
     }
 }

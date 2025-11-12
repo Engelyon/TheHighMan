@@ -65,10 +65,6 @@ public class SacolaDeGuloseimas extends BaseCard {
 
     @Override
     public void upgrade() {
-        if (!upgraded) {
-            upgradeName();
-            upgradeBlock(UPG_BLOCK);
-            initializeDescription();
-        }
+        super.upgrade();
     }
 }

@@ -30,10 +30,7 @@ public class EaPotencia extends BaseCard {
     }
     @Override
     public void upgrade() {
-        if (!upgraded) {
-            upgradeName();
-            this.isInnate=true;
-            initializeDescription();
-        }
+        super.upgrade();
+        this.isInnate = true;
     }
 }

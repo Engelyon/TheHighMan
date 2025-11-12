@@ -73,10 +73,6 @@ public class LaricaDePoder extends BaseCard {
 
     @Override
     public void upgrade() {
-        if (!upgraded) {
-            upgradeName();
-            // agora o comportamento muda por stack (já tratado em use), não alteramos damage fixo
-            initializeDescription();
-        }
+        super.upgrade();
     }
 }

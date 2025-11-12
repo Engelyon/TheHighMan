@@ -51,10 +51,6 @@ public class TragadaProfunda extends BaseCard {
     }
     @Override
     public void upgrade() {
-        if (!upgraded) {
-            upgradeName();
-            upgradeMagicNumber(ErvaUpg);// reduz custo em 1 erva
-            initializeDescription();
-        }
+        super.upgrade();
     }
 }

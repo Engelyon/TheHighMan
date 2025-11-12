@@ -69,10 +69,7 @@ public class BrisaFinal extends BaseCard {
 
     @Override
     public void upgrade() {
-        if (!upgraded) {
-            upgradeName();
-            initializeDescription();
-        }
+        super.upgrade();
     }
 
     // atualiza o magicNumber com a quantidade de SedaPower

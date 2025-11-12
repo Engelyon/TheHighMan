@@ -47,12 +47,9 @@ public class OndaLenta extends BaseCard {
         int delayedTurns = upgraded ? 2 : 1;
         addToBot(new ApplyPowerAction(m, p, new ChapadoProximoTurnoPower(m, delayedTurns, this.magicNumber), this.magicNumber));
     }
+
     @Override
     public void upgrade() {
-        if (!upgraded) {
-            upgradeName();
-            upgradeDamage(UPG_DAMAGE); // 8 → 11
-            initializeDescription();
-        }
+        super.upgrade();
     }
 }

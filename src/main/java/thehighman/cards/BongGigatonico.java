@@ -52,9 +52,6 @@ public class BongGigatonico extends BaseCard {
     }
     @Override
     public void upgrade() {
-        if (!upgraded) {
-            upgradeName();
-            initializeDescription();
-        }
+        super.upgrade();
     }
 }

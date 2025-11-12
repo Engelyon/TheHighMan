@@ -35,10 +35,6 @@ public class BuchimChei extends BaseCard {
 
     @Override
     public void upgrade() {
-        if (!upgraded) {
-            upgradeName();
-            upgradeMagicNumber(TANTO_UPG);
-            initializeDescription();
-        }
+        super.upgrade();
     }
 }

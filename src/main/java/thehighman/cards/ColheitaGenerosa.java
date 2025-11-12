@@ -45,9 +45,6 @@ public class ColheitaGenerosa extends BaseCard {
     }
     @Override
     public void upgrade() {
-        if (!upgraded) {
-            upgradeName();
-            initializeDescription();
-        }
+        super.upgrade();
     }
 }

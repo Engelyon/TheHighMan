@@ -20,7 +20,7 @@ public class CompreensaoElevada extends BaseCard {
 
     public CompreensaoElevada() {
         super(ID, info);
-        this.isEthereal=true;
+        this.isEthereal = true;
         initializeDescription();
     }
 
@@ -30,10 +30,7 @@ public class CompreensaoElevada extends BaseCard {
     }
     @Override
     public void upgrade() {
-        if (!upgraded) {
-            upgradeName();
-            this.isEthereal=false;
-            initializeDescription();
-        }
+        super.upgrade();
+        this.isEthereal = false;
     }
 }
