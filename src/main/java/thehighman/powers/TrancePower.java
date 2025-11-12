@@ -1,6 +1,7 @@
 package thehighman.powers;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -24,13 +25,11 @@ public class TrancePower extends BasePower {
 
     @Override
     public void onApplyPower(AbstractPower power, AbstractCreature target, AbstractCreature source) {
-        if (target == owner && power.ID.equals(makeID("Larica"))) {
-            List<AbstractCard> hand = AbstractDungeon.player.hand.group;
-            if (!hand.isEmpty()) {
-                Collections.shuffle(hand);
-                AbstractCard toExhaust = hand.get(0);
-                AbstractDungeon.player.hand.moveToExhaustPile(toExhaust);
-                addToBot(new ApplyPowerAction(owner, owner, new SedaPower(owner, owner, 1), 1));
+        if (power.ID == LaricaPower.POWER_ID){
+            AbstractPlayer p = AbstractDungeon.player;
+            if (!p.hand.isEmpty()){
+            addToBot(new com.megacrit.cardcrawl.actions.common.ExhaustAction(p, p, 1, false));
+            addToBot(new ApplyPowerAction(p,p, new SedaPower(p, p, 1), 1));
             }
         }
     }
@@ -39,10 +38,4 @@ public class TrancePower extends BasePower {
         description = DESCRIPTIONS[0];
     }
 
-    @Override
-    public void atEndOfTurn(boolean isPlayer) {
-        if (isPlayer) {
-            this.amount = 0;
-        }
-    }
 }

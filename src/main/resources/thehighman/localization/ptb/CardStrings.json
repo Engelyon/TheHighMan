@@ -1,8 +1,8 @@
 {
   "${modID}:AlimentoDivino": {
     "NAME": "Alimento Divino",
-    "DESCRIPTION": "Ganha 5 de ${modID}:Comido. Se estiver com 10 de ${modID}:Comido, ganha Imunidade à BadTrip.",
-    "UPGRADE_DESCRIPTION": "Ganha 5 de ${modID}:Comido. Se estiver com 10 de ${modID}:Comido, ganha Imunidade à BadTrip."
+    "DESCRIPTION": "Ganha 5 de ${modID}:Comido. Se estiver com 10 de ${modID}:Comido, ganha Imunidade ao dano de BadTrip.",
+    "UPGRADE_DESCRIPTION": "Ganha 5 de ${modID}:Comido. Se estiver com 10 de ${modID}:Comido, ganha Imunidade ao dano de BadTrip."
   },
   "${modID}:Alivio": {
     "NAME": "Alivio",
@@ -121,8 +121,8 @@
   },
   "${modID}:CompreensaoElevada": {
     "NAME": "Compreensao Elevada",
-    "DESCRIPTION": "Ao aplicar ${modID}:Chapado, há 50% de chance de aplicar 1 stack adicional.",
-    "UPGRADE_DESCRIPTION": "Ao aplicar ${modID}:Chapado, há 50% de chance de aplicar 1 stack adicional."
+    "DESCRIPTION": "Ao aplicar ${modID}:Chapado, aplique novamente.",
+    "UPGRADE_DESCRIPTION": "Ao aplicar ${modID}:Chapado, aplique novamente."
   },
   "${modID}:Confusao": {
     "NAME": "Confusao",
@@ -147,7 +147,7 @@
   "${modID}:EaPotencia": {
     "NAME": "É a Potencia",
     "DESCRIPTION": "No início de cada turno, ganhe 1 de ${modID}:Erva.",
-    "UPGRADE_DESCRIPTION": "No início de cada turno, ganhe 1 de ${modID}:Erva."
+    "UPGRADE_DESCRIPTION": "Inato. No início de cada turno, ganhe 1 de ${modID}:Erva."
   },
   "${modID}:Enrolar": {
     "NAME": "Enrolar",
@@ -232,7 +232,7 @@
   "${modID}:LoopMental": {
     "NAME": "Loop Mental",
     "DESCRIPTION": "Cause !D! de dano. Compre 2 cartas. Se comprar pelo menos 1 BadTrip, compre mais 2 cartas",
-    "UPGRADE_DESCRIPTION": "Cause !D! de dano. Se comprar pelo menos 1 BadTrip, compre mais 3 cartas"
+    "UPGRADE_DESCRIPTION": "Cause !D! de dano. Compre 3 cartas. Se comprar pelo menos 1 BadTrip, compre mais 3 cartas"
   },
   "${modID}:MaoSanta": {
     "NAME": "Mao Santa",

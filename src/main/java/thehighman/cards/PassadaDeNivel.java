@@ -3,8 +3,10 @@ package thehighman.cards;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thehighman.character.TheHighman;
 import thehighman.powers.ChapadoPower;
@@ -48,6 +50,17 @@ public class PassadaDeNivel extends BaseCard {
             upgradeName();
             upgradeMagicNumber(UPG_DRAW);
             initializeDescription();
+        }
+    }
+    @Override
+    public void triggerOnGlowCheck() {
+        super.triggerOnGlowCheck();
+        int x=2;
+        if (AbstractDungeon.player != null && AbstractDungeon.player.hasPower(ErvaPower.POWER_ID)
+                && AbstractDungeon.player.getPower(ErvaPower.POWER_ID).amount >= x) {
+            this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR;
+        } else {
+            this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR;
         }
     }
 }

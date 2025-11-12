@@ -2,11 +2,13 @@ package thehighman.cards;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thehighman.character.TheHighman;
+import thehighman.powers.ErvaPower;
 import thehighman.util.CardStats;
 
 public class ViagemSoDeIda extends BaseCard {
@@ -51,6 +53,25 @@ public class ViagemSoDeIda extends BaseCard {
             upgradeName();
             upgradeDamage(UPG_DAMAGE); // 6 → 9 de dano base
             initializeDescription();
+        }
+    }
+
+    @Override
+    public void triggerOnGlowCheck() {
+        super.triggerOnGlowCheck();
+        boolean hasBadTrip = false;
+        if (AbstractDungeon.player != null) {
+            for (AbstractCard c : AbstractDungeon.player.hand.group) {
+                if (c.cardID.equals(BadTrip.ID)) {
+                    hasBadTrip = true;
+                    break;
+                }
+            }
+        }
+        if (AbstractDungeon.player != null && hasBadTrip) {
+            this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR;
+        } else {
+            this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR;
         }
     }
 }

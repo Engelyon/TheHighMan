@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.VulnerablePower;
 import thehighman.character.TheHighman;
 import thehighman.powers.LaricaPower;
 import thehighman.util.CardStats;
@@ -28,26 +29,19 @@ public class BongGigatonico extends BaseCard {
         super(ID, info);
         setDamage(DAMAGE);
         this.exhaust = true;
-        this.magicNumber=VULNERABLE_AMOUNT;
+        setMagic(VULNERABLE_AMOUNT);
         this.keywords.add("larica");
         initializeDescription();
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        boolean upgradedEffect = this.upgraded && m.hasPower(LaricaPower.POWER_ID);
-
-        if (upgradedEffect) {
-           addToBot(new ApplyPowerAction(m, p,
-                    new com.megacrit.cardcrawl.powers.VulnerablePower(m, this.magicNumber, false),
-                    this.magicNumber));
-        }
-        addToBot(new DamageAction(m, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL),
-                AbstractGameAction.AttackEffect.FIRE));
-        if (!upgradedEffect && m.hasPower(LaricaPower.POWER_ID)) {
-                    addToBot(new ApplyPowerAction(m, p,
-                    new com.megacrit.cardcrawl.powers.VulnerablePower(m, this.magicNumber, false),
-                    this.magicNumber));
+        if (!upgraded){
+            addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
+            addToBot(new ApplyPowerAction(m,p, new VulnerablePower(m, this.magicNumber, false),this.magicNumber));
+        }else{
+            addToBot(new ApplyPowerAction(m,p, new VulnerablePower(m, this.magicNumber, false),this.magicNumber));
+            addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
         }
     }
     @Override

@@ -3,10 +3,13 @@ package thehighman.cards;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thehighman.character.TheHighman;
+import thehighman.powers.ErvaPower;
 import thehighman.powers.LaricaPower;
 import thehighman.util.CardStats;
 
@@ -49,5 +52,17 @@ public class AtaqueDeVazio extends BaseCard {
     public void upgrade() {
         super.upgrade();
         this.exhaust = false;
+    }
+
+    @Override
+    public void triggerOnGlowCheck() {
+        super.triggerOnGlowCheck();
+        int x=1;
+        if (AbstractDungeon.player != null && AbstractDungeon.player.hasPower(LaricaPower.POWER_ID)
+                && AbstractDungeon.player.getPower(LaricaPower.POWER_ID).amount >= x) {
+            this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR;
+        } else {
+            this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR;
+        }
     }
 }

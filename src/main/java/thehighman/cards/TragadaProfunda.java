@@ -4,8 +4,10 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thehighman.character.TheHighman;
 import thehighman.powers.ComidoPower;
@@ -33,24 +35,31 @@ public class TragadaProfunda extends BaseCard {
         super(ID, info);
         setDamage(DAMAGE);
         setMagic(Erva, ErvaUpg);
-        this.keywords.add("larica");
-        this.keywords.add("fume");
         initializeDescription();
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-
-        addToBot(new DamageAction(m, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL),
-                AbstractGameAction.AttackEffect.SLASH_HEAVY));
-        int ervaAmount = p.getPower(ErvaPower.POWER_ID).amount;
-        if (ervaAmount >=2) {
-            addToBot(new ReducePowerAction(p, p, ErvaPower.POWER_ID, magicNumber));
+        addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HEAVY));
+        if (p.hasPower(ErvaPower.POWER_ID) && p.getPower(ErvaPower.POWER_ID).amount >= magicNumber) {
             addToBot(new ApplyPowerAction(p, p, new LaricaPower(p, LARICA_GAIN), LARICA_GAIN));
         }
     }
+
     @Override
     public void upgrade() {
         super.upgrade();
+    }
+
+    @Override
+    public void triggerOnGlowCheck() {
+        super.triggerOnGlowCheck();
+        int x=2;
+        if (AbstractDungeon.player != null && AbstractDungeon.player.hasPower(ErvaPower.POWER_ID)
+                && AbstractDungeon.player.getPower(ErvaPower.POWER_ID).amount >= x) {
+            this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR;
+        } else {
+            this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR;
+        }
     }
 }

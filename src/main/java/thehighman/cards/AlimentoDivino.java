@@ -30,10 +30,7 @@ public class AlimentoDivino extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        // Ganha 5 de Comido
         addToBot(new ApplyPowerAction(p, p, new ComidoPower(p, COMIDO_GAIN), COMIDO_GAIN));
-
-        // Se Comido estiver no máximo, aplica imunidade a Bad Trip
         if (p.hasPower(ComidoPower.POWER_ID) && p.getPower(ComidoPower.POWER_ID).amount >= COMIDO_MAX) {
             addToBot(new ApplyPowerAction(p, p, new ImuneABadTripPower(p,p), 1));
         }

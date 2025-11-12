@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thehighman.character.TheHighman;
+import thehighman.powers.ImuneABadTripPower;
 import thehighman.powers.LaricaPower;
 import thehighman.util.CardStats;
 
@@ -32,16 +33,15 @@ public class BadTrip extends BaseCard {
     @Override
     public void triggerOnEndOfTurnForPlayingCard() {
         AbstractPlayer p = AbstractDungeon.player;
+        int dano = 1;
+        if (p.hasPower(ImuneABadTripPower.POWER_ID)){
+            dano = 0;
+        }
         if (p.hand.contains(this)) {
-            // Perde 1 de vida
-            addToBot(new LoseHPAction(p, p, 1));
-
-            // Ativa Maconha Medicinal se estiver presente
+            addToBot(new LoseHPAction(p, p, dano));
             if (p.hasRelic("thehighman:MaconhaMedicinal")) {
                 ((thehighman.relics.MaconhaMedicinal) p.getRelic("thehighman:MaconhaMedicinal")).onBadTripDano();
             }
-
-            // Ganha 1 de Larica
             addToBot(new ApplyPowerAction(p, p, new LaricaPower(p, 1), 1));
         }
     }

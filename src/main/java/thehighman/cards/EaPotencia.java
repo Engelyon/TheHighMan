@@ -20,7 +20,6 @@ public class EaPotencia extends BaseCard {
 
     public EaPotencia() {
         super(ID, info);
-        this.keywords.add("potência");
         initializeDescription();
     }
 

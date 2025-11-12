@@ -99,7 +99,7 @@
     "${modID}:TrancePower": {
       "NAME": "Transe",
       "DESCRIPTIONS": [
-        "Sempre que você ganhar Larica neste turno, exaure 1 carta da sua mão e ganhe 1 de Seda."
+        "Sempre que você ganhar Larica , exaure 1 carta da sua mão e ganhe 1 de Seda."
       ]
     },
   "${modID}:VisaoDistorcidaPower": {

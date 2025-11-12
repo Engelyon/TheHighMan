@@ -26,7 +26,7 @@ public class CompreensaoElevada extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new CompreensaoElevadaPower(p,p)));
+        addToBot(new ApplyPowerAction(p, p, new CompreensaoElevadaPower(p, p, 1), 1));
     }
     @Override
     public void upgrade() {

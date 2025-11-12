@@ -38,6 +38,11 @@ public class Burgao extends BaseCard {
         }
     }
 
+    @Override
+    public boolean canUse(AbstractPlayer p, AbstractMonster m) {
+        return p.hasPower(ComidoPower.POWER_ID) && p.getPower(ComidoPower.POWER_ID).amount >= 1;
+    }
+
     public void upgrade() {
         if (!upgraded) {
             upgradeName();

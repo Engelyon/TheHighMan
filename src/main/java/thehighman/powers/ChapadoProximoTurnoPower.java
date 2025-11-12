@@ -13,22 +13,20 @@ public class ChapadoProximoTurnoPower extends BasePower {
     private final int amountPerTurn;
 
     public ChapadoProximoTurnoPower(AbstractCreature owner, int turns, int amountPerTurn) {
-        super(POWER_ID, PowerType.BUFF, true, owner, owner, turns); // isTurnBased = true
+        super(POWER_ID, PowerType.BUFF, true, owner, owner, turns);
         this.turnsRemaining = turns;
         this.amountPerTurn = amountPerTurn;
         this.amount = this.turnsRemaining;
-    this.isTurnBased=true;
         updateDescription();
     }
 
     @Override
     public void atStartOfTurnPostDraw() {
         addToBot(new ApplyPowerAction(owner, owner, new ChapadoPower(owner, amountPerTurn), amountPerTurn));
-        turnsRemaining--;
-        this.amount = turnsRemaining;
-
-        if (turnsRemaining <= 0) {
-            addToBot(new RemoveSpecificPowerAction(owner, owner, POWER_ID));
+        this.turnsRemaining--;
+        this.amount = this.turnsRemaining;
+        if (this.turnsRemaining <= 0) {
+            addToBot(new RemoveSpecificPowerAction(owner, owner, this.POWER_ID));
         } else {
             updateDescription();
         }

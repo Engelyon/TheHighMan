@@ -2,10 +2,13 @@ package thehighman.cards;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thehighman.character.TheHighman;
 import thehighman.powers.ComidoPower;
+import thehighman.powers.ErvaPower;
 import thehighman.util.CardStats;
 
 public class AlmocoDeGraca extends BaseCard {
@@ -31,10 +34,7 @@ public class AlmocoDeGraca extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        // Ganha 2 de Comido
         addToBot(new ApplyPowerAction(p, p, new ComidoPower(p, COMIDO_GAIN), COMIDO_GAIN));
-
-        // Se Comido estiver no máximo, ganha 2 de energia
         if (p.hasPower(ComidoPower.POWER_ID)) {
             int atual = p.getPower(ComidoPower.POWER_ID).amount;
             if (atual >= COMIDO_MAX) {
@@ -48,6 +48,17 @@ public class AlmocoDeGraca extends BaseCard {
             upgradeName();
             this.upgradeBaseCost(0); // Reduz o custo de 1 para 0
             initializeDescription();
+        }
+    }
+    @Override
+    public void triggerOnGlowCheck() {
+        super.triggerOnGlowCheck();
+        int x=8;
+        if (AbstractDungeon.player != null && AbstractDungeon.player.hasPower(ComidoPower.POWER_ID)
+                && AbstractDungeon.player.getPower(ComidoPower.POWER_ID).amount >= x) {
+            this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR;
+        } else {
+            this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR;
         }
     }
 }

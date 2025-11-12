@@ -8,10 +8,12 @@ import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thehighman.character.TheHighman;
 import thehighman.powers.ChapadoPower;
 import thehighman.powers.ErvaPower;
+import thehighman.powers.SedaPower;
 import thehighman.util.CardStats;
 
 public class BaforadaEterea extends BaseCard {
@@ -65,6 +67,32 @@ public class BaforadaEterea extends BaseCard {
             upgradeName();
             upgradeDamage(UPG_DAMAGE); // 4 → 6 de dano
             initializeDescription();
+        }
+    }
+
+    @Override
+    public void applyPowers() {
+        super.applyPowers();
+        int base = this.baseMagicNumber;
+        int newMagic = base;
+        if (AbstractDungeon.player != null && AbstractDungeon.player.hasPower(SedaPower.POWER_ID)) {
+            int seda = AbstractDungeon.player.getPower(SedaPower.POWER_ID).amount;
+            newMagic = base + Math.max(0, seda);
+        }
+        this.magicNumber = newMagic;
+        this.isMagicNumberModified = (this.magicNumber != this.baseMagicNumber);
+        initializeDescription();
+    }
+
+    @Override
+    public void triggerOnGlowCheck() {
+        super.triggerOnGlowCheck();
+        int x=1;
+        if (AbstractDungeon.player != null && AbstractDungeon.player.hasPower(ErvaPower.POWER_ID)
+                && AbstractDungeon.player.getPower(ErvaPower.POWER_ID).amount >= x) {
+            this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR;
+        } else {
+            this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR;
         }
     }
 }

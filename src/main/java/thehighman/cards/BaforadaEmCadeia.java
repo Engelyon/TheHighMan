@@ -7,9 +7,11 @@ import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thehighman.character.TheHighman;
 import thehighman.powers.ChapadoPower;
+import thehighman.powers.SedaPower;
 import thehighman.util.CardStats;
 
 public class BaforadaEmCadeia extends BaseCard {
@@ -59,5 +61,19 @@ public class BaforadaEmCadeia extends BaseCard {
             upgradeDamage(UPG_DAMAGE); // Aumenta o dano de 4 para 6
             initializeDescription();
         }
+    }
+
+    @Override
+    public void applyPowers() {
+        super.applyPowers();
+        int base = this.baseMagicNumber;
+        int newMagic = base;
+        if (AbstractDungeon.player != null && AbstractDungeon.player.hasPower(SedaPower.POWER_ID)) {
+            int seda = AbstractDungeon.player.getPower(SedaPower.POWER_ID).amount;
+            newMagic = base + Math.max(0, seda);
+        }
+        this.magicNumber = newMagic;
+        this.isMagicNumberModified = (this.magicNumber != this.baseMagicNumber);
+        initializeDescription();
     }
 }
