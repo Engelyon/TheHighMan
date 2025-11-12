@@ -3,6 +3,7 @@ package thehighman.cards;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
+import com.megacrit.cardcrawl.actions.common.LoseHPAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -11,6 +12,8 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thehighman.character.TheHighman;
 import thehighman.actions.DrawCheckBadTripAction;
 import thehighman.util.CardStats;
+
+import java.util.Objects;
 
 public class LoopMental extends BaseCard {
     public static final String ID = makeID("LoopMental");
@@ -43,44 +46,21 @@ public class LoopMental extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
-
-        // snapshot da mão antes do draw
-        final java.util.Set<String> before = new java.util.HashSet<>();
-        if (p != null && p.hand != null) {
-            for (com.megacrit.cardcrawl.cards.AbstractCard c : p.hand.group) {
-                before.add(c.cardID + "|" + c.uuid);
+        //addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
+        addToBot(new DrawCardAction(1));
+        if (Objects.equals(p.hand.getBottomCard().cardID, BadTrip.ID)) {;
+            addToBot(new DrawCardAction(p, 1));
+        }
+        addToBot(new DrawCardAction(1));
+        if (Objects.equals(p.hand.getBottomCard().cardID, BadTrip.ID)) {;
+            addToBot(new DrawCardAction(p, 1));
+        }
+        if(upgraded){
+            addToBot(new DrawCardAction(1));
+            if (Objects.equals(p.hand.getBottomCard().cardID, BadTrip.ID)) {;
+                addToBot(new DrawCardAction(p, 1));
             }
         }
-
-        // enfileira o draw inicial
-        addToBot(new DrawCardAction(p, this.magicNumber));
-
-        // ação que roda depois do draw para checar se alguma BadTrip foi desenhada
-        addToBot(new com.megacrit.cardcrawl.actions.AbstractGameAction() {
-            @Override
-            public void update() {
-                boolean foundBadTrip = false;
-                if (p != null && p.hand != null) {
-                    for (com.megacrit.cardcrawl.cards.AbstractCard c : p.hand.group) {
-                        String key = c.cardID + "|" + c.uuid;
-                        if (!before.contains(key)) {
-                            // aqui detectamos as cartas recém desenhadas; verifique o ID de BadTrip
-                            // substitua "BadTrip" pelo ID real da sua carta se necessário (ex: BadTrip.ID)
-                            if (c.cardID.equals("BadTrip")) {
-                                foundBadTrip = true;
-                                break;
-                            }
-                        }
-                    }
-                }
-
-                if (foundBadTrip && magicNumber > 0) {
-                    AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, magicNumber));
-                }
-                this.isDone = true;
-            }
-        });
     }
 
     @Override
