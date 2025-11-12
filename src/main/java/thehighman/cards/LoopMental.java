@@ -48,16 +48,16 @@ public class LoopMental extends BaseCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         //addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
         addToBot(new DrawCardAction(1));
-        if (Objects.equals(p.hand.getBottomCard().cardID, BadTrip.ID)) {;
+        if (Objects.equals(p.hand.getTopCard().cardID, BadTrip.ID)) {;
             addToBot(new DrawCardAction(p, 1));
         }
         addToBot(new DrawCardAction(1));
-        if (Objects.equals(p.hand.getBottomCard().cardID, BadTrip.ID)) {;
+        if (Objects.equals(p.hand.getTopCard().cardID, BadTrip.ID)) {;
             addToBot(new DrawCardAction(p, 1));
         }
         if(upgraded){
             addToBot(new DrawCardAction(1));
-            if (Objects.equals(p.hand.getBottomCard().cardID, BadTrip.ID)) {;
+            if (Objects.equals(p.hand.getTopCard().cardID, BadTrip.ID)) {;
                 addToBot(new DrawCardAction(p, 1));
             }
         }
