@@ -71,8 +71,8 @@
   },
   "${modID}:BongExtra": {
     "NAME": "Bong Extra",
-    "DESCRIPTION": "Sempre que um inimigo ganhar ${modID}:Larica, compre 1 carta e ganhe 5 de Bloqueio no final do turno.",
-    "UPGRADE_DESCRIPTION": "Sempre que um inimigo ganhar ${modID}:Larica, compre 1 carta e ganhe 5 de Bloqueio no final do turno."
+    "DESCRIPTION": "Sempre que um inimigo ganhar ${modID}:Larica, compre 1 carta e ganhe !B! de Bloqueio no final do turno.",
+    "UPGRADE_DESCRIPTION": "Sempre que um inimigo ganhar ${modID}:Larica, compre 1 carta e ganhe !B! de Bloqueio no final do turno."
   },
   "${modID}:BongGigatonico": {
     "NAME": "Bong Gigatônico",

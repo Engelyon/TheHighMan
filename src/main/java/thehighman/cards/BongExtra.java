@@ -18,25 +18,25 @@ public class BongExtra extends BaseCard {
             1
     );
 
-    private static final int BLOCK_PER_TRIGGER = 5;
-    private static final int BLOCK_PER_TRIGGER_UPG = 8;
+    private static final int BLOCK= 5;
+    private static final int BLOCK_UPG = 3;
 
     public BongExtra() {
         super(ID, info);
-        this.keywords.add("bong");
+        setBlock(BLOCK, BLOCK_UPG);
         initializeDescription();
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        int blockPerTrigger = upgraded ? BLOCK_PER_TRIGGER_UPG : BLOCK_PER_TRIGGER;
-        addToBot(new ApplyPowerAction(p, p, new BongExtraPower(p, p, blockPerTrigger), blockPerTrigger));
+        addToBot(new ApplyPowerAction(p, p, new BongExtraPower(p, p, block), block));
     }
 
     @Override
     public void upgrade() {
         if (!upgraded) {
-            upgradeName(); // ajustar custo aqui se quiser
+            upgradeName();
+            upgradeBlock(BLOCK_UPG);
             initializeDescription();
         }
     }
