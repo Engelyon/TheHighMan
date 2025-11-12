@@ -33,26 +33,36 @@ public class Amnesia extends BaseCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (!upgraded) {
+            addToBot(new ExhaustAction(2, true, false, false));
             int badtripsEX = 0;
-            for (int i = 0; i < p.exhaustPile.size(); i++) {
+            int counter =0;
+            for (int i =  p.exhaustPile.size(); i > 0; i--) {
                 if (Objects.equals(p.exhaustPile.getNCardFromTop(i).getMetricID(), BadTrip.ID)) {
                     badtripsEX++;
                 }
+                counter++;
+                if (counter >=2) {
+                    break;
+                }
             }
-            addToBot(new ExhaustAction(2, true, false, false));
             if (badtripsEX >= 1) {
                 for (int i = 0; i < badtripsEX; i++) {
                     addToBot(new ApplyPowerAction(p, p, new ErvaPower(p, ERVA_GAIN), ERVA_GAIN));
                 }
             }
         } else {
+            addToBot(new ExhaustAction(2, false, false, false));
             int badtripsEX = 0;
-            for (int i = 0; i < p.exhaustPile.size(); i++) {
+            int counter =0;
+            for (int i =  p.exhaustPile.size(); i > 0; i--) {
                 if (Objects.equals(p.exhaustPile.getNCardFromTop(i).getMetricID(), BadTrip.ID)) {
                     badtripsEX++;
                 }
+                counter++;
+                if (counter >=2) {
+                    break;
+                }
             }
-            addToBot(new ExhaustAction(2, false, false, false));
             if (badtripsEX >= 1) {
                 for (int i = 0; i < badtripsEX; i++) {
                     addToBot(new ApplyPowerAction(p, p, new ErvaPower(p, ERVA_GAIN), ERVA_GAIN));
