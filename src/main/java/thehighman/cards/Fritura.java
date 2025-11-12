@@ -22,43 +22,32 @@ public class Fritura extends BaseCard {
     );
 
     private static final int TEMP_STRENGTH = 2;
-    private static final int UPG_TEMP_STRENGTH = 1;
+    private static final int UPG_TEMP_STRENGTH = 2;
     private static final int LARICA_LOSS = 1;
+    private static final int UPG_LARICA_LOSS = 1;
 
     public Fritura() {
         super(ID, info);
         setMagic(TEMP_STRENGTH, UPG_TEMP_STRENGTH);
-        this.keywords.add("larica");
         initializeDescription();
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (p == null) return;
-        int strengthToApply = this.magicNumber;
-        int laricaToRemove = LARICA_LOSS;
+        addToBot(new ApplyPowerAction(p,p, new StrengthPower(p, magicNumber)));
+        addToBot(new ApplyPowerAction(p,p, new LoseStrengthPower(p, magicNumber)));
+        int laricaLoss = LARICA_LOSS;
         if (upgraded) {
-            strengthToApply *= 2;
-            laricaToRemove *= 2;
+            laricaLoss += UPG_LARICA_LOSS;
         }
-
-        if (strengthToApply > 0) {
-            addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, strengthToApply), strengthToApply));
-            addToBot(new ApplyPowerAction(p, p, new LoseStrengthPower(p, strengthToApply), strengthToApply));
-        }
-        if (p.hasPower(LaricaPower.POWER_ID)) {
-            int current = p.getPower(LaricaPower.POWER_ID).amount;
-            int amountToRemove = Math.min(current, laricaToRemove);
-            if (amountToRemove > 0) {
-                addToBot(new ReducePowerAction(p, p, LaricaPower.POWER_ID, amountToRemove));
-            }
-        }
+        addToBot(new ReducePowerAction(p,p, LaricaPower.POWER_ID, laricaLoss));
     }
 
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
+            upgradeMagicNumber(UPG_TEMP_STRENGTH);
             initializeDescription();
         }
     }
