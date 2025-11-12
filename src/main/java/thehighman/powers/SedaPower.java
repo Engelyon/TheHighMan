@@ -26,24 +26,27 @@ public class SedaPower extends BasePower {
     public void updateDescription() {
         this.description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1]+ this.amount + DESCRIPTIONS[2];
     }
-
+/*
     @Override
     public float atDamageGive(float damage, DamageInfo.DamageType type) {
         if (type == DamageInfo.DamageType.NORMAL) {
             return damage + amount;
         }
         return damage;
-    }
+    }*/
+
     @Override
     public void onUseCard(AbstractCard card, UseCardAction action) {
         if (card.keywords != null && card.keywords.contains("chapado")) {
             AbstractMonster target = action.target instanceof AbstractMonster ? (AbstractMonster) action.target : null;
             if (target != null && amount > 0) {
-                int bonus = Math.max(1, amount / 2); // garante pelo menos 1
+                //int bonus = Math.max(1, amount / 2);
+                int bonus = amount;
                 AbstractDungeon.actionManager.addToBottom(
                         new ApplyPowerAction(target, owner, new ChapadoPower(target, bonus), bonus)
                 );
             }
         }
     }
+
 }

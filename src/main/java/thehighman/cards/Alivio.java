@@ -58,21 +58,17 @@ public class Alivio extends BaseCard {
     @Override
     public void applyPowers() {
         super.applyPowers();
-
-        int base = this.baseMagicNumber;
-        int newMagic = base;
-
-        if (AbstractDungeon.player != null && AbstractDungeon.player.hasPower(SedaPower.POWER_ID)) {
+        if (AbstractDungeon.player.hasPower(SedaPower.POWER_ID)) {
             int seda = AbstractDungeon.player.getPower(SedaPower.POWER_ID).amount;
-            newMagic = base + Math.max(0, seda);
+            int bonus = Math.max(0, seda);
+            this.magicNumber = this.baseMagicNumber + bonus;
+            isMagicNumberModified = true;
+        } else {
+            this.magicNumber = this.baseMagicNumber;
+            isMagicNumberModified = false;
         }
-
-        this.magicNumber = newMagic;
-        this.isMagicNumberModified = (this.magicNumber != this.baseMagicNumber);
-
         initializeDescription();
     }
-
     @Override
     public void triggerOnGlowCheck() {
         super.triggerOnGlowCheck();

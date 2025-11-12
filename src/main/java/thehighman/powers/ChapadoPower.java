@@ -17,11 +17,11 @@ public class ChapadoPower extends BasePower{
 
     public ChapadoPower(AbstractCreature owner, int amount) {
         super(POWER_ID, TYPE, TURN_BASED, owner, amount);
-        AbstractCreature player = AbstractDungeon.player;
+        /*AbstractCreature player = AbstractDungeon.player;
         if (player != null && player.hasPower(SedaPower.POWER_ID)) {
             int extra = player.getPower(SedaPower.POWER_ID).amount;
             this.amount += extra;
-        }
+        }*/
         updateDescription();
     }
 
@@ -36,24 +36,21 @@ public class ChapadoPower extends BasePower{
     @Override
     public void stackPower(int stackAmount) {
         this.fontScale = 8.0F;
-
-        AbstractCreature player = AbstractDungeon.player;
+       /* AbstractCreature player = AbstractDungeon.player;
         if (player != null && player.hasPower(SedaPower.POWER_ID)) {
             int extra = player.getPower(SedaPower.POWER_ID).amount;
             stackAmount += extra;
-        }
-
+        }*/
         this.amount += stackAmount;
-
         if (this.amount >= 20) {
             AbstractDungeon.actionManager.addToBottom(
                     new ApplyPowerAction(owner, owner, new LaricaPower(owner, 1), 1)
             );
             this.amount = 5;
         }
-
         updateDescription();
     }
+
     @Override
     public void atEndOfRound() {
         if (this.amount > 0) {

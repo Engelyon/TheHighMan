@@ -36,19 +36,15 @@ package thehighman.cards;
 
             public Tapa() {
                 super(ID, info);
-                // Define o dano base e o dano adicional ao aprimorar
                 setDamage(DAMAGE, UPG_DAMAGE);
                 setMagic(CHAPADO, UPG_CHAPADO);
-                // Adiciona tags relacionadas a cartas iniciais e de ataque
                 tags.add(CardTags.STARTER_STRIKE);
                 tags.add(CardTags.STRIKE);
-                // Adiciona a palavra-chave "chapado" para exibição de tooltip
                 this.keywords.add("chapado");
                 initializeDescription();
             }
             @Override
             public void use(AbstractPlayer p, AbstractMonster m) {
-                // Causa dano ao inimigo alvo
                 addToBot(new DamageAction(m, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL),
                         AbstractGameAction.AttackEffect.SLASH_VERTICAL));
                 addToBot(new ApplyPowerAction(m, p, new ChapadoPower(m, this.magicNumber), this.magicNumber));
@@ -57,11 +53,11 @@ package thehighman.cards;
             public void upgrade() {
                 if (!upgraded) {
                     upgradeName();
-                    upgradeDamage(UPG_DAMAGE); // 6 → 9 de dano
+                    upgradeDamage(UPG_DAMAGE);
                     initializeDescription();
                 }
             }
-            //atualiza o magic number com a quantidade de SedaPower
+
             @Override
             public void applyPowers() {
                 super.applyPowers();
@@ -76,4 +72,5 @@ package thehighman.cards;
                 }
                 initializeDescription();
             }
+
         }

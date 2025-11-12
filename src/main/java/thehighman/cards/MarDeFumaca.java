@@ -32,17 +32,19 @@ public class MarDeFumaca extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
-            if (mo != null && !mo.isDeadOrEscaped()) {
-                addToBot(new ApplyPowerAction(mo, p, new ChapadoPower(mo, this.magicNumber), this.magicNumber));
+        int defesa = 0;
+        if (AbstractDungeon.getCurrRoom() != null && AbstractDungeon.getCurrRoom().monsters != null) {
+            for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
+                if (mo != null && !mo.isDeadOrEscaped()) {
+                    addToBot(new ApplyPowerAction(mo, p, new ChapadoPower(mo, magicNumber), magicNumber));
+
+                }
             }
         }
-        int defesa =0;
-        for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
-            if (mo != null && !mo.isDeadOrEscaped()) {
-                defesa += mo.getPower(ChapadoPower.POWER_ID).amount;
+        for (int i = 0; i < AbstractDungeon.getCurrRoom().monsters.monsters.size(); i++)
+            if (!AbstractDungeon.getCurrRoom().monsters.monsters.get(i).isDead){
+                defesa += magicNumber;
             }
-        }
         addToBot(new GainBlockAction(p, p, defesa));
     }
 
