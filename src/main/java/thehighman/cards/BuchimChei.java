@@ -17,27 +17,27 @@ public class BuchimChei extends BaseCard {
             CardTarget.SELF,
             2
     );
+    private static final int TANTO = 1;
+    private static final int TANTO_UPG =1;
 
     public BuchimChei() {
         super(ID, info);
         this.exhaust=true;
-        this.keywords.add("comido");
+        setMagic(TANTO, TANTO_UPG);
         initializeDescription();
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         int comidoAmount = p.getPower(ComidoPower.POWER_ID).amount;
-        addToBot(new ApplyPowerAction(p, p, new ComidoPower(p, comidoAmount)));
-        if (upgraded){
-            addToBot(new ApplyPowerAction(p, p, new ComidoPower(p, comidoAmount)));
-        }
+        addToBot(new ApplyPowerAction(p,p, new ComidoPower(p, this.magicNumber*comidoAmount)));
     }
 
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
+            upgradeMagicNumber(TANTO_UPG);
             initializeDescription();
         }
     }
