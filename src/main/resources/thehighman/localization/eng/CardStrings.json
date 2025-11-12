@@ -106,8 +106,8 @@
   },
   "${modID}:CheiroDeLanche": {
     "NAME": "Cheiro De Lanche",
-    "DESCRIPTION": "Cause !D! de dano. Se o inimigo tiver ${modID}:Larica, cause mais !M!",
-    "UPGRADE_DESCRIPTION": "Cause !D! de dano. Se o inimigo tiver ${modID}:Larica, cause mais !M!."
+    "DESCRIPTION": "Cause !D! de dano. Se você não tiver ${modID}:Larica, receba ${modID}:Larica.",
+    "UPGRADE_DESCRIPTION": "Cause !D! de dano. Se você não tiver ${modID}:Larica, receba ${modID}:Larica."
   },
   "${modID}:ColheitaGenerosa": {
     "NAME": "Colheita Generosa",

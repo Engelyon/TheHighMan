@@ -42,22 +42,15 @@ public class SacolaDeGuloseimas extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        // Dano direto ao inimigo alvo
         addToBot(new DamageAction(m, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL),
                 AbstractGameAction.AttackEffect.BLUNT_HEAVY));
-
-        // Ganha 1 stack de Comido
         addToBot(new ApplyPowerAction(p, p, new ComidoPower(p, 1), 1));
-
-        // Se o inimigo tiver Larica, causa 5 de dano a todos os inimigos
         if (m != null && m.hasPower(LaricaPower.POWER_ID)) {
             addToBot(new DamageAllEnemiesAction(p,
                     DamageInfo.createDamageMatrix(BONUS_DAMAGE, true),
                     DamageInfo.DamageType.THORNS,
                     AbstractGameAction.AttackEffect.FIRE));
         }
-
-        // Upgrade: ganha 5 de proteção (block)
         if (upgraded) {
             addToBot(new GainBlockAction(p, p, UPG_BLOCK));
         }
