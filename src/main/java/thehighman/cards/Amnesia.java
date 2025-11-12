@@ -39,7 +39,7 @@ public class Amnesia extends BaseCard {
                     badtripsEX++;
                 }
             }
-            addToBot(new ExhaustAction(2, false, false, false));
+            addToBot(new ExhaustAction(2, true, false, false));
             if (badtripsEX >= 1) {
                 for (int i = 0; i < badtripsEX; i++) {
                     addToBot(new ApplyPowerAction(p, p, new ErvaPower(p, ERVA_GAIN), ERVA_GAIN));
