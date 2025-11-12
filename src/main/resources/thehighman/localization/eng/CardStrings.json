@@ -241,8 +241,8 @@
   },
   "${modID}:MarDeFumaca": {
     "NAME": "Mar De Fumaca",
-    "DESCRIPTION": "Aplique !M! de ${modID}:Chapado a todos os inimigos. Ganhe Bloqueio igual ao ${modID}:Chapado total de todos os inimigos.",
-    "UPGRADE_DESCRIPTION": "Aplique !M! de ${modID}:Chapado a todos os inimigos. Ganhe Bloqueio igual ao dobro do ${modID}:Chapado total de todos os inimigos."
+    "DESCRIPTION": "Aplique !M! de ${modID}:Chapado a todos os inimigos. Ganhe Bloqueio igual ao ${modID}:Chapado total de todos os inimigos. Exaurir",
+    "UPGRADE_DESCRIPTION": "Aplique !M! de ${modID}:Chapado a todos os inimigos. Ganhe Bloqueio igual ao dobro do ${modID}:Chapado total de todos os inimigos. Exaurir"
   },
   "${modID}:Marmita": {
     "NAME": "Marmita",
@@ -336,8 +336,8 @@
   },
   "${modID}:SoproRelaxante": {
     "NAME": "Sopro Relaxante",
-    "DESCRIPTION": "Causa !D! de dano. Aplica !M! de Chapado e !SECOND! de Vulnerável.",
-    "UPGRADE_DESCRIPTION": "Causa !D! de dano. Aplica !M! de Chapado e !SECOND! de Vulnerável."
+    "DESCRIPTION": "Causa !D! de dano. Aplica !M! de Chapado e 1 de Vulnerável.",
+    "UPGRADE_DESCRIPTION": "Causa !D! de dano. Aplica !M! de Chapado e 2 de Vulnerável."
   },
   "${modID}:Tapa": {
     "NAME": "Tapa",

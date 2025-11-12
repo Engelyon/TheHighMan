@@ -46,7 +46,7 @@ public class Analisar extends BaseCard {
             }
         }
         if (chapadoDetectado) {
-            new ApplyPowerAction(p, p, new SedaPower(p, p, 1), 1);
+            addToBot(new ApplyPowerAction(p, p, new SedaPower(p, p, 1), 1));
         }
     }
 
