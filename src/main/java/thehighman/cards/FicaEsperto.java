@@ -36,7 +36,6 @@ public class FicaEsperto extends BaseCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new DamageAction(m, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL),
                 AbstractGameAction.AttackEffect.BLUNT_LIGHT));
-
         if (m.hasPower(ChapadoPower.POWER_ID)) {
             addToBot(new DrawCardAction(p, this.magicNumber));
         }
@@ -45,11 +44,9 @@ public class FicaEsperto extends BaseCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagic();
+            upgradeMagicNumber(DRAW_CARD_UPG);
             initializeDescription();
         }
     }
 
-    private void upgradeMagic() {
-    }
 }
