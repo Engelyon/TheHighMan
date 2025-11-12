@@ -23,11 +23,12 @@ public class Ventilador extends BaseCard {
 
     private static final int CHAPADO_AMOUNT = 1;
     private static final int BLOCK_PER_HIT = 3;
-    private static final int BLOCK_PER_HIT_UPG = 5;
+    private static final int BLOCK_PER_HIT_UPG = 2;
 
     public Ventilador() {
         super(ID, info);
         setMagic(CHAPADO_AMOUNT);
+        setBlock(BLOCK_PER_HIT, BLOCK_PER_HIT_UPG);
         this.keywords.add("chapado");
         initializeDescription();
     }
@@ -43,10 +44,8 @@ public class Ventilador extends BaseCard {
                 }
             }
         }
-
         if (hits > 0) {
-            int perHit = upgraded ? BLOCK_PER_HIT_UPG : BLOCK_PER_HIT;
-            int totalBlock = hits * perHit;
+            int totalBlock = hits * block;
             addToBot(new GainBlockAction(p, p, totalBlock));
         }
     }
@@ -55,6 +54,7 @@ public class Ventilador extends BaseCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
+            upgradeBlock(BLOCK_PER_HIT_UPG);
             initializeDescription();
         }
     }

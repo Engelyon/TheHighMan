@@ -366,8 +366,8 @@
   },
   "${modID}:Ventilador": {
     "NAME": "Ventilador",
-    "DESCRIPTION": "Aplique !M! de ${modID}:Chapado a todos os inimigos. Ganhe 3 de Bloqueio para cada inimigo afetado.",
-    "UPGRADE_DESCRIPTION": "Aplique !M! de ${modID}:Chapado a todos os inimigos. Ganhe 5 de Bloqueio para cada inimigo afetado."
+    "DESCRIPTION": "Aplique !M! de ${modID}:Chapado a todos os inimigos. Ganhe !B! de Bloqueio para cada inimigo afetado.",
+    "UPGRADE_DESCRIPTION": "Aplique !M! de ${modID}:Chapado a todos os inimigos. Ganhe !B! de Bloqueio para cada inimigo afetado."
   },
   "${modID}:ViagemSoDeIda": {
     "NAME": "Viagem So De Ida",
