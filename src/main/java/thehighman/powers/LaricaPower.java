@@ -24,12 +24,14 @@ public class LaricaPower extends BasePower {
         this(owner, owner, amount);
     }
 
-    @Override
+    /*@Override
     public void onInitialApplication() {
-        AbstractDungeon.actionManager.addToBottom(
+       /AbstractDungeon.actionManager.addToBottom(
                 new ApplyPowerAction(owner, owner, new StrengthPower(owner, 2 * amount), 2 * amount)
         );
     }
+*/
+
 
     @Override
     public float atDamageReceive(float damage, DamageInfo.DamageType damageType) {
@@ -44,6 +46,21 @@ public class LaricaPower extends BasePower {
         AbstractDungeon.actionManager.addToBottom(
                 new ApplyPowerAction(owner, owner, new StrengthPower(owner, -2 * amount), -2 * amount)
         );
+    }
+
+    @Override
+    public void stackPower(int stackAmount) {
+        if (stackAmount > 0) {
+            AbstractDungeon.actionManager.addToBottom(
+                    new ApplyPowerAction(owner, owner, new StrengthPower(owner, 2 * stackAmount), 2 * stackAmount)
+            );
+        } else if (stackAmount < 0) {
+            AbstractDungeon.actionManager.addToBottom(
+                    new ApplyPowerAction(owner, owner, new StrengthPower(owner, 2 * stackAmount), 2 * stackAmount)
+            );
+        }
+        this.amount += stackAmount;
+        this.updateDescription();
     }
 
     @Override

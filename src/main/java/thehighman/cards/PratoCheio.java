@@ -18,8 +18,8 @@ public class PratoCheio extends BaseCard {
             0
     );
 
-    private static final int COMIDO_AMOUNT = 4;
-    private static final int UPG_COMIDO = 1;
+    private static final int COMIDO_AMOUNT = 3;
+    private static final int UPG_COMIDO = 2;
 
     public PratoCheio() {
         super(ID, info);
