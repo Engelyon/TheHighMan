@@ -5,6 +5,7 @@ import com.megacrit.cardcrawl.actions.common.LoseHPAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.relics.BlueCandle;
 import thehighman.character.TheHighman;
 import thehighman.powers.ImuneABadTripPower;
 import thehighman.powers.LaricaPower;
@@ -25,8 +26,6 @@ public class BadTrip extends BaseCard {
         super(ID, info);
         this.exhaust = false;
         this.dontTriggerOnUseCard = true;
-        this.keywords.add("larica");
-        this.keywords.add("maldição");
         initializeDescription();
     }
 
@@ -46,13 +45,18 @@ public class BadTrip extends BaseCard {
         }
     }
 
+
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        // Não faz nada — carta não jogável
+        addToBot(new com.megacrit.cardcrawl.actions.common.LoseHPAction(p, p, 1));
     }
 
     @Override
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
+        if (p.hasRelic(BlueCandle.ID)){
+            this.exhaust=true;
+            return true;
+        }
         return false;
     }
 }
