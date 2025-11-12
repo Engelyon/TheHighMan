@@ -42,10 +42,9 @@ public class Reembolso extends BaseCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new DamageAction(m, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL),
                 AbstractGameAction.AttackEffect.BLUNT_HEAVY));
-
         if (p.hasPower(ErvaPower.POWER_ID)) {
             addToBot(new ReducePowerAction(p, p, ErvaPower.POWER_ID, 1));
-            new ApplyPowerAction(p, p, new SedaPower(p, p, this.magicNumber), this.magicNumber);
+            addToBot(new ApplyPowerAction(p, p, new SedaPower(p, p, this.magicNumber), this.magicNumber));
         }
     }
     @Override
