@@ -37,7 +37,6 @@ public class MarDeFumaca extends BaseCard {
             for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
                 if (mo != null && !mo.isDeadOrEscaped()) {
                     addToBot(new ApplyPowerAction(mo, p, new ChapadoPower(mo, magicNumber), magicNumber));
-
                 }
             }
         }

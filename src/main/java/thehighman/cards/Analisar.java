@@ -35,12 +35,21 @@ public class Analisar extends BaseCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new DrawCardAction(p, DRAW_AMOUNT));
-        boolean chapadoDetectado = AbstractDungeon.getCurrRoom().monsters.monsters.stream()
-                .anyMatch(mo -> mo.hasPower(ChapadoPower.POWER_ID) && mo.getPower(ChapadoPower.POWER_ID).amount >= CHAPADO_THRESHOLD);
+        boolean chapadoDetectado = false;
+        for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
+            if (mo != null && !mo.isDeadOrEscaped()) {
+                if (mo.hasPower(ChapadoPower.POWER_ID)){
+                    if (mo.getPower(ChapadoPower.POWER_ID).amount >= CHAPADO_THRESHOLD){
+                        chapadoDetectado = true;
+                    }
+                }
+            }
+        }
         if (chapadoDetectado) {
             new ApplyPowerAction(p, p, new SedaPower(p, p, 1), 1);
         }
     }
+
     @Override
     public void upgrade() {
         if (!upgraded) {
