@@ -21,7 +21,7 @@ public class EnergiaExtraProximoTurnoPower extends AbstractPower {
     }
     @Override
     public void updateDescription() {
-                description = DESCRIPTIONS[0];
+                this.description = DESCRIPTIONS[0];
     }
 
     @Override
