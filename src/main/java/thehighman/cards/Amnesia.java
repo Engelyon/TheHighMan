@@ -107,7 +107,7 @@ public class Amnesia extends BaseCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            this.exhaust = false; // Remove o exhaust na versão upada
+            this.exhaust = false;
             initializeDescription();
         }
     }

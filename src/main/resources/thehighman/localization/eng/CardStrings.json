@@ -21,8 +21,8 @@
   },
   "${modID}:Amnesia": {
     "NAME": "Amnesia",
-    "DESCRIPTION": "Exausta 2 cartas aleatórias da sua mão. Para cada BadTrip exaurida, ganhe 2 de ${modID}:Erva. Exaurir",
-    "UPGRADE_DESCRIPTION": "Exausta 2 cartas da sua mão. Para cada BadTrip exaurida, ganhe 2 de ${modID}:Erva."
+    "DESCRIPTION": "Exaure 2 cartas aleatórias da sua mão. Para cada BadTrip exaurida, ganhe 2 de ${modID}:Erva. Exaurir",
+    "UPGRADE_DESCRIPTION": "Exaure 2 cartas da sua mão. Para cada BadTrip exaurida, ganhe 2 de ${modID}:Erva."
   },
   "${modID}:Analisar": {
     "NAME": "Analisar",
