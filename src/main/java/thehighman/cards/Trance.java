@@ -21,7 +21,6 @@ public class Trance extends BaseCard {
     public Trance() {
         super(ID, info);
         this.exhaust = true;
-        this.keywords.add("transe");
         initializeDescription();
     }
 

@@ -361,8 +361,8 @@
   },
   "${modID}:Trance": {
     "NAME": "Trance",
-    "DESCRIPTION": "Entre em trance. Sempre que você ganhar ${modID}:Larica neste turno, exaure 1 carta da sua mão e ganhe 1 de ${modID}:Seda.",
-    "UPGRADE_DESCRIPTION": "Entre em trance. Sempre que você ganhar ${modID}:Larica neste turno, exaure 1 carta da sua mão e ganhe 1 de ${modID}:Seda."
+    "DESCRIPTION": "Entre em trance. Sempre que você ganhar ${modID}:Larica, exaure 1 carta da sua mão e ganhe 1 de ${modID}:Seda.",
+    "UPGRADE_DESCRIPTION": "Entre em trance. Sempre que você ganhar ${modID}:Larica, exaure 1 carta da sua mão e ganhe 1 de ${modID}:Seda."
   },
   "${modID}:Ventilador": {
     "NAME": "Ventilador",
