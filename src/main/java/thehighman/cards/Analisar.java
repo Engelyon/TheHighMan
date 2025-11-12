@@ -27,18 +27,16 @@ public class Analisar extends BaseCard {
 
     public Analisar() {
         super(ID, info);
+        setMagic(DRAW_AMOUNT);
         this.keywords.add("chapado");
         initializeDescription();
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        // Compra 2 cartas
         addToBot(new DrawCardAction(p, DRAW_AMOUNT));
-
         boolean chapadoDetectado = AbstractDungeon.getCurrRoom().monsters.monsters.stream()
                 .anyMatch(mo -> mo.hasPower(ChapadoPower.POWER_ID) && mo.getPower(ChapadoPower.POWER_ID).amount >= CHAPADO_THRESHOLD);
-
         if (chapadoDetectado) {
             new ApplyPowerAction(p, p, new SedaPower(p, p, 1), 1);
         }
@@ -47,7 +45,7 @@ public class Analisar extends BaseCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            this.upgradeMagicNumber(1); // Compra 3 cartas em vez de 2
+            this.upgradeMagicNumber(1);
             initializeDescription();
         }
     }

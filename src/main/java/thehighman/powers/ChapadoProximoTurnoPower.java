@@ -17,7 +17,7 @@ public class ChapadoProximoTurnoPower extends BasePower {
         this.turnsRemaining = turns;
         this.amountPerTurn = amountPerTurn;
         this.amount = this.turnsRemaining;
-
+    this.isTurnBased=true;
         updateDescription();
     }
 

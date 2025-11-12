@@ -26,8 +26,8 @@
   },
   "${modID}:Analisar": {
     "NAME": "Analisar",
-    "DESCRIPTION": "Compre 2 cartas. Se algum inimigo tiver 5 ou mais de ${modID}:Chapado, ganhe 1 de ${modID}:Seda.",
-    "UPGRADE_DESCRIPTION": "Compre 3 cartas. Se algum inimigo tiver 5 ou mais de ${modID}:Chapado, ganhe 1 de ${modID}:Seda."
+    "DESCRIPTION": "Compre !M! cartas. Se algum inimigo tiver 5 ou mais de ${modID}:Chapado, ganhe 1 de ${modID}:Seda.",
+    "UPGRADE_DESCRIPTION": "Compre !M! cartas. Se algum inimigo tiver 5 ou mais de ${modID}:Chapado, ganhe 1 de ${modID}:Seda."
   },
   "${modID}:Aperitivo": {
     "NAME": "Aperitivo",
