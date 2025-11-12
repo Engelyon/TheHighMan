@@ -226,8 +226,8 @@
   },
   "${modID}:LimparOBong": {
     "NAME": "Limpar O Bong",
-    "DESCRIPTION": "Reter. Gaste toda sua ${modID}:Erva. Para cada ponto gasto, ganhe 1 de Força temporária. Exaure.",
-    "UPGRADE_DESCRIPTION": "Gaste toda sua ${modID}:Erva. Para cada ponto gasto, ganhe 2 de Força temporária. Exaure."
+    "DESCRIPTION": "Reter. Gaste toda sua ${modID}:Erva. Para cada ponto gasto, ganhe !M! de Força temporária. Exaure.",
+    "UPGRADE_DESCRIPTION": "Gaste toda sua ${modID}:Erva. Para cada ponto gasto, ganhe !M! de Força temporária. Exaure."
   },
   "${modID}:LoopMental": {
     "NAME": "Loop Mental",

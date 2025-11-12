@@ -21,10 +21,14 @@ public class LimparOBong extends BaseCard {
             0
     );
 
+    private static final int STRENGHT = 1;
+    private static final int STRENGHT_UPG = 1;
+
     public LimparOBong() {
         super(ID, info);
         this.selfRetain = true;
         this.exhaust = true;
+        setMagic(STRENGHT,STRENGHT_UPG);
         this.keywords.add("erva");
         this.keywords.add("força");
         initializeDescription();
@@ -36,7 +40,7 @@ public class LimparOBong extends BaseCard {
             int erva = p.getPower(ErvaPower.POWER_ID).amount;
             if (erva > 0) {
                 addToBot(new ReducePowerAction(p, p, ErvaPower.POWER_ID, erva));
-                int strengthPerErva = upgraded ? 2 : 1;
+                int strengthPerErva = magicNumber;
                 int totalStrength = erva * strengthPerErva;
                 addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, totalStrength), totalStrength));
                 addToBot(new ApplyPowerAction(p, p, new LoseStrengthPower(p, totalStrength), totalStrength));
@@ -60,6 +64,7 @@ public class LimparOBong extends BaseCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
+            upgradeMagicNumber(STRENGHT_UPG);
             this.exhaust = false;
             initializeDescription();
         }
