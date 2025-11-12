@@ -34,7 +34,7 @@ public class Inspiracao extends BaseCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new ApplyPowerAction(p, p, new ErvaPower(p,this.magicNumber), this.magicNumber));
-        addToBot(new ApplyPowerAction(p, p, new SedaPower(p,p,2),2));
+        addToBot(new ApplyPowerAction(p, p, new SedaPower(p,p,1),1));
     }
     @Override
     public void upgrade() {
