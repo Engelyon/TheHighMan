@@ -44,6 +44,7 @@ public class LoopMental extends BaseCard {
                 break;
             }
         }
+        addToBot(new DrawCardAction(p, magicNumber));
         if (badtrip){
             addToBot(new DrawCardAction(p, magicNumber));
         }
