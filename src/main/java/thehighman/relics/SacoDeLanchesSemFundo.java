@@ -22,4 +22,9 @@ public class SacoDeLanchesSemFundo extends BaseRelic {
         flash();
         addToBot(new DrawCardAction(AbstractDungeon.player, 1));
     }
+
+    @Override
+    public String getUpdatedDescription() {
+        return DESCRIPTIONS[0];
+    }
 }

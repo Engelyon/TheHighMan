@@ -30,4 +30,9 @@ public class IsqueiroInfinito extends BaseRelic {
     public AbstractRelic makeCopy() {
         return new IsqueiroInfinito();
     }
+
+    @Override
+    public String getUpdatedDescription() {
+        return DESCRIPTIONS[0];
+    }
 }

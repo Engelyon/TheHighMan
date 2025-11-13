@@ -22,4 +22,9 @@ public class MaconhaMedicinal extends BaseRelic {
         flash();
         addToBot(new HealAction(AbstractDungeon.player, AbstractDungeon.player, 2));
     }
+
+    @Override
+    public String getUpdatedDescription() {
+        return DESCRIPTIONS[0];
+    }
 }

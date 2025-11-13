@@ -21,4 +21,8 @@ public class CinzeiroAbencoado extends BaseRelic {
     public void atBattleStart() {
         addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new SedaPower(AbstractDungeon.player,AbstractDungeon.player,1)));
     }
+    @Override
+    public String getUpdatedDescription() {
+        return DESCRIPTIONS[0];
+    }
 }
