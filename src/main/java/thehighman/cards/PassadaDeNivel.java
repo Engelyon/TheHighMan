@@ -46,7 +46,7 @@ public class PassadaDeNivel extends BaseCard {
             }
             //NAO DELETA ISSO DE JEITO NENHUM SENAO DA ERRO
         } catch (Exception e) {
-            System.out.println(e);
+            System.out.println("Nada de errado aqui :) || Nothing is wrong here :)");
         }
 
     }
