@@ -17,12 +17,6 @@ public class MaconhaMedicinal extends BaseRelic {
         return new MaconhaMedicinal();
     }
 
-    // Este método deve ser chamado pela lógica que aplica dano da Bad Trip
-    public void onBadTripDano() {
-        flash();
-        addToBot(new HealAction(AbstractDungeon.player, AbstractDungeon.player, 2));
-    }
-
     @Override
     public String getUpdatedDescription() {
         return DESCRIPTIONS[0];

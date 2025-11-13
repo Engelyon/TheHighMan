@@ -1,6 +1,7 @@
 package thehighman.cards;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.HealAction;
 import com.megacrit.cardcrawl.actions.common.LoseHPAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -9,6 +10,7 @@ import com.megacrit.cardcrawl.relics.BlueCandle;
 import thehighman.character.TheHighman;
 import thehighman.powers.ImuneABadTripPower;
 import thehighman.powers.LaricaPower;
+import thehighman.relics.MaconhaMedicinal;
 import thehighman.util.CardStats;
 
 public class BadTrip extends BaseCard {
@@ -38,10 +40,11 @@ public class BadTrip extends BaseCard {
         }
         if (p.hand.contains(this)) {
             addToBot(new LoseHPAction(p, p, dano));
-            if (p.hasRelic("thehighman:MaconhaMedicinal")) {
-                ((thehighman.relics.MaconhaMedicinal) p.getRelic("thehighman:MaconhaMedicinal")).onBadTripDano();
-            }
             addToBot(new ApplyPowerAction(p, p, new LaricaPower(p, 1), 1));
+        }
+        if (p.hasRelic(MaconhaMedicinal.ID)){
+            p.getRelic(MaconhaMedicinal.ID).flash();
+            addToBot(new HealAction(p,p,2));
         }
     }
 

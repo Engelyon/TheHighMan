@@ -10,7 +10,7 @@
     "NAME": "Infinite Lighter",
     "FLAVOR": "Never runs out of fuel",
     "DESCRIPTIONS": [
-      "At the start of each turn, if youu have 0 Weed, gain 1 Weed."
+      "At the start of each turn, if you have 0 Weed, gain 1 Weed."
     ]
   },
   "${modID}:MaconhaMedicinal": {
