@@ -13,8 +13,6 @@ import static thehighman.InimigosDoSpire.makeID;
 public class CompreensaoElevadaPower extends BasePower {
     public static final String POWER_ID = makeID("CompreensaoElevadaPower");
 
-    private final Set<AbstractPower> ignoreSet = new HashSet<>();
-
     public CompreensaoElevadaPower(AbstractCreature owner, AbstractCreature source, int amount) {
         super(POWER_ID, PowerType.BUFF, false, owner, source, amount);
     }
@@ -26,8 +24,10 @@ public class CompreensaoElevadaPower extends BasePower {
 
     @Override
     public void onApplyPower(AbstractPower power, AbstractCreature target, AbstractCreature source) {
-        if (Objects.equals(power.ID, ChapadoPower.POWER_ID)){
-            addToBot(new ApplyPowerAction(target,source,new ChapadoPower(target, power.amount)));
+        if (!Objects.equals(source.id, CompreensaoElevadaPower.POWER_ID)) {
+            if (Objects.equals(power.ID, ChapadoPower.POWER_ID)) {
+                addToBot(new ApplyPowerAction(target, source, new ChapadoPower(target, power.amount)));
+            }
         }
     }
 }
