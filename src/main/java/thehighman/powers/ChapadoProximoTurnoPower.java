@@ -3,6 +3,7 @@ package thehighman.powers;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
+import com.megacrit.cardcrawl.powers.AbstractPower;
 
 import static thehighman.InimigosDoSpire.makeID;
 
@@ -21,7 +22,7 @@ public class ChapadoProximoTurnoPower extends BasePower {
     }
 
     @Override
-    public void atStartOfTurnPostDraw() {
+    public void atEndOfTurn(boolean isPlayer) {
         addToBot(new ApplyPowerAction(owner, owner, new ChapadoPower(owner, amountPerTurn), amountPerTurn));
         this.turnsRemaining--;
         this.amount = this.turnsRemaining;
@@ -31,6 +32,7 @@ public class ChapadoProximoTurnoPower extends BasePower {
             updateDescription();
         }
     }
+
 
     @Override
     public void updateDescription() {
