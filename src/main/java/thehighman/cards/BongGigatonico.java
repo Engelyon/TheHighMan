@@ -40,7 +40,12 @@ public class BongGigatonico extends BaseCard {
             addToBot(new ApplyPowerAction(m,p, new VulnerablePower(m, this.magicNumber, false),this.magicNumber));
         }
         if (upgraded){
-            int dano = (int)(damage * 1.5);
+            int dano=0;
+            if (!m.hasPower(VulnerablePower.POWER_ID)){
+                dano = (int)(damage * 1.5);
+            }  else{
+                dano = damage;
+            }
             addToBot(new ApplyPowerAction(m,p, new VulnerablePower(m, this.magicNumber, false),this.magicNumber));
             addToBot(new DamageAction(m, new DamageInfo(p, dano, DamageInfo.DamageType.NORMAL),
                     AbstractGameAction.AttackEffect.BLUNT_HEAVY));

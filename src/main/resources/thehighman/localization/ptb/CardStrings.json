@@ -121,7 +121,7 @@
   },
   "${modID}:CompreensaoElevada": {
     "NAME": "Compreensao Elevada",
-    "DESCRIPTION": "Ao aplicar ${modID}:Chapado, aplique novamente.",
+    "DESCRIPTION": "Etérea. Ao aplicar ${modID}:Chapado, aplique novamente.",
     "UPGRADE_DESCRIPTION": "Ao aplicar ${modID}:Chapado, aplique novamente."
   },
   "${modID}:Confusao": {

@@ -121,7 +121,7 @@
   },
   "${modID}:CompreensaoElevada": {
     "NAME": "Elevated Comprehension",
-    "DESCRIPTION": "When you apply ${modID}:High, apply again.",
+    "DESCRIPTION": "Ethereal. When you apply ${modID}:High, apply again.",
     "UPGRADE_DESCRIPTION": "When you apply ${modID}:High, apply again."
   },
   "${modID}:Confusao": {
