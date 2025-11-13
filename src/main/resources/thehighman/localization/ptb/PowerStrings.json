@@ -77,7 +77,7 @@
       "Sempre que você exaurir uma carta, ganhe 1 de energia no próximo turno."
     ]
   },
-    "${modID}:ImuneABadTrip": {
+    "${modID}:ImuneABadTripPower": {
         "NAME": "Imune a Bad Trip",
         "DESCRIPTIONS": [
         "Você não recebe mais dano de Bad Trip neste combate."

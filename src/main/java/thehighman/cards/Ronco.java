@@ -35,11 +35,8 @@ public class Ronco extends BaseCard {
                 validTargets.add(mo);
             }
         }
-
         if (!validTargets.isEmpty()) {
             AbstractMonster target = validTargets.get(AbstractDungeon.cardRandomRng.random(validTargets.size() - 1));
-
-            // Remove todos os poderes (buffs e debuffs)
             for (AbstractPower power : target.powers) {
                 addToBot(new RemoveSpecificPowerAction(target, p, power.ID));
             }
@@ -49,8 +46,7 @@ public class Ronco extends BaseCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            this.target = CardTarget.ENEMY; // permite selecionar o alvo
-            this.rawDescription = "Remova todos os poderes de um inimigo à sua escolha. Exaure.";
+            this.target = CardTarget.ENEMY;
             initializeDescription();
         }
     }

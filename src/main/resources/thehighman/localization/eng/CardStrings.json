@@ -111,8 +111,8 @@
   },
   "${modID}:ColheitaGenerosa": {
     "NAME": "Generous Harvest",
-    "DESCRIPTION": "Gain 2 ${modID}:Weed. gain 1 ${modID}:Grub. gain 1 de ${modID}:Papes. Exhaust.",
-    "UPGRADE_DESCRIPTION": "Gain 2 ${modID}:Weed. gain 1 ${modID}:Grub. gain 1 de ${modID}:Papes. Draw 1 card. Exhaust."
+    "DESCRIPTION": "Gain 2 ${modID}:Weed. gain 1 ${modID}:Grub. Gain 1 ${modID}:Papes. Exhaust.",
+    "UPGRADE_DESCRIPTION": "Gain 2 ${modID}:Weed. gain 1 ${modID}:Grub. Gain 1 ${modID}:Papes. Draw 1 card. Exhaust."
   },
   "${modID}:ComeAi": {
     "NAME": "Eat This!",
@@ -177,7 +177,7 @@
   "${modID}:FocoFino": {
     "NAME": "Fine Focus",
     "DESCRIPTION": "Apply !M! ${modID}:High to the enemy. Draw 1 card.",
-    "UPGRADE_DESCRIPTION": "Apply !M! ${modID}:High to the enemy. Compre 2 cards."
+    "UPGRADE_DESCRIPTION": "Apply !M! ${modID}:High to the enemy. Draw 2 cards."
   },
   "${modID}:Fritura": {
     "NAME": "Deepfried Food",
@@ -209,12 +209,12 @@
     "DESCRIPTION": "Gain !M! ${modID}:Weed. gain 1 ${modID}:Papes. Exhaust.",
     "UPGRADE_DESCRIPTION": "Gain !M! ${modID}:Weed. gain 1 ${modID}:Papes. Exhaust."
   },
-  "${modID}:MunchiesDePoder": {
+  "${modID}:LaricaDePoder": {
     "NAME": "Power Munchies",
     "DESCRIPTION": "Deal !D! Damage for each ${modID}:Grub you have. Lose all your ${modID}:Grub.",
     "UPGRADE_DESCRIPTION": "Deal !D! Damage for each ${modID}:Grub you have. Lose all your ${modID}:Grub."
   },
-  "${modID}:MunchiesPesada": {
+  "${modID}:LaricaPesada": {
     "NAME": "Heavy Munchies",
     "DESCRIPTION": "Deal !D! Damage to all enemies. Gain !M! ${modID}:Munchies.",
     "UPGRADE_DESCRIPTION": "Deal !D! Damage to all enemies. Gain !M! ${modID}:Munchies."
@@ -316,8 +316,8 @@
   },
   "${modID}:ResgateDeLanche": {
     "NAME": "Lunch Rescue",
-    "DESCRIPTION": "Gain !B! Proteção. ${modID}:Eat 1, Heal !M! HP.",
-    "UPGRADE_DESCRIPTION": "Gain !B! Proteção. ${modID}:Eat 1, Heal !M! HP."
+    "DESCRIPTION": "Gain !B! Block. ${modID}:Eat 1, Heal !M! HP.",
+    "UPGRADE_DESCRIPTION": "Gain !B! Block. ${modID}:Eat 1, Heal !M! HP."
   },
   "${modID}:Ronco": {
     "NAME": "Snore",

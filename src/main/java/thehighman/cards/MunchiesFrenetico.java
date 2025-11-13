@@ -30,7 +30,6 @@ public class MunchiesFrenetico extends BaseCard {
         super(ID, info);
         setDamage(DAMAGE, UPG_DAMAGE);
         setMagic(LARICA_AMOUNT);
-        this.keywords.add("larica");
         initializeDescription();
     }
 
@@ -47,7 +46,7 @@ public class MunchiesFrenetico extends BaseCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeDamage(UPG_DAMAGE); // 4 → 6 de dano por hit
+            upgradeDamage(UPG_DAMAGE);
             initializeDescription();
         }
     }

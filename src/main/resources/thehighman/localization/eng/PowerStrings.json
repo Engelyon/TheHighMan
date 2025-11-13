@@ -77,7 +77,7 @@
       "Whenever you exhaust a card, gain 1 extra Energy next turn."
     ]
   },
-  "${modID}:ImuneABadTrip": {
+  "${modID}:ImuneABadTripPower": {
     "NAME": "Immune to Bad Trip",
     "DESCRIPTIONS": [
       "You don't receive BadTrip damage anymore this in fight."
