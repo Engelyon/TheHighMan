@@ -26,14 +26,8 @@ public class CompreensaoElevadaPower extends BasePower {
 
     @Override
     public void onApplyPower(AbstractPower power, AbstractCreature target, AbstractCreature source) {
-        if (power == null || target == null) return;
-        if (ignoreSet.remove(power)) {
-            return;
-        }
-        if (power instanceof ChapadoPower) {
-            ChapadoPower toApply = new ChapadoPower(target, this.amount);
-            ignoreSet.add(toApply);
-            addToBot(new ApplyPowerAction(target, source, toApply, this.amount));
+        if (Objects.equals(power.ID, ChapadoPower.POWER_ID)){
+            addToBot(new ApplyPowerAction(target,source,new ChapadoPower(target, power.amount)));
         }
     }
 }

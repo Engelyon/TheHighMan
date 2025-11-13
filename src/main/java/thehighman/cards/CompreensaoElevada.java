@@ -20,18 +20,15 @@ public class CompreensaoElevada extends BaseCard {
             3
     );
 
-    public static final int MAGIC = 1;
-
     public CompreensaoElevada() {
         super(ID, info);
-        setMagic(MAGIC);
         this.isEthereal = true;
         initializeDescription();
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new CompreensaoElevadaPower(p, p, magicNumber), magicNumber));
+        addToBot(new ApplyPowerAction(p, p, new CompreensaoElevadaPower(p, p, 1), 1));
     }
 
     @Override
@@ -39,20 +36,4 @@ public class CompreensaoElevada extends BaseCard {
         super.upgrade();
         this.isEthereal = false;
     }
-
-    @Override
-    public void applyPowers() {
-        super.applyPowers();
-        if (AbstractDungeon.player.hasPower(SedaPower.POWER_ID)) {
-            int seda = AbstractDungeon.player.getPower(SedaPower.POWER_ID).amount;
-            int bonus = Math.max(0, seda);
-            this.magicNumber = this.baseMagicNumber + bonus;
-            isMagicNumberModified = true;
-        } else {
-            this.magicNumber = this.baseMagicNumber;
-            isMagicNumberModified = false;
-        }
-        initializeDescription();
-    }
-
 }
