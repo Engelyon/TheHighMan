@@ -2,7 +2,7 @@
   {
     "PROPER_NAME": "Chapado",
     "NAMES": ["chapado","Chapado"],
-    "DESCRIPTION": "Reduz o dano causado pelo inimigo em 5% por stack. Ao atingir 15 stacks, o inimigo perde todos os stacks e recebe Larica.",
+    "DESCRIPTION": "Reduz o dano causado pelo inimigo em 5% por stack. Ao atingir 20 stacks, o inimigo perde 15 stacks e recebe Larica.",
     "COLOR": "3cb371"
   },
   {

@@ -5,7 +5,7 @@
     "UPGRADE_DESCRIPTION": "Gain 5 ${modID}:Grub. If you have at least 10 ${modID}:Grub, receive immunity from BadTrip Damage."
   },
   "${modID}:Alivio": {
-    "NAME": "Alivio",
+    "NAME": "Relief",
     "DESCRIPTION": "Gain !B! Block. ${modID}:Smoke 1 to apply !M! ${modID}:High to the enemy.",
     "UPGRADE_DESCRIPTION": "Gain !B! Block. ${modID}:Smoke 1 to apply !M! ${modID}:High to the enemy."
   },
@@ -56,8 +56,8 @@
   },
   "${modID}:BaforadaEterea": {
     "NAME": "Ethereal Puff",
-    "DESCRIPTION": "${modID}:Smoke 1. Deal !D! Damage, apply !M! ${modID}:High and gain a copy of this card.",
-    "UPGRADE_DESCRIPTION": "${modID}:Smoke 1. Deal !D! Damage, apply !M! ${modID}:High and gain a copy of this card."
+    "DESCRIPTION": "Ethereal. ${modID}:Smoke 1. Deal !D! Damage, apply !M! ${modID}:High and gain a copy of this card.",
+    "UPGRADE_DESCRIPTION": "Ethereal. ${modID}:Smoke 1. Deal !D! Damage, apply !M! ${modID}:High and gain a copy of this card."
   },
   "${modID}:BaforadaForte": {
     "NAME": "Strong Puff",
@@ -161,8 +161,8 @@
   },
   "${modID}:Espirro": {
     "NAME": "Sneeze",
-    "DESCRIPTION": "Deal !D! Damage to all enemies. Add 1 BadTrip to your discard pile.",
-    "UPGRADE_DESCRIPTION": "Deal !D! Damage to all enemies. Add 1 BadTrip to your discard pile."
+    "DESCRIPTION": "Deal !D! Damage to all enemies. Add 1 ${modID}:BadTrip to your discard pile.",
+    "UPGRADE_DESCRIPTION": "Deal !D! Damage to all enemies. Add 1 ${modID}:BadTrip to your discard pile."
   },
   "${modID}:FicaEsperto": {
     "NAME": "Get Smart",

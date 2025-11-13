@@ -56,8 +56,8 @@
   },
   "${modID}:BaforadaEterea": {
     "NAME": "Baforada Eterea",
-    "DESCRIPTION": "${modID}:Fume 1. Cause !D! de dano, aplique !M! de ${modID}:Chapado e copie esta carta.",
-    "UPGRADE_DESCRIPTION": "${modID}:Fume 1. Cause !D! de dano, aplique !M! de ${modID}:Chapado e copie esta carta."
+    "DESCRIPTION": "Etérea. ${modID}:Fume 1. Cause !D! de dano, aplique !M! de ${modID}:Chapado e copie esta carta.",
+    "UPGRADE_DESCRIPTION": "Etérea. ${modID}:Fume 1. Cause !D! de dano, aplique !M! de ${modID}:Chapado e copie esta carta."
   },
   "${modID}:BaforadaForte": {
     "NAME": "Baforada Forte",
@@ -161,8 +161,8 @@
   },
   "${modID}:Espirro": {
     "NAME": "Espirro",
-    "DESCRIPTION": "Cause !D! de dano a todos os inimigos. Adicione 1 BadTrip à pilha de descarte.",
-    "UPGRADE_DESCRIPTION": "Cause !D! de dano a todos os inimigos. Adicione 1 BadTrip à pilha de descarte."
+    "DESCRIPTION": "Cause !D! de dano a todos os inimigos. Adicione 1 ${modID}:BadTrip à pilha de descarte.",
+    "UPGRADE_DESCRIPTION": "Cause !D! de dano a todos os inimigos. Adicione 1 ${modID}:BadTrip à pilha de descarte."
   },
   "${modID}:FicaEsperto": {
     "NAME": "Fica Esperto",

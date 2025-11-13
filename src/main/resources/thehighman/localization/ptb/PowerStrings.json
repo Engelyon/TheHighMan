@@ -8,7 +8,7 @@
   "${modID}:ChapadoPower": {
     "NAME": "Chapado",
     "DESCRIPTIONS": [
-      "Reduz 1 no final do turno. Ao atingir 15 stacks, perde 10 stacks e recebe Larica. Stacks atuais: ",
+      "Reduz 1 no final do turno. Ao atingir 20 stacks, perde 15 stacks e recebe Larica. Stacks atuais: ",
       ". Redução de dano: ",
       "%."
     ]
