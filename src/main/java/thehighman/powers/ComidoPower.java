@@ -1,5 +1,6 @@
 package thehighman.powers;
 
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -37,22 +38,13 @@ public class ComidoPower extends BasePower {
         return damage;
     }
 
-    public static boolean consumirComido(AbstractCreature target) {
-        AbstractPower comido = target.getPower(POWER_ID);
-        if (comido != null && comido.amount > 0) {
-            comido.amount--;
-            comido.updateDescription();
-
-            if (AbstractDungeon.player.hasRelic("SacoDeLanchesSemFundo")) {
-                ((SacoDeLanchesSemFundo) AbstractDungeon.player.getRelic("SacoDeLanchesSemFundo")).onComidoConsumido(AbstractDungeon.player);
-            }
-
-            if (comido.amount == 0) {
-                target.powers.remove(comido);
-            }
-            return true;
+    @Override
+    public void reducePower(int reduceAmount) {
+        super.reducePower(reduceAmount);
+        if (AbstractDungeon.player.hasRelic(SacoDeLanchesSemFundo.ID)) {
+            AbstractDungeon.player.getRelic(SacoDeLanchesSemFundo.ID).flash();
+            addToBot(new DrawCardAction(AbstractDungeon.player, 1));
         }
-        return false;
     }
 
 }

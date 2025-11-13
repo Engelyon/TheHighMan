@@ -18,13 +18,6 @@ public class SacoDeLanchesSemFundo extends BaseRelic {
         return new SacoDeLanchesSemFundo();
     }
 
-    // Este método deve ser chamado pela lógica que consome Comido
-    public void onComidoConsumido(AbstractPlayer p) {
-        addToBot(new DrawCardAction(p, 1));
-        flash();
-    }
-
-
     @Override
     public String getUpdatedDescription() {
         return DESCRIPTIONS[0];
