@@ -30,28 +30,16 @@ public class PizzaAtomica extends BaseCard {
         super(ID, info);
         setDamage(HIT_DAMAGE, UPG_HIT_DAMAGE);
         setMagic(HITS, 1);
-        this.keywords.add("larica");
         initializeDescription();
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (m == null) {
-            return;
-        }
-        if (m.hasPower(LaricaPower.POWER_ID)) {
-            int current = m.getPower(LaricaPower.POWER_ID).amount;
-            if (current > 0) {
-                addToBot(new ReducePowerAction(m, p, LaricaPower.POWER_ID, 1));
-            }
-        }
-        int hits = upgraded ? 2 : 1;
-
-        for (int i = 0; i < hits; i++) {
-            addToBot(new DamageAction(m,
-                    new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL),
-                    AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
-            addToBot(new com.megacrit.cardcrawl.actions.utility.WaitAction(0.08f));
+        addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
+        addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
+        if (m.hasPower(LaricaPower.POWER_ID)){
+            addToBot(new ReducePowerAction(m, p, LaricaPower.POWER_ID, 1));
+            addToBot(new DamageAction(m, new DamageInfo(p, BONUS_DAMAGE, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_VERTICAL));
         }
     }
     @Override
