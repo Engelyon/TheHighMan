@@ -26,7 +26,7 @@ public class ChapadoProximoTurnoPower extends BasePower {
         this.turnsRemaining--;
         this.amount = this.turnsRemaining;
         if (this.turnsRemaining <= 0) {
-            addToBot(new RemoveSpecificPowerAction(owner, owner, this.POWER_ID));
+            addToBot(new RemoveSpecificPowerAction(owner, owner, POWER_ID));
         } else {
             updateDescription();
         }
