@@ -24,10 +24,11 @@ public class CompreensaoElevadaPower extends BasePower {
 
     @Override
     public void onApplyPower(AbstractPower power, AbstractCreature target, AbstractCreature source) {
-        if (!Objects.equals(source.id, CompreensaoElevadaPower.POWER_ID)) {
-            if (Objects.equals(power.ID, ChapadoPower.POWER_ID)) {
-                addToBot(new ApplyPowerAction(target, source, new ChapadoPower(target, power.amount)));
-            }
+        if (source == this.owner) {
+            return;
+        }
+        if (Objects.equals(power.ID, ChapadoPower.POWER_ID)) {
+            addToBot(new ApplyPowerAction(target, source, new ChapadoPower(target, power.amount)));
         }
     }
 }
