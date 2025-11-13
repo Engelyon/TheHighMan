@@ -44,7 +44,7 @@ public class ComidoPower extends BasePower {
             comido.updateDescription();
 
             if (target.isPlayer && AbstractDungeon.player.hasRelic("SacoDeLanchesSemFundo")) {
-                ((SacoDeLanchesSemFundo) AbstractDungeon.player.getRelic("SacoDeLanchesSemFundo")).onComidoConsumido();
+                ((SacoDeLanchesSemFundo) AbstractDungeon.player.getRelic("SacoDeLanchesSemFundo")).onComidoConsumido(AbstractDungeon.player);
             }
 
             if (comido.amount == 0) {
