@@ -54,12 +54,9 @@ public class GeloNaMao extends BaseCard {
             }
         }
     }
+
     @Override
     public void upgrade() {
-        if (!upgraded) {
-            upgradeName();
-            upgradeDamage(2);
-            initializeDescription();
-        }
+        super.upgrade();
     }
 }
