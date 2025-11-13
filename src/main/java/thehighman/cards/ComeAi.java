@@ -40,7 +40,8 @@ public class ComeAi extends BaseCard {
         if (p.hasPower(ComidoPower.POWER_ID)) {
             int comidoStacks = p.getPower(ComidoPower.POWER_ID).amount;
             if (comidoStacks >= COMIDO_THRESHOLD) {
-                addToBot(new ReducePowerAction(p, p, ComidoPower.POWER_ID, comidoStacks));
+                addToBot(new ReducePowerAction(p, p, ComidoPower.POWER_ID, comidoStacks-1));
+                addToBot(new ReducePowerAction(p, p, ComidoPower.POWER_ID, 1));
                 addToBot(new GainEnergyAction(comidoStacks));
             }
         }
