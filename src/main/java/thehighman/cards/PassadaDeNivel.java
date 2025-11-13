@@ -46,7 +46,7 @@ public class PassadaDeNivel extends BaseCard {
                 addToBot(new ReducePowerAction(p, p, ErvaPower.POWER_ID, C_ERVA));
             }
         } catch (Exception e) {
-            throw new RuntimeException(e);
+            System.out.println(e);
         }
 
     }
