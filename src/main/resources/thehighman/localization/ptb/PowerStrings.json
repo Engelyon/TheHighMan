@@ -31,8 +31,7 @@
   "${modID}:SedaPower": {
     "NAME": "Seda",
     "DESCRIPTIONS": [
-      "Causa +",
-      " de dano em ataques físicos. Aplica +"," de Chapado."
+      "Aplica +"," de Chapado."
     ]
   },
   "${modID}:ErvaPower": {
@@ -72,12 +71,6 @@
         "No início de cada turno, ganhe 1 de Erva."
         ]
     },
-  "${modID}:EnergiaExtraProximoTurnoPower": {
-    "NAME": "Passar a Energia",
-    "DESCRIPTIONS": [
-      "No início do seu turno, ganhe 1 de Energia."
-    ]
-  },
   "${modID}:HyparPower": {
     "NAME": "Hypar",
     "DESCRIPTIONS": [

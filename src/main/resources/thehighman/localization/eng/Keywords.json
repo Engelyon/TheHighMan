@@ -1,50 +1,50 @@
 [
   {
-    "PROPER_NAME": "Chapado",
-    "NAMES": ["chapado","Chapado"],
-    "DESCRIPTION": "Reduz o dano causado pelo inimigo em 5% por stack. Ao atingir 15 stacks, o inimigo perde todos os stacks e recebe Larica.",
+    "PROPER_NAME": "High",
+    "NAMES": ["high","High"],
+    "DESCRIPTION": "Reduce the damage caused by 5% per stack. When at 20 stacks, loses 15 stacks and gains Munchies.",
     "COLOR": "3cb371"
   },
   {
-    "PROPER_NAME": "Seda",
-    "NAMES": ["seda","Seda"],
-    "DESCRIPTION": "Aumenta o dano de ataques da sua classe em 10% por stack e aplica mais Chapado.",
+    "PROPER_NAME": "Papes",
+    "NAMES": ["papes","Papes"],
+    "DESCRIPTION": "Apply 1 more High per stack.",
     "COLOR": "3cb371"
   },
   {
-    "PROPER_NAME": "Erva",
-    "NAMES": ["erva","Erva"],
-    "DESCRIPTION": "Recurso especial usado por cartas da sua classe para ativar efeitos únicos.",
+    "PROPER_NAME": "Weed",
+    "NAMES": ["weed","Weed"],
+    "DESCRIPTION": "Special resource used by cards to activate secondary effects.",
     "COLOR": "3cb371"
   },
   {
-    "PROPER_NAME": "Larica",
-    "NAMES": ["larica","Larica"],
-    "DESCRIPTION": "Ganha 1 de força e leva mais 3 de dano de ataque.",
+    "PROPER_NAME": "Munchies",
+    "NAMES": ["munchies","Munchies"],
+    "DESCRIPTION": "Gain 1 Strength and take 3 more Damage from attacks.",
     "COLOR": "3cb371"
   },
   {
-    "PROPER_NAME": "Comido",
-    "NAMES": ["comido","Comido"],
-    "DESCRIPTION": "Evita o dano colateral de 1 stack de Larica",
+    "PROPER_NAME": "Grub",
+    "NAMES": ["grub","Grub"],
+    "DESCRIPTION": "Denies the damage drawback of 1 stack of Munchies",
     "COLOR": "3cb371"
   },
   {
     "PROPER_NAME": "Piticas",
     "NAMES": ["piticas","Piticas"],
-    "DESCRIPTION": "Loja Geek Brasileira de produtos variados da qual um dos devs faliu uma loja da franquia.",
+    "DESCRIPTION": "A Brazilian geek stuff shop brand. One of the mod developers have managed to bankrupt a branch some years ago.",
     "COLOR": "3cb371"
   },
   {
-    "PROPER_NAME": "Fume",
-    "NAMES": ["fume","Fume"],
-    "DESCRIPTION": "Consuma x Erva",
+    "PROPER_NAME": "Smoke",
+    "NAMES": ["smoke","Smoke"],
+    "DESCRIPTION": "Consume x Weed",
     "COLOR": "3cb371"
   },
   {
-    "PROPER_NAME": "Coma",
-    "NAMES": ["coma","Coma"],
-    "DESCRIPTION": "Consuma 1 Comido",
+    "PROPER_NAME": "Eat",
+    "NAMES": ["eat","Eat"],
+    "DESCRIPTION": "Consume 1 Grub",
     "COLOR": "3cb371"
   },
   {
@@ -53,9 +53,9 @@
     "COLOR": "3cb371"
   },
   {
-    "PROPER_NAME": "Potencia",
-    "NAMES": ["Potencia","potencia"],
-    "DESCRIPTION": "N tem como",
+    "PROPER_NAME": "THE POWER",
+    "NAMES": ["ThePower","thepower"],
+    "DESCRIPTION": "There's no way",
     "COLOR": "3cb371"
   }
 ]

@@ -20,7 +20,7 @@ public class AlimentoDivino extends BaseCard {
     );
 
     private static final int COMIDO_GAIN = 5;
-    private static final int COMIDO_MAX = 10; // ajuste conforme o limite real
+    private static final int COMIDO_MAX = 10;
 
     public AlimentoDivino() {
         super(ID, info);
@@ -39,7 +39,7 @@ public class AlimentoDivino extends BaseCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            this.upgradeBaseCost(1); // Reduz o custo de 2 para 1
+            this.upgradeBaseCost(1);
             initializeDescription();
         }
     }

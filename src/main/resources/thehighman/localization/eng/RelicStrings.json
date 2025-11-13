@@ -1,37 +1,37 @@
 {
   "${modID}:CinzeiroAbencoado": {
-    "NAME": "Cinzeiro Abençoado",
-    "FLAVOR": "Cheira a velas",
+    "NAME": "Holy Ashtray",
+    "FLAVOR": "Smells like candles",
     "DESCRIPTIONS": [
-      "No início do combate, ganhe 1 de Seda"
+      "At the beginning of tha battle, gain 1 Papes"
     ]
   },
   "${modID}:IsqueiroInfinito": {
-    "NAME": "Isqueiro Infinito",
-    "FLAVOR": "Nunca acaba",
+    "NAME": "Infinite Lighter",
+    "FLAVOR": "Never runs out of fuel",
     "DESCRIPTIONS": [
-      "No início de cada turno, se você tiver 0 de Erva, ganhe 1 de Erva."
+      "At the start of each turn, if youu have 0 Weed, gain 1 Weed."
     ]
   },
   "${modID}:MaconhaMedicinal": {
-    "NAME": "Maconha Medicinal",
+    "NAME": "Medicinal Marijuana",
     "FLAVOR": "Good vibes?",
     "DESCRIPTIONS": [
-      "Toda vez que você perder HP devido à Bad Trip, cure 2 de HP."
+      "Every time you lose HP due to Bad Trip, heal 2 HP."
     ]
   },
   "${modID}:SacoDeLanchesSemFundo": {
-    "NAME": "Saco De Lanches Sem Fundo",
-    "FLAVOR": "Tem gosto de papel",
+    "NAME": "Bottomless Snack Bag",
+    "FLAVOR": "Tastes like paper",
     "DESCRIPTIONS": [
-      "Sempre que você consumir um stack de Comido, compre 1 carta."
+      "Whenever you consume a stack of Grub, Draw 1 card."
     ]
   },
   "${modID}:BongLimpo": {
-    "NAME": "Bong Limpo",
-    "FLAVOR": "Brilha como novo. Quase dá gosto de não usar.",
+    "NAME": "Clean Bong",
+    "FLAVOR": "It shines like new. You almost don't want to use it.",
     "DESCRIPTIONS": [
-      "No início de cada combate, adicione um Limpar o Bong à sua mão."
+      "At the start of each battle, add a Clear Bong to your hand."
     ]
   }
 }

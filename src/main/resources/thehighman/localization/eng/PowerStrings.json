@@ -6,106 +6,99 @@
     ]
   },
   "${modID}:ChapadoPower": {
-    "NAME": "Chapado",
+    "NAME": "High",
     "DESCRIPTIONS": [
-      "Reduz 1 no final do turno. Ao atingir 15 stacks, perde 10 stacks e recebe Larica. Stacks atuais: ",
-      ". Redução de dano: ",
+      "Lose 1 at the end of the turn. When at 20 stacks, lose 15 stacks and gain Munchies. Actual stacks : ",
+      ". Reduced attack damage by: ",
       "%."
     ]
   },
   "${modID}:ChapadoProximoTurnoPower": {
-    "NAME": "Chapado Depois",
+    "NAME": "Late High",
     "DESCRIPTIONS": [
-      "No próximo turno ganhará ",
-      " de Chapado nos próximos ",
-      " turno(s)."
+      "Will receive ",
+      " High on the next ",
+      " turn(s)."
     ]
   }
 ,
   "${modID}:LaricaPower": {
-    "NAME": "Larica",
+    "NAME": "Munchies",
     "DESCRIPTIONS": [
-      "Você está com larica. Recebe !M! de dano extra de ataques normais."
+      "You have the Munchies. Receive !M! extra damage from attacks."
     ]
   },
   "${modID}:SedaPower": {
-    "NAME": "Seda",
+    "NAME": "Papes",
     "DESCRIPTIONS": [
-      "Causa +",
-      " de dano em ataques físicos. Aplica +"," de Chapado."
+      "Applies +"," of High."
     ]
   },
   "${modID}:ErvaPower": {
-    "NAME": "Erva",
+    "NAME": "Weed",
     "DESCRIPTIONS": [
-      "Você possui ",
-      " Ervas."
+      "You have ",
+      " Weed."
     ]
   },
   "${modID}:BongExtraPower": {
-    "NAME": "Bong Extra",
+    "NAME": "Extra Bong",
     "DESCRIPTIONS": [
-      "Sempre que um inimigo ganhar Larica, compre 1 carta e ganhe ",
-      " de Bloqueio no final do turno."
+      "Whenever an enemy receives Munchies, Draw 1 card and gain ",
+      " Block."
     ]
-  },  "${modID}:ComidoPower": {
-  "NAME": "Comido",
+  },"${modID}:ComidoPower": {
+  "NAME": "Grub",
   "DESCRIPTIONS": [
-    "Você tem !M! Comido. Nega !M! do dano adicional de Larica."
+    "You have !M! Grub. Deny !M! Damage of Munchies extra damage."
   ]
 },
   "${modID}:CompreensaoElevadaPower": {
-    "NAME": "Compreensão Elevada",
+    "NAME": "Elevated Comprehension",
     "DESCRIPTIONS": [
-      "Ao aplicar Chapado, há 50% de chance de aplicar 1 stack adicional."
+      "When you apply High, apply it again."
     ]
   },
   "${modID}:CozinharPower": {
-    "NAME": "Cozinhar",
+    "NAME": "Cook",
     "DESCRIPTIONS": [
-      "Sempre que você sofrer dano, ganhe 1 de Destreza."
+      "When you take damage, gain 1 Dexterity."
     ]
   },
   "${modID}:EaPotenciaPower": {
-    "NAME": "É a Potência",
+    "NAME": "THE POWER",
     "DESCRIPTIONS": [
-      "No início de cada turno, ganhe 1 de Erva."
-    ]
-  },
-  "${modID}:EnergiaExtraProximoTurnoPower": {
-    "NAME": "Passar a Energia",
-    "DESCRIPTIONS": [
-      "No início do seu turno, ganhe 1 de Energia."
+      "At the beginning of each turn, gain 1 Weed."
     ]
   },
   "${modID}:HyparPower": {
-    "NAME": "Hypar",
+    "NAME": "Hype",
     "DESCRIPTIONS": [
-      "Sempre que você exaurir uma carta, ganhe 1 de energia no próximo turno."
+      "Whenever you exhaust a card, gain 1 extra Energy next turn."
     ]
   },
   "${modID}:ImuneABadTrip": {
-    "NAME": "Imune a Bad Trip",
+    "NAME": "Immune to Bad Trip",
     "DESCRIPTIONS": [
-      "Você não recebe mais dano de Bad Trip neste combate."
+      "You don't receive BadTrip damage anymore this in fight."
     ]
   },
   "${modID}:NirvanaPower": {
     "NAME": "Nirvana",
     "DESCRIPTIONS": [
-      "Todas as suas cartas com Exaustão são jogadas duas vezes."
+      "All your Exhaust cards are played twice."
     ]
   },
   "${modID}:TrancePower": {
-    "NAME": "Transe",
+    "NAME": "Trance",
     "DESCRIPTIONS": [
-      "Sempre que você ganhar Larica , exaure 1 carta da sua mão e ganhe 1 de Seda."
+      "When tou gain Munchies, Exhaust 1 card from your hand and gain 1 Papes."
     ]
   },
   "${modID}:VisaoDistorcidaPower": {
-    "NAME": "Visao Distorcida",
+    "NAME": "Distorted Vision",
     "DESCRIPTIONS": [
-      "No início do próximo turno, compre 2 cartas e ganhe 1 de energia."
+      "At the beginning of the next turn, Draw 2 cards and gain 1 Energy."
     ]
   }
 }

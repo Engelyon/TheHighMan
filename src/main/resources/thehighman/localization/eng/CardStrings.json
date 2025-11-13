@@ -1,377 +1,377 @@
 {
   "${modID}:AlimentoDivino": {
-    "NAME": "Alimento Divino",
-    "DESCRIPTION": "Ganha 5 de ${modID}:Comido. Se estiver com 10 de ${modID}:Comido, ganha Imunidade ao dano de BadTrip.",
-    "UPGRADE_DESCRIPTION": "Ganha 5 de ${modID}:Comido. Se estiver com 10 de ${modID}:Comido, ganha Imunidade ao dano de BadTrip."
+    "NAME": "Divine Food",
+    "DESCRIPTION": "Gain 5 ${modID}:Grub. If you have at least 10 ${modID}:Grub, receive immunity from BadTrip Damage.",
+    "UPGRADE_DESCRIPTION": "Gain 5 ${modID}:Grub. If you have at least 10 ${modID}:Grub, receive immunity from BadTrip Damage."
   },
   "${modID}:Alivio": {
     "NAME": "Alivio",
-    "DESCRIPTION": "Ganhe !B! de Proteção. ${modID}:Fume 1 para aplicar !M! de ${modID}:Chapado em um inimigo.",
-    "UPGRADE_DESCRIPTION": "Ganhe !B! de Proteção. ${modID}:Fume1 para aplicar !M! de ${modID}:Chapado em um inimigo."
+    "DESCRIPTION": "Gain !B! Block. ${modID}:Smoke 1 to apply !M! ${modID}:High to the enemy.",
+    "UPGRADE_DESCRIPTION": "Gain !B! Block. ${modID}:Smoke 1 to apply !M! ${modID}:High to the enemy."
   },
   "${modID}:AlmocoDeGraca": {
-    "NAME": "Almoco De Graca",
-    "DESCRIPTION": "Ganha 2 de ${modID}:Comido. Se estiver com 10 de ${modID}:Comido, ganhe 2 de Energia.",
-    "UPGRADE_DESCRIPTION": "Ganha 2 de ${modID}:Comido. Se estiver com 10 de ${modID}:Comido, ganhe 2 de Energia."
+    "NAME": "Free Lunch",
+    "DESCRIPTION": "Gain 2 ${modID}:Grub. If you have at least 10 ${modID}:Grub, gain 2 Energy.",
+    "UPGRADE_DESCRIPTION": "Gain 2 ${modID}:Grub. If you have at least 10 ${modID}:Grub, gain 2 Energy."
   },
   "${modID}:Almondega": {
-    "NAME": "Almôndega",
-    "DESCRIPTION": "Ganha 1 de ${modID}:Comido e 1 de ${modID}:Larica. Exaurir",
-    "UPGRADE_DESCRIPTION": "Ganha 1 de ${modID}:Comido e 1 de ${modID}:Larica. Exaurir"
+    "NAME": "Meatball",
+    "DESCRIPTION": "Gain 1 ${modID}:Grub and 1 ${modID}:Munchies. Exhaust.",
+    "UPGRADE_DESCRIPTION": "Gain 1 ${modID}:Grub and 1 ${modID}:Munchies. Exhaust."
   },
   "${modID}:Amnesia": {
     "NAME": "Amnesia",
-    "DESCRIPTION": "Exaure 2 cartas aleatórias da sua mão. Para cada BadTrip exaurida, ganhe 2 de ${modID}:Erva. Exaurir",
-    "UPGRADE_DESCRIPTION": "Exaure 2 cartas da sua mão. Para cada BadTrip exaurida, ganhe 2 de ${modID}:Erva."
+    "DESCRIPTION": "Exhaust 2 random cards from your hand. For each BadTrip exhausted, gain 2 ${modID}:Weed. Exhaust.",
+    "UPGRADE_DESCRIPTION": "Exhaust 2 cards from your hand. For each BadTrip exhausted, gain 2 ${modID}:Weed. Exhaust."
   },
   "${modID}:Analisar": {
-    "NAME": "Analisar",
-    "DESCRIPTION": "Compre !M! cartas. Se algum inimigo tiver 5 ou mais de ${modID}:Chapado, ganhe 1 de ${modID}:Seda.",
-    "UPGRADE_DESCRIPTION": "Compre !M! cartas. Se algum inimigo tiver 5 ou mais de ${modID}:Chapado, ganhe 1 de ${modID}:Seda."
+    "NAME": "Analyze",
+    "DESCRIPTION": "Draw !M! cards. If any enemy has 5 or more ${modID}:High, gain 1 ${modID}:Papes.",
+    "UPGRADE_DESCRIPTION": "Draw !M! cards. If any enemy has 5 or more ${modID}:High, gain 1 ${modID}:Papes."
   },
   "${modID}:Aperitivo": {
-    "NAME": "Aperitivo",
-    "DESCRIPTION": "Cause !D! de dano. Ganha !M! de ${modID}:Larica.",
-    "UPGRADE_DESCRIPTION": "Cause !D! de dano. Ganha !M! de ${modID}:Larica."
+    "NAME": "Appetizer",
+    "DESCRIPTION": "Deal !D! Damage. Gain !M! ${modID}:Munchies.",
+    "UPGRADE_DESCRIPTION": "Deal !D! Damage. Gain !M! ${modID}:Munchies."
   },
   "${modID}:AtaqueDeVazio": {
-    "NAME": "Ataque De Vazio",
-    "DESCRIPTION": "Cause !D! de dano. Se tiver ${modID}:Larica, cause 10 de dano adicional e perca 1 de ${modID}:Larica. Exaurir",
-    "UPGRADE_DESCRIPTION": "Cause !D! de dano. Se tiver ${modID}:Larica, cause 10 de dano adicional e perca 1 de ${modID}:Larica."
+    "NAME": "Hollow Attack",
+    "DESCRIPTION": "Deal !D! Damage. If you have ${modID}:Munchies, deal 10 additional Damage and lose 1 ${modID}:Munchies. Exhaust.",
+    "UPGRADE_DESCRIPTION": "Deal !D! Damage. If you have ${modID}:Munchies, deal 10 additional Damage and lose 1 ${modID}:Munchies."
   },
   "${modID}:AtaqueFaminto": {
-    "NAME": "Ataque Faminto",
-    "DESCRIPTION": "Cause !D! de dano. Se tiver ${modID}:Comido, repita o ataque e consuma 1 de ${modID}:Comido.",
-    "UPGRADE_DESCRIPTION": "Cause !D! de dano. Se tiver ${modID}:Comido, repita o ataque e consuma 1 de ${modID}:Comido."
+    "NAME": "Hungry Attack",
+    "DESCRIPTION": "Deal !D! Damage. If you have ${modID}:Grub, repeat the attack and lose 1 ${modID}:Grub.",
+    "UPGRADE_DESCRIPTION": "Deal !D! Damage. If you have ${modID}:Grub, repeat the attack and lose 1 ${modID}:Grub."
   },
   "${modID}:BadTrip": {
     "NAME": "Bad Trip",
-    "DESCRIPTION": "No fim do turno, se estiver na mão: perca 1 de vida e ganhe 1 de ${modID}:Larica.",
-    "UPGRADE_DESCRIPTION": "No fim do turno, se estiver na mão: perca 1 de vida e ganhe 1 de ${modID}:Larica."
+    "DESCRIPTION": "At the end of your turn, if this is on your hand: lose 1 HP and gain 1 ${modID}:Munchies.",
+    "UPGRADE_DESCRIPTION": "At the end of your turn, if this is on your hand: lose 1 HP and gain 1 ${modID}:Munchies."
   },
   "${modID}:BaforadaEmCadeia": {
-    "NAME": "Baforada Em Cadeia",
-    "DESCRIPTION": "Cause !D! de dano e aplique !M! de ${modID}:Chapado. Adicione uma Baforada Etérea à sua mão.",
-    "UPGRADE_DESCRIPTION": "Cause !D! de dano e aplique !M! de ${modID}:Chapado. Adicione uma Baforada Etérea à sua mão."
+    "NAME": "Chain Puff",
+    "DESCRIPTION": "Deal !D! Damage and apply !M! ${modID}:High. Add one Ethereal Puff to your hand.",
+    "UPGRADE_DESCRIPTION": "Deal !D! Damage and apply !M! ${modID}:High. Add one Ethereal Puff to your hand."
   },
   "${modID}:BaforadaEterea": {
-    "NAME": "Baforada Eterea",
-    "DESCRIPTION": "${modID}:Fume 1. Cause !D! de dano, aplique !M! de ${modID}:Chapado e copie esta carta.",
-    "UPGRADE_DESCRIPTION": "${modID}:Fume 1. Cause !D! de dano, aplique !M! de ${modID}:Chapado e copie esta carta."
+    "NAME": "Ethereal Puff",
+    "DESCRIPTION": "${modID}:Smoke 1. Deal !D! Damage, apply !M! ${modID}:High and gain a copy of this card.",
+    "UPGRADE_DESCRIPTION": "${modID}:Smoke 1. Deal !D! Damage, apply !M! ${modID}:High and gain a copy of this card."
   },
   "${modID}:BaforadaForte": {
-    "NAME": "Baforada Forte",
-    "DESCRIPTION": "Cause !D! de dano e aplique !M! de ${modID}:Chapado.",
-    "UPGRADE_DESCRIPTION": "Cause !D! de dano e aplique !M! de ${modID}:Chapado."
+    "NAME": "Strong Puff",
+    "DESCRIPTION": "Deal !D! Damage and apply !M! ${modID}:High.",
+    "UPGRADE_DESCRIPTION": "Deal !D! Damage and apply !M! ${modID}:High."
   },
   "${modID}:BaguaDaDiscordia": {
-    "NAME": "Bagua Da Discordia",
-    "DESCRIPTION": "Cause !D! de dano a todos os inimigos. Adicione 2 BadTrip à pilha de descarte.",
-    "UPGRADE_DESCRIPTION": "Cause !D! de dano a todos os inimigos. Adicione 2 BadTrip à pilha de descarte."
+    "NAME": "Quarrel Disk",
+    "DESCRIPTION": "Deal !D! Damage to all enemies. Add 2 BadTrip to your discard pile.",
+    "UPGRADE_DESCRIPTION": "Deal !D! Damage to all enemies. Add 2 BadTrip to your discard pile."
   },
   "${modID}:BongExtra": {
-    "NAME": "Bong Extra",
-    "DESCRIPTION": "Sempre que um inimigo ganhar ${modID}:Larica, compre 1 carta e ganhe !B! de Bloqueio no final do turno.",
-    "UPGRADE_DESCRIPTION": "Sempre que um inimigo ganhar ${modID}:Larica, compre 1 carta e ganhe !B! de Bloqueio no final do turno."
+    "NAME": "Extra Bong",
+    "DESCRIPTION": "Everytime an enemy gain ${modID}:Munchies, draw 1 card and gain !B! Block at the end of your turn.",
+    "UPGRADE_DESCRIPTION": "Everytime an enemy gain ${modID}:Munchies, draw 1 card and gain !B! Block at the end of your turn."
   },
   "${modID}:BongGigatonico": {
-    "NAME": "Bong Gigatônico",
-    "DESCRIPTION": "Cause !D! de dano. Aplique !M! de Vulnerável.",
-    "UPGRADE_DESCRIPTION": " Aplique !M! de Vulnerável. Cause !D! de dano."
+    "NAME": "Gigatonic Bong",
+    "DESCRIPTION": "Deal !D! Damage. Apply !M! Vulnerable.",
+    "UPGRADE_DESCRIPTION": " Apply !M! Vulnerable. Deal !D! Damage."
   },
   "${modID}:BrigarPorBatata": {
-    "NAME": "Brigar Por Batata",
-    "DESCRIPTION": "Cause !D! de dano. Se o inimigo tiver ${modID}:Larica, remova 1 e ganhe 1 de ${modID}:Comido.",
-    "UPGRADE_DESCRIPTION": "Cause !D! de dano. Se o inimigo tiver ${modID}:Larica, remova 1 e ganhe 1 de ${modID}:Comido."
+    "NAME": "Fight For Potato",
+    "DESCRIPTION": "Deal !D! Damage. If the enemy has ${modID}:Munchies, remove 1 and gain 1 ${modID}:Grub.",
+    "UPGRADE_DESCRIPTION": "Deal !D! Damage. If the enemy has ${modID}:Munchies, remove 1 and gain 1 ${modID}:Grub."
   },
   "${modID}:BrisaFinal": {
-    "NAME": "Brisa Final",
-    "DESCRIPTION": "Cause !D! de dano X vezes e aplique !M! de Chapado a todos os inimigos X vezes.",
-    "UPGRADE_DESCRIPTION": "Cause !D! de dano X+1 vezes e aplique !M! de Chapado a todos os inimigos X+1 vezes."
+    "NAME": "Final Haze",
+    "DESCRIPTION": "Deal !D! Damage X times and apply !M! ${modID}:High to all enemies X times.",
+    "UPGRADE_DESCRIPTION": "Deal !D! Damage X+1 times and apply !M! ${modID}:High to all enemies X+1 times."
   },
   "${modID}:BuchimChei": {
-    "NAME": "Buchim Chei",
-    "DESCRIPTION": "Dobre seu ${modID}:Comido.",
-    "UPGRADE_DESCRIPTION": "Triplique seu ${modID}:Comido."
+    "NAME": "Full Belly",
+    "DESCRIPTION": "Double your ${modID}:Grub.",
+    "UPGRADE_DESCRIPTION": "Triple your ${modID}:Grub."
   },
   "${modID}:Burgao": {
-    "NAME": "Burgao",
-    "DESCRIPTION": "Ganhe !B! de Bloqueio por ${modID}:Comido. Exaure.",
-    "UPGRADE_DESCRIPTION": "Ganhe !B! de Bloqueio por ${modID}:Comido. Exaure."
+    "NAME": "Borgir",
+    "DESCRIPTION": "Gain !B! Block for each ${modID}:Grub you have. Exhaust.",
+    "UPGRADE_DESCRIPTION": "Gain !B! Block for each ${modID}:Grub you have. Exhaust."
   },
   "${modID}:CheirinhoBom": {
-    "NAME": "Cheirinho Bom",
-    "DESCRIPTION": "Ganhe !B! de Bloqueio. Se qualquer estiver ${modID}:Chapado, ganhe !M! de Destreza.",
-    "UPGRADE_DESCRIPTION": "Ganhe !B! de Bloqueio. Se qualquer estiver ${modID}:Chapado, ganhe !M! de Destreza."
+    "NAME": "Pleasant Smell",
+    "DESCRIPTION": "Gain !B! Block. If any enemy has ${modID}:High, gain !M! de Dexterity.",
+    "UPGRADE_DESCRIPTION": "Gain !B! Block. If any enemy has ${modID}:High, gain !M! de Dexterity"
   },
   "${modID}:CheiroDeLanche": {
-    "NAME": "Cheiro De Lanche",
-    "DESCRIPTION": "Cause !D! de dano. Se você não tiver ${modID}:Larica, receba ${modID}:Larica.",
-    "UPGRADE_DESCRIPTION": "Cause !D! de dano. Se você não tiver ${modID}:Larica, receba ${modID}:Larica."
+    "NAME": "Smell of Snack",
+    "DESCRIPTION": "Deal !D! Damage. If you don't have ${modID}:Munchies, gain ${modID}:Munchies.",
+    "UPGRADE_DESCRIPTION": "Deal !D! Damage. If you don't have ${modID}:Munchies, gain ${modID}:Munchies."
   },
   "${modID}:ColheitaGenerosa": {
-    "NAME": "Colheita Generosa",
-    "DESCRIPTION": "Ganhe 2 de ${modID}:Erva. Ganhe 1 de ${modID}:Comido. ganhe 1 de ${modID}:Seda. Exaure.",
-    "UPGRADE_DESCRIPTION": "Ganhe 3 de ${modID}:Erva. Ganhe 1 de ${modID}:Comido. Ganhe 1 de ${modID}:Seda. Compre 1 carta. Exaure."
+    "NAME": "Generous Harvest",
+    "DESCRIPTION": "Gain 2 ${modID}:Weed. gain 1 ${modID}:Grub. gain 1 de ${modID}:Papes. Exhaust.",
+    "UPGRADE_DESCRIPTION": "Gain 2 ${modID}:Weed. gain 1 ${modID}:Grub. gain 1 de ${modID}:Papes. Draw 1 card. Exhaust."
   },
   "${modID}:ComeAi": {
-    "NAME": "Come Aí",
-    "DESCRIPTION": "Cause !D! de dano. Se tiver 3+ de ${modID}:Comido, consuma tudo e ganhe 1 de energia por stack.",
-    "UPGRADE_DESCRIPTION": "Cause !D! de dano. Se tiver 3+ de ${modID}:Comido, consuma tudo e ganhe 1 de energia por stack."
+    "NAME": "Eat This!",
+    "DESCRIPTION": "Deal !D! Damage. If you have 3+ ${modID}:Grub, ${modID}:Eat all and gain 1 energy per stack.",
+    "UPGRADE_DESCRIPTION": "Deal !D! Damage. If you have 3+ ${modID}:Grub, ${modID}:Eat all and gain 1 energy per stack."
   },
   "${modID}:CompreensaoElevada": {
-    "NAME": "Compreensao Elevada",
-    "DESCRIPTION": "Ao aplicar ${modID}:Chapado, aplique novamente.",
-    "UPGRADE_DESCRIPTION": "Ao aplicar ${modID}:Chapado, aplique novamente."
+    "NAME": "Elevated Comprehension",
+    "DESCRIPTION": "When you apply ${modID}:High, apply again.",
+    "UPGRADE_DESCRIPTION": "When you apply ${modID}:High, apply again."
   },
   "${modID}:Confusao": {
-    "NAME": "Confusao",
-    "DESCRIPTION": "Cause !D! de dano. Adicione 1 BadTrip à pilha de descarte.",
-    "UPGRADE_DESCRIPTION": "Cause !D! de dano. Adicione 1 BadTrip à pilha de descarte."
+    "NAME": "Confusion",
+    "DESCRIPTION": "Deal !D! Damage. Add 1 BadTrip to your discard pile.",
+    "UPGRADE_DESCRIPTION": "Deal !D! Damage. Add 1 BadTrip to your discard pile."
   },
   "${modID}:Cozinhar": {
-    "NAME": "Cozinhar",
-    "DESCRIPTION": "Sempre que você sofrer dano, ganhe 1 de Destreza.",
-    "UPGRADE_DESCRIPTION": "Sempre que você sofrer dano, ganhe 1 de Destreza."
+    "NAME": "Cook",
+    "DESCRIPTION": "Whenever you take damage, gain 1 Dexterity.",
+    "UPGRADE_DESCRIPTION": "Whenever you take damage, gain 1 Dexterity."
   },
   "${modID}:CuidadoAlimentar": {
-    "NAME": "Cuidado Alimentar",
-    "DESCRIPTION": "Ganhe !B! de Bloqueio e cure !M! de vida.",
-    "UPGRADE_DESCRIPTION": "Ganhe !B! de Bloqueio e cure !M! de vida."
+    "NAME": "Food Care",
+    "DESCRIPTION": "Gain !B! Block and Heal !M!.",
+    "UPGRADE_DESCRIPTION": "Gain !B! Block and Heal !M!."
   },
   "${modID}:Desconfianca": {
-    "NAME": "Desconfiança",
-    "DESCRIPTION": "Ganhe !B! de Bloqueio. Aplique 1 de ${modID}:Larica ao inimigo.",
-    "UPGRADE_DESCRIPTION": "Ganhe !B! de Bloqueio. Aplique 1 de ${modID}:Larica ao inimigo."
+    "NAME": "Distrust",
+    "DESCRIPTION": "Apply 1 ${modID}:Munchies to the enemy. Gain !B! Block.",
+    "UPGRADE_DESCRIPTION": "Apply 1 ${modID}:Munchies to the enemy. Gain !B! Block."
   },
   "${modID}:EaPotencia": {
-    "NAME": "É a Potencia",
-    "DESCRIPTION": "No início de cada turno, ganhe 1 de ${modID}:Erva.",
-    "UPGRADE_DESCRIPTION": "Inato. No início de cada turno, ganhe 1 de ${modID}:Erva."
+    "NAME": "THE POWER",
+    "DESCRIPTION": "At the start of your turn, gain 1 ${modID}:Weed.",
+    "UPGRADE_DESCRIPTION": "Innate. At the start of your turn, gain 1 ${modID}:Weed."
   },
   "${modID}:Enrolar": {
-    "NAME": "Enrolar",
-    "DESCRIPTION": "Cause !D! de dano. Ganhe !M! de ${modID}:Erva.",
-    "UPGRADE_DESCRIPTION": "Cause !D! de dano. Ganhe !M! de ${modID}:Erva."
+    "NAME": "Roll one",
+    "DESCRIPTION": "Deal !D! Damage. gain !M! ${modID}:Weed.",
+    "UPGRADE_DESCRIPTION": "Deal !D! Damage. gain !M! ${modID}:Weed."
   },
   "${modID}:ErvaDaPaz": {
-    "NAME": "Erva Da Paz",
-    "DESCRIPTION": "Todos ganham !M! de ${modID}:Chapado e !B! de Bloqueio.",
-    "UPGRADE_DESCRIPTION": "Todos ganham !M! de ${modID}:Chapado e !B! de Bloqueio."
+    "NAME": "Peace Herb",
+    "DESCRIPTION": "EVERYONE gain !M! ${modID}:High and !B! Block.",
+    "UPGRADE_DESCRIPTION": "EVERYONE gain !M! ${modID}:High and !B! Block."
   },
   "${modID}:Espirro": {
-    "NAME": "Espirro",
-    "DESCRIPTION": "Cause !D! de dano a todos os inimigos. Adicione 1 BadTrip à pilha de descarte.",
-    "UPGRADE_DESCRIPTION": "Cause !D! de dano a todos os inimigos. Adicione 1 BadTrip à pilha de descarte."
+    "NAME": "Sneeze",
+    "DESCRIPTION": "Deal !D! Damage to all enemies. Add 1 BadTrip to your discard pile.",
+    "UPGRADE_DESCRIPTION": "Deal !D! Damage to all enemies. Add 1 BadTrip to your discard pile."
   },
   "${modID}:FicaEsperto": {
-    "NAME": "Fica Esperto",
-    "DESCRIPTION": "Cause !D! de dano. Se o inimigo estiver ${modID}:Chapado, compre !M! carta.",
-    "UPGRADE_DESCRIPTION": "Cause !D! de dano. Se o inimigo estiver ${modID}:Chapado, compre !M! carta."
+    "NAME": "Get Smart",
+    "DESCRIPTION": "Deal !D! Damage. If the enemy has ${modID}:High, draw !M! card.",
+    "UPGRADE_DESCRIPTION": "Deal !D! Damage. If the enemy has ${modID}:High, draw !M! cards."
   },
   "${modID}:Fissura": {
-    "NAME": "Fissura",
-    "DESCRIPTION": "Cause !D! de dano. ${modID}:Fume 1 e ganhe !M! de Bloqueio.",
-    "UPGRADE_DESCRIPTION": "Cause !D! de dano. ${modID}:Fume 1 e ganhe !M! de Bloqueio."
+    "NAME": "Fissure",
+    "DESCRIPTION": "Deal !D! Damage. ${modID}:Smoke 1 and gain !M! Block.",
+    "UPGRADE_DESCRIPTION": "Deal !D! Damage. ${modID}:Smoke 1 and gain !M! Block."
   },
   "${modID}:FocoFino": {
-    "NAME": "FocoFino",
-    "DESCRIPTION": "Aplique !M! de ${modID}:Chapado ao inimigo. Compre 1 carta.",
-    "UPGRADE_DESCRIPTION": "Aplique !M! de ${modID}:Chapado ao inimigo. Compre 2 cartas."
+    "NAME": "Fine Focus",
+    "DESCRIPTION": "Apply !M! ${modID}:High to the enemy. Draw 1 card.",
+    "UPGRADE_DESCRIPTION": "Apply !M! ${modID}:High to the enemy. Compre 2 cards."
   },
   "${modID}:Fritura": {
-    "NAME": "Fritura",
-    "DESCRIPTION": "Ganhe !M! de Força temporária. Perca 1 de ${modID}:Larica.",
-    "UPGRADE_DESCRIPTION": "Ganhe !M! de Força temporária. Perca 2 de ${modID}:Larica."
+    "NAME": "Deepfried Food",
+    "DESCRIPTION": "Gain !M! Temporary Strength. Lose 1 ${modID}:Munchies.",
+    "UPGRADE_DESCRIPTION": "Gain !M! Temporary Strength. Lose 2 ${modID}:Munchies."
   },
   "${modID}:FumacaPassiva": {
-    "NAME": "Fumaca Passiva",
-    "DESCRIPTION": "Causa !D! de dano a todos os inimigos. ${modID}:Fume 1 e aplica !M! de Chapado a todos os inimigos.",
-    "UPGRADE_DESCRIPTION": "Causa !D! de dano a todos os inimigos. ${modID}:Fume 1 e aplica !M! de Chapado a todos os inimigos."
+    "NAME": "Passive Smoking",
+    "DESCRIPTION": "Deal !D! Damage to all enemies. ${modID}:Smoke 1 and apply !M! ${modID}:High to all enemies.",
+    "UPGRADE_DESCRIPTION": "Deal !D! Damage to all enemies. ${modID}:Smoke 1 and apply !M! ${modID}:High to all enemies."
   },
   "${modID}:GeloNaMao": {
-    "NAME": "Ice Na Mao",
-    "DESCRIPTION": "Cause !D! de dano. Exaure 1 carta aleatória da sua mão.",
-    "UPGRADE_DESCRIPTION": "Cause !D! de dano. Exaure uma carta à sua escolha da sua mão"
+    "NAME": "Frosty Hand",
+    "DESCRIPTION": "Deal !D! Damage. Exhaust 1 random card from your hand.",
+    "UPGRADE_DESCRIPTION": "Deal !D! Damage. Exhaust 1 card from your hand."
   },
   "${modID}:Hypar": {
-    "NAME": "Hypar",
-    "DESCRIPTION": "Sempre que você exaurir uma carta, ganhe 1 de energia no próximo turno.",
-    "UPGRADE_DESCRIPTION": "Sempre que você exaurir uma carta, ganhe 1 de energia no próximo turno."
+    "NAME": "Hype",
+    "DESCRIPTION": "Everytime you Exhaust a card, gain 1 extra energy next turn.",
+    "UPGRADE_DESCRIPTION": "Everytime you Exhaust a card, gain 1 extra energy next turn."
   },
   "${modID}:IdeiaDeStartup": {
-    "NAME": "Ideia De Startup",
-    "DESCRIPTION": "Ganhe !M! de ${modID}:Erva. Embaralhe uma BadTrip no deck. Consome toda a energia restante pq vc faliu a ${modID}:Piticas.",
-    "UPGRADE_DESCRIPTION": "Ganhe !M! de ${modID}:Erva. Embaralhe uma BadTrip no deck. Consome toda a energia restante pq vc faliu a ${modID}:Piticas."
+    "NAME": "Startup Idea",
+    "DESCRIPTION": "Gain !M! ${modID}:Weed. Shuffle a BadTrip into your deck. Lose all your energy because you drove ${modID}:Piticas to bankruptcy.",
+    "UPGRADE_DESCRIPTION": "Gain !M! ${modID}:Weed. Shuffle a BadTrip into your deck. Lose all your energy because you drove ${modID}:Piticas to bankruptcy."
   },
   "${modID}:Inspiracao": {
-    "NAME": "Inspiracao",
-    "DESCRIPTION": "Ganhe !M! de ${modID}:Erva. Ganhe 1 de ${modID}:Seda. Exaure.",
-    "UPGRADE_DESCRIPTION": "Ganhe !M! de ${modID}:Erva. Ganhe 1 de ${modID}:Seda. Exaure."
+    "NAME": "Inspiration",
+    "DESCRIPTION": "Gain !M! ${modID}:Weed. gain 1 ${modID}:Papes. Exhaust.",
+    "UPGRADE_DESCRIPTION": "Gain !M! ${modID}:Weed. gain 1 ${modID}:Papes. Exhaust."
   },
-  "${modID}:LaricaDePoder": {
-    "NAME": "Larica De Poder",
-    "DESCRIPTION": "Cause !D! de dano para cada ${modID}:Comido. Remove todos os ${modID}:Comido.",
-    "UPGRADE_DESCRIPTION": "Cause !D! de dano para cada ${modID}:Comido. Remove todos os ${modID}:Comido."
+  "${modID}:MunchiesDePoder": {
+    "NAME": "Power Munchies",
+    "DESCRIPTION": "Deal !D! Damage for each ${modID}:Grub you have. Lose all your ${modID}:Grub.",
+    "UPGRADE_DESCRIPTION": "Deal !D! Damage for each ${modID}:Grub you have. Lose all your ${modID}:Grub."
   },
-  "${modID}:LaricaPesada": {
-    "NAME": "Larica Pesada",
-    "DESCRIPTION": "Cause !D! de dano a todos os inimigos. Ganhe !M! de ${modID}:Larica.",
-    "UPGRADE_DESCRIPTION": "Cause !D! de dano a todos os inimigos. Ganhe !M! de ${modID}:Larica."
+  "${modID}:MunchiesPesada": {
+    "NAME": "Heavy Munchies",
+    "DESCRIPTION": "Deal !D! Damage to all enemies. Gain !M! ${modID}:Munchies.",
+    "UPGRADE_DESCRIPTION": "Deal !D! Damage to all enemies. Gain !M! ${modID}:Munchies."
   },
   "${modID}:LimparAMente": {
-    "NAME": "Limpar A Mente",
-    "DESCRIPTION": "Descarte 2 cartas. Ganhe !M! de ${modID}:Erva.",
-    "UPGRADE_DESCRIPTION": "Descarte 2 cartas. Ganhe !M! de ${modID}:Erva."
+    "NAME": "Clear Your Mind",
+    "DESCRIPTION": "Discard 2 cards. Gain !M! ${modID}:Weed.",
+    "UPGRADE_DESCRIPTION": "Discard 2 cards. Gain !M! ${modID}:Weed."
   },
   "${modID}:LimparOBong": {
-    "NAME": "Limpar O Bong",
-    "DESCRIPTION": "Reter. Gaste toda sua ${modID}:Erva. Para cada ponto gasto, ganhe !M! de Força temporária. Exaure.",
-    "UPGRADE_DESCRIPTION": "Gaste toda sua ${modID}:Erva. Para cada ponto gasto, ganhe !M! de Força temporária. Exaure."
+    "NAME": "Clean The Bong",
+    "DESCRIPTION": "Retain. Use all your ${modID}:Weed. For each ${modID}:Weed used, gain !M! Temporary Strength. Exhaust.",
+    "UPGRADE_DESCRIPTION": "Retain. Use all your ${modID}:Weed. For each ${modID}:Weed used, gain !M! Temporary Strength."
   },
   "${modID}:LoopMental": {
-    "NAME": "Loop Mental",
-    "DESCRIPTION": "Cause !D! de dano. Compre 2 cartas. Se comprar pelo menos 1 BadTrip, compre mais 2 cartas",
-    "UPGRADE_DESCRIPTION": "Cause !D! de dano. Compre 3 cartas. Se comprar pelo menos 1 BadTrip, compre mais 3 cartas"
+    "NAME": "Mental Loop",
+    "DESCRIPTION": "Deal !D! Damage. Draw 2 cards. If you draw at least 1 BadTrip, draw 2 more cards.",
+    "UPGRADE_DESCRIPTION": "Deal !D! Damage. Draw 3 cards. If you draw at least 1 BadTrip, draw 3 more cards."
   },
   "${modID}:MaoSanta": {
-    "NAME": "Mao Santa",
-    "DESCRIPTION": "Ganhe !M! de ${modID}:Seda e !M! de ${modID}:Erva.",
-    "UPGRADE_DESCRIPTION": "Ganhe !M! de ${modID}:Seda e !M! de ${modID}:Erva."
+    "NAME": "Saint Hand",
+    "DESCRIPTION": "Gain !M! ${modID}:Papes and !M! ${modID}:Weed.",
+    "UPGRADE_DESCRIPTION": "Gain !M! ${modID}:Papes and !M! ${modID}:Weed."
   },
   "${modID}:MarDeFumaca": {
-    "NAME": "Mar De Fumaca",
-    "DESCRIPTION": "Aplique !M! de ${modID}:Chapado a todos os inimigos. Ganhe Bloqueio igual ao ${modID}:Chapado total de todos os inimigos. Exaurir",
-    "UPGRADE_DESCRIPTION": "Aplique !M! de ${modID}:Chapado a todos os inimigos. Ganhe Bloqueio igual ao dobro do ${modID}:Chapado total de todos os inimigos. Exaurir"
+    "NAME": "Haze Wave",
+    "DESCRIPTION": "Apply !M! ${modID}:High to all enemies. Gain Block equals the ${modID}:High your enemies have together. Exhaust.",
+    "UPGRADE_DESCRIPTION": "Apply !M! ${modID}:High to all enemies. Gain Block equals twice the ${modID}:High your enemies have together. Exhaust."
   },
   "${modID}:Marmita": {
-    "NAME": "Marmita",
-    "DESCRIPTION": "Ganhe !B! de Bloqueio. Ganhe !M! de ${modID}:Comido.",
-    "UPGRADE_DESCRIPTION": "Ganhe !B! de Bloqueio. Ganhe !M! de ${modID}:Comido."
+    "NAME": "LunchBox",
+    "DESCRIPTION": "Gain !B! Block. Gain !M! ${modID}:Grub.",
+    "UPGRADE_DESCRIPTION": "Gain !B! Block. Gain !M! ${modID}:Grub."
   },
   "${modID}:MunchiesFrenetico": {
-    "NAME": "Munchies Frenetico",
-    "DESCRIPTION": "Cause !D! de dano 3 vezes. Ganhe !M! de ${modID}:Larica.",
-    "UPGRADE_DESCRIPTION": "Cause !D! de dano 3 vezes. Ganhe !M! de ${modID}:Larica."
+    "NAME": "Frenzy Munchies",
+    "DESCRIPTION": "Deal !D! Damage 3 times. Gain !M! ${modID}:Munchies.",
+    "UPGRADE_DESCRIPTION": "Deal !D! Damage 3 times. Gain !M! ${modID}:Munchies."
   },
   "${modID}:Nirvana": {
     "NAME": "Nirvana",
-    "DESCRIPTION": "Todas as suas cartas com Exaustão são jogadas duas vezes.",
-    "UPGRADE_DESCRIPTION": "Inato. Todas as suas cartas com Exaustão são jogadas duas vezes."
+    "DESCRIPTION": "All your Exhaust cards are played twice.",
+    "UPGRADE_DESCRIPTION": "Innate. All your Exhaust cards are played twice."
   },
   "${modID}:OndaLenta": {
-    "NAME": "Onda Lenta",
-    "DESCRIPTION": "Cause !D! de dano. Aplique !M! de ${modID}:Chapado agora e nos próximos turno(s). Exaure.",
-    "UPGRADE_DESCRIPTION": "Cause !D! de dano. Aplique !M! de ${modID}:Chapado agora e nos próximos 2 turnos. Exaure."
+    "NAME": "Slow Wave",
+    "DESCRIPTION": "Deal !D! Damage. Apply !M! ${modID}:High now and in the next turn. Exhaust.",
+    "UPGRADE_DESCRIPTION": "Deal !D! Damage. Apply !M! ${modID}:High now and in the next 2 turns. Exhaust."
   },
   "${modID}:PassadaDeNivel": {
-    "NAME": "Passada De Nível",
-    "DESCRIPTION": "Compre !M! cartas. ${modID}:Fume 2, ganhe 1 de Energia",
-    "UPGRADE_DESCRIPTION": "Compre !M! cartas. ${modID}:Fume 2, ganhe 1 de Energia"
+    "NAME": "Level Up!",
+    "DESCRIPTION": "Draw !M! cards. ${modID}:Smoke 2, Gain 1 Energy.",
+    "UPGRADE_DESCRIPTION": "Draw !M! cards. ${modID}:Smoke 2, Gain 1 Energy."
   },
   "${modID}:PetiscoPotente": {
-    "NAME": "Petisco Potente",
-    "DESCRIPTION": "Ganhe !M! de ${modID}:Comido. Se tiver 5 ou mais de ${modID}:Comido, ganhe 2 de energia no próximo turno.",
-    "UPGRADE_DESCRIPTION": "Ganhe !M! de ${modID}:Comido. Se tiver 5 ou mais de ${modID}:Comido, ganhe 2 de energia no próximo turno."
+    "NAME": "Powerful Snack",
+    "DESCRIPTION": "Gain !M! ${modID}:Grub. If you have 5+ ${modID}:Grub, Gain 2 Energy next turn.",
+    "UPGRADE_DESCRIPTION": "Gain !M! ${modID}:Grub. If you have 5+ ${modID}:Grub, Gain 2 Energy next turn."
   },
   "${modID}:PizzaAtomica": {
-    "NAME": "Pizza Atomica",
-    "DESCRIPTION": "Cause !D! de dano 2 vezes. Se o inimigo tiver ${modID}:Larica, remova 1 e cause 7 de dano adicional.",
-    "UPGRADE_DESCRIPTION": "Cause !D! de dano 2 vezes. Se o inimigo tiver ${modID}:Larica, remova 1 e cause 7 de dano adicional."
+    "NAME": "Atomic Pizza",
+    "DESCRIPTION": "Deal !D! Damage 2 times. If the enemy has ${modID}:Munchies, remove 1 and deal 7 additional Damage.",
+    "UPGRADE_DESCRIPTION": "Deal !D! Damage 2 times. If the enemy has ${modID}:Munchies, remove 1 and deal 7 additional Damage."
   },
   "${modID}:Ponderar": {
-    "NAME": "Ponderar",
-    "DESCRIPTION": "${modID}:Fume 1. Vidência 3. Compre 1 carta.",
-    "UPGRADE_DESCRIPTION": "${modID}:Fume 1. Vidência 3. Compre 2 cartas."
+    "NAME": "Ponder",
+    "DESCRIPTION": "${modID}:Smoke 1. Scry 3. Draw 1 card.",
+    "UPGRADE_DESCRIPTION": "${modID}:Smoke 1. Scry 3. Draw 2 cards."
   },
   "${modID}:PratoCheio": {
-    "NAME": "Prato Cheio",
-    "DESCRIPTION": "Ganhe !M! de ${modID}:Comido. Exaurir",
-    "UPGRADE_DESCRIPTION": "Ganhe !M! de ${modID}:Comido. Exaurir"
+    "NAME": "Full Plate",
+    "DESCRIPTION": "Gain !M! ${modID}:Grub. Exhaust.",
+    "UPGRADE_DESCRIPTION": "Gain !M! ${modID}:Grub. Exhaust."
   },
   "${modID}:Reabastecer": {
-    "NAME": "Reabastecer",
-    "DESCRIPTION": "Ganhe !M! de ${modID}:Erva. Compre 1 carta",
-    "UPGRADE_DESCRIPTION": "Ganhe !M! de ${modID}:Erva."
+    "NAME": "Restock",
+    "DESCRIPTION": "Gain !M! ${modID}:Weed. Draw 1 card.",
+    "UPGRADE_DESCRIPTION": "Gain !M! ${modID}:Weed. Draw 1 card."
   },
   "${modID}:Recompensa": {
-    "NAME": "Recompensa",
-    "DESCRIPTION": "Cause !D! de dano. ${modID}:Fume 1 para aplicar !M! de Vulnerável.",
-    "UPGRADE_DESCRIPTION": "Cause !D! de dano. ${modID}:Fume 1 para aplicar !M! de Vulnerável."
+    "NAME": "Reward",
+    "DESCRIPTION": "Deal !D! Damage. ${modID}:Smoke 1, apply !M! Vulnerable.",
+    "UPGRADE_DESCRIPTION": "Deal !D! Damage. ${modID}:Smoke 1, apply !M! Vulnerable."
   },
   "${modID}:Reembolso": {
-    "NAME": "Reembolso",
-    "DESCRIPTION": "Cause !D! de dano. ${modID}:Fume 1 e Ganhe !M! de ${modID}:Seda. Exaurir",
-    "UPGRADE_DESCRIPTION": "Cause !D! de dano. ${modID}:Fume 1 e Ganhe !M! de ${modID}:Seda. Exaurir"
+    "NAME": "Refund",
+    "DESCRIPTION": "Deal !D! Damage. ${modID}:Smoke 1 and gain !M! ${modID}:Papes. Exhaust.",
+    "UPGRADE_DESCRIPTION": "Deal !D! Damage. ${modID}:Smoke 1 and gain !M! ${modID}:Papes. Exhaust."
   },
   "${modID}:Reflexao": {
-    "NAME": "Reflexao",
-    "DESCRIPTION": "Remova todos os efeitos de ${modID}:Chapado do inimigo. Aplique !M! de ${modID}:Larica.",
-    "UPGRADE_DESCRIPTION": "Remova todos os efeitos de ${modID}:Chapado do inimigo. Aplique !M! de ${modID}:Larica."
+    "NAME": "Reflect",
+    "DESCRIPTION": "Remove all ${modID}:High the enemy has. Apply !M! ${modID}:Munchies.",
+    "UPGRADE_DESCRIPTION": "Remove all ${modID}:High the enemy has. Apply !M! ${modID}:Munchies."
   },
   "${modID}:Relaxar": {
-    "NAME": "Relaxar",
-    "DESCRIPTION": "Ganhe !B! de Bloqueio.",
-    "UPGRADE_DESCRIPTION": "Ganhe !B! de Bloqueio."
+    "NAME": "Relax",
+    "DESCRIPTION": "Gain !B! Block.",
+    "UPGRADE_DESCRIPTION": "Gain !B! Block."
   },
   "${modID}:ResgateDeLanche": {
-    "NAME": "Resgate De Lanche",
-    "DESCRIPTION": "Ganhe !B! de Proteção. ${modID}:Coma 1, Cure !M! de Vida.",
-    "UPGRADE_DESCRIPTION": "Ganhe !B! de Proteção. ${modID}:Coma 1, Cure !M! de Vida."
+    "NAME": "Lunch Rescue",
+    "DESCRIPTION": "Gain !B! Proteção. ${modID}:Eat 1, Heal !M! HP.",
+    "UPGRADE_DESCRIPTION": "Gain !B! Proteção. ${modID}:Eat 1, Heal !M! HP."
   },
   "${modID}:Ronco": {
-    "NAME": "Ronco",
-    "DESCRIPTION": "Remova todos os poderes de um inimigo aleatorio. Exaure.",
-    "UPGRADE_DESCRIPTION": "Remova todos os poderes de um inimigo à sua escolha. Exaure."
+    "NAME": "Snore",
+    "DESCRIPTION": "Remove all powers from an random enemy. Exhaust.",
+    "UPGRADE_DESCRIPTION": "Remove all powers from the enemy. Exhaust."
   },
   "${modID}:SacolaDeGuloseimas": {
-    "NAME": "Sacola De Guloseimas",
-    "DESCRIPTION": "Cause !D! de dano a um inimigo. Se ele tiver ${modID}:Larica, cause 5 de dano a todos os inimigos. Ganhe 1 de ${modID}:Comido. Exaure.",
-    "UPGRADE_DESCRIPTION": "Cause !D! de dano a um inimigo. Se ele tiver ${modID}:Larica, cause 5 de dano a todos os inimigos. Ganhe 1 de ${modID}:Comido.  Ganhe !B! de proteção. Exaure. "
+    "NAME": "Goodie Bag",
+    "DESCRIPTION": "Deal !D! Damage. If the enemy has ${modID}:Munchies, deal 5 Damage to all enemies. Gain 1 ${modID}:Grub. Exhaust.",
+    "UPGRADE_DESCRIPTION": "Deal !D! Damage. If the enemy has ${modID}:Munchies, deal 5 Damage to all enemies. Gain 1 ${modID}:Grub. Gain !B! Block. Exhaust. "
   },
   "${modID}:SemPressa": {
-    "NAME": "Sem Pressa",
-    "DESCRIPTION": "Reter. Ganhe !B! de Bloqueio. A cada turno retida ganha +2 de Bloqueio. Exaurir",
-    "UPGRADE_DESCRIPTION": "Reter. Ganhe !B! de Bloqueio. A cada turno retida ganha +3 de Bloqueio. Exaurir"
+    "NAME": "No Hurry",
+    "DESCRIPTION": "Retain. Gain !B! de Block. Each turn retained add +2 Block. Exhaust.",
+    "UPGRADE_DESCRIPTION": "Retain. Gain !B! de Block. Each turn retained add +3 Block. Exhaust."
   },
   "${modID}:SoproRelaxante": {
-    "NAME": "Sopro Relaxante",
-    "DESCRIPTION": "Causa !D! de dano. Aplica !M! de Chapado e 1 de Vulnerável.",
-    "UPGRADE_DESCRIPTION": "Causa !D! de dano. Aplica !M! de Chapado e 2 de Vulnerável."
+    "NAME": "Relaxing Breath",
+    "DESCRIPTION": "Deal !D! Damage. Apply !M! ${modID}:High and 1 Vulnerable.",
+    "UPGRADE_DESCRIPTION": "Deal !D! Damage. Apply !M! ${modID}:High and 2 Vulnerable."
   },
   "${modID}:Tapa": {
-    "NAME": "Tapa",
-    "DESCRIPTION": "Cause !D! de dano. Aplique !M! de ${modID}:Chapado.",
-    "UPGRADE_DESCRIPTION": "Cause !D! de dano. Aplique !M! de ${modID}:Chapado."
+    "NAME": "Hit",
+    "DESCRIPTION": "Deal !D! Damage. Apply !M! ${modID}:High.",
+    "UPGRADE_DESCRIPTION": "Deal !D! Damage. Apply !M! ${modID}:High."
   },
   "${modID}:TapaRapido": {
-    "NAME": "Tapa Rapido",
-    "DESCRIPTION": "Cause !D! de dano. Exaurir.",
-    "UPGRADE_DESCRIPTION": "Cause !D! de dano. Exaurir."
+    "NAME": "Quick Hit",
+    "DESCRIPTION": "Deal !D! Damage. Exhaust.",
+    "UPGRADE_DESCRIPTION": "Deal !D! Damage. Exhaust."
   },
   "${modID}:TiroCerto": {
-    "NAME": "Tiro Certo",
-    "DESCRIPTION": "Cause !D! de dano. Se o inimigo tiver !M! ou mais de ${modID}:Chapado, aplique 1 Atordoado. Exaurir.",
-    "UPGRADE_DESCRIPTION": "Cause !D! de dano. Se o inimigo tiver !M! ou mais de ${modID}:Chapado, aplique 1 Atordoado. Exaurir."
+    "NAME": "Sure Strike",
+    "DESCRIPTION": "Deal !D! Damage. If the enemy has !M!+ ${modID}:High, apply 1 Stun. Exhaust.",
+    "UPGRADE_DESCRIPTION": "Deal !D! Damage. If the enemy has !M!+ ${modID}:High, apply 1 Stun. Exhaust."
   },
   "${modID}:TragadaProfunda": {
-    "NAME": "Tragada Profunda",
-    "DESCRIPTION": "Cause !D! de dano. ${modID}:Fume 2, ganhe 2 de ${modID}:Larica.",
-    "UPGRADE_DESCRIPTION": "Cause !D! de dano. ${modID}:Fume 1, ganhe 2 de ${modID}:Larica."
+    "NAME": "Deep Drag",
+    "DESCRIPTION": "Deal !D! Damage. ${modID}:Smoke 2, gain 2 ${modID}:Munchies.",
+    "UPGRADE_DESCRIPTION": "Deal !D! Damage. ${modID}:Smoke 1, gain 2 ${modID}:Munchies."
   },
   "${modID}:Trance": {
     "NAME": "Trance",
-    "DESCRIPTION": "Entre em trance. Sempre que você ganhar ${modID}:Larica, exaure 1 carta da sua mão e ganhe 1 de ${modID}:Seda.",
-    "UPGRADE_DESCRIPTION": "Entre em trance. Sempre que você ganhar ${modID}:Larica, exaure 1 carta da sua mão e ganhe 1 de ${modID}:Seda."
+    "DESCRIPTION": "Enter trance. Everytime you gain ${modID}:Munchies, Exhaust 1 card from your hand and gain 1 ${modID}:Papes.",
+    "UPGRADE_DESCRIPTION": "Enter trance. Everytime you gain ${modID}:Munchies, Exhaust 1 card from your hand and gain 1 ${modID}:Papes."
   },
   "${modID}:Ventilador": {
-    "NAME": "Ventilador",
-    "DESCRIPTION": "Aplique !M! de ${modID}:Chapado a todos os inimigos. Ganhe !B! de Bloqueio para cada inimigo afetado.",
-    "UPGRADE_DESCRIPTION": "Aplique !M! de ${modID}:Chapado a todos os inimigos. Ganhe !B! de Bloqueio para cada inimigo afetado."
+    "NAME": "Fan",
+    "DESCRIPTION": "Apply !M! ${modID}:High to all enemies. Gain !B! Block for each affected enemy.",
+    "UPGRADE_DESCRIPTION": "Apply !M! ${modID}:High to all enemies. Gain !B! Block for each affected enemy."
   },
   "${modID}:ViagemSoDeIda": {
-    "NAME": "Viagem So De Ida",
-    "DESCRIPTION": "Cause !D! de dano. Se você tem BadTrip na mão, cause +6 de dano.",
-    "UPGRADE_DESCRIPTION": "Cause !D! de dano. Se você tem BadTrip na mão, cause +6 de dano."
+    "NAME": "One-way Trip",
+    "DESCRIPTION": "Deal !D! Damage. If you have BadTrip in you hand, deal 6 more Damage.",
+    "UPGRADE_DESCRIPTION": "Deal !D! Damage. If you have BadTrip in you hand, deal 6 more Damage."
   }
 }

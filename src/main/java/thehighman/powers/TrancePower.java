@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 import java.util.Collections;
 import java.util.List;
+import java.util.Objects;
 
 import static thehighman.InimigosDoSpire.makeID;
 
@@ -25,7 +26,7 @@ public class TrancePower extends BasePower {
 
     @Override
     public void onApplyPower(AbstractPower power, AbstractCreature target, AbstractCreature source) {
-        if (power.ID == LaricaPower.POWER_ID){
+        if (Objects.equals(power.ID, LaricaPower.POWER_ID)){
             AbstractPlayer p = AbstractDungeon.player;
             if (!p.hand.isEmpty()){
             addToBot(new com.megacrit.cardcrawl.actions.common.ExhaustAction(p, p, 1, false));
