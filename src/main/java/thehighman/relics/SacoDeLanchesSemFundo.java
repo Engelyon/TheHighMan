@@ -19,8 +19,8 @@ public class SacoDeLanchesSemFundo extends BaseRelic {
 
     // Este método deve ser chamado pela lógica que consome Comido
     public void onComidoConsumido() {
-        flash();
         addToBot(new DrawCardAction(AbstractDungeon.player, 1));
+        flash();
     }
 
     @Override
