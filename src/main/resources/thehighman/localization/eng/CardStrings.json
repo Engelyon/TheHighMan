@@ -41,8 +41,8 @@
   },
   "${modID}:AtaqueFaminto": {
     "NAME": "Hungry Attack",
-    "DESCRIPTION": "Deal !D! Damage. If you have ${modID}:Grub, repeat the attack and lose 1 ${modID}:Grub.",
-    "UPGRADE_DESCRIPTION": "Deal !D! Damage. If you have ${modID}:Grub, repeat the attack and lose 1 ${modID}:Grub."
+    "DESCRIPTION": "Deal !D! Damage. If you have ${modID}:Grub, ${modID}:Eat 1 ${modID}:Grub and repeat the attack.",
+    "UPGRADE_DESCRIPTION": "Deal !D! Damage. If you have ${modID}:Grub, ${modID}:Eat 1 ${modID}:Grub and repeat the attack."
   },
   "${modID}:BadTrip": {
     "NAME": "Bad Trip",

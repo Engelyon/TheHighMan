@@ -44,10 +44,7 @@ public class Ronco extends BaseCard {
     }
     @Override
     public void upgrade() {
-        if (!upgraded) {
-            upgradeName();
-            this.target = CardTarget.ENEMY;
-            initializeDescription();
-        }
+        super.upgrade();
+        this.target = CardTarget.ENEMY;
     }
 }
