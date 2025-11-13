@@ -24,10 +24,12 @@ public class PizzaAtomica extends BaseCard {
     private static final int HIT_DAMAGE = 3;
     private static final int UPG_HIT_DAMAGE = 2;
     private static final int BONUS_DAMAGE = 7;
+    private static final int HITS =1;
 
     public PizzaAtomica() {
         super(ID, info);
         setDamage(HIT_DAMAGE, UPG_HIT_DAMAGE);
+        setMagic(HITS, 1);
         this.keywords.add("larica");
         initializeDescription();
     }
@@ -37,32 +39,23 @@ public class PizzaAtomica extends BaseCard {
         if (m == null) {
             return;
         }
-
-        // Se o inimigo tiver Larica, remove 1 antes de causar dano
         if (m.hasPower(LaricaPower.POWER_ID)) {
             int current = m.getPower(LaricaPower.POWER_ID).amount;
             if (current > 0) {
                 addToBot(new ReducePowerAction(m, p, LaricaPower.POWER_ID, 1));
             }
         }
-
-        // Número de hits: 1 base, +1 se upada
         int hits = upgraded ? 2 : 1;
 
         for (int i = 0; i < hits; i++) {
             addToBot(new DamageAction(m,
                     new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL),
                     AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
-            // pequeno delay visual opcional entre hits
             addToBot(new com.megacrit.cardcrawl.actions.utility.WaitAction(0.08f));
         }
     }
     @Override
     public void upgrade() {
-        if (!upgraded) {
-            upgradeName();
-            upgradeDamage(UPG_HIT_DAMAGE); // 3 → 5 por golpe
-            initializeDescription();
-        }
+        super.upgrade();
     }
 }

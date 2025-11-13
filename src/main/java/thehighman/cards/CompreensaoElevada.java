@@ -19,10 +19,12 @@ public class CompreensaoElevada extends BaseCard {
             CardTarget.SELF,
             3
     );
+
     public static final int MAGIC = 1;
 
     public CompreensaoElevada() {
         super(ID, info);
+        setMagic(MAGIC);
         this.isEthereal = true;
         initializeDescription();
     }
@@ -31,6 +33,7 @@ public class CompreensaoElevada extends BaseCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new ApplyPowerAction(p, p, new CompreensaoElevadaPower(p, p, magicNumber), magicNumber));
     }
+
     @Override
     public void upgrade() {
         super.upgrade();
@@ -51,4 +54,5 @@ public class CompreensaoElevada extends BaseCard {
         }
         initializeDescription();
     }
+
 }
