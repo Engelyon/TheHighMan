@@ -27,8 +27,7 @@ public class IdeiaDeStartup extends BaseCard {
         super(ID, info);
         this.exhaust=true;
         setMagic(ERVA_GAIN);
-        setMagic(ERVA_GAIN, ERVA_GAIN + 2); // 5 → 7 de Erva com upgrade
-        this.keywords.add("erva");
+        setMagic(ERVA_GAIN, ERVA_GAIN + 2);
         this.cardsToPreview = new BadTrip();
         initializeDescription();
     }

@@ -29,7 +29,6 @@ public class ErvaDaPaz extends BaseCard {
         setMagic(CHAPADO_AMOUNT);
         setBlock(BLOCK_AMOUNT, BLOCK_UPG);
         this.exhaust = true;
-        this.keywords.add("chapado");
         initializeDescription();
     }
 

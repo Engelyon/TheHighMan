@@ -35,7 +35,7 @@ public class Relaxar extends BaseCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeBlock(UPG_BLOCK); // 7 → 10 de Bloqueio
+            upgradeBlock(UPG_BLOCK);
             initializeDescription();
         }
     }

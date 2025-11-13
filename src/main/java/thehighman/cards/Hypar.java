@@ -32,7 +32,7 @@ public class Hypar extends BaseCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeBaseCost(0); // 1 → 0 de custo
+            upgradeBaseCost(0);
             initializeDescription();
         }
     }

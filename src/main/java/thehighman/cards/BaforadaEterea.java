@@ -24,7 +24,7 @@ public class BaforadaEterea extends BaseCard {
             CardType.ATTACK,
             CardRarity.UNCOMMON,
             CardTarget.ENEMY,
-            -2 // custo especial: não usa energia
+            -2
     );
 
     private static final int DAMAGE = 4;
@@ -49,15 +49,10 @@ public class BaforadaEterea extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        // Consome 1 de Erva
         addToBot(new ReducePowerAction(p, p, ErvaPower.POWER_ID, 1));
-
-        // Causa dano e aplica Chapado
         addToBot(new DamageAction(m, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL),
                 AbstractGameAction.AttackEffect.FIRE));
         addToBot(new ApplyPowerAction(m, p, new ChapadoPower(m, this.magicNumber), this.magicNumber));
-
-        // Cria uma cópia de si mesma
         AbstractCard copia = this.makeStatEquivalentCopy();
         addToBot(new MakeTempCardInHandAction(copia, 1));
     }
@@ -65,7 +60,7 @@ public class BaforadaEterea extends BaseCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeDamage(UPG_DAMAGE); // 4 → 6 de dano
+            upgradeDamage(UPG_DAMAGE);
             initializeDescription();
         }
     }

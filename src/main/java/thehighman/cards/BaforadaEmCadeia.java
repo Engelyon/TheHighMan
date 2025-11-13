@@ -40,14 +40,9 @@ public class BaforadaEmCadeia extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        // Causa dano
         addToBot(new DamageAction(m, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL),
                 AbstractGameAction.AttackEffect.FIRE));
-
-        // Aplica Chapado
         addToBot(new ApplyPowerAction(m, p, new ChapadoPower(m, this.magicNumber), this.magicNumber));
-
-        // Gera uma cópia da carta Baforada Etérea
         AbstractCard copia = new BaforadaEterea();
         if (this.upgraded) {
             copia.upgrade();
@@ -58,7 +53,7 @@ public class BaforadaEmCadeia extends BaseCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeDamage(UPG_DAMAGE); // Aumenta o dano de 4 para 6
+            upgradeDamage(UPG_DAMAGE);
             initializeDescription();
         }
     }

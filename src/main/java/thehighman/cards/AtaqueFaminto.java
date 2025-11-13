@@ -30,7 +30,6 @@ public class AtaqueFaminto extends BaseCard {
     public AtaqueFaminto() {
         super(ID, info);
         setDamage(DAMAGE, UPG_DAMAGE);
-        this.keywords.add("comido");
         initializeDescription();
     }
 
@@ -44,12 +43,12 @@ public class AtaqueFaminto extends BaseCard {
                     AbstractGameAction.AttackEffect.BLUNT_LIGHT));
         }
     }
-    
+
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeDamage(UPG_DAMAGE); // Aumenta o dano de 7 para 10
+            upgradeDamage(UPG_DAMAGE);
             initializeDescription();
         }
     }

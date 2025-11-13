@@ -29,7 +29,6 @@ public class Aperitivo extends BaseCard {
         super(ID, info);
         setDamage(DAMAGE, UPG_DAMAGE);
         setMagic(LARICA_AMOUNT);
-        this.keywords.add("larica");
         initializeDescription();
     }
 
@@ -44,7 +43,7 @@ public class Aperitivo extends BaseCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeDamage(UPG_DAMAGE); // Aumenta o dano de 6 para 9
+            upgradeDamage(UPG_DAMAGE);
             initializeDescription();
         }
     }

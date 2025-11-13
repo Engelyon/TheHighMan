@@ -24,26 +24,20 @@ public class LimparAMente extends BaseCard {
 
     public LimparAMente() {
         super(ID, info);
-        setMagic(ERVA_GAIN, ERVA_GAIN + 1); // 2 → 3 de Erva com upgrade
-
-        this.keywords.add("erva");
+        setMagic(ERVA_GAIN, ERVA_GAIN + 1);
         initializeDescription();
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        // Descarta 2 cartas da mão
         addToBot(new DiscardAction(p, p, DISCARD_AMOUNT, false));
-
-        // Ganha 2 de Erva
         addToBot(new ApplyPowerAction(p, p, new ErvaPower(p, ERVA_GAIN), ERVA_GAIN));
     }
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(1); // 2 → 3 de Erva
-            initializeDescription();
+            upgradeMagicNumber(1);
         }
     }
 }

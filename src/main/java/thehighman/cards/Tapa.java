@@ -12,15 +12,8 @@ package thehighman.cards;
         import thehighman.powers.SedaPower;
         import thehighman.util.CardStats;
 
-        /**
-         * Representa a carta "Tapa" no jogo.
-         * Esta carta é um ataque básico que causa dano a um único inimigo e aplica o efeito "Chapado".
-         */
         public class Tapa extends BaseCard {
-            // Identificador único da carta
             public static final String ID = makeID("Tapa");
-
-            // Estatísticas da carta, incluindo cor, tipo, raridade, alvo e custo de energia
             private static final CardStats info = new CardStats(
                     TheHighman.Meta.CARD_COLOR, // Cor da carta
                     CardType.ATTACK,            // Tipo: ataque
@@ -40,7 +33,6 @@ package thehighman.cards;
                 setMagic(CHAPADO, UPG_CHAPADO);
                 tags.add(CardTags.STARTER_STRIKE);
                 tags.add(CardTags.STRIKE);
-                this.keywords.add("chapado");
                 initializeDescription();
             }
             @Override

@@ -40,9 +40,7 @@ public class ComeAi extends BaseCard {
         if (p.hasPower(ComidoPower.POWER_ID)) {
             int comidoStacks = p.getPower(ComidoPower.POWER_ID).amount;
             if (comidoStacks >= COMIDO_THRESHOLD) {
-                // Remove todos os stacks de Comido
                 addToBot(new ReducePowerAction(p, p, ComidoPower.POWER_ID, comidoStacks));
-                // Ganha 1 de energia por stack perdido
                 addToBot(new GainEnergyAction(comidoStacks));
             }
         }
@@ -52,7 +50,7 @@ public class ComeAi extends BaseCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeDamage(UPG_DAMAGE); // 10 → 14 de dano
+            upgradeDamage(UPG_DAMAGE);
             initializeDescription();
         }
     }

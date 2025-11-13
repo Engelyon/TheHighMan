@@ -34,7 +34,6 @@ public class Recompensa extends BaseCard {
         super(ID, info);
         setDamage(DAMAGE, UPG_DAMAGE);
         setMagic(VULNERABLE_AMOUNT, VULNERABLE_AMOUNT_UPG);
-        this.keywords.add("erva");
         initializeDescription();
     }
 
@@ -43,8 +42,6 @@ public class Recompensa extends BaseCard {
         // Causa dano
         addToBot(new DamageAction(m, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL),
                 AbstractGameAction.AttackEffect.BLUNT_LIGHT));
-
-        // Se tiver Erva, consome 1 e aplica Vulnerável
         if (p.hasPower(ErvaPower.POWER_ID) && p.getPower(ErvaPower.POWER_ID).amount >= 1) {
             addToBot(new ReducePowerAction(p, p, ErvaPower.POWER_ID, 1));
             addToBot(new ApplyPowerAction(m, p, new VulnerablePower(m, magicNumber, false), magicNumber));

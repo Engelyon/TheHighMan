@@ -84,7 +84,7 @@ public class FumacaPassiva extends BaseCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeDamage(UPG_DAMAGE); // 4 → 6 de dano base
+            upgradeDamage(UPG_DAMAGE);
             initializeDescription();
         }
     }

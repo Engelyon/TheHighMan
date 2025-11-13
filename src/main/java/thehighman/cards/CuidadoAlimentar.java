@@ -39,8 +39,8 @@ public class CuidadoAlimentar extends BaseCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeBlock(4);         // 12 → 16
-            upgradeMagicNumber(1);   // 2 → 3
+            upgradeBlock(4);
+            upgradeMagicNumber(1);
             initializeDescription();
         }
     }

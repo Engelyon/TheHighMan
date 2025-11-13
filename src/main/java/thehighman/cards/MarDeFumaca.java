@@ -27,7 +27,6 @@ public class MarDeFumaca extends BaseCard {
         super(ID, info);
         setMagic(CHAPADO_AMOUNT);
         this.exhaust=true;
-        this.keywords.add("chapado");
         initializeDescription();
     }
 

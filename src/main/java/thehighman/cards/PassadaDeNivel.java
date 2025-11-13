@@ -33,7 +33,6 @@ public class PassadaDeNivel extends BaseCard {
     public PassadaDeNivel() {
         super(ID, info);
         setMagic(DRAW, UPG_DRAW);
-        this.keywords.add("chapado");
         initializeDescription();
     }
 
@@ -45,6 +44,7 @@ public class PassadaDeNivel extends BaseCard {
                 addToBot(new com.megacrit.cardcrawl.actions.common.GainEnergyAction(ENERGIA));
                 addToBot(new ReducePowerAction(p, p, ErvaPower.POWER_ID, C_ERVA));
             }
+            //NAO DELETA ISSO DE JEITO NENHUM SENAO DA ERRO
         } catch (Exception e) {
             System.out.println(e);
         }

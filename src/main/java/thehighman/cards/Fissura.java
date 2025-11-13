@@ -31,7 +31,7 @@ public class Fissura extends BaseCard {
     public Fissura() {
         super(ID, info);
         setDamage(DAMAGE, UPG_DAMAGE);
-        setMagic(BLOCK_GAIN, BLOCK_GAIN + 2); // 3 → 5 de Bloqueio com upgrade
+        setMagic(BLOCK_GAIN, BLOCK_GAIN + 2);
 
         this.keywords.add("erva");
         initializeDescription();
@@ -39,11 +39,8 @@ public class Fissura extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        // Causa dano
         addToBot(new DamageAction(m, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL),
                 AbstractGameAction.AttackEffect.SLASH_HEAVY));
-
-        // Se tiver Erva, consome 1 e ganha Bloqueio
         if (p.hasPower(ErvaPower.POWER_ID) && p.getPower(ErvaPower.POWER_ID).amount >= 1) {
             addToBot(new ReducePowerAction(p, p, ErvaPower.POWER_ID, 1));
             addToBot(new GainBlockAction(p, BLOCK_GAIN));
@@ -53,8 +50,8 @@ public class Fissura extends BaseCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeDamage(UPG_DAMAGE);     // 7 → 10 de dano
-            upgradeMagicNumber(2);         // 3 → 5 de Bloqueio
+            upgradeDamage(UPG_DAMAGE);
+            upgradeMagicNumber(2);
             initializeDescription();
         }
     }

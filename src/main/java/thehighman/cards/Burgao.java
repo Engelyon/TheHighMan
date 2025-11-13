@@ -26,7 +26,6 @@ public class Burgao extends BaseCard {
         super(ID, info);
         this.exhaust = true;
         setBlock(BLOCK, BLOCK_UPG);
-        this.keywords.add("comido");
         initializeDescription();
     }
 

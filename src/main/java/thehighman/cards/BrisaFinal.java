@@ -24,13 +24,13 @@ public class BrisaFinal extends BaseCard {
     );
 
     private static final int DAMAGE = 5;
-    private static final int UPG_X_PLUS = 1; // upgrade: X + 1
+    private static final int UPG_X_PLUS = 1;
     private static final int CHAPADO_AMOUNT = 1;
 
     public BrisaFinal() {
         super(ID, info);
         setDamage(DAMAGE);
-        setMagic(CHAPADO_AMOUNT); // define baseMagicNumber e magicNumber
+        setMagic(CHAPADO_AMOUNT);
         this.isMultiDamage = true;
         this.keywords.add("chapado");
         initializeDescription();
@@ -44,24 +44,18 @@ public class BrisaFinal extends BaseCard {
             effect += 2;
             p.getRelic("Chemical X").flash();
         }
-
-        // upgrade dá +1 ao X
         if (upgraded) {
             effect += UPG_X_PLUS;
         }
-
         if (effect > 0) {
             for (int i = 0; i < effect; i++) {
-                // Causa dano a todos os inimigos
                 addToBot(new DamageAllEnemiesAction(p, this.multiDamage, DamageInfo.DamageType.NORMAL,
                         com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
-                // Aplica magicNumber de Chapado a todos os inimigos
                 for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
                     if (!mo.isDeadOrEscaped()) {
                         addToBot(new ApplyPowerAction(mo, p, new ChapadoPower(mo, this.magicNumber), this.magicNumber));
                     }
                 }
-                // Pequeno delay visual entre os hits
                 addToBot(new WaitAction(0.1f));
             }
         }
@@ -72,7 +66,6 @@ public class BrisaFinal extends BaseCard {
         super.upgrade();
     }
 
-    // atualiza o magicNumber com a quantidade de SedaPower
     @Override
     public void applyPowers() {
         super.applyPowers();
@@ -84,7 +77,6 @@ public class BrisaFinal extends BaseCard {
         }
         this.magicNumber = newMagic;
         this.isMagicNumberModified = (this.magicNumber != this.baseMagicNumber);
-
         initializeDescription();
     }
 }

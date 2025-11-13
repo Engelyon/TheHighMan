@@ -35,8 +35,6 @@ public class SacolaDeGuloseimas extends BaseCard {
         setBlock(0, UPG_BLOCK);
         this.isMultiDamage = true;
         this.exhaust = true;
-        this.keywords.add("comido");
-        this.keywords.add("larica");
         initializeDescription();
     }
 

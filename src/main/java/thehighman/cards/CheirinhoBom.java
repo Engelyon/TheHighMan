@@ -33,7 +33,6 @@ public class CheirinhoBom extends BaseCard {
         super(ID, info);
         setBlock(BLOCK);
         setMagic(DEX_GAIN, UPG_DEX);
-        this.keywords.add("chapado");
         initializeDescription();
     }
 

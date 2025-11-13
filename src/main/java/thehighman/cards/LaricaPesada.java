@@ -39,15 +39,13 @@ public class LaricaPesada extends BaseCard {
         // Dano em área
         addToBot(new DamageAllEnemiesAction(p, this.multiDamage, DamageInfo.DamageType.NORMAL,
                 AbstractGameAction.AttackEffect.BLUNT_HEAVY));
-
-        // Aplica Larica ao jogador
         addToBot(new ApplyPowerAction(p, p, new LaricaPower(p, this.magicNumber), this.magicNumber));
     }
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeDamage(UPG_DAMAGE);     // 10 → 14 de dano em área
+            upgradeDamage(UPG_DAMAGE);
             initializeDescription();
         }
     }

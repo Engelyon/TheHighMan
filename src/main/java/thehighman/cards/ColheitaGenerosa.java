@@ -28,9 +28,6 @@ public class ColheitaGenerosa extends BaseCard {
     public ColheitaGenerosa() {
         super(ID, info);
         this.exhaust = true;
-        this.keywords.add("erva");
-        this.keywords.add("comido");
-        this.keywords.add("seda");
         initializeDescription();
     }
 

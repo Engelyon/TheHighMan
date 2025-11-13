@@ -31,8 +31,6 @@ public class LimparOBong extends BaseCard {
         this.selfRetain = true;
         this.exhaust = true;
         setMagic(STRENGHT,STRENGHT_UPG);
-        this.keywords.add("erva");
-        this.keywords.add("força");
         initializeDescription();
     }
 

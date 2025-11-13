@@ -25,24 +25,20 @@ public class Almondega extends BaseCard {
     public Almondega() {
         super(ID, info);
         this.exhaust=true;
-        this.keywords.add("comido");
-        this.keywords.add("larica");
         initializeDescription();
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        // Ganha 1 de Comido
         addToBot(new ApplyPowerAction(p, p, new ComidoPower(p, COMIDO_AMOUNT), COMIDO_AMOUNT));
-
-        // Ganha 1 de Larica
         addToBot(new ApplyPowerAction(p, p, new LaricaPower(p, LARICA_AMOUNT), LARICA_AMOUNT));
     }
+
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            this.upgradeBaseCost(0); // Reduz o custo de 1 para 0
+            this.upgradeBaseCost(0);
             initializeDescription();
         }
     }

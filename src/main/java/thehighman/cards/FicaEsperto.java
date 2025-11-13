@@ -28,7 +28,6 @@ public class FicaEsperto extends BaseCard {
         super(ID, info);
         setDamage(DAMAGE);
         setMagic(DRAW_CARD, DRAW_CARD_UPG);
-        this.keywords.add("chapado");
         initializeDescription();
     }
 

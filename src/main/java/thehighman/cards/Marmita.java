@@ -27,7 +27,6 @@ public class Marmita extends BaseCard {
         super(ID, info);
         setMagic(COMIDO_AMOUNT, UPG_COMIDO);
         setBlock(BLOCK);
-        this.keywords.add("comido");
         initializeDescription();
     }
 
@@ -40,7 +39,7 @@ public class Marmita extends BaseCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(UPG_COMIDO); // 2 → 3 de Comido
+            upgradeMagicNumber(UPG_COMIDO);
             initializeDescription();
         }
     }

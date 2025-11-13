@@ -35,10 +35,7 @@ public class FocoFino extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        // Aplica Chapado ao inimigo (usa magicNumber, que já pode ser modificado por Seda)
         addToBot(new ApplyPowerAction(m, p, new ChapadoPower(m, this.magicNumber), this.magicNumber));
-
-        // Compra cartas: base DRAW_AMOUNT, se upada compra DRAW_BONUS_UPG a mais
         int draws = DRAW_AMOUNT + (upgraded ? DRAW_BONUS_UPG : 0);
         addToBot(new DrawCardAction(p, draws));
     }

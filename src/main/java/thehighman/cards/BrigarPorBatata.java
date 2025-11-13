@@ -38,11 +38,8 @@ public class BrigarPorBatata extends BaseCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new DamageAction(m, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL),
                 AbstractGameAction.AttackEffect.BLUNT_LIGHT));
-
         if (m.hasPower(LaricaPower.POWER_ID)) {
-            // Remove 1 de Larica do inimigo
             addToBot(new ReducePowerAction(m, p, LaricaPower.POWER_ID, 1));
-            // Ganha 1 stack de Comido
             addToBot(new ApplyPowerAction(p, p, new ComidoPower(p, 1), 1));
         }
     }
@@ -50,8 +47,8 @@ public class BrigarPorBatata extends BaseCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeDamage(UPG_DAMAGE);     // 6 → 9 de dano
-            upgradeMagicNumber(1);         // opcional: se quiser escalar Comido ou remover mais Larica
+            upgradeDamage(UPG_DAMAGE);
+            upgradeMagicNumber(1);
             initializeDescription();
         }
     }

@@ -31,7 +31,6 @@ public class AtaqueDeVazio extends BaseCard {
         super(ID, info);
         setDamage(BASE_DAMAGE);
         this.exhaust = true;
-        this.keywords.add("larica");
         initializeDescription();
     }
 
@@ -40,8 +39,6 @@ public class AtaqueDeVazio extends BaseCard {
         // Dano base
         addToBot(new DamageAction(m, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL),
                 AbstractGameAction.AttackEffect.BLUNT_LIGHT));
-
-        // Se estiver com Larica, causa dano extra e consome 1 stack
         if (p.hasPower(LaricaPower.POWER_ID) && p.getPower(LaricaPower.POWER_ID).amount >= 1) {
             addToBot(new DamageAction(m, new DamageInfo(p, BONUS_DAMAGE, DamageInfo.DamageType.NORMAL),
                     AbstractGameAction.AttackEffect.FIRE));

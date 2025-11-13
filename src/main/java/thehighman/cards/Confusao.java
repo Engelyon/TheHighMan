@@ -25,7 +25,6 @@ public class Confusao extends BaseCard {
         super(ID, info);
         setDamage(DAMAGE);
         this.cardsToPreview = new BadTrip();
-        this.keywords.add("bad trip");
         initializeDescription();
     }
 
@@ -38,7 +37,7 @@ public class Confusao extends BaseCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeDamage(5); // 5 → 8 de dano
+            upgradeDamage(5);
             initializeDescription();
         }
     }

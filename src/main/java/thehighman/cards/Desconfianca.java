@@ -26,23 +26,19 @@ public class Desconfianca extends BaseCard {
     public Desconfianca() {
         super(ID, info);
         setBlock(BLOCK, UPG_BLOCK);
-        this.keywords.add("larica");
         initializeDescription();
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        // Ganha bloqueio
         addToBot(new GainBlockAction(p, this.block));
-
-        // Aplica Larica ao inimigo
         addToBot(new ApplyPowerAction(m, p, new LaricaPower(m, LARICA_AMOUNT), LARICA_AMOUNT));
     }
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeBlock(UPG_BLOCK); // 12 → 16 de Bloqueio
+            upgradeBlock(UPG_BLOCK);
             initializeDescription();
         }
     }

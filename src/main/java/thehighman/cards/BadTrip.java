@@ -21,7 +21,7 @@ public class BadTrip extends BaseCard {
             CardType.CURSE,
             CardRarity.CURSE,
             CardTarget.NONE,
-            -2 // não pode ser jogada
+            -2
     );
 
     public BadTrip() {

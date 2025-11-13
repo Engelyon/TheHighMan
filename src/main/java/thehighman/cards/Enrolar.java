@@ -29,7 +29,6 @@ public class Enrolar extends BaseCard {
         super(ID, info);
         setDamage(DAMAGE, UPG_DAMAGE);
         setMagic(ERVA_AMOUNT);
-        this.keywords.add("erva");
         initializeDescription();
     }
 
@@ -37,15 +36,15 @@ public class Enrolar extends BaseCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new DamageAction(m, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL),
                 AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
-
         addToBot(new ApplyPowerAction(p, p, new ErvaPower(p, this.magicNumber), this.magicNumber));
     }
+
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeDamage(UPG_DAMAGE);     // 7 → 10 de dano
-            upgradeMagicNumber(1);         // 1 → 2 de Erva
+            upgradeDamage(UPG_DAMAGE);
+            upgradeMagicNumber(1);
             initializeDescription();
         }
     }

@@ -27,7 +27,6 @@ public class Inspiracao extends BaseCard {
         super(ID, info);
         setMagic(ERVA_GAIN, UPG_ERVA);
         this.exhaust = true;
-        this.keywords.add("erva");
         initializeDescription();
     }
 

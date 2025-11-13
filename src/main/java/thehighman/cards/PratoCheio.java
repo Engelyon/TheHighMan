@@ -25,7 +25,6 @@ public class PratoCheio extends BaseCard {
         super(ID, info);
         setMagic(COMIDO_AMOUNT, UPG_COMIDO);
         this.setExhaust(true);
-        this.keywords.add("comido");
         initializeDescription();
     }
 
@@ -37,7 +36,7 @@ public class PratoCheio extends BaseCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(UPG_COMIDO); // 2 → 3 de Comido
+            upgradeMagicNumber(UPG_COMIDO);
             initializeDescription();
         }
     }

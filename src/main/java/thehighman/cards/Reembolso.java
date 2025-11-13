@@ -35,8 +35,6 @@ public class Reembolso extends BaseCard {
         setDamage(DAMAGE, UPG_DAMAGE);
         setMagic(CHANGE, CHANGE_UPG);
         this.exhaust=true;
-        this.keywords.add("fume");
-        this.keywords.add("seda");
         initializeDescription();
     }
 

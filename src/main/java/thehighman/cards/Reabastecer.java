@@ -26,7 +26,6 @@ public class Reabastecer extends BaseCard {
         super(ID, info);
         setMagic(ERVA_GAIN, 4);
         this.exhaust=true;
-        this.keywords.add("erva");
         initializeDescription();
     }
 

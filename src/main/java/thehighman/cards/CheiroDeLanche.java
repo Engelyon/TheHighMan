@@ -27,7 +27,6 @@ public class CheiroDeLanche extends BaseCard {
     public CheiroDeLanche() {
         super(ID, info);
         setDamage(BASE_DAMAGE, BASE_DAMAGE_UPG);
-        this.keywords.add("larica");
         initializeDescription();
     }
 

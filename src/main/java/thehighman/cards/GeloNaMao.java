@@ -31,7 +31,6 @@ public class GeloNaMao extends BaseCard {
         setDamage(DAMAGE);
         this.exhaust = false;
         setDamage(DAMAGE, 2);
-        this.keywords.add("bad trip");
         initializeDescription();
     }
 

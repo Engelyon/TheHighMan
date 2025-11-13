@@ -20,7 +20,6 @@ public class Cozinhar extends BaseCard {
 
     public Cozinhar() {
         super(ID, info);
-        this.keywords.add("cozinhar");
         initializeDescription();
     }
 
@@ -33,7 +32,7 @@ public class Cozinhar extends BaseCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeBaseCost(1); // 2 → 1 de custo
+            upgradeBaseCost(1);
             initializeDescription();
         }
     }

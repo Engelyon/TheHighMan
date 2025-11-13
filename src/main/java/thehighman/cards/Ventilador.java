@@ -29,7 +29,6 @@ public class Ventilador extends BaseCard {
         super(ID, info);
         setMagic(CHAPADO_AMOUNT);
         setBlock(BLOCK_PER_HIT, BLOCK_PER_HIT_UPG);
-        this.keywords.add("chapado");
         initializeDescription();
     }
 
