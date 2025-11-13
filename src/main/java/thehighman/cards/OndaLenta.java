@@ -34,8 +34,6 @@ public class OndaLenta extends BaseCard {
         setDamage(DAMAGE, UPG_DAMAGE);
         setMagic(CHAPADO_AMOUNT);
         this.exhaust = true;
-        setDamage(DAMAGE, UPG_DAMAGE);
-        setMagic(CHAPADO_AMOUNT);
         initializeDescription();
     }
 

@@ -13,7 +13,7 @@ public class ChapadoProximoTurnoPower extends BasePower {
     private final int amountPerTurn;
 
     public ChapadoProximoTurnoPower(AbstractCreature owner, int turns, int amountPerTurn) {
-        super(POWER_ID, PowerType.BUFF, true, owner, owner, turns);
+        super(POWER_ID, PowerType.DEBUFF, true, owner, owner, turns);
         this.turnsRemaining = turns;
         this.amountPerTurn = amountPerTurn;
         this.amount = this.turnsRemaining;
