@@ -40,7 +40,8 @@ public class LaricaDePoder extends BaseCard {
         for (int i = 0; i < p.getPower(ComidoPower.POWER_ID).amount; i++) {
             addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
         }
-        addToBot(new ReducePowerAction(p, p, ComidoPower.POWER_ID, p.getPower(ComidoPower.POWER_ID).amount));
+        addToBot(new ReducePowerAction(p, p, ComidoPower.POWER_ID, p.getPower(ComidoPower.POWER_ID).amount-1));
+        addToBot(new ReducePowerAction(p, p, ComidoPower.POWER_ID, 1));
     }
 
     @Override
