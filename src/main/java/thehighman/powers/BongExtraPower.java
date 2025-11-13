@@ -26,7 +26,6 @@ public class BongExtraPower extends BasePower {
     @Override
     public void updateDescription() {
         int blockPerTrigger = getBlockPerTrigger();
-        // DESCRIPTIONS vem do PowerStrings carregado pelo BasePower/arquitetura do mod
         description = DESCRIPTIONS[0] + blockPerTrigger + DESCRIPTIONS[1];
     }
 
@@ -39,7 +38,7 @@ public class BongExtraPower extends BasePower {
 
     @Override
     public void onApplyPower(AbstractPower power, AbstractCreature target, AbstractCreature source) {
-        if (target != owner && power.ID.equals("thehighman:Larica")) {
+        if (target != owner && power.ID.equals(LaricaPower.POWER_ID)) {
             flash();
             addToBot(new DrawCardAction(1));
             pendingBlock += getBlockPerTrigger();
