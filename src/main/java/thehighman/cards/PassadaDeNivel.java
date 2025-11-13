@@ -3,6 +3,7 @@ package thehighman.cards;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
+import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -39,18 +40,14 @@ public class PassadaDeNivel extends BaseCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new DrawCardAction(p, this.magicNumber));
-        int ervaStacks = p.getPower(ErvaPower.POWER_ID).amount;
-        if (ervaStacks >= C_ERVA) {
+        if (p.getPower(ErvaPower.POWER_ID).amount >= C_ERVA) {
             addToBot(new com.megacrit.cardcrawl.actions.common.GainEnergyAction(ENERGIA));
+            addToBot(new ReducePowerAction(p, p, ErvaPower.POWER_ID, C_ERVA));
         }
     }
     @Override
     public void upgrade() {
-        if (!upgraded) {
-            upgradeName();
-            upgradeMagicNumber(UPG_DRAW);
-            initializeDescription();
-        }
+        super.upgrade();
     }
     @Override
     public void triggerOnGlowCheck() {
