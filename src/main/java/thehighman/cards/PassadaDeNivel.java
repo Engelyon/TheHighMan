@@ -40,10 +40,15 @@ public class PassadaDeNivel extends BaseCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new DrawCardAction(p, this.magicNumber));
-        if (p.getPower(ErvaPower.POWER_ID).amount >= C_ERVA) {
-            addToBot(new com.megacrit.cardcrawl.actions.common.GainEnergyAction(ENERGIA));
-            addToBot(new ReducePowerAction(p, p, ErvaPower.POWER_ID, C_ERVA));
+        try {
+            if (p.getPower(ErvaPower.POWER_ID).amount >= C_ERVA) {
+                addToBot(new com.megacrit.cardcrawl.actions.common.GainEnergyAction(ENERGIA));
+                addToBot(new ReducePowerAction(p, p, ErvaPower.POWER_ID, C_ERVA));
+            }
+        } catch (Exception e) {
+            throw new RuntimeException(e);
         }
+
     }
     @Override
     public void upgrade() {
