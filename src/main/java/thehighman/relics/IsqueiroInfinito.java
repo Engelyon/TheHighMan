@@ -11,7 +11,7 @@ import static thehighman.InimigosDoSpire.makeID;
 
 @AutoAdd.Seen
 public class IsqueiroInfinito extends BaseRelic {
-    private static final String NAME = "BongLimpo";
+    private static final String NAME = "IsqueiroInfinito";
     public static final String ID = makeID(NAME);
     private static final RelicTier RARITY = RelicTier.COMMON;
     private static final LandingSound SOUND = LandingSound.CLINK;
@@ -22,7 +22,7 @@ public class IsqueiroInfinito extends BaseRelic {
 
     @Override
     public void atTurnStart() {
-        if (!AbstractDungeon.player.hasPower("thehighman:Erva")) {
+        if (!AbstractDungeon.player.hasPower(ErvaPower.POWER_ID)) {
             flash();
             addToBot(new ApplyPowerAction(
                     AbstractDungeon.player,

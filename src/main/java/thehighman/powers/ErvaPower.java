@@ -10,12 +10,9 @@ import static thehighman.InimigosDoSpire.makeID;
 
 public class ErvaPower extends BasePower {
     public static final String POWER_ID = makeID("ErvaPower");
-    //private static final PowerStrings powerStrings = com.megacrit.cardcrawl.core.CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
 
     public ErvaPower(AbstractCreature owner, int amount) {
         super(POWER_ID, PowerType.BUFF, false, owner, amount);
-
-        //this.img = ImageMaster.loadImage("thehighman/images/powers/large/ErvaPower.jpg");
         this.updateDescription();
     }
 

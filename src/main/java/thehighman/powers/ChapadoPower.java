@@ -38,7 +38,6 @@ public class ChapadoPower extends BasePower{
     public void stackPower(int stackAmount) {
         setStackFontScale();
         this.amount += stackAmount;
-        boolean m = this.owner instanceof AbstractMonster;
         if (this.amount >= 20) {
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(owner, owner, new LaricaPower(owner, 1), 1));
             this.amount = 5;

@@ -8,6 +8,7 @@ import com.evacipated.cardcrawl.modthespire.lib.SpireReturn;
 import thehighman.powers.ChapadoPower;
 import thehighman.powers.LaricaPower;
 import java.lang.reflect.Field;
+import java.lang.reflect.Method;
 
 @SpirePatch(
         clz = ChapadoPower.class,
@@ -26,13 +27,14 @@ public class TogetherInSpirePatch {
                 return true;
             }
             Class<?> p2pClass = Class.forName("spireTogether.network.P2P.P2PManager");
-            Field selfIDField = p2pClass.getField("selfID");
-            Object selfIDObj = selfIDField.get(null);
-            if (selfIDObj instanceof Integer) {
-                return (Integer) selfIDObj == 0;
+            Method getSelfMethod = p2pClass.getMethod("GetSelf");
+            Object selfPlayer = getSelfMethod.invoke(null);
+            Method getLobbyOwnerMethod = p2pClass.getMethod("GetLobbyOwner");
+            Object lobbyOwnerPlayer = getLobbyOwnerMethod.invoke(null);
+            if (selfPlayer == null || lobbyOwnerPlayer == null) {
+                return false;
             }
-            return false;
-
+            return selfPlayer==lobbyOwnerPlayer;
         } catch (Exception e) {
             return true;
         }
