@@ -33,7 +33,9 @@ public class ChapadoPower extends BasePower{
         this.fontScale = 8.0F;
         this.amount += stackAmount;
         if (this.amount >= 20) {
-            addToBot(new ApplyPowerAction(this.owner, this.owner, new ChapadoPower(this.owner, 1), 1));
+            AbstractDungeon.actionManager.addToBottom(
+                    new ApplyPowerAction(owner, owner, new LaricaPower(owner, 1), 1)
+            );
             this.amount = 5;
         }
         updateDescription();
