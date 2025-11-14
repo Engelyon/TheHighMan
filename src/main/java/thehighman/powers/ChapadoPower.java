@@ -1,10 +1,12 @@
 package thehighman.powers;
 
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
 import static thehighman.InimigosDoSpire.makeID;
@@ -20,6 +22,10 @@ public class ChapadoPower extends BasePower{
         updateDescription();
     }
 
+    public void setStackFontScale() {
+        this.fontScale = 8.0F;
+    }
+
     @Override
     public float atDamageGive(float damage, DamageInfo.DamageType type) {
         if (type == DamageInfo.DamageType.NORMAL) {
@@ -30,12 +36,11 @@ public class ChapadoPower extends BasePower{
 
     @Override
     public void stackPower(int stackAmount) {
-        this.fontScale = 8.0F;
+        setStackFontScale();
         this.amount += stackAmount;
+        boolean m = this.owner instanceof AbstractMonster;
         if (this.amount >= 20) {
-            AbstractDungeon.actionManager.addToBottom(
-                    new ApplyPowerAction(owner, owner, new LaricaPower(owner, 1), 1)
-            );
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(owner, owner, new LaricaPower(owner, 1), 1));
             this.amount = 5;
         }
         updateDescription();
@@ -53,6 +58,7 @@ public class ChapadoPower extends BasePower{
             }
         }
     }
+
     public void updateDescription() {
         float reducao = 5f * amount;
         this.description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1] + reducao + DESCRIPTIONS[2];

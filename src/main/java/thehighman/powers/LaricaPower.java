@@ -44,7 +44,7 @@ public class LaricaPower extends BasePower {
         );
         this.amount += stackAmount;
         this.appliedStacks += stackAmount;
-        if (this.appliedStacks < 0) this.appliedStacks = 0; // segurança
+        if (this.appliedStacks < 0) this.appliedStacks = 0;
         this.updateDescription();
     }
 

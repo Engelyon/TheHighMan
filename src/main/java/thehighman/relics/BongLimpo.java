@@ -6,16 +6,19 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import thehighman.cards.LimparOBong;
+import thehighman.character.TheHighman;
+
+import static thehighman.InimigosDoSpire.makeID;
 
 public class BongLimpo extends BaseRelic {
-    public static final String ID = "highman:BongLimpo";
+    private static final String NAME = "BongLimpo";
+    public static final String ID = makeID(NAME);
+    private static final RelicTier RARITY = RelicTier.STARTER;
+    private static final LandingSound SOUND = LandingSound.CLINK;
 
     public BongLimpo() {
-        super(ID,
-                RelicTier.STARTER,
-                LandingSound.FLAT);
+        super(ID, NAME, TheHighman.Meta.CARD_COLOR, RARITY, SOUND);
     }
-
     @Override
     public void atBattleStart() {
         this.flash();
