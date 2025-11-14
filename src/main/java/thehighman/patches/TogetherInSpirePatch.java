@@ -43,31 +43,32 @@ public class TogetherInSpirePatch {
 
     private static boolean isHostOrSinglePlayer() {
         try {
-            // --- 1. Checa o estado da conexão (SpireTogetherMod.isConnected) ---
             Class<?> modClass = Class.forName("spireTogether.SpireTogetherMod");
             Field isConnectedField = modClass.getField("isConnected");
             boolean isConnected = isConnectedField.getBoolean(null);
-
             if (!isConnected) {
-                return true; // Single-player, pode aplicar.
+                return true;
             }
-
-            // --- 2. Prepara as classes e métodos de Reflexão ---
             Class<?> p2pClass = Class.forName("spireTogether.network.P2P.P2PManager");
-            // A classe P2PPlayer é a superclasse de PFPlayer, SteamPlayer, etc.
             Class<?> playerClass = Class.forName("spireTogether.network.P2P.P2PPlayer");
-
-            // Pega os métodos que vamos precisar
+            Class<?> locationClass = Class.forName("spireTogether.network.objects.rooms.NetworkLocation");
             Method getSelfMethod = p2pClass.getMethod("GetSelf");
             Method getAllPlayersMethod = p2pClass.getMethod("GetAllPlayers", boolean.class);
-            Method inSameRoomMethod = playerClass.getMethod("IsPlayerInSameRoomAndAction");
-            Field idField = playerClass.getField("id"); // O campo 'id'
+            Field idField = playerClass.getField("id");
 
-            // --- 3. Pega o nosso próprio ID ---
+            // Esta é a nossa suposição: que o campo de localização se chama "location"
+            Field locationField = playerClass.getField("location");
+            // O método .equals() para comparar dois objetos NetworkLocation
+            Method locationEqualsMethod = locationClass.getMethod("equals", Object.class);
+
+            // --- 3. Pega NOSSOS dados (ID e Localização) ---
             Object selfPlayer = getSelfMethod.invoke(null);
             if (selfPlayer == null) return false; // Rede não está pronta
+
             Integer selfId = (Integer) idField.get(selfPlayer);
-            if (selfId == null) return false; // Rede não está pronta
+            Object selfLocation = locationField.get(selfPlayer); // Pega nosso objeto de localização
+
+            if (selfId == null || selfLocation == null) return false; // Rede não está pronta
 
             // --- 4. Encontra o ID mais baixo NA NOSSA SALA ---
             Object iteratorObj = getAllPlayersMethod.invoke(null, true); // true = incluir a si mesmo
@@ -78,15 +79,20 @@ public class TogetherInSpirePatch {
             while (playerIterator.hasNext()) {
                 Object currentPlayer = playerIterator.next();
 
-                // Verifica se este jogador está na mesma sala/combate que nós
-                boolean inRoom = (Boolean) inSameRoomMethod.invoke(currentPlayer);
+                // Pega a localização do jogador atual
+                Object currentLocation = locationField.get(currentPlayer);
+                if (currentLocation == null) continue; // Pula jogador se a localização for nula
 
-                if (inRoom) {
+                // Compara a localização dele com a NOSSA localização
+                // (Equivalente a: currentLocation.equals(selfLocation))
+                boolean inSameRoom = (Boolean) locationEqualsMethod.invoke(currentLocation, selfLocation);
+
+                if (inSameRoom) {
                     // Se ele está na sala, pega o ID dele
                     Integer currentId = (Integer) idField.get(currentPlayer);
 
                     // Compara para ver se é o ID mais baixo encontrado até agora
-                    if (lowestIdInRoom == null || currentId < lowestIdInRoom) {
+                    if (lowestIdInRoom == null || (currentId != null && currentId < lowestIdInRoom)) {
                         lowestIdInRoom = currentId;
                     }
                 }
@@ -98,6 +104,7 @@ public class TogetherInSpirePatch {
 
         } catch (Exception e) {
             // Qualquer falha = Assume single-player
+            // (Se o campo "location" não existir, vai cair aqui e funcionar no single-player)
             return true;
         }
     }
