@@ -3,6 +3,8 @@ package thehighman.cards;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
+import com.megacrit.cardcrawl.actions.common.EmptyDeckShuffleAction;
+import com.megacrit.cardcrawl.actions.common.ShuffleAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -39,6 +41,9 @@ public class LoopMental extends BaseCard {
         addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
         boolean badtrip = false;
         for (int i = 0; i < magicNumber; i++) {
+            if( p.drawPile.isEmpty()){
+                addToBot(new EmptyDeckShuffleAction());
+            }
             if (Objects.equals(p.drawPile.getNCardFromTop(i).cardID, BadTrip.ID)){
                 badtrip = true;
                 addToBot(new DrawCardAction(p, 1));
