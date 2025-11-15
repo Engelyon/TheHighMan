@@ -1,6 +1,7 @@
 package thehighman.cards;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -25,15 +26,18 @@ public class PetiscoPotente extends BaseCard {
     private static final int UPG_COMIDO_GAIN = 1;
     private static final int COMIDO_THRESHOLD = 5;
     private static final int ENERGY_NEXT_TURN = 2;
+    private static final int BLOCK = 5;
 
     public PetiscoPotente() {
         super(ID, info);
         setMagic(COMIDO_GAIN, UPG_COMIDO_GAIN);
+        setBlock(BLOCK);
         initializeDescription();
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        addToBot(new GainBlockAction(p, BLOCK));
         addToBot(new ApplyPowerAction(p, p, new ComidoPower(p, magicNumber), magicNumber));
         if (p.hasPower(ComidoPower.POWER_ID) && p.getPower(ComidoPower.POWER_ID).amount >= COMIDO_THRESHOLD) {
             addToBot(new ApplyPowerAction(p,p, new EnergizedPower(p, ENERGY_NEXT_TURN), ENERGY_NEXT_TURN));

@@ -26,7 +26,7 @@ public class LoopMental extends BaseCard {
     );
 
     private static final int DAMAGE = 10;
-    private static final int DRAW = 2;// up: compra +3
+    private static final int DRAW = 2;
 
     public LoopMental() {
         super(ID, info);
@@ -37,27 +37,6 @@ public class LoopMental extends BaseCard {
         initializeDescription();
     }
 
-    /*@Override
-    public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
-        boolean badtrip = false;
-        if(p.drawPile.isEmpty()){
-            addToBot(new EmptyDeckShuffleAction());
-        }
-        for (int i = 0; i < magicNumber; i++) {
-            if(p.drawPile.isEmpty()){
-                addToBot(new EmptyDeckShuffleAction());
-            }
-            if (Objects.equals(p.drawPile.getNCardFromTop(0).cardID, BadTrip.ID)){
-                badtrip = true;
-            }
-            addToBot(new DrawCardAction(p, 1));
-        }
-        if (badtrip){
-            addToBot(new DrawCardAction(p, magicNumber));
-        }
-    }*/
-    
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));

@@ -19,7 +19,7 @@ public class Alivio extends BaseCard {
     private static final CardStats info = new CardStats(
             TheHighman.Meta.CARD_COLOR,
             CardType.SKILL,
-            CardRarity.BASIC,
+            CardRarity.COMMON,
             CardTarget.ENEMY,
             1
     );
@@ -27,7 +27,6 @@ public class Alivio extends BaseCard {
     private static final int CHAPADO = 1;
     private static final int BLOCK = 5;
     private static final int BLOCK_UPG = 3;
-    private static final int ERVA_COST = 1;
 
     public Alivio() {
         super(ID, info);

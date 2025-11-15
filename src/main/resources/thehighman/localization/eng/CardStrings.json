@@ -1,8 +1,8 @@
 {
   "${modID}:AlimentoDivino": {
     "NAME": "Divine Food",
-    "DESCRIPTION": "Gain 5 ${modID}:Grub. If you have at least 10 ${modID}:Grub, receive immunity from ${modID}:BadTrip Damage.",
-    "UPGRADE_DESCRIPTION": "Gain 5 ${modID}:Grub. If you have at least 10 ${modID}:Grub, receive immunity from ${modID}:BadTrip Damage."
+    "DESCRIPTION": "Gain !B! Block. Gain 5 ${modID}:Grub. If you have at least 10 ${modID}:Grub, receive immunity from ${modID}:BadTrip Damage.",
+    "UPGRADE_DESCRIPTION": "Gain !B! Block. Gain 5 ${modID}:Grub. If you have at least 10 ${modID}:Grub, receive immunity from ${modID}:BadTrip Damage."
   },
   "${modID}:Alivio": {
     "NAME": "Relief",
@@ -11,8 +11,8 @@
   },
   "${modID}:AlmocoDeGraca": {
     "NAME": "Free Lunch",
-    "DESCRIPTION": "Gain 2 ${modID}:Grub. If you have at least 10 ${modID}:Grub, gain 2 Energy.",
-    "UPGRADE_DESCRIPTION": "Gain 2 ${modID}:Grub. If you have at least 10 ${modID}:Grub, gain 2 Energy."
+    "DESCRIPTION": "Gain !B! Block. Gain 2 ${modID}:Grub. If you have at least 10 ${modID}:Grub, gain 2 Energy.",
+    "UPGRADE_DESCRIPTION": "Gain !B! Block. Gain 2 ${modID}:Grub. If you have at least 10 ${modID}:Grub, gain 2 Energy."
   },
   "${modID}:Almondega": {
     "NAME": "Meatball",
@@ -206,8 +206,8 @@
   },
   "${modID}:Inspiracao": {
     "NAME": "Inspiration",
-    "DESCRIPTION": "Gain !M! ${modID}:Weed. gain 1 ${modID}:Papes. Exhaust.",
-    "UPGRADE_DESCRIPTION": "Gain !M! ${modID}:Weed. gain 1 ${modID}:Papes. Exhaust."
+    "DESCRIPTION": "Gain !B! Block. Gain !M! ${modID}:Weed. gain 1 ${modID}:Papes. Exhaust.",
+    "UPGRADE_DESCRIPTION": "GGain !B! Block. ain !M! ${modID}:Weed. gain 1 ${modID}:Papes. Exhaust."
   },
   "${modID}:LaricaDePoder": {
     "NAME": "Power Munchies",
@@ -236,8 +236,8 @@
   },
   "${modID}:MaoSanta": {
     "NAME": "Saint Hand",
-    "DESCRIPTION": "Gain !M! ${modID}:Papes and !M! ${modID}:Weed.",
-    "UPGRADE_DESCRIPTION": "Gain !M! ${modID}:Papes and !M! ${modID}:Weed."
+    "DESCRIPTION": "Gain !B! Block. Gain !M! ${modID}:Papes and !M! ${modID}:Weed.",
+    "UPGRADE_DESCRIPTION": "Gain !B! Block. Gain !M! ${modID}:Papes and !M! ${modID}:Weed."
   },
   "${modID}:MarDeFumaca": {
     "NAME": "Haze Wave",
@@ -271,8 +271,8 @@
   },
   "${modID}:PetiscoPotente": {
     "NAME": "Powerful Snack",
-    "DESCRIPTION": "Gain !M! ${modID}:Grub. If you have 5+ ${modID}:Grub, Gain 2 Energy next turn.",
-    "UPGRADE_DESCRIPTION": "Gain !M! ${modID}:Grub. If you have 5+ ${modID}:Grub, Gain 2 Energy next turn."
+    "DESCRIPTION": "Gain !B! Block. Gain !M! ${modID}:Grub. If you have 5+ ${modID}:Grub, Gain 2 Energy next turn.",
+    "UPGRADE_DESCRIPTION": "Gain !B! Block. Gain !M! ${modID}:Grub. If you have 5+ ${modID}:Grub, Gain 2 Energy next turn."
   },
   "${modID}:PizzaAtomica": {
     "NAME": "Atomic Pizza",
@@ -286,8 +286,8 @@
   },
   "${modID}:PratoCheio": {
     "NAME": "Full Plate",
-    "DESCRIPTION": "Gain !M! ${modID}:Grub. Exhaust.",
-    "UPGRADE_DESCRIPTION": "Gain !M! ${modID}:Grub. Exhaust."
+    "DESCRIPTION": "Gain !B! Block. Gain !M! ${modID}:Grub. Exhaust.",
+    "UPGRADE_DESCRIPTION": "Gain !B! Block. Gain !M! ${modID}:Grub. Exhaust."
   },
   "${modID}:Reabastecer": {
     "NAME": "Restock",

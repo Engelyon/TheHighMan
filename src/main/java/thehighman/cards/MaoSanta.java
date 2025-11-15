@@ -2,6 +2,7 @@ package thehighman.cards;
 
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -23,20 +24,20 @@ public class MaoSanta extends BaseCard {
     );
 
     private static final int BUFF_AMOUNT = 1;
-
+    private static final int BLOCK = 6;
     private static final int UPG_BUFF = 1;
 
     public MaoSanta() {
         super(ID, info);
         setMagic(BUFF_AMOUNT, UPG_BUFF);
-        this.keywords.add("seda");
-        this.keywords.add("erva");
+        setBlock(BLOCK);
         initializeDescription();
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new VFXAction(new InflameEffect(p)));
+        addToBot(new GainBlockAction(p, BLOCK));
         AbstractDungeon.actionManager.addToBottom(
                 new ApplyPowerAction(p, p, new SedaPower(p, p, this.magicNumber), this.magicNumber)
         );

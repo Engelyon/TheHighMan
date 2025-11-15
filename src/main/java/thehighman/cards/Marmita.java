@@ -14,9 +14,9 @@ public class Marmita extends BaseCard {
     private static final CardStats info = new CardStats(
             TheHighman.Meta.CARD_COLOR,
             CardType.SKILL,
-            CardRarity.COMMON,
+            CardRarity.BASIC,
             CardTarget.SELF,
-            1
+            2
     );
 
     private static final int COMIDO_AMOUNT = 2;
