@@ -44,10 +44,10 @@ public class LoopMental extends BaseCard {
             if( p.drawPile.isEmpty()){
                 addToBot(new EmptyDeckShuffleAction());
             }
-            if (Objects.equals(p.drawPile.getNCardFromTop(i).cardID, BadTrip.ID)){
+            if (Objects.equals(p.drawPile.getNCardFromTop(0).cardID, BadTrip.ID)){
                 badtrip = true;
-                addToBot(new DrawCardAction(p, 1));
             }
+            addToBot(new DrawCardAction(p, 1));
         }
         if (badtrip){
             addToBot(new DrawCardAction(p, magicNumber));
