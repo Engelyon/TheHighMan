@@ -6,8 +6,8 @@
   },
   "${modID}:Alivio": {
     "NAME": "Relief",
-    "DESCRIPTION": "Gain !B! Block. ${modID}:Smoke 1 to apply !M! ${modID}:High to the enemy.",
-    "UPGRADE_DESCRIPTION": "Gain !B! Block. ${modID}:Smoke 1 to apply !M! ${modID}:High to the enemy."
+    "DESCRIPTION": "Gain !B! Block. Apply !M! ${modID}:High to the enemy.",
+    "UPGRADE_DESCRIPTION": "Gain !B! Block. Apply !M! ${modID}:High to the enemy."
   },
   "${modID}:AlmocoDeGraca": {
     "NAME": "Free Lunch",
@@ -331,8 +331,8 @@
   },
   "${modID}:SemPressa": {
     "NAME": "No Hurry",
-    "DESCRIPTION": "Retain. Gain !B! de Block. Each turn retained add +2 Block. Exhaust.",
-    "UPGRADE_DESCRIPTION": "Retain. Gain !B! de Block. Each turn retained add +3 Block. Exhaust."
+    "DESCRIPTION": "Retain. Gain !B! Block. Each turn retained add +2 Block. Exhaust.",
+    "UPGRADE_DESCRIPTION": "Retain. Gain !B! Block. Each turn retained add +3 Block. Exhaust."
   },
   "${modID}:SoproRelaxante": {
     "NAME": "Relaxing Breath",

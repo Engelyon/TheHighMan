@@ -40,8 +40,11 @@ public class LoopMental extends BaseCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
         boolean badtrip = false;
+        if(p.drawPile.isEmpty()){
+            addToBot(new EmptyDeckShuffleAction());
+        }
         for (int i = 0; i < magicNumber; i++) {
-            if( p.drawPile.isEmpty()){
+            if(p.drawPile.isEmpty()){
                 addToBot(new EmptyDeckShuffleAction());
             }
             if (Objects.equals(p.drawPile.getNCardFromTop(0).cardID, BadTrip.ID)){

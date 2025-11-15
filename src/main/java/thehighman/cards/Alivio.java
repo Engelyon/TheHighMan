@@ -39,9 +39,6 @@ public class Alivio extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (p != null && p.hasPower(ErvaPower.POWER_ID) && p.getPower(ErvaPower.POWER_ID).amount >= ERVA_COST) {
-            addToBot(new ReducePowerAction(p, p, ErvaPower.POWER_ID, ERVA_COST));
-        }
         addToBot(new ApplyPowerAction(m, p, new ChapadoPower(m, this.magicNumber), this.magicNumber));
         addToBot(new GainBlockAction(p, p, this.block));
     }

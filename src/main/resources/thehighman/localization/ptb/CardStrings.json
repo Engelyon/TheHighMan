@@ -6,8 +6,8 @@
   },
   "${modID}:Alivio": {
     "NAME": "Alivio",
-    "DESCRIPTION": "Ganhe !B! de Proteção. ${modID}:Fume 1 para aplicar !M! de ${modID}:Chapado em um inimigo.",
-    "UPGRADE_DESCRIPTION": "Ganhe !B! de Proteção. ${modID}:Fume1 para aplicar !M! de ${modID}:Chapado em um inimigo."
+    "DESCRIPTION": "Ganhe !B! de Proteção. Aplique !M! de ${modID}:Chapado em um inimigo.",
+    "UPGRADE_DESCRIPTION": "Ganhe !B! de Proteção. Aplique !M! de ${modID}:Chapado em um inimigo."
   },
   "${modID}:AlmocoDeGraca": {
     "NAME": "Almoço De Graça",
