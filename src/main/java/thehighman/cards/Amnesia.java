@@ -2,6 +2,7 @@ package thehighman.cards;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.ExhaustAction;
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thehighman.character.TheHighman;
@@ -22,16 +23,19 @@ public class Amnesia extends BaseCard {
     );
 
     private static final int ERVA_GAIN = 2;
+    private static final int BLOCK = 12;
 
     public Amnesia() {
         super(ID, info);
         this.exhaust = true;
+        setBlock(BLOCK);
         this.cardsToPreview = new BadTrip();
         initializeDescription();
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        addToBot(new GainBlockAction(p, BLOCK));
         if (!upgraded) {
             addToBot(new ExhaustAction(2, true, false, false));
             int badtripsEX = 0;

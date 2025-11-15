@@ -1,8 +1,8 @@
 {
   "${modID}:AlimentoDivino": {
     "NAME": "Divine Food",
-    "DESCRIPTION": "Gain !B! Block. Gain 5 ${modID}:Grub. If you have at least 10 ${modID}:Grub, receive immunity from ${modID}:BadTrip Damage.",
-    "UPGRADE_DESCRIPTION": "Gain !B! Block. Gain 5 ${modID}:Grub. If you have at least 10 ${modID}:Grub, receive immunity from ${modID}:BadTrip Damage."
+    "DESCRIPTION": "Gain 5 ${modID}:Grub. If you have at least 10 ${modID}:Grub, heal HP equals to your ${modID}:Grub. Exhaust",
+    "UPGRADE_DESCRIPTION": "Gain 5 ${modID}:Grub. If you have at least 10 ${modID}:Grub, heal HP equals to your ${modID}:Grub. Exhaust."
   },
   "${modID}:Alivio": {
     "NAME": "Relief",
@@ -16,18 +16,18 @@
   },
   "${modID}:Almondega": {
     "NAME": "Meatball",
-    "DESCRIPTION": "Gain 1 ${modID}:Grub and 1 ${modID}:Munchies. Exhaust.",
-    "UPGRADE_DESCRIPTION": "Gain 1 ${modID}:Grub and 1 ${modID}:Munchies. Exhaust."
+    "DESCRIPTION": "Gain !M! ${modID}:Grub and 1 ${modID}:Munchies. Exhaust.",
+    "UPGRADE_DESCRIPTION": "Gain !M! ${modID}:Grub and 1 ${modID}:Munchies. Exhaust."
   },
   "${modID}:Amnesia": {
     "NAME": "Amnesia",
-    "DESCRIPTION": "Exhaust 2 random cards from your hand. For each ${modID}:BadTrip exhausted, gain 2 ${modID}:Weed. Exhaust.",
-    "UPGRADE_DESCRIPTION": "Exhaust 2 cards from your hand. For each ${modID}:BadTrip exhausted, gain 2 ${modID}:Weed. Exhaust."
+    "DESCRIPTION": "Gain !B! Block. Exhaust 2 random cards from your hand. For each ${modID}:BadTrip exhausted, gain 2 ${modID}:Weed. Exhaust.",
+    "UPGRADE_DESCRIPTION": "Gain !B! Block. Exhaust 2 cards from your hand. For each ${modID}:BadTrip exhausted, gain 2 ${modID}:Weed. Exhaust."
   },
   "${modID}:Analisar": {
     "NAME": "Analyze",
-    "DESCRIPTION": "Draw !M! cards. If any enemy has 5 or more ${modID}:High, gain 1 ${modID}:Papes.",
-    "UPGRADE_DESCRIPTION": "Draw !M! cards. If any enemy has 5 or more ${modID}:High, gain 1 ${modID}:Papes."
+    "DESCRIPTION": "Draw !M! cards. Gain 1 ${modID}:Papes.",
+    "UPGRADE_DESCRIPTION": "Draw !M! cards. Gain 1 ${modID}:Papes."
   },
   "${modID}:Aperitivo": {
     "NAME": "Appetizer",
@@ -36,8 +36,8 @@
   },
   "${modID}:AtaqueDeVazio": {
     "NAME": "Hollow Attack",
-    "DESCRIPTION": "Deal !D! Damage. If you have ${modID}:Munchies, deal 10 additional Damage and lose 1 ${modID}:Munchies. Exhaust.",
-    "UPGRADE_DESCRIPTION": "Deal !D! Damage. If you have ${modID}:Munchies, deal 10 additional Damage and lose 1 ${modID}:Munchies."
+    "DESCRIPTION": "Deal !D! Damage. Repeat for each ${modID}:Munchies you have. Exhaust.",
+    "UPGRADE_DESCRIPTION": "Deal !D! Damage. Repeat for each ${modID}:Munchies you have. Exhaust."
   },
   "${modID}:AtaqueFaminto": {
     "NAME": "Hungry Attack",
@@ -91,8 +91,8 @@
   },
   "${modID}:BuchimChei": {
     "NAME": "Full Belly",
-    "DESCRIPTION": "Double your ${modID}:Grub.",
-    "UPGRADE_DESCRIPTION": "Triple your ${modID}:Grub."
+    "DESCRIPTION": "Gain !M! ${modID}:Grub. Double your ${modID}:Grub. Exhaust",
+    "UPGRADE_DESCRIPTION": "Gain !M! ${modID}:Grub. Double your ${modID}:Grub."
   },
   "${modID}:Burgao": {
     "NAME": "Borgir",
@@ -116,8 +116,8 @@
   },
   "${modID}:ComeAi": {
     "NAME": "Eat This!",
-    "DESCRIPTION": "Deal !D! Damage. If you have 3+ ${modID}:Grub, ${modID}:Eat all and gain 1 energy per stack.",
-    "UPGRADE_DESCRIPTION": "Deal !D! Damage. If you have 3+ ${modID}:Grub, ${modID}:Eat all and gain 1 energy per stack."
+    "DESCRIPTION": "Deal !D! Damage. If the enemy has ${modID}:Munchies, ${modID}:Eat 1 and remove all of the enemie's ${modID}:Munchies.",
+    "UPGRADE_DESCRIPTION": "Deal !D! Damage. If the enemy has ${modID}:Munchies, ${modID}:Eat 1 and remove all of the enemie's ${modID}:Munchies."
   },
   "${modID}:CompreensaoElevada": {
     "NAME": "Elevated Comprehension",
@@ -141,8 +141,8 @@
   },
   "${modID}:Desconfianca": {
     "NAME": "Distrust",
-    "DESCRIPTION": "Apply 1 ${modID}:Munchies to the enemy. Gain !B! Block.",
-    "UPGRADE_DESCRIPTION": "Apply 1 ${modID}:Munchies to the enemy. Gain !B! Block."
+    "DESCRIPTION": "Gain !B! Block. Gain 1 ${modID}:Munchies.",
+    "UPGRADE_DESCRIPTION": "Gain !B! Block. Gain 1 ${modID}:Munchies."
   },
   "${modID}:EaPotencia": {
     "NAME": "THE POWER",
@@ -176,7 +176,7 @@
   },
   "${modID}:FocoFino": {
     "NAME": "Fine Focus",
-    "DESCRIPTION": "Apply !M! ${modID}:High to the enemy. Draw 1 card.",
+    "DESCRIPTION": "Apply !M! ${modID}:High to the enemy. Draw 2 cards.",
     "UPGRADE_DESCRIPTION": "Apply !M! ${modID}:High to the enemy. Draw 2 cards."
   },
   "${modID}:Fritura": {
@@ -211,8 +211,8 @@
   },
   "${modID}:LaricaDePoder": {
     "NAME": "Power Munchies",
-    "DESCRIPTION": "Deal !D! Damage for each ${modID}:Grub you have. Lose all your ${modID}:Grub.",
-    "UPGRADE_DESCRIPTION": "Deal !D! Damage for each ${modID}:Grub you have. Lose all your ${modID}:Grub."
+    "DESCRIPTION": "Deal !D! . Apply 1 ${modID}:Munchies. Deal damage equals twice the enemies ${modID}:Munchies colateral damage. Exhaust.",
+    "UPGRADE_DESCRIPTION": "Deal !D! . Apply 1 ${modID}:Munchies. Deal damage equals twice the enemies ${modID}:Munchies colateral damage."
   },
   "${modID}:LaricaPesada": {
     "NAME": "Heavy Munchies",
@@ -221,8 +221,8 @@
   },
   "${modID}:LimparAMente": {
     "NAME": "Clear Your Mind",
-    "DESCRIPTION": "Discard 2 cards. Gain !M! ${modID}:Weed.",
-    "UPGRADE_DESCRIPTION": "Discard 2 cards. Gain !M! ${modID}:Weed."
+    "DESCRIPTION": "Exhaust 1 card. Gain 1 ${modID}:Papes.",
+    "UPGRADE_DESCRIPTION": "Exhaust 1 card. Gain 1 ${modID}:Papes."
   },
   "${modID}:LimparOBong": {
     "NAME": "Clean The Bong",

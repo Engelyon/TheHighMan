@@ -21,7 +21,8 @@ public class Marmita extends BaseCard {
 
     private static final int COMIDO_AMOUNT = 2;
     private static final int UPG_COMIDO = 1;
-    private static final int BLOCK = 5;
+    private static final int BLOCK = 9;
+    private static final int BLOCK_UPG = 3;
 
     public Marmita() {
         super(ID, info);
@@ -39,6 +40,7 @@ public class Marmita extends BaseCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
+            upgradeBlock(BLOCK_UPG);
             upgradeMagicNumber(UPG_COMIDO);
             initializeDescription();
         }

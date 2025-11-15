@@ -26,7 +26,6 @@ public class ComeAi extends BaseCard {
     );
     private static final int DAMAGE = 10;
     private static final int UPG_DAMAGE = 4;
-    private static final int COMIDO_THRESHOLD = 3;
     public ComeAi() {
         super(ID, info);
         setDamage(DAMAGE, UPG_DAMAGE);
@@ -34,16 +33,10 @@ public class ComeAi extends BaseCard {
     }
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new DamageAction(m, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL),
-                AbstractGameAction.AttackEffect.BLUNT_HEAVY));
-
-        if (p.hasPower(ComidoPower.POWER_ID)) {
-            int comidoStacks = p.getPower(ComidoPower.POWER_ID).amount;
-            if (comidoStacks >= COMIDO_THRESHOLD) {
-                addToBot(new ReducePowerAction(p, p, ComidoPower.POWER_ID, comidoStacks-1));
-                addToBot(new ReducePowerAction(p, p, ComidoPower.POWER_ID, 1));
-                addToBot(new GainEnergyAction(comidoStacks));
-            }
+        addToBot(new DamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL)));
+        if (m.hasPower(LaricaPower.POWER_ID) && p.hasPower(ComidoPower.POWER_ID)){
+            addToBot(new ReducePowerAction(p, p, ComidoPower.POWER_ID, 1));
+            addToBot(new ReducePowerAction(m,p, LaricaPower.POWER_ID, m.getPower(LaricaPower.POWER_ID).amount));
         }
     }
 
@@ -53,17 +46,6 @@ public class ComeAi extends BaseCard {
             upgradeName();
             upgradeDamage(UPG_DAMAGE);
             initializeDescription();
-        }
-    }
-    @Override
-    public void triggerOnGlowCheck() {
-        super.triggerOnGlowCheck();
-        int x=3;
-        if (AbstractDungeon.player != null && AbstractDungeon.player.hasPower(ComidoPower.POWER_ID)
-                && AbstractDungeon.player.getPower(ComidoPower.POWER_ID).amount >= x) {
-            this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR;
-        } else {
-            this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR;
         }
     }
 }

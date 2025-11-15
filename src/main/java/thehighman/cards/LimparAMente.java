@@ -1,11 +1,12 @@
 package thehighman.cards;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.DiscardAction;
+import com.megacrit.cardcrawl.actions.common.ExhaustAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thehighman.character.TheHighman;
 import thehighman.powers.ErvaPower;
+import thehighman.powers.SedaPower;
 import thehighman.util.CardStats;
 
 public class LimparAMente extends BaseCard {
@@ -19,25 +20,25 @@ public class LimparAMente extends BaseCard {
             1
     );
 
-    private static final int DISCARD_AMOUNT = 2;
-    private static final int ERVA_GAIN = 2;
+    private static final int Exhaust_AMOUNT = 1;
+    private static final int PapesGain = 1;
 
     public LimparAMente() {
         super(ID, info);
-        setMagic(ERVA_GAIN, ERVA_GAIN + 1);
+        setMagic(PapesGain);
         initializeDescription();
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new DiscardAction(p, p, DISCARD_AMOUNT, false));
-        addToBot(new ApplyPowerAction(p, p, new ErvaPower(p, ERVA_GAIN), ERVA_GAIN));
+        addToBot(new ExhaustAction(p, p, Exhaust_AMOUNT, false));
+        addToBot(new ApplyPowerAction(p, p, new SedaPower(p, p, magicNumber)));
     }
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(1);
+            upgradeBaseCost(0);
         }
     }
 }

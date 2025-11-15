@@ -23,7 +23,6 @@ public class Analisar extends BaseCard {
     );
 
     private static final int DRAW_AMOUNT = 2;
-    private static final int CHAPADO_THRESHOLD = 5;
 
     public Analisar() {
         super(ID, info);
@@ -35,19 +34,7 @@ public class Analisar extends BaseCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new DrawCardAction(p, DRAW_AMOUNT));
-        boolean chapadoDetectado = false;
-        for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
-            if (mo != null && !mo.isDeadOrEscaped()) {
-                if (mo.hasPower(ChapadoPower.POWER_ID)){
-                    if (mo.getPower(ChapadoPower.POWER_ID).amount >= CHAPADO_THRESHOLD){
-                        chapadoDetectado = true;
-                    }
-                }
-            }
-        }
-        if (chapadoDetectado) {
-            addToBot(new ApplyPowerAction(p, p, new SedaPower(p, p, 1), 1));
-        }
+        addToBot(new ApplyPowerAction(p,p, new SedaPower(p,p,1), 1));
     }
 
     @Override

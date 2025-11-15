@@ -25,38 +25,32 @@ public class AtaqueDeVazio extends BaseCard {
     );
 
     private static final int BASE_DAMAGE = 5;
-    private static final int BONUS_DAMAGE = 10;
-
+    private static final int BASE_DAMAGE_UPG = 5;
     public AtaqueDeVazio() {
         super(ID, info);
-        setDamage(BASE_DAMAGE);
+        setDamage(BASE_DAMAGE,BASE_DAMAGE_UPG);
         this.exhaust = true;
         initializeDescription();
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        // Dano base
-        addToBot(new DamageAction(m, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL),
-                AbstractGameAction.AttackEffect.BLUNT_LIGHT));
-        if (p.hasPower(LaricaPower.POWER_ID) && p.getPower(LaricaPower.POWER_ID).amount >= 1) {
-            addToBot(new DamageAction(m, new DamageInfo(p, BONUS_DAMAGE, DamageInfo.DamageType.NORMAL),
-                    AbstractGameAction.AttackEffect.FIRE));
-            addToBot(new ReducePowerAction(p, p, LaricaPower.POWER_ID, 1));
+        if (p.hasPower(LaricaPower.POWER_ID)){
+            addToBot(new DamageAction(m, new DamageInfo(p, this.damage*p.getPower(LaricaPower.POWER_ID).amount, DamageInfo.DamageType.NORMAL)));
+        }else{
+            addToBot(new DamageAction(m, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL)));
         }
     }
     @Override
     public void upgrade() {
         super.upgrade();
-        this.exhaust = false;
+        upgradeDamage(BASE_DAMAGE_UPG);
     }
 
     @Override
     public void triggerOnGlowCheck() {
         super.triggerOnGlowCheck();
-        int x=1;
-        if (AbstractDungeon.player != null && AbstractDungeon.player.hasPower(LaricaPower.POWER_ID)
-                && AbstractDungeon.player.getPower(LaricaPower.POWER_ID).amount >= x) {
+        if (AbstractDungeon.player != null && AbstractDungeon.player.hasPower(LaricaPower.POWER_ID)) {
             this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR;
         } else {
             this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR;

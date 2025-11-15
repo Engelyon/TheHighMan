@@ -15,7 +15,7 @@ public class BuchimChei extends BaseCard {
             CardType.SKILL,
             CardRarity.RARE,
             CardTarget.SELF,
-            2
+            1
     );
     private static final int TANTO = 1;
     private static final int TANTO_UPG =1;
@@ -29,12 +29,13 @@ public class BuchimChei extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        int comidoAmount = p.getPower(ComidoPower.POWER_ID).amount;
-        addToBot(new ApplyPowerAction(p,p, new ComidoPower(p, this.magicNumber*comidoAmount)));
+        addToBot(new ApplyPowerAction(p,p, new ComidoPower(p,p, magicNumber)));
+        addToBot(new ApplyPowerAction(p,p, new ComidoPower(p, p.getPower(ComidoPower.POWER_ID).amount)));
     }
 
     @Override
     public void upgrade() {
         super.upgrade();
+        this.exhaust=false;
     }
 }

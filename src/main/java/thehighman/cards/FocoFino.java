@@ -21,29 +21,26 @@ public class FocoFino extends BaseCard {
             1
     );
 
-    private static final int CHAPADO_AMOUNT = 1;
-    private static final int UPG_CHAPADO = 1;
-    private static final int DRAW_AMOUNT = 1;
-    private static final int DRAW_BONUS_UPG = 1; // no upgrade compra +1 carta
+    private static final int CHAPADO_AMOUNT = 1;;
 
     public FocoFino() {
         super(ID, info);
-        setMagic(CHAPADO_AMOUNT, UPG_CHAPADO);
+        setMagic(CHAPADO_AMOUNT);
         this.keywords.add("chapado");
         initializeDescription();
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(m, p, new ChapadoPower(m, this.magicNumber), this.magicNumber));
-        int draws = DRAW_AMOUNT + (upgraded ? DRAW_BONUS_UPG : 0);
-        addToBot(new DrawCardAction(p, draws));
+        addToBot(new ApplyPowerAction(m,p, new ChapadoPower(m,magicNumber)));
+        addToBot(new DrawCardAction(2));
     }
 
     @Override
     public void upgrade() {
         if (!upgraded) {
             super.upgrade();
+            upgradeBaseCost(0);
         }
     }
 

@@ -1,6 +1,7 @@
 package thehighman.cards;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -11,6 +12,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thehighman.character.TheHighman;
 import thehighman.powers.ComidoPower;
 import thehighman.powers.ErvaPower;
+import thehighman.powers.LaricaPower;
 import thehighman.util.CardStats;
 
 public class LaricaDePoder extends BaseCard {
@@ -26,22 +28,21 @@ public class LaricaDePoder extends BaseCard {
 
     private static final int DAMAGE = 5;
     private static final int UPG_DAMAGE = 5;
-    private static final int COMIDO = 0;
 
     public LaricaDePoder() {
         super(ID, info);
         setDamage(DAMAGE, UPG_DAMAGE);
-        setMagic(COMIDO);
+        this.exhaust=true;
         initializeDescription();
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        for (int i = 0; i < p.getPower(ComidoPower.POWER_ID).amount; i++) {
-            addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
+        new DamageAction(m, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL));
+        new ApplyPowerAction(m,p, new LaricaPower(m, 1));
+        for (int i=0; i < m.getPower(LaricaPower.POWER_ID).amount; i++){
+            new DamageAction(m, new DamageInfo(p, (m.getPower(LaricaPower.POWER_ID).amount*5)*2, DamageInfo.DamageType.NORMAL));
         }
-        addToBot(new ReducePowerAction(p, p, ComidoPower.POWER_ID, p.getPower(ComidoPower.POWER_ID).amount-1));
-        addToBot(new ReducePowerAction(p, p, ComidoPower.POWER_ID, 1));
     }
 
     @Override
@@ -52,17 +53,7 @@ public class LaricaDePoder extends BaseCard {
     @Override
     public void upgrade() {
         super.upgrade();
+        this.exhaust=false;
     }
 
-    @Override
-    public void triggerOnGlowCheck() {
-        super.triggerOnGlowCheck();
-        int x=1;
-        if (AbstractDungeon.player != null && AbstractDungeon.player.hasPower(ComidoPower.POWER_ID)
-                && AbstractDungeon.player.getPower(ComidoPower.POWER_ID).amount >= x) {
-            this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR;
-        } else {
-            this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR;
-        }
-    }
 }

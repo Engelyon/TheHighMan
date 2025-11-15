@@ -19,9 +19,8 @@ public class Desconfianca extends BaseCard {
             1
     );
 
-    private static final int BLOCK = 6;
-    private static final int UPG_BLOCK = 4;
-    private static final int LARICA_AMOUNT = 1;
+    private static final int BLOCK = 7;
+    private static final int UPG_BLOCK = 3;
 
     public Desconfianca() {
         super(ID, info);
@@ -32,7 +31,7 @@ public class Desconfianca extends BaseCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new GainBlockAction(p, this.block));
-        addToBot(new ApplyPowerAction(m, p, new LaricaPower(m, LARICA_AMOUNT), LARICA_AMOUNT));
+        addToBot(new ApplyPowerAction(p,p, new LaricaPower(p, 1 )));
     }
     @Override
     public void upgrade() {

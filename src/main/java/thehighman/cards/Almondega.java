@@ -20,17 +20,20 @@ public class Almondega extends BaseCard {
     );
 
     private static final int COMIDO_AMOUNT = 1;
+    private static final int UPG_COMIDO_AMOUNT = 1;
     private static final int LARICA_AMOUNT = 1;
+
 
     public Almondega() {
         super(ID, info);
         this.exhaust=true;
+        setMagic(COMIDO_AMOUNT, UPG_COMIDO_AMOUNT);
         initializeDescription();
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new ComidoPower(p, COMIDO_AMOUNT), COMIDO_AMOUNT));
+        addToBot(new ApplyPowerAction(p, p, new ComidoPower(p, magicNumber), magicNumber));
         addToBot(new ApplyPowerAction(p, p, new LaricaPower(p, LARICA_AMOUNT), LARICA_AMOUNT));
     }
 
@@ -38,6 +41,7 @@ public class Almondega extends BaseCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
+            upgradeMagicNumber(UPG_COMIDO_AMOUNT);
             this.upgradeBaseCost(0);
             initializeDescription();
         }
