@@ -5,6 +5,7 @@ import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.EmptyDeckShuffleAction;
 import com.megacrit.cardcrawl.actions.common.ShuffleAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -36,7 +37,7 @@ public class LoopMental extends BaseCard {
         initializeDescription();
     }
 
-    @Override
+    /*@Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
         boolean badtrip = false;
@@ -55,9 +56,41 @@ public class LoopMental extends BaseCard {
         if (badtrip){
             addToBot(new DrawCardAction(p, magicNumber));
         }
+    }*/
+    
+    @Override
+    public void use(AbstractPlayer p, AbstractMonster m) {
+        addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
+        final boolean[] badtripEncontrada = {false};
+        for (int i = 0; i < magicNumber; i++) {
+            addToBot(new AbstractGameAction() {
+                @Override
+                public void update() {
+                    if (p.drawPile.isEmpty()) {
+                        this.isDone = true;
+                        return;
+                    }
+                    AbstractCard topCard = p.drawPile.getNCardFromTop(0);
+                    if (topCard != null && Objects.equals(topCard.cardID, BadTrip.ID)) {
+                        badtripEncontrada[0] = true;
+                    }
+                    this.isDone = true;
+                }
+            });
+            addToBot(new DrawCardAction(p, 1));
+        }
+        addToBot(new AbstractGameAction() {
+            @Override
+            public void update() {
+                if (badtripEncontrada[0]) {
+                    addToTop(new DrawCardAction(p, magicNumber));
+                }
+                this.isDone = true;
+            }
+        });
     }
 
-    @Override
+        @Override
     public void upgrade() {
         super.upgrade();
     }
