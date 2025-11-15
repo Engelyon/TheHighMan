@@ -28,7 +28,7 @@ public class CompreensaoElevadaPower extends BasePower {
             return;
         }
         if (Objects.equals(power.ID, ChapadoPower.POWER_ID)) {
-            addToBot(new ApplyPowerAction(target, source, new ChapadoPower(target, power.amount)));
+            addToBot(new ApplyPowerAction(target, source, new ChapadoPower(target, source.getPower(SedaPower.POWER_ID).amount)));
         }
     }
 }

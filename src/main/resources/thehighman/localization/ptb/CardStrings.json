@@ -171,8 +171,8 @@
   },
   "${modID}:Fissura": {
     "NAME": "Fissura",
-    "DESCRIPTION": "Cause !D! de dano. ${modID}:Fume 1 e ganhe !M! de Bloqueio.",
-    "UPGRADE_DESCRIPTION": "Cause !D! de dano. ${modID}:Fume 1 e ganhe !M! de Bloqueio."
+    "DESCRIPTION": "Cause !D! de dano. ${modID}:Fume 1 e ganhe !B! de Bloqueio.",
+    "UPGRADE_DESCRIPTION": "Cause !D! de dano. ${modID}:Fume 1 e ganhe !B! de Bloqueio."
   },
   "${modID}:FocoFino": {
     "NAME": "Foco Fino",
@@ -231,8 +231,8 @@
   },
   "${modID}:LoopMental": {
     "NAME": "Loop Mental",
-    "DESCRIPTION": "Cause !D! de dano. Compre 2 cartas. Se comprar pelo menos 1 BadTrip, compre mais 2 cartas",
-    "UPGRADE_DESCRIPTION": "Cause !D! de dano. Compre 3 cartas. Se comprar pelo menos 1 BadTrip, compre mais 3 cartas"
+    "DESCRIPTION": "Cause !D! de dano. Compre !M! cartas. Se comprar pelo menos 1 BadTrip, compre mais 2 cartas",
+    "UPGRADE_DESCRIPTION": "Cause !D! de dano. Compre !M! cartas. Se comprar pelo menos 1 BadTrip, compre mais 3 cartas"
   },
   "${modID}:MaoSanta": {
     "NAME": "Mao Santa",

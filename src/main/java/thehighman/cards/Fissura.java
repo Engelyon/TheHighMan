@@ -31,9 +31,7 @@ public class Fissura extends BaseCard {
     public Fissura() {
         super(ID, info);
         setDamage(DAMAGE, UPG_DAMAGE);
-        setMagic(BLOCK_GAIN, BLOCK_GAIN + 2);
-
-        this.keywords.add("erva");
+        setBlock(BLOCK_GAIN, 2);
         initializeDescription();
     }
 
@@ -43,7 +41,7 @@ public class Fissura extends BaseCard {
                 AbstractGameAction.AttackEffect.SLASH_HEAVY));
         if (p.hasPower(ErvaPower.POWER_ID) && p.getPower(ErvaPower.POWER_ID).amount >= 1) {
             addToBot(new ReducePowerAction(p, p, ErvaPower.POWER_ID, 1));
-            addToBot(new GainBlockAction(p, BLOCK_GAIN));
+            addToBot(new GainBlockAction(p, block));
         }
     }
     @Override
@@ -51,7 +49,7 @@ public class Fissura extends BaseCard {
         if (!upgraded) {
             upgradeName();
             upgradeDamage(UPG_DAMAGE);
-            upgradeMagicNumber(2);
+            upgradeBlock(2);
             initializeDescription();
         }
     }

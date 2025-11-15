@@ -171,8 +171,8 @@
   },
   "${modID}:Fissura": {
     "NAME": "Fissure",
-    "DESCRIPTION": "Deal !D! Damage. ${modID}:Smoke 1 and gain !M! Block.",
-    "UPGRADE_DESCRIPTION": "Deal !D! Damage. ${modID}:Smoke 1 and gain !M! Block."
+    "DESCRIPTION": "Deal !D! Damage. ${modID}:Smoke 1 and gain !B! Block.",
+    "UPGRADE_DESCRIPTION": "Deal !D! Damage. ${modID}:Smoke 1 and gain !B! Block."
   },
   "${modID}:FocoFino": {
     "NAME": "Fine Focus",
@@ -231,8 +231,8 @@
   },
   "${modID}:LoopMental": {
     "NAME": "Mental Loop",
-    "DESCRIPTION": "Deal !D! Damage. Draw 2 cards. If you draw at least 1 BadTrip, draw 2 more cards.",
-    "UPGRADE_DESCRIPTION": "Deal !D! Damage. Draw 3 cards. If you draw at least 1 BadTrip, draw 3 more cards."
+    "DESCRIPTION": "Deal !D! Damage. Draw !M! cards. If you draw at least 1 BadTrip, draw 2 more cards.",
+    "UPGRADE_DESCRIPTION": "Deal !D! Damage. Draw !M! cards. If you draw at least 1 BadTrip, draw 3 more cards."
   },
   "${modID}:MaoSanta": {
     "NAME": "Saint Hand",

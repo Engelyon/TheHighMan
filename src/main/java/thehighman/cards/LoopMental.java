@@ -41,10 +41,9 @@ public class LoopMental extends BaseCard {
         for (int i = 0; i < magicNumber; i++) {
             if (Objects.equals(p.drawPile.getNCardFromTop(i).cardID, BadTrip.ID)){
                 badtrip = true;
-                break;
+                addToBot(new DrawCardAction(p, 1));
             }
         }
-        addToBot(new DrawCardAction(p, magicNumber));
         if (badtrip){
             addToBot(new DrawCardAction(p, magicNumber));
         }
