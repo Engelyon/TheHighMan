@@ -31,7 +31,7 @@ public class Reabastecer extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new ErvaPower(p, ERVA_GAIN), ERVA_GAIN));
+        addToBot(new ApplyPowerAction(p, p, new ErvaPower(p, magicNumber), magicNumber));
         addToBot(new DrawCardAction(p, 1));
     }
     @Override

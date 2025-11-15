@@ -1,8 +1,8 @@
 {
   "${modID}:AlimentoDivino": {
     "NAME": "Divine Food",
-    "DESCRIPTION": "Gain 5 ${modID}:Grub. If you have at least 10 ${modID}:Grub, receive immunity from BadTrip Damage.",
-    "UPGRADE_DESCRIPTION": "Gain 5 ${modID}:Grub. If you have at least 10 ${modID}:Grub, receive immunity from BadTrip Damage."
+    "DESCRIPTION": "Gain 5 ${modID}:Grub. If you have at least 10 ${modID}:Grub, receive immunity from ${modID}:BadTrip Damage.",
+    "UPGRADE_DESCRIPTION": "Gain 5 ${modID}:Grub. If you have at least 10 ${modID}:Grub, receive immunity from ${modID}:BadTrip Damage."
   },
   "${modID}:Alivio": {
     "NAME": "Relief",
@@ -21,8 +21,8 @@
   },
   "${modID}:Amnesia": {
     "NAME": "Amnesia",
-    "DESCRIPTION": "Exhaust 2 random cards from your hand. For each BadTrip exhausted, gain 2 ${modID}:Weed. Exhaust.",
-    "UPGRADE_DESCRIPTION": "Exhaust 2 cards from your hand. For each BadTrip exhausted, gain 2 ${modID}:Weed. Exhaust."
+    "DESCRIPTION": "Exhaust 2 random cards from your hand. For each ${modID}:BadTrip exhausted, gain 2 ${modID}:Weed. Exhaust.",
+    "UPGRADE_DESCRIPTION": "Exhaust 2 cards from your hand. For each ${modID}:BadTrip exhausted, gain 2 ${modID}:Weed. Exhaust."
   },
   "${modID}:Analisar": {
     "NAME": "Analyze",
@@ -45,14 +45,14 @@
     "UPGRADE_DESCRIPTION": "Deal !D! Damage. If you have ${modID}:Grub, ${modID}:Eat 1 ${modID}:Grub and repeat the attack."
   },
   "${modID}:BadTrip": {
-    "NAME": "Bad Trip",
-    "DESCRIPTION": "At the end of your turn, if this is on your hand: lose 1 HP and gain 1 ${modID}:Munchies.",
-    "UPGRADE_DESCRIPTION": "At the end of your turn, if this is on your hand: lose 1 HP and gain 1 ${modID}:Munchies."
+    "NAME": "BadTrip",
+    "DESCRIPTION": "Unplayable. At the end of your turn, if this is on your hand: lose 1 HP and gain 1 ${modID}:Munchies.",
+    "UPGRADE_DESCRIPTION": "Unplayable. At the end of your turn, if this is on your hand: lose 1 HP and gain 1 ${modID}:Munchies."
   },
   "${modID}:BaforadaEmCadeia": {
     "NAME": "Chain Puff",
-    "DESCRIPTION": "Deal !D! Damage and apply !M! ${modID}:High. Add one Ethereal Puff to your hand.",
-    "UPGRADE_DESCRIPTION": "Deal !D! Damage and apply !M! ${modID}:High. Add one Ethereal Puff to your hand."
+    "DESCRIPTION": "Deal !D! Damage and apply !M! ${modID}:High. Add one Ethereal Puff to your hand. It uses ${modID}:Weed instead of Energy.",
+    "UPGRADE_DESCRIPTION": "Deal !D! Damage and apply !M! ${modID}:High. Add one Ethereal Puff to your hand. It uses ${modID}:Weed instead of Energy."
   },
   "${modID}:BaforadaEterea": {
     "NAME": "Ethereal Puff",
@@ -66,8 +66,8 @@
   },
   "${modID}:BaguaDaDiscordia": {
     "NAME": "Quarrel Disk",
-    "DESCRIPTION": "Deal !D! Damage to all enemies. Add 2 BadTrip to your discard pile.",
-    "UPGRADE_DESCRIPTION": "Deal !D! Damage to all enemies. Add 2 BadTrip to your discard pile."
+    "DESCRIPTION": "Deal !D! Damage to all enemies. Shuffle 2 ${modID}:BadTrip to your draw pile.",
+    "UPGRADE_DESCRIPTION": "Deal !D! Damage to all enemies. Shuffle 2 ${modID}:BadTrip to your draw pile."
   },
   "${modID}:BongExtra": {
     "NAME": "Extra Bong",
@@ -126,8 +126,8 @@
   },
   "${modID}:Confusao": {
     "NAME": "Confusion",
-    "DESCRIPTION": "Deal !D! Damage. Add 1 BadTrip to your discard pile.",
-    "UPGRADE_DESCRIPTION": "Deal !D! Damage. Add 1 BadTrip to your discard pile."
+    "DESCRIPTION": "Deal !D! Damage. Shuffle 1 ${modID}:BadTrip to your draw pile.",
+    "UPGRADE_DESCRIPTION": "Deal !D! Damage. Shuffle 1 ${modID}:BadTrip to your draw pile."
   },
   "${modID}:Cozinhar": {
     "NAME": "Cook",
@@ -161,8 +161,8 @@
   },
   "${modID}:Espirro": {
     "NAME": "Sneeze",
-    "DESCRIPTION": "Deal !D! Damage to all enemies. Add 1 ${modID}:BadTrip to your discard pile.",
-    "UPGRADE_DESCRIPTION": "Deal !D! Damage to all enemies. Add 1 ${modID}:BadTrip to your discard pile."
+    "DESCRIPTION": "Deal !D! Damage to all enemies. Shuffle 1 ${modID}:BadTrip to your draw pile.",
+    "UPGRADE_DESCRIPTION": "Deal !D! Damage to all enemies. Shuffle 1 ${modID}:BadTrip to your draw pile."
   },
   "${modID}:FicaEsperto": {
     "NAME": "Get Smart",
@@ -201,8 +201,8 @@
   },
   "${modID}:IdeiaDeStartup": {
     "NAME": "Startup Idea",
-    "DESCRIPTION": "Gain !M! ${modID}:Weed. Shuffle a BadTrip into your deck. Lose all your energy because you drove ${modID}:Piticas to bankruptcy.",
-    "UPGRADE_DESCRIPTION": "Gain !M! ${modID}:Weed. Shuffle a BadTrip into your deck. Lose all your energy because you drove ${modID}:Piticas to bankruptcy."
+    "DESCRIPTION": "Gain !M! ${modID}:Weed. Shuffle a ${modID}:BadTrip into your deck. Lose all your energy because you drove ${modID}:Piticas to bankruptcy.",
+    "UPGRADE_DESCRIPTION": "Gain !M! ${modID}:Weed. Shuffle a ${modID}:BadTrip into your deck. Lose all your energy because you drove ${modID}:Piticas to bankruptcy."
   },
   "${modID}:Inspiracao": {
     "NAME": "Inspiration",
@@ -231,8 +231,8 @@
   },
   "${modID}:LoopMental": {
     "NAME": "Mental Loop",
-    "DESCRIPTION": "Deal !D! Damage. Draw !M! cards. If you draw at least 1 BadTrip, draw 2 more cards.",
-    "UPGRADE_DESCRIPTION": "Deal !D! Damage. Draw !M! cards. If you draw at least 1 BadTrip, draw 3 more cards."
+    "DESCRIPTION": "Deal !D! Damage. Draw !M! cards. If you draw at least 1 ${modID}:BadTrip, draw 2 more cards.",
+    "UPGRADE_DESCRIPTION": "Deal !D! Damage. Draw !M! cards. If you draw at least 1 ${modID}:BadTrip, draw 3 more cards."
   },
   "${modID}:MaoSanta": {
     "NAME": "Saint Hand",
@@ -325,7 +325,7 @@
     "UPGRADE_DESCRIPTION": "Remove all powers from the enemy. Exhaust."
   },
   "${modID}:SacolaDeGuloseimas": {
-    "NAME": "Goodie Bag",
+    "NAME": "Overflowing Bag",
     "DESCRIPTION": "Deal !D! Damage. If the enemy has ${modID}:Munchies, deal 5 Damage to all enemies. Gain 1 ${modID}:Grub. Exhaust.",
     "UPGRADE_DESCRIPTION": "Deal !D! Damage. If the enemy has ${modID}:Munchies, deal 5 Damage to all enemies. Gain 1 ${modID}:Grub. Gain !B! Block. Exhaust. "
   },
@@ -371,7 +371,7 @@
   },
   "${modID}:ViagemSoDeIda": {
     "NAME": "One-way Trip",
-    "DESCRIPTION": "Deal !D! Damage. If you have BadTrip in you hand, deal 6 more Damage.",
-    "UPGRADE_DESCRIPTION": "Deal !D! Damage. If you have BadTrip in you hand, deal 6 more Damage."
+    "DESCRIPTION": "Deal !D! Damage. If you have ${modID}:BadTrip in you hand, deal 6 more Damage.",
+    "UPGRADE_DESCRIPTION": "Deal !D! Damage. If you have ${modID}:BadTrip in you hand, deal 6 more Damage."
   }
 }

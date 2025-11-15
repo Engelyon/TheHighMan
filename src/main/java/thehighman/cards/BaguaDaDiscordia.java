@@ -29,7 +29,6 @@ public class BaguaDaDiscordia extends BaseCard {
         this.isMultiDamage = true;
         this.exhaust=true;
         this.cardsToPreview = new BadTrip();
-        this.keywords.add("bad trip");
         initializeDescription();
     }
 
@@ -40,7 +39,8 @@ public class BaguaDaDiscordia extends BaseCard {
         for (int i = 0; i < 2; i++) {
             AbstractCard badTrip = new BadTrip();
             badTrip.modifyCostForCombat(0);
-            AbstractDungeon.player.discardPile.addToTop(badTrip);
+            //AbstractDungeon.player.discardPile.addToTop(badTrip);
+            AbstractDungeon.player.drawPile.addToRandomSpot(badTrip);
         }
     }
     @Override

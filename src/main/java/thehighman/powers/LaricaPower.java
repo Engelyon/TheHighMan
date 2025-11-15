@@ -61,13 +61,13 @@ public class LaricaPower extends BasePower {
     @Override
     public float atDamageReceive(float damage, DamageInfo.DamageType damageType) {
         if (damageType == DamageInfo.DamageType.NORMAL) {
-            return damage + (3 * amount);
+            return damage + (5 * amount);
         }
         return damage;
     }
 
     @Override
     public void updateDescription() {
-        this.description = powerStrings.DESCRIPTIONS[0].replace("!M!", Integer.toString(amount * 3));
+        this.description = powerStrings.DESCRIPTIONS[0].replace("!M!", Integer.toString(amount * 5));
     }
 }

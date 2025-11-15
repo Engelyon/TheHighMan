@@ -38,7 +38,8 @@ public class Espirro extends BaseCard {
         addToBot(new DamageAllEnemiesAction(p, this.multiDamage, DamageInfo.DamageType.NORMAL,
                 AbstractGameAction.AttackEffect.SMASH));
         AbstractCard badTrip = new BadTrip();
-        AbstractDungeon.player.discardPile.addToTop(badTrip);
+        //AbstractDungeon.player.discardPile.addToTop(badTrip);
+        AbstractDungeon.player.drawPile.addToRandomSpot(badTrip);
     }
     @Override
     public void upgrade() {

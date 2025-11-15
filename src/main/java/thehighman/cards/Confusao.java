@@ -4,6 +4,7 @@ import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDiscardAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thehighman.character.TheHighman;
 import thehighman.util.CardStats;
@@ -31,7 +32,8 @@ public class Confusao extends BaseCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn)));
-        addToBot(new MakeTempCardInDiscardAction(new BadTrip(), 1));
+        //addToBot(new MakeTempCardInDiscardAction(new BadTrip(), 1));
+        AbstractDungeon.player.drawPile.addToRandomSpot(new BadTrip());
     }
     @Override
     public void upgrade() {

@@ -13,7 +13,7 @@ import thehighman.powers.ComidoPower;
 import thehighman.powers.ErvaPower;
 import thehighman.util.CardStats;
 
-public class AtaqueFaminto extends BaseCard {
+public class  AtaqueFaminto extends BaseCard {
     public static final String ID = makeID("AtaqueFaminto");
 
     private static final CardStats info = new CardStats(

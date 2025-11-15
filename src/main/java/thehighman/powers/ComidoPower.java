@@ -32,7 +32,7 @@ public class ComidoPower extends BasePower {
         if (player != null && player.hasPower(LaricaPower.POWER_ID)) {
             int extra = player.getPower(LaricaPower.POWER_ID).amount;
             int stacksToNegate = Math.min(extra, this.amount);
-            damage -= stacksToNegate * 3;
+            damage -= stacksToNegate * 5;
         }
         return damage;
     }
