@@ -39,7 +39,6 @@ public class BrisaFinal extends BaseCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         int effect = this.energyOnUse;
-
         if (p.hasRelic("Chemical X")) {
             effect += 2;
             p.getRelic("Chemical X").flash();
@@ -58,6 +57,9 @@ public class BrisaFinal extends BaseCard {
                 }
                 addToBot(new WaitAction(0.1f));
             }
+        }
+        if (!this.freeToPlayOnce) {
+            p.energy.use(this.energyOnUse);
         }
     }
 

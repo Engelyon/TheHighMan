@@ -36,7 +36,7 @@ public class Analisar extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new GainBlockAction(p,block));
+        addToBot(new GainBlockAction(p, this.block));
         addToBot(new DrawCardAction(p, DRAW_AMOUNT));
         addToBot(new ApplyPowerAction(p,p, new SedaPower(p,p,1), 1));
     }

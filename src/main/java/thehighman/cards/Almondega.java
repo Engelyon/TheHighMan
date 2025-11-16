@@ -33,7 +33,7 @@ public class Almondega extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new ComidoPower(p, magicNumber), magicNumber));
+        addToBot(new ApplyPowerAction(p, p, new ComidoPower(p, this.magicNumber), this.magicNumber));
         addToBot(new ApplyPowerAction(p, p, new LaricaPower(p, LARICA_AMOUNT), LARICA_AMOUNT));
     }
 

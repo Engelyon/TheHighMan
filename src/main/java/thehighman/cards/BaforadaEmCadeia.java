@@ -34,7 +34,6 @@ public class BaforadaEmCadeia extends BaseCard {
         setDamage(DAMAGE, UPG_DAMAGE);
         setMagic(CHAPADO_AMOUNT);
         this.cardsToPreview = new BaforadaEterea();
-        this.keywords.add("chapado");
         initializeDescription();
     }
 

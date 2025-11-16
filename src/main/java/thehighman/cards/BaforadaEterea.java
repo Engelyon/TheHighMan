@@ -37,8 +37,6 @@ public class BaforadaEterea extends BaseCard {
         setMagic(CHAPADO_AMOUNT);
         this.exhaust = true;
         this.isEthereal = true;
-        this.keywords.add("erva");
-        this.keywords.add("chapado");
         initializeDescription();
     }
 

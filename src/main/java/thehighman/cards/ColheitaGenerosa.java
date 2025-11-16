@@ -22,7 +22,7 @@ public class ColheitaGenerosa extends BaseCard {
     );
 
     private static final int ERVA_GAIN = 2;
-    private static final int COMIDO_GAIN= 3;
+    private static final int COMIDO_GAIN= 2;
     private static final int SEDA_GAIN = 1;
 
     public ColheitaGenerosa() {

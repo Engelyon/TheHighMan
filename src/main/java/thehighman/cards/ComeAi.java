@@ -33,7 +33,7 @@ public class ComeAi extends BaseCard {
     }
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new DamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL)));
+        addToBot(new DamageAction(m, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL)));
         if (m.hasPower(LaricaPower.POWER_ID) && p.hasPower(ComidoPower.POWER_ID)){
             addToBot(new ReducePowerAction(p, p, ComidoPower.POWER_ID, 1));
             addToBot(new ReducePowerAction(m,p, LaricaPower.POWER_ID, m.getPower(LaricaPower.POWER_ID).amount));

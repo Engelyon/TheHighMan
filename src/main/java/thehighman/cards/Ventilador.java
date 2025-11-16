@@ -44,7 +44,7 @@ public class Ventilador extends BaseCard {
             }
         }
         if (hits > 0) {
-            int totalBlock = hits * block;
+            int totalBlock = hits * this.block;
             addToBot(new GainBlockAction(p, p, totalBlock));
         }
     }

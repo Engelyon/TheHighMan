@@ -9,7 +9,6 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thehighman.character.TheHighman;
 import thehighman.powers.ComidoPower;
-import thehighman.powers.ErvaPower;
 import thehighman.util.CardStats;
 
 public class AlmocoDeGraca extends BaseCard {
@@ -36,7 +35,7 @@ public class AlmocoDeGraca extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new GainBlockAction(p, BLOCK));
+        addToBot(new GainBlockAction(p, this.block));
         addToBot(new ApplyPowerAction(p, p, new ComidoPower(p, COMIDO_GAIN), COMIDO_GAIN));
         if (p.hasPower(ComidoPower.POWER_ID)) {
             int atual = p.getPower(ComidoPower.POWER_ID).amount;

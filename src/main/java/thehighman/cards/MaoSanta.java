@@ -37,7 +37,7 @@ public class MaoSanta extends BaseCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new VFXAction(new InflameEffect(p)));
-        addToBot(new GainBlockAction(p, BLOCK));
+        addToBot(new GainBlockAction(p, this.block));
         AbstractDungeon.actionManager.addToBottom(
                 new ApplyPowerAction(p, p, new SedaPower(p, p, this.magicNumber), this.magicNumber)
         );

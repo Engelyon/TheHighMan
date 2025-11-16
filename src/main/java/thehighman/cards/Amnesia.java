@@ -35,7 +35,7 @@ public class Amnesia extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new GainBlockAction(p, BLOCK));
+        addToBot(new GainBlockAction(p, this.block));
         if (!upgraded) {
             addToBot(new ExhaustAction(2, true, false, false));
             int badtripsEX = 0;
@@ -79,11 +79,7 @@ public class Amnesia extends BaseCard {
     @Override
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
         super.canUse(p, m);
-        if (p.hand.size() <= 2) {
-            this.cantUseMessage = "Preciso de pelo menos 3 cartas na mão para usar isto.";
-            return false;
-        }
-        return true;
+        return p.hand.size() > 2;
     }
 
     @Override

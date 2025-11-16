@@ -37,8 +37,8 @@ public class PetiscoPotente extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new GainBlockAction(p, BLOCK));
-        addToBot(new ApplyPowerAction(p, p, new ComidoPower(p, magicNumber), magicNumber));
+        addToBot(new GainBlockAction(p, this.block));
+        addToBot(new ApplyPowerAction(p, p, new ComidoPower(p, this.magicNumber), this.magicNumber));
         if (p.hasPower(ComidoPower.POWER_ID) && p.getPower(ComidoPower.POWER_ID).amount >= COMIDO_THRESHOLD) {
             addToBot(new ApplyPowerAction(p,p, new EnergizedPower(p, ENERGY_NEXT_TURN), ENERGY_NEXT_TURN));
         }

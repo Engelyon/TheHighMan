@@ -34,8 +34,8 @@ public class Fritura extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p,p, new StrengthPower(p, magicNumber)));
-        addToBot(new ApplyPowerAction(p,p, new LoseStrengthPower(p, magicNumber)));
+        addToBot(new ApplyPowerAction(p,p, new StrengthPower(p, this.magicNumber)));
+        addToBot(new ApplyPowerAction(p,p, new LoseStrengthPower(p, this.magicNumber)));
         int laricaLoss = LARICA_LOSS;
         if (upgraded) {
             laricaLoss += UPG_LARICA_LOSS;

@@ -37,8 +37,6 @@ public class FumacaPassiva extends BaseCard {
         setDamage(DAMAGE, UPG_DAMAGE);
         isMultiDamage = true;
         setMagic(CHAPADO);
-        this.keywords.add("chapado");
-        this.keywords.add("seda");
         initializeDescription();
     }
 

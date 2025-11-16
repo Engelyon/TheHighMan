@@ -41,11 +41,11 @@ public class ResgateDeLanche extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new GainBlockAction(p, p, block));
+        addToBot(new GainBlockAction(p, p, this.block));
         if (p.hasPower(ComidoPower.POWER_ID)) {
             int ComidoStacks = p.getPower(ComidoPower.POWER_ID).amount;
             if (ComidoStacks >= 1) {
-                addToBot(new HealAction(p, p, magicNumber));
+                addToBot(new HealAction(p, p, this.magicNumber));
                 addToBot(new ReducePowerAction(p, p, ComidoPower.POWER_ID, 1));
             }
         }

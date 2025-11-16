@@ -29,7 +29,7 @@ public class BongExtra extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new BongExtraPower(p, p, block), block));
+        addToBot(new ApplyPowerAction(p, p, new BongExtraPower(p, p, this.block), this.block));
     }
 
     @Override

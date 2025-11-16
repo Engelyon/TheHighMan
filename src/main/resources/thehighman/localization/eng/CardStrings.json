@@ -56,8 +56,8 @@
   },
   "${modID}:BaforadaEterea": {
     "NAME": "Ethereal Puff",
-    "DESCRIPTION": "Ethereal. ${modID}:Smoke 1. Deal !D! Damage, apply !M! ${modID}:High and gain a copy of this card.",
-    "UPGRADE_DESCRIPTION": "Ethereal. ${modID}:Smoke 1. Deal !D! Damage, apply !M! ${modID}:High and gain a copy of this card."
+    "DESCRIPTION": "Ethereal. ${modID}:Smoke 1. Deal !D! Damage, apply !M! ${modID}:High and gain a copy of this card. Exhaust.",
+    "UPGRADE_DESCRIPTION": "Ethereal. ${modID}:Smoke 1. Deal !D! Damage, apply !M! ${modID}:High and gain a copy of this card. Exhaust."
   },
   "${modID}:BaforadaForte": {
     "NAME": "Strong Puff",
@@ -111,8 +111,8 @@
   },
   "${modID}:ColheitaGenerosa": {
     "NAME": "Generous Harvest",
-    "DESCRIPTION": "Gain 2 ${modID}:Weed. gain 1 ${modID}:Grub. Gain 1 ${modID}:Papes. Exhaust.",
-    "UPGRADE_DESCRIPTION": "Gain 2 ${modID}:Weed. gain 1 ${modID}:Grub. Gain 1 ${modID}:Papes. Draw 1 card. Exhaust."
+    "DESCRIPTION": "Gain 2 ${modID}:Weed. gain 2 ${modID}:Grub. Gain 1 ${modID}:Papes. Exhaust.",
+    "UPGRADE_DESCRIPTION": "Gain 2 ${modID}:Weed. gain 2 ${modID}:Grub. Gain 1 ${modID}:Papes. Draw 1 card. Exhaust."
   },
   "${modID}:ComeAi": {
     "NAME": "Eat This!",

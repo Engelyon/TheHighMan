@@ -28,6 +28,7 @@ public class NirvanaPower extends BasePower {
     @Override
     public void onAfterUseCard(AbstractCard card, UseCardAction action) {
         if (card.exhaust && !card.purgeOnUse && !card.dontTriggerOnUseCard) {
+            this.flash();
             AbstractCard copy = card.makeSameInstanceOf();
             copy.freeToPlayOnce = true;
             copy.purgeOnUse = true;
@@ -36,15 +37,11 @@ public class NirvanaPower extends BasePower {
             copy.current_y = card.current_y;
             copy.target_x = card.target_x;
             copy.target_y = card.target_y;
-            copy.applyPowers();
             AbstractMonster target = null;
             if (action.target instanceof AbstractMonster) {
                 target = (AbstractMonster) action.target;
-                copy.calculateCardDamage(target);
-            } else {
-                copy.calculateCardDamage(null);
             }
-            copy.use(AbstractDungeon.player, target);
+            AbstractDungeon.actionManager.addToBottom(new UseCardAction(copy, target));
             AbstractDungeon.actionManager.addToBottom(new UnlimboAction(copy));
         }
     }

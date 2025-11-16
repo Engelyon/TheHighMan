@@ -30,7 +30,6 @@ public class LaricaPesada extends BaseCard {
         setDamage(DAMAGE, UPG_DAMAGE);
         setMagic(LARICA_AMOUNT);
         this.isMultiDamage = true;
-        this.keywords.add("larica");
         initializeDescription();
     }
 

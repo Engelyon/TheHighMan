@@ -33,7 +33,7 @@ public class PratoCheio extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new GainBlockAction(p, BLOCK));
+        addToBot(new GainBlockAction(p, this.block));
         addToBot(new ApplyPowerAction(p, p, new ComidoPower(p, this.magicNumber), this.magicNumber));
     }
     @Override

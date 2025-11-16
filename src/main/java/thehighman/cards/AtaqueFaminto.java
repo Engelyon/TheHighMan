@@ -10,7 +10,6 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thehighman.character.TheHighman;
 import thehighman.powers.ComidoPower;
-import thehighman.powers.ErvaPower;
 import thehighman.util.CardStats;
 
 public class  AtaqueFaminto extends BaseCard {

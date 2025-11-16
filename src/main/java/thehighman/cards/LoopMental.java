@@ -32,7 +32,6 @@ public class LoopMental extends BaseCard {
         super(ID, info);
         setDamage(DAMAGE,3);
         setMagic(DRAW,1);
-        this.keywords.add("bad trip");
         this.cardsToPreview = new BadTrip();
         initializeDescription();
     }
@@ -41,7 +40,7 @@ public class LoopMental extends BaseCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
         final boolean[] badtripEncontrada = {false};
-        for (int i = 0; i < magicNumber; i++) {
+        for (int i = 0; i < this.magicNumber; i++) {
             addToBot(new AbstractGameAction() {
                 @Override
                 public void update() {

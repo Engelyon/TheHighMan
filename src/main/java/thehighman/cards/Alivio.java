@@ -2,7 +2,6 @@ package thehighman.cards;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
-import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -32,7 +31,6 @@ public class Alivio extends BaseCard {
         super(ID, info);
         setBlock(BLOCK);
         setMagic(CHAPADO);
-        this.keywords.add("chapado");
         initializeDescription();
     }
 

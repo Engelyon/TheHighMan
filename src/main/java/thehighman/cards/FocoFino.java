@@ -32,7 +32,7 @@ public class FocoFino extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(m,p, new ChapadoPower(m,magicNumber)));
+        addToBot(new ApplyPowerAction(m,p, new ChapadoPower(m, this.magicNumber)));
         addToBot(new DrawCardAction(2));
     }
 

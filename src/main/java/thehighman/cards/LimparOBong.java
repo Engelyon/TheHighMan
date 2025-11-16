@@ -40,7 +40,7 @@ public class LimparOBong extends BaseCard {
             int erva = p.getPower(ErvaPower.POWER_ID).amount;
             if (erva > 0) {
                 addToBot(new ReducePowerAction(p, p, ErvaPower.POWER_ID, erva));
-                int strengthPerErva = magicNumber;
+                int strengthPerErva = this.magicNumber;
                 int totalStrength = erva * strengthPerErva;
                 addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, totalStrength), totalStrength));
                 addToBot(new ApplyPowerAction(p, p, new LoseStrengthPower(p, totalStrength), totalStrength));

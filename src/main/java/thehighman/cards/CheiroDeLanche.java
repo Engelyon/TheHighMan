@@ -32,7 +32,7 @@ public class CheiroDeLanche extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
+        addToBot(new DamageAction(m, new DamageInfo(p, this.damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
         if (!p.hasPower(LaricaPower.POWER_ID)){
             addToBot(new ApplyPowerAction(p,p, new LaricaPower(p,1),1));
         }

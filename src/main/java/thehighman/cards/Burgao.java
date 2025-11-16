@@ -33,7 +33,7 @@ public class Burgao extends BaseCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         int comidoStacks = p.getPower(ComidoPower.POWER_ID).amount;
         for (int i = 0; i < comidoStacks; i++) {
-            AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, block));
+            AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, this.block));
         }
     }
 

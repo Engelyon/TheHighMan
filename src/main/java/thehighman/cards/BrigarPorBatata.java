@@ -29,8 +29,6 @@ public class BrigarPorBatata extends BaseCard {
     public BrigarPorBatata() {
         super(ID, info);
         setDamage(DAMAGE, UPG_DAMAGE);
-        this.keywords.add("larica");
-        this.keywords.add("comido");
         initializeDescription();
     }
 

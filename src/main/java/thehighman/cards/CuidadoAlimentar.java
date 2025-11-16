@@ -31,8 +31,8 @@ public class CuidadoAlimentar extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new GainBlockAction(p, BLOCK));
-        addToBot(new HealAction(p, p, HEAL));
+        addToBot(new GainBlockAction(p, this.block));
+        addToBot(new HealAction(p, p, this.magicUpgrade));
     }
 
     @Override

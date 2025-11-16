@@ -20,7 +20,6 @@ public class Hypar extends BaseCard {
 
     public Hypar() {
         super(ID, info);
-        this.keywords.add("hypar");
         initializeDescription();
     }
 

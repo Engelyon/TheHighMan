@@ -56,8 +56,8 @@
   },
   "${modID}:BaforadaEterea": {
     "NAME": "Baforada Etérea",
-    "DESCRIPTION": "Etérea. ${modID}:Fume 1. Cause !D! de dano, aplique !M! de ${modID}:Chapado e copie esta carta.",
-    "UPGRADE_DESCRIPTION": "Etérea. ${modID}:Fume 1. Cause !D! de dano, aplique !M! de ${modID}:Chapado e copie esta carta."
+    "DESCRIPTION": "Etérea. ${modID}:Fume 1. Cause !D! de dano, aplique !M! de ${modID}:Chapado e copie esta carta. Exaurir.",
+    "UPGRADE_DESCRIPTION": "Etérea. ${modID}:Fume 1. Cause !D! de dano, aplique !M! de ${modID}:Chapado e copie esta carta. Exaurir."
   },
   "${modID}:BaforadaForte": {
     "NAME": "Baforada Forte",

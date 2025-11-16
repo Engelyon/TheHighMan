@@ -36,7 +36,7 @@ public class GeloNaMao extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn)));
+        addToBot(new DamageAction(m, new DamageInfo(p, this.damage, damageTypeForTurn)));
 
         if (upgraded) {
             addToBot(new com.megacrit.cardcrawl.actions.common.ExhaustAction(

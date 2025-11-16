@@ -29,7 +29,6 @@ public class BaforadaForte extends BaseCard {
         super(ID, info);
         setDamage(DAMAGE, UPG_DAMAGE);
         setMagic(CHAPADO_AMOUNT);
-        this.keywords.add("chapado");
         initializeDescription();
     }
 
