@@ -2,6 +2,7 @@ package thehighman.cards;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -23,16 +24,19 @@ public class Analisar extends BaseCard {
     );
 
     private static final int DRAW_AMOUNT = 2;
+    private static final int BLOCK = 6;
+    private static final int BLOCK_UPG = 2;
 
     public Analisar() {
         super(ID, info);
+        setBlock(BLOCK,BLOCK_UPG);
         setMagic(DRAW_AMOUNT);
-        this.keywords.add("chapado");
         initializeDescription();
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        addToBot(new GainBlockAction(p,block));
         addToBot(new DrawCardAction(p, DRAW_AMOUNT));
         addToBot(new ApplyPowerAction(p,p, new SedaPower(p,p,1), 1));
     }

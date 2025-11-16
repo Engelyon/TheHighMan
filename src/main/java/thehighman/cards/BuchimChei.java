@@ -29,8 +29,12 @@ public class BuchimChei extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p,p, new ComidoPower(p,p, magicNumber)));
+        if (p.hasPower(ComidoPower.POWER_ID)){
+        addToBot(new ApplyPowerAction(p,p, new ComidoPower(p,p, magicNumber*2)));
         addToBot(new ApplyPowerAction(p,p, new ComidoPower(p, p.getPower(ComidoPower.POWER_ID).amount)));
+    } else{
+            addToBot(new ApplyPowerAction(p,p, new ComidoPower(p,p, magicNumber*2)));
+        }
     }
 
     @Override

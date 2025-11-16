@@ -176,7 +176,7 @@
   },
   "${modID}:FocoFino": {
     "NAME": "Foco Fino",
-    "DESCRIPTION": "Aplique !M! de ${modID}:Chapado ao inimigo. Compre 2 carta.",
+    "DESCRIPTION": "Aplique !M! de ${modID}:Chapado ao inimigo. Compre 2 cartas.",
     "UPGRADE_DESCRIPTION": "Aplique !M! de ${modID}:Chapado ao inimigo. Compre 2 cartas."
   },
   "${modID}:Fritura": {
@@ -206,8 +206,8 @@
   },
   "${modID}:Inspiracao": {
     "NAME": "Inspiração",
-    "DESCRIPTION": "Gain !B! Block. Ganhe !M! de ${modID}:Erva. Ganhe 1 de ${modID}:Seda. Exaurir.",
-    "UPGRADE_DESCRIPTION": "Gain !B! Block. Ganhe !M! de ${modID}:Erva. Ganhe 1 de ${modID}:Seda. Exaurir."
+    "DESCRIPTION": "Ganhe !B! Block. Ganhe !M! de ${modID}:Erva. Ganhe 1 de ${modID}:Seda. Exaurir.",
+    "UPGRADE_DESCRIPTION": "Ganhe !B! Block. Ganhe !M! de ${modID}:Erva. Ganhe 1 de ${modID}:Seda. Exaurir."
   },
   "${modID}:LaricaDePoder": {
     "NAME": "Larica De Poder",
@@ -321,8 +321,8 @@
   },
   "${modID}:Ronco": {
     "NAME": "Ronco",
-    "DESCRIPTION": "Remova todos os poderes de um inimigo aleatorio. Exaure.",
-    "UPGRADE_DESCRIPTION": "Remova todos os poderes de um inimigo à sua escolha. Exaure."
+    "DESCRIPTION": "Remova todos os poderes de um inimigo aleatorio. Exaurir.",
+    "UPGRADE_DESCRIPTION": "Remova todos os poderes de um inimigo à sua escolha. Exaurir."
   },
   "${modID}:SacolaDeGuloseimas": {
     "NAME": "Sacola Transbordando",

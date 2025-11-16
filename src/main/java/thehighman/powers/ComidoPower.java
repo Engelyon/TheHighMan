@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
+import com.megacrit.cardcrawl.powers.VulnerablePower;
 import thehighman.relics.SacoDeLanchesSemFundo;
 
 import static thehighman.InimigosDoSpire.makeID;
@@ -32,7 +33,14 @@ public class ComidoPower extends BasePower {
         if (player != null && player.hasPower(LaricaPower.POWER_ID)) {
             int extra = player.getPower(LaricaPower.POWER_ID).amount;
             int stacksToNegate = Math.min(extra, this.amount);
-            damage -= stacksToNegate * 5;
+            float reducao = stacksToNegate * 5;
+            if (player.hasPower(VulnerablePower.POWER_ID)) {
+                reducao *= 1.5f;
+            }
+            damage -= reducao;
+            if (damage < 0) {
+                damage = 0;
+            }
         }
         return damage;
     }

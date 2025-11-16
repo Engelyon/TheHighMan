@@ -15,7 +15,7 @@ public class Desconfianca extends BaseCard {
             TheHighman.Meta.CARD_COLOR,
             CardType.SKILL,
             CardRarity.COMMON,
-            CardTarget.ENEMY,
+            CardTarget.SELF,
             1
     );
 
