@@ -4,16 +4,20 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
+import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.AbstractPower;
 import thehighman.character.TheHighman;
 import thehighman.powers.ComidoPower;
 import thehighman.powers.ErvaPower;
 import thehighman.powers.LaricaPower;
 import thehighman.util.CardStats;
+
+import java.util.ArrayList;
 
 public class LaricaDePoder extends BaseCard {
     public static final String ID = makeID("LaricaDePoder");
@@ -38,10 +42,15 @@ public class LaricaDePoder extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        new DamageAction(m, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL));
-        new ApplyPowerAction(m,p, new LaricaPower(m, 1));
-        for (int i=0; i < m.getPower(LaricaPower.POWER_ID).amount; i++){
-            new DamageAction(m, new DamageInfo(p, (m.getPower(LaricaPower.POWER_ID).amount*5)*2, DamageInfo.DamageType.NORMAL));
+        System.out.println(m);
+        addToBot(new DamageAction(m, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL)));
+        addToBot(new ApplyPowerAction(m,p, new LaricaPower(m, 1)));
+        try {
+            for (int i=0; i < m.getPower(LaricaPower.POWER_ID).amount; i++){
+                addToBot(new DamageAction(m, new DamageInfo(p, (m.getPower(LaricaPower.POWER_ID).amount*5)*2, DamageInfo.DamageType.NORMAL)));
+            }
+        } catch (Exception e) {
+            System.out.println(e);;
         }
     }
 
