@@ -1,10 +1,13 @@
 package thehighman.powers;
 
 import com.megacrit.cardcrawl.actions.GameActionManager;
+import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.actions.utility.UnlimboAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.CardQueueItem;
 import com.megacrit.cardcrawl.core.AbstractCreature;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
@@ -25,24 +28,24 @@ public class NirvanaPower extends BasePower {
         description = DESCRIPTIONS[0];
     }
 
-    @Override
-    public void onAfterUseCard(AbstractCard card, UseCardAction action) {
-        if (card.exhaust && !card.purgeOnUse && !card.dontTriggerOnUseCard) {
-            this.flash();
-            AbstractCard copy = card.makeSameInstanceOf();
-            copy.freeToPlayOnce = true;
-            copy.purgeOnUse = true;
-            AbstractDungeon.player.limbo.addToBottom(copy);
-            copy.current_x = card.current_x;
-            copy.current_y = card.current_y;
-            copy.target_x = card.target_x;
-            copy.target_y = card.target_y;
-            AbstractMonster target = null;
-            if (action.target instanceof AbstractMonster) {
-                target = (AbstractMonster) action.target;
+    public void onUseCard(AbstractCard card, UseCardAction action) {
+        if (!card.purgeOnUse && card.exhaust) {
+            flash();
+            AbstractMonster m = null;
+            if (action.target != null) {
+                m = (AbstractMonster)action.target;
             }
-            AbstractDungeon.actionManager.addToBottom(new UseCardAction(copy, target));
-            AbstractDungeon.actionManager.addToBottom(new UnlimboAction(copy));
+            AbstractCard tmp = card.makeSameInstanceOf();
+            AbstractDungeon.player.limbo.addToBottom(tmp);
+            tmp.current_x = card.current_x;
+            tmp.current_y = card.current_y;
+            tmp.target_x = Settings.WIDTH / 2.0F - 300.0F * Settings.scale;
+            tmp.target_y = Settings.HEIGHT / 2.0F;
+            if (m != null) {
+                tmp.calculateCardDamage(m);
+            }
+            tmp.purgeOnUse = true;
+            AbstractDungeon.actionManager.addCardQueueItem(new CardQueueItem(tmp, m, card.energyOnUse, true, true), true);
         }
     }
 }

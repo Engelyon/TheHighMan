@@ -20,27 +20,29 @@ public class CuidadoAlimentar extends BaseCard {
     );
 
     private static final int BLOCK = 12;
+    private static final int BLOCKUPG = 4;
     private static final int HEAL = 2;
+    private static final int HEALUPG = 1;
 
     public CuidadoAlimentar() {
         super(ID, info);
-        setBlock(BLOCK, BLOCK + 4);
-        setMagic(HEAL, HEAL + 1);
+        setBlock(BLOCK, BLOCKUPG);
+        setMagic(HEAL, HEALUPG);
         initializeDescription();
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new GainBlockAction(p, this.block));
-        addToBot(new HealAction(p, p, this.magicUpgrade));
+        addToBot(new HealAction(p, p, this.magicNumber));
     }
 
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeBlock(4);
-            upgradeMagicNumber(1);
+            upgradeBlock(BLOCKUPG);
+            upgradeMagicNumber(HEALUPG);
             initializeDescription();
         }
     }
