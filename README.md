@@ -1,4 +1,4 @@
-# The Highman - A Slay the Spire Character Mod
+# The HighMan - A Slay the Spire Character Silly Mod
 
 [View in English](#the-highman-english) | [Ver em Português](#o-highman-português)
 
@@ -32,7 +32,7 @@ The Highman's kit is built around a cycle of powers:
 > **Dependencies:** This mod requires the following other mods to be installed:
 > * [BaseMod](https://steamcommunity.com/sharedfiles/filedetails/?id=1605833019)
 > * [ModTheSpire](https://github.com/kiooeht/ModTheSpire/releases)
-> * [StSLib](https://steamcommunity.com/sharedfiles/filedetails/?id=1605070445))
+> * [StSLib](https://steamcommunity.com/sharedfiles/filedetails/?id=1605070445)
 
 **From Steam Workshop:**
 1.  Subscribe to [The HighMan] on the Steam Workshop.
@@ -42,19 +42,19 @@ The Highman's kit is built around a cycle of powers:
 ---
 ---
 
-## O Highman (Português)
+## O HighMan (Português)
 
 Um mod de personagem customizado completo para Slay the Spire, trazendo um novo e relaxado desafiante para a Torre. O gameplay do Highman gira em torno de um ciclo único de "alto risco, alta recompensa" com buffs, debuffs e gerenciamento de recursos.
 
 ### O que o mod inclui?
-* **Um Novo Personagem:** O Highman
-* **+70 Novas Cartas:** Um conjunto completo de Ataques, Habilidades e Poderes.
+* **Um Novo Personagem:** O HighMan
+* **70+ Novas Cartas:** Um conjunto completo de Ataques, Habilidades e Poderes.
 * **6 Novas Relíquias:** Relíquias únicas para suportar seu estilo de jogo.
 * **Mecânicas Customizadas:** Um conjunto de novos poderes e palavras-chave que interagem entre si.
 * **Suporte Multiplayer:** Inclui um patch de compatibilidade nativo para o mod **Together in Spire**.
 
 ### Mecânicas Principais
-O kit do Highman é construído em torno de um ciclo de poderes:
+O kit do HighMan é construído em torno de um ciclo de poderes:
 
 * **Chapado:** Um debuff aplicado em inimigos que reduz o dano que eles causam. Quando o `Chapado` chega a 20 stacks, ele ativa...
 * **Larica:** Um poder que, quando ativado, interage com...
@@ -70,7 +70,7 @@ O kit do Highman é construído em torno de um ciclo de poderes:
 > **Dependências:** Este mod requer que os seguintes mods estejam instalados:
 > * [BaseMod](https://steamcommunity.com/sharedfiles/filedetails/?id=1605833019)
 > * [ModTheSpire](https://github.com/kiooeht/ModTheSpire/releases)
-> * [StSLib](https://steamcommunity.com/sharedfiles/filedetails/?id=1605070445))
+> * [StSLib](https://steamcommunity.com/sharedfiles/filedetails/?id=1605070445)
 
 **Pela Oficina Steam (Steam Workshop):**
 1.  Inscreva-se em [The HighMan] na Oficina Steam.
