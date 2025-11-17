@@ -3,59 +3,59 @@
     "PROPER_NAME": "Chapado",
     "NAMES": ["chapado","Chapado"],
     "DESCRIPTION": "Reduz o dano causado pelo inimigo em 5% por stack. Ao atingir 20 stacks, o inimigo perde 15 stacks e recebe Larica.",
-    "COLOR": "3cb371"
+    "COLOR": "16e94b"
   },
   {
     "PROPER_NAME": "Seda",
     "NAMES": ["seda","Seda"],
     "DESCRIPTION": "Aumenta o dano de ataques da sua classe em 10% por stack e aplica mais Chapado.",
-    "COLOR": "3cb371"
+    "COLOR": "16e94b"
   },
   {
     "PROPER_NAME": "Erva",
     "NAMES": ["erva","Erva"],
     "DESCRIPTION": "Recurso especial usado por cartas da sua classe para ativar efeitos únicos.",
-    "COLOR": "3cb371"
+    "COLOR": "16e94b"
   },
   {
     "PROPER_NAME": "Larica",
     "NAMES": ["larica","Larica"],
     "DESCRIPTION": "Ganha 2 de força e leva mais 5 de dano de ataque.",
-    "COLOR": "3cb371"
+    "COLOR": "16e94b"
   },
   {
     "PROPER_NAME": "Comido",
     "NAMES": ["comido","Comido"],
     "DESCRIPTION": "Evita o dano colateral de 1 stack de Larica",
-    "COLOR": "3cb371"
+    "COLOR": "16e94b"
   },
   {
     "PROPER_NAME": "Piticas",
     "NAMES": ["piticas","Piticas"],
     "DESCRIPTION": "Loja Geek Brasileira de produtos variados da qual um dos devs faliu uma loja da franquia.",
-    "COLOR": "3cb371"
+    "COLOR": "16e94b"
   },
   {
     "PROPER_NAME": "Fume",
     "NAMES": ["fume","Fume"],
     "DESCRIPTION": "Consuma x Erva",
-    "COLOR": "3cb371"
+    "COLOR": "16e94b"
   },
   {
     "PROPER_NAME": "Coma",
     "NAMES": ["coma","Coma"],
     "DESCRIPTION": "Consuma 1 Comido",
-    "COLOR": "3cb371"
+    "COLOR": "16e94b"
   },
   {
     "PROPER_NAME": "BadTrip",
     "NAMES": ["badtrip","Badtrip","Bad Trip", "BadTrip","bad trip"],
-    "COLOR": "3cb371"
+    "COLOR": "16e94b"
   },
   {
     "PROPER_NAME": "Potencia",
     "NAMES": ["Potencia","potencia"],
     "DESCRIPTION": "N tem como",
-    "COLOR": "3cb371"
+    "COLOR": "16e94b"
   }
 ]
