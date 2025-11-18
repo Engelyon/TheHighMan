@@ -3,59 +3,59 @@
     "PROPER_NAME": "High",
     "NAMES": ["high","High"],
     "DESCRIPTION": "Reduce the damage caused by 5% per stack. When at 20 stacks, loses 15 stacks and gains Munchies.",
-    "COLOR": "3cb371"
+    "COLOR": "16e94b"
   },
   {
     "PROPER_NAME": "Papes",
     "NAMES": ["papes","Papes"],
     "DESCRIPTION": "Apply 1 more High per stack.",
-    "COLOR": "3cb371"
+    "COLOR": "16e94b"
   },
   {
     "PROPER_NAME": "Weed",
     "NAMES": ["weed","Weed"],
     "DESCRIPTION": "Special resource used by cards to activate secondary effects.",
-    "COLOR": "3cb371"
+    "COLOR": "16e94b"
   },
   {
     "PROPER_NAME": "Munchies",
     "NAMES": ["munchies","Munchies"],
     "DESCRIPTION": "Gain 2 Strength and take 5 more Damage from attacks.",
-    "COLOR": "3cb371"
+    "COLOR": "16e94b"
   },
   {
     "PROPER_NAME": "Grub",
     "NAMES": ["grub","Grub"],
     "DESCRIPTION": "Denies the damage drawback of 1 stack of Munchies",
-    "COLOR": "3cb371"
+    "COLOR": "16e94b"
   },
   {
     "PROPER_NAME": "Piticas",
     "NAMES": ["piticas","Piticas"],
     "DESCRIPTION": "A Brazilian geek stuff shop brand. One of the mod developers have managed to bankrupt a branch some years ago.",
-    "COLOR": "3cb371"
+    "COLOR": "16e94b"
   },
   {
     "PROPER_NAME": "Smoke",
     "NAMES": ["smoke","Smoke"],
     "DESCRIPTION": "Consume x Weed",
-    "COLOR": "3cb371"
+    "COLOR": "16e94b"
   },
   {
     "PROPER_NAME": "Eat",
     "NAMES": ["eat","Eat"],
     "DESCRIPTION": "Consume 1 Grub",
-    "COLOR": "3cb371"
+    "COLOR": "16e94b"
   },
   {
     "PROPER_NAME": "BadTrip",
     "NAMES": ["badtrip","Badtrip","Bad Trip", "BadTrip","bad trip"],
-    "COLOR": "3cb371"
+    "COLOR": "16e94b"
   },
   {
     "PROPER_NAME": "THE POWER",
     "NAMES": ["ThePower","thepower"],
     "DESCRIPTION": "There's no way",
-    "COLOR": "3cb371"
+    "COLOR": "16e94b"
   }
 ]
