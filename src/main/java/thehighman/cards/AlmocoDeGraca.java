@@ -39,7 +39,7 @@ public class AlmocoDeGraca extends BaseCard {
         addToBot(new ApplyPowerAction(p, p, new ComidoPower(p, COMIDO_GAIN), COMIDO_GAIN));
         if (p.hasPower(ComidoPower.POWER_ID)) {
             int atual = p.getPower(ComidoPower.POWER_ID).amount;
-            if (atual >= COMIDO_MAX) {
+            if (atual >= COMIDO_MAX-2) {
                 addToBot(new GainEnergyAction(ENERGY_GAIN));
             }
         }

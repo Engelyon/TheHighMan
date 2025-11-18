@@ -36,8 +36,8 @@
   },
   "${modID}:AtaqueDeVazio": {
     "NAME": "Hollow Attack",
-    "DESCRIPTION": "Deal !D! Damage. Repeat for each ${modID}:Munchies you have. Exhaust.",
-    "UPGRADE_DESCRIPTION": "Deal !D! Damage. Repeat for each ${modID}:Munchies you have. Exhaust."
+    "DESCRIPTION": "Deal !D! Damage. Deal 5 more damage for each ${modID}:Munchies you have. Exhaust.",
+    "UPGRADE_DESCRIPTION": "Deal !D! Damage. Deal 10 more damage for each ${modID}:Munchies you have. Exhaust."
   },
   "${modID}:AtaqueFaminto": {
     "NAME": "Hungry Attack",
@@ -201,8 +201,8 @@
   },
   "${modID}:IdeiaDeStartup": {
     "NAME": "Startup Idea",
-    "DESCRIPTION": "Gain !M! ${modID}:Weed. Shuffle a ${modID}:BadTrip into your deck. Lose all your energy because you drove ${modID}:Piticas to bankruptcy.",
-    "UPGRADE_DESCRIPTION": "Gain !M! ${modID}:Weed. Shuffle a ${modID}:BadTrip into your deck. Lose all your energy because you drove ${modID}:Piticas to bankruptcy."
+    "DESCRIPTION": "Gain !M! ${modID}:Weed. Shuffle a ${modID}:BadTrip into your deck. Lose all your energy because you drove ${modID}:Piticas to bankruptcy. Exhaust.",
+    "UPGRADE_DESCRIPTION": "Gain !M! ${modID}:Weed. Shuffle a ${modID}:BadTrip into your deck. Lose all your energy because you drove ${modID}:Piticas to bankruptcy. Exhaust."
   },
   "${modID}:Inspiracao": {
     "NAME": "Inspiration",

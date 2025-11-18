@@ -36,8 +36,8 @@
   },
   "${modID}:AtaqueDeVazio": {
     "NAME": "Ataque De Vazio",
-    "DESCRIPTION": "Cause !D! de dano. Repita para cada stack de ${modID}:Larica que você tem. Exaurir.",
-    "UPGRADE_DESCRIPTION": "Cause !D! de dano. Repita para cada stack de ${modID}:Larica que você tem. Exaurir."
+    "DESCRIPTION": "Cause !D! de dano. Causa 5 de dano a mais para cada stack de ${modID}:Larica que você tem. Exaurir.",
+    "UPGRADE_DESCRIPTION": "Cause !D! de dano. Causa 10 de dano a mais stack de ${modID}:Larica que você tem. Exaurir."
   },
   "${modID}:AtaqueFaminto": {
     "NAME": "Ataque Faminto",
@@ -111,8 +111,8 @@
   },
   "${modID}:ColheitaGenerosa": {
     "NAME": "Colheita Generosa",
-    "DESCRIPTION": "Ganhe 2 de ${modID}:Erva. Ganhe 1 de ${modID}:Comido. ganhe 1 de ${modID}:Seda. Exaure.",
-    "UPGRADE_DESCRIPTION": "Ganhe 3 de ${modID}:Erva. Ganhe 1 de ${modID}:Comido. Ganhe 1 de ${modID}:Seda. Compre 1 carta. Exaure."
+    "DESCRIPTION": "Ganhe 2 de ${modID}:Erva. Ganhe 1 de ${modID}:Comido. ganhe 1 de ${modID}:Seda. Exaurir.",
+    "UPGRADE_DESCRIPTION": "Ganhe 3 de ${modID}:Erva. Ganhe 1 de ${modID}:Comido. Ganhe 1 de ${modID}:Seda. Compre 1 carta. Exaurir."
   },
   "${modID}:ComeAi": {
     "NAME": "Come Aí",
@@ -201,8 +201,8 @@
   },
   "${modID}:IdeiaDeStartup": {
     "NAME": "Ideia De Startup",
-    "DESCRIPTION": "Ganhe !M! de ${modID}:Erva. Embaralhe uma BadTrip no deck. Consome toda a energia restante pq vc faliu a ${modID}:Piticas.",
-    "UPGRADE_DESCRIPTION": "Ganhe !M! de ${modID}:Erva. Embaralhe uma BadTrip no deck. Consome toda a energia restante pq vc faliu a ${modID}:Piticas."
+    "DESCRIPTION": "Ganhe !M! de ${modID}:Erva. Embaralhe uma BadTrip no deck. Consome toda a energia restante pq vc faliu a ${modID}:Piticas. Exaurir.",
+    "UPGRADE_DESCRIPTION": "Ganhe !M! de ${modID}:Erva. Embaralhe uma BadTrip no deck. Consome toda a energia restante pq vc faliu a ${modID}:Piticas. Exaurir."
   },
   "${modID}:Inspiracao": {
     "NAME": "Inspiração",

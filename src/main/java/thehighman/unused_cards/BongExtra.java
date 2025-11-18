@@ -1,10 +1,10 @@
-package thehighman.cards;
+package thehighman.unused_cards;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import thehighman.cards.BaseCard;
 import thehighman.character.TheHighman;
-import thehighman.unused_cards.BongExtraPower;
 import thehighman.util.CardStats;
 
 public class BongExtra extends BaseCard {
@@ -13,7 +13,7 @@ public class BongExtra extends BaseCard {
     private static final CardStats info = new CardStats(
             TheHighman.Meta.CARD_COLOR,
             CardType.POWER,
-            CardRarity.UNCOMMON,
+            CardRarity.SPECIAL,
             CardTarget.SELF,
             1
     );

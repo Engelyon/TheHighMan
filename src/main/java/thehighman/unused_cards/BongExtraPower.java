@@ -1,9 +1,11 @@
-package thehighman.powers;
+package thehighman.unused_cards;
 
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import thehighman.powers.BasePower;
+import thehighman.powers.LaricaPower;
 
 import static thehighman.InimigosDoSpire.makeID;
 

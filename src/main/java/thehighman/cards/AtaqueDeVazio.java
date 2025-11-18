@@ -18,7 +18,7 @@ public class AtaqueDeVazio extends BaseCard {
             CardType.ATTACK,
             CardRarity.UNCOMMON,
             CardTarget.ENEMY,
-            0
+            2
     );
 
     private static final int BASE_DAMAGE = 5;
