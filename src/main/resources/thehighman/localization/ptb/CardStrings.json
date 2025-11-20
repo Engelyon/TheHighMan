@@ -206,8 +206,8 @@
   },
   "${modID}:Inspiracao": {
     "NAME": "Inspiração",
-    "DESCRIPTION": "Ganhe !B! Block. Ganhe !M! de ${modID}:Erva. Ganhe 1 de ${modID}:Seda. Exaurir.",
-    "UPGRADE_DESCRIPTION": "Ganhe !B! Block. Ganhe !M! de ${modID}:Erva. Ganhe 1 de ${modID}:Seda. Exaurir."
+    "DESCRIPTION": "Ganhe !B! Bloqueio. Ganhe !M! de ${modID}:Erva. Ganhe 1 de ${modID}:Seda. Exaurir.",
+    "UPGRADE_DESCRIPTION": "Ganhe !B! Bloqueio. Ganhe !M! de ${modID}:Erva. Ganhe 1 de ${modID}:Seda. Exaurir."
   },
   "${modID}:LaricaDePoder": {
     "NAME": "Larica De Poder",
